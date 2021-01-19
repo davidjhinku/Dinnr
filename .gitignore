@@ -27,7 +27,7 @@
 /config/master.key
 
 #additional requrested W11D3
-bundle.js
-bundle.js.map
+**/bundle.js
+**/bundle.js.map
 .DS_Store
 npm-debug.log
