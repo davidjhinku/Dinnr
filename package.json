@@ -27,6 +27,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.14.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/davidjhinku/Dinnr.git"
