@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store'
+import Root from './components/root'
 
 //testing
 import {signup, signin, logout} from './util/session_api_util'
@@ -17,5 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState
     //testing
 
-    ReactDOM.render(<h1>React Loaded</h1>, root)
+    ReactDOM.render(<Root store={store} />, root)
 })
