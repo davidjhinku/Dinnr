@@ -9,9 +9,11 @@ const receiveCurrentUser = user => ({
     user
 });
 
-const logoutCurrentUser = () => ({
-    type: LOGOUT_CURRENT_USER
-});
+const logoutCurrentUser = () => {
+    return {
+        type: LOGOUT_CURRENT_USER
+    }
+}
 
 const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
@@ -27,14 +29,14 @@ export const signup = user => dispatch => (
     )
 )
 
-export const signin = user => dispatch => (
-    APIUTIL.signin(user).then(user => (
+export const signin = user => dispatch => {
+    return APIUTIL.signin(user).then(user => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.responseJSON)))
     )
-)
+}
 
-export const logout = () => (
-    APIUTIL.logout().then(() => dispatch(logoutCurrentUser()))
-)
+export const logout = () => dispatch => {
+    return APIUTIL.logout().then(() => dispatch(logoutCurrentUser()))
+}

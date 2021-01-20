@@ -1,42 +1,40 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const NavBar = (props) => {
+const NavBar = ({currentUser, logout}) => {
     const displayLoggout = () => {
         return (
-            <li>
-                <button onClick={() => this.props.logout()}>Logout</button>
-            </li>
+            <ul>
+                <li className='logout-button'>
+                    <button onClick={() => logout()}>Logout</button>
+                </li>
+            </ul>
         )
     }
 
     const displaySessionLinks = () => {
         return (
-            <>
+            <ul>
                 <li className='signup-button'>
                     <Link to='/signup' >Sign up</Link>
                 </li>
                 <li className='signin-button'>
-                    <Link to='/login' >Sign in</Link>
+                    <Link to='/signin' >Sign in</Link>
                 </li>
-            </>
+            </ul>
         )
     }
 
     let session
-    this.props.currentUser ? session = displayLoggout() : session = displaySessionLinks()
+    currentUser ? session = displayLoggout() : session = displaySessionLinks()
 
     return (
-        <ul className='nav-bar'>
-            <li>
-                <>
-                </>
-            </li>
-
-
-        </ul>
+        <nav>
+            {session}
+        </nav>
     )
 
 }
+
 
 export default NavBar;
