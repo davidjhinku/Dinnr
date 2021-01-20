@@ -15,7 +15,8 @@ class SignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(() => this.props.history.push('/'))
+        // this.props.processForm(this.state).then(() => this.props.history.push('/'))
+        this.props.processForm(this.state).then(this.props.closeModal)
     }
 
     handleChange(type) {
@@ -43,6 +44,7 @@ class SignUp extends React.Component {
 
         return (
             <div className="signup-modal">
+                <div className="close-modal-x" onClick={props.closeModal}>X</div>
                 <h2>Welcome to Dinnr!</h2>
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
@@ -61,10 +63,10 @@ class SignUp extends React.Component {
                         <option value="Los Angeles">Los Angeles</option>
                     </select>
                     <br/>
-                    <button className='signup-button'>Create Account</button>
+                    <button className='session-submit-button'>Create Account</button>
                 </form>
                 <br />
-                <span>Already a member? {props.linkPath}</span>
+                <span>Already a member? {props.otherForm}</span>
             </div>
         )
 

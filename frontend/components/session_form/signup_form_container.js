@@ -1,20 +1,27 @@
-import { connect } from 'react-redux'
-import { signup } from '../../actions/session_actions'
 import React from 'react'
 import SignUp from './signup_form'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { signup } from '../../actions/session_actions'
+import {openModal, closeModal} from '../../actions/modal_actions'
+// import { Link } from 'react-router-dom'
 
 const mSTP = (state, ownProps) => {
     return {
         errors: state.errors.session,
         formType: 'signup',
-        linkPatch: <Link to='/signin'>Signin Instead</Link>
+        // linkPatch: <Link to='/signin'>Signin Instead</Link>
     }
 }
 
 const mDTP = dispatch => {
     return {
-        processForm: user => dispatch(signup(user))
+        processForm: user => dispatch(signup(user)),
+        otherForm: (
+            <button onClick={() => dispatch(openModal('signin'))}>
+                Sign in instead
+            </button>
+        ),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

@@ -12,7 +12,8 @@ class SignIn extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.props.processForm(this.state).then(() => this.props.history.push('/'))
+        // this.props.processForm(this.state).then(() => this.props.history.push('/'))
+        this.props.processForm(this.state).then(this.props.closeModal)
     }
 
     handleChange(type) {
@@ -40,6 +41,7 @@ class SignIn extends React.Component {
 
         return(
             <div className="signin-modal">
+                <div className="close-modal-x" onClick={props.closeModal}>X</div>
                 <h2>Please sign in</h2>
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
@@ -47,10 +49,10 @@ class SignIn extends React.Component {
                     <br/>
                     <input type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')}/>
                     <br/>
-                    <button className='signin-button'>Sign In</button>
+                    <button className='session-submit-button'>Sign In</button>
                 </form>
                 <br/>
-                <span>New to Dinnr? {props.linkPath}</span>
+                <span>New to Dinnr? {props.otherForm}</span>
             </div>
         )
 
