@@ -36,5 +36,5 @@ export const signin = user => dispatch => (
 )
 
 export const logout = () => (
-    APIUTIL.logout().then(user)
+    APIUTIL.logout().then(() => dispatch(logoutCurrentUser()))
 )
