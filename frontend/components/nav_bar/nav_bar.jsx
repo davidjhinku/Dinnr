@@ -29,7 +29,8 @@ const NavBar = (props) => {
     return (
         <ul className='nav-bar'>
             <li>
-                
+                <>
+                </>
             </li>
 
 
