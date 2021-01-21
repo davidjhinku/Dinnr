@@ -14,4 +14,14 @@
  *= require_self
  *= require reset
  *= require modal
+ *= require nav_bar
  */
+
+ * {
+    font-family: 'Source Sans Pro', sans-serif;
+ }
+
+ body {
+    background-color: #f7f7f7;
+    color: #2d333f;
+ }

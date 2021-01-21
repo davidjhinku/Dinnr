@@ -4,7 +4,7 @@ import React from 'react'
 const NavBar = ({currentUser, logout, openModal}) => {
     const displayLoggout = () => {
         return (
-            <ul>
+            <ul className='session-links'>
                 <li className='logout-button'>
                     <button onClick={() => logout()}>Logout</button>
                 </li>
@@ -14,7 +14,7 @@ const NavBar = ({currentUser, logout, openModal}) => {
 
     const displaySessionLinks = () => {
         return (
-            <ul>
+            <ul className='session-links'>
                 <li className='signup-button'>
                     {/* <Link to='/signup' >Sign up</Link> */}
                     <button onClick={() => openModal('signup')}>Sign up</button>

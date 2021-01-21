@@ -10,7 +10,7 @@ const App = () => (
         <Modal />
         <header>
             <Link to='/' className='header-logo'>
-                <img src={window.dinnrUrl} />
+                <img src={window.dinnrUrl} className='header-logo'/>
             </Link>
             <NavBarContainer />
         </header>
