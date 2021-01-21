@@ -4,7 +4,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 10;
 }
 
@@ -14,31 +14,52 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 16px;
-    border-radius: 5px;
-    padding: 16px;
+    width: 460px;
+    padding: 30px 16px;
+    font-size: 16px;
+    border-radius: 3px;
 }
 
-.modal-box h2 {
-    font-size: 24px;
-    padding: 16px;
+.modal-content > * {
+    padding: 0 16px;
 }
 
-.modal-box input, select, button {
-    margin: 8px;
+hr {
+    border: 0.1px solid rgba(0, 0, 0, 0.07);
+    width: 92%;
+}
+
+.modal-box form > input, select {
+    width: 100%;
     padding: 16px;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 15px;
 }
 
 .session-submit-button {
+    width: 100%;
     background-color: #d93744;
     color: white;
+    font-size: 19.5px;
     border: none;
+    cursor: pointer;
+    padding: 16px;
+    border-radius: 3px;
+    transition: all 0.4s;
+}
+
+.session-submit-button:hover {
+    filter: brightness(85%);
+}
+
+.modal-content span > a {
+    color: #d93744;
     cursor: pointer;
 }
 
-.close-modal-x {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
+.session-error-message {
+    margin-bottom: 8px;
+    color: #d93744;
+    font-weight: 600;
 }

@@ -30,7 +30,7 @@ class SignUp extends React.Component {
             <ul>
                 {this.props.errors.map((err, idx) => {
                     return (
-                        <li key={idx}>
+                        <li key={idx} className='session-error-message'>
                             {err}
                         </li>
                     )
@@ -43,20 +43,21 @@ class SignUp extends React.Component {
         const props = this.props
 
         return (
-            <div className="signup-modal">
-                <div className="close-modal-x" onClick={props.closeModal}>X</div>
+            <div className="modal-content">
                 <h2>Welcome to Dinnr!</h2>
+                <hr/>
+
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder='First Name' value={this.state.first_name} onChange={this.handleChange('first_name')} />
+                    <input type="text" placeholder='First Name' value={this.state.first_name} onChange={this.handleChange('first_name')} required/>
                     <br />
-                    <input type="text" placeholder='Last Name' value={this.state.last_name} onChange={this.handleChange('last_name')} />
+                    <input type="text" placeholder='Last Name' value={this.state.last_name} onChange={this.handleChange('last_name')} required/>
                     <br />
-                    <input type="text" placeholder='Enter Email' value={this.state.email} onChange={this.handleChange('email')} />
+                    <input type="text" placeholder='Enter Email' value={this.state.email} onChange={this.handleChange('email')} required/>
                     <br />
-                    <input type="password" placeholder='Enter Password' value={this.state.password} onChange={this.handleChange('password')} />
+                    <input type="password" placeholder='Enter Password' value={this.state.password} onChange={this.handleChange('password')} required/>
                     <br />
-                    <select value={this.state.primary_location} onChange={this.handleChange('primary_location')}>
+                    <select value={this.state.primary_location} onChange={this.handleChange('primary_location')} required>
                         <option value="" disabled hidden>Primary Dining Location</option>
                         <option value="New York">New York</option>
                         <option value="Chicago">Chicago</option>
@@ -65,7 +66,8 @@ class SignUp extends React.Component {
                     <br/>
                     <button className='session-submit-button'>Create Account</button>
                 </form>
-                <br />
+                <hr/>
+
                 <span>Already a member? {props.otherForm}</span>
             </div>
         )

@@ -18,15 +18,17 @@
  */
 
  * {
-    font-family: 'Source Sans Pro', sans-serif;
+   font-family: 'Source Sans Pro', sans-serif;
+   box-sizing: border-box;
  }
 
  body {
-    background-color: #f7f7f7;
-    color: #2d333f;
+   background-color: #f7f7f7;
+   color: #2d333f;
+   width: 100%;
  }
 
  h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    
+   font-weight: 600;
+   font-size: 24px;
  }

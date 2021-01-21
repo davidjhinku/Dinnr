@@ -27,7 +27,7 @@ class SignIn extends React.Component {
             <ul>
                 {this.props.errors.map((err, idx) => {
                     return(
-                        <li key={idx}>
+                        <li key={idx} className='session-error-message'>
                             {err}
                         </li>
                     )
@@ -40,18 +40,20 @@ class SignIn extends React.Component {
         const props = this.props
 
         return(
-            <div className="signin-modal">
-                <div className="close-modal-x" onClick={props.closeModal}>X</div>
+            <div className="modal-content">
                 <h2>Please sign in</h2>
+                <hr/>
+
                 {this.renderErrors()}
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" placeholder='Email' value={this.state.email} onChange={this.handleChange('email')}/>
+                    <input type="text" placeholder='Email' value={this.state.email} onChange={this.handleChange('email')} required/>
                     <br/>
-                    <input type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')}/>
+                    <input type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')} required/>
                     <br/>
                     <button className='session-submit-button'>Sign In</button>
                 </form>
-                <br/>
+                <hr/>
+                
                 <span>New to Dinnr? {props.otherForm}</span>
             </div>
         )
