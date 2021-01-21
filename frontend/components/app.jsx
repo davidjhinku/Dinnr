@@ -8,21 +8,18 @@ import {Link, Route} from 'react-router-dom'
 const App = () => (
     <div>
         <Modal />
-        <header>
-            <Link to='/' className='header-logo'>
+        <header className='nav-bar'>
+            <Link to='/' className='header-link'>
                 <img src={window.dinnrUrl} className='header-logo'/>
             </Link>
             <NavBarContainer />
         </header>
-
-        {/* <Route path="/signin" component={SigninFormContainer} />
-        <Route path="/signup" component={SignupFormContainer} /> */}
         
         {/* <switch>
             other pages/components in here
         </switch> */}
 
-        <footer>
+        <footer className='nav-footer'>
             {/* Social links */}
         </footer>
     </div>

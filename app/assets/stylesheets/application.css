@@ -12,9 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require reset
- *= require modal
- *= require nav_bar
  */
 
  * {

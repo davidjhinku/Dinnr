@@ -15,13 +15,13 @@ const NavBar = ({currentUser, logout, openModal}) => {
     const displaySessionLinks = () => {
         return (
             <ul className='session-links'>
-                <li className='signup-button'>
+                <li>
                     {/* <Link to='/signup' >Sign up</Link> */}
-                    <button onClick={() => openModal('signup')}>Sign up</button>
+                    <button className='signup-button' onClick={() => openModal('signup')}>Sign up</button>
                 </li>
-                <li className='signin-button'>
+                <li>
                     {/* <Link to='/signin' >Sign in</Link> */}
-                    <button onClick={() => openModal('signin')}>Sign in</button>
+                    <button className='signin-button' onClick={() => openModal('signin')}>Sign in</button>
                 </li>
             </ul>
         )
