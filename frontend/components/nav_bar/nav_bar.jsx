@@ -1,14 +1,39 @@
-import React from 'react'
-// import {Link} from 'react-router-dom'
+import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
+
+// class NavBar extends React.Component {
+//     constructor(props) {
+//         super(props)
+//     }
+// }
+
+
 
 const NavBar = ({currentUser, logout, openModal}) => {
+    const [isActive, setActive] = useState('false')
+    
+    const toggleActive = () => {
+        setActive(!isActive)
+    };
+    
     const displayLoggout = () => {
         return (
-            <ul className='session-links'>
-                <li className='logout-button'>
-                    <button onClick={() => logout()}>Logout</button>
+            <ul className="nav-dropdown">
+                <li onClick={toggleActive}><img src={window.userProfileUrl} className='profile-icon' />
+                    
+                    <div className={isActive ? 'dropdown-options active' : 'dropdown-options'}>
+                        <h3>{`Hello, ${currentUser.first_name}!`}</h3>
+                        <hr/>
+                        <ul>
+                            <li><button>My Profile</button></li>
+                            <li><button>My Reservations</button></li>
+                            <li><button>My Saved Restaurants</button></li>
+                            <li><button className='signout-button' onClick={() => logout()}>Sign out</button></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
+
         )
     }
 

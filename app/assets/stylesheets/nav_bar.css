@@ -37,24 +37,73 @@ ul.session-links li button {
     border-radius: 3px;
 } 
 
-/* .session-links li {
-    display: inline-block;
-    padding: 0 20px;
+.profile-icon {
+    width: 35px;
+    vertical-align: middle;
 }
 
-.session-links li button {
-    transition: all 0.3s ease 0s;
-    font-size: 14px;
-    height: 35px;
-    width: 75px;
-    text-align: center;
-    padding: 16px;
-    border-radius: 5px;
+ul.nav-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+ul.nav-dropdown > li {
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 48px;
+    right: 8px;
+    width: 315px;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid silver;
+    display: none;
+}
+
+.dropdown-options.active {
+    display: initial;
+}
+
+.dropdown-options h3 {
+    font-size: 17px;
+    font-weight: 600;
+    padding: 15px 15px 5px 15px;
+    padding-top: 15px;
+    cursor: initial;
+}
+
+.dropdown-options hr {
+    width: 100%;
+    margin-bottom: 1px;
+}
+
+
+.dropdown-options button {
+    background-color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    text-align: left;
     cursor: pointer;
 }
 
-.session-links li button:hover {
-    filter: brightness(85%);
+.dropdown-options button:hover {
+    filter: brightness(85%)
 }
 
- */
+.signout-button {
+    color: red;
+    margin-bottom: 5px;
+}
+
+/* .dropdown-options li:hover {
+    filter: brightness(85%);
+} */
+/* .dropdown-options li :link:hover {
+    filter: brightness(85%);
+} */
