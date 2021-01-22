@@ -25,6 +25,7 @@ ul.session-links li button {
     background-color: #247f9e;
     font-weight: 300;
     color: white;
+    border: 1px solid #247f9e;
     border: none;
     border-radius: 3px;
 }
