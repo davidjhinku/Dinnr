@@ -1,0 +1,10 @@
+.nav-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d333f;
+    width: auto;
+    height: 100px;
+    margin-top: auto;
+    border: 1px solid black;
+}

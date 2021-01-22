@@ -29,3 +29,11 @@
    font-weight: 600;
    font-size: 24px;
  }
+
+ .main-app {
+   margin: 0 40px;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+ }
