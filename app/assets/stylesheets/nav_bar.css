@@ -101,6 +101,22 @@ ul.nav-dropdown > li {
     margin-bottom: 5px;
 }
 
+.vertical-line {
+    border-left: 1px solid rgb(235, 233, 233);
+    height: 35px;
+    vertical-align: middle;
+    margin: 0 8px 0 15px;
+}
+
+.search-icon {
+    /* position: relative; */
+    width: 22px;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 8px;
+    /* margin-top: 35px; */
+}
+
 /* .dropdown-options li:hover {
     filter: brightness(85%);
 } */

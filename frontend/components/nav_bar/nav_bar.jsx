@@ -30,6 +30,10 @@ class NavBar extends React.Component {
                         </ul>
                     </div>
                 </li>
+                <li><div className='vertical-line'></div></li>
+                <li><img src={window.searchUrl} className='search-icon' />
+                </li>
+
             </ul>
 
         )
@@ -45,6 +49,8 @@ class NavBar extends React.Component {
                 <li>
                     {/* <Link to='/signin' >Sign in</Link> */}
                     <button className='signin-button' onClick={() => this.props.openModal('signin')}>Sign in</button>
+                </li>
+                <li><img src={window.searchUrl} className='search-icon' />
                 </li>
             </ul>
         )
