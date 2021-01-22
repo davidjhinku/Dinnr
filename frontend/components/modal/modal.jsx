@@ -1,6 +1,7 @@
 import React from 'react';
 import SigninFormContainer from '../session_form/signin_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import SearchContainer from '../search/search_container'
 import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 
@@ -8,15 +9,21 @@ const Modal = (props) => {
     if (!props.modal) return null;
     
     let popupForm;
+    let modalStyling;
     if (props.modal === 'signin') {
         popupForm = <SigninFormContainer />
+        modalStyling = 'modal-box'
     } else if (props.modal === 'signup') {
         popupForm = <SignupFormContainer />
+        modalStyling = 'modal-box'
+    } else if (props.modal === 'search') {
+        popupForm = <SearchContainer />
+        modalStyling = 'search-modal-box'
     }
 
     return (
         <div className='modal-screen-background' onClick={props.closeModal}>
-            <div className='modal-box' onClick={e => e.stopPropagation()}>
+            <div className={modalStyling} onClick={e => e.stopPropagation()}>
                 {popupForm}
             </div>
         </div>
