@@ -6,6 +6,13 @@ class User < ApplicationRecord
 
     attr_reader :password
 
+    # has_many :favorites
+    # has_many :favorite_restaurants,
+    #     through: :favorites,
+    #     source: :restaurant
+    # has_many :reservations
+    # has_many :reviews
+
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         return nil unless user

@@ -1,0 +1,1 @@
+# under rest ID will need to pull name, reviews avg(method on review model), cuisine_type, price Range, potential for reservations(method to check how many times booked that day)
