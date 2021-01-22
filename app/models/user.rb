@@ -11,7 +11,7 @@ class User < ApplicationRecord
     #     through: :favorites,
     #     source: :restaurant
     # has_many :reservations
-    # has_many :reviews
+    # has_many :reviews dependent destroy
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_22_194810) do
+ActiveRecord::Schema.define(version: 2021_01_22_213112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "business_hours", force: :cascade do |t|
+    t.integer "day_of_week", null: false
+    t.float "open_at", null: false
+    t.float "close_at", null: false
+    t.integer "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_business_hours_on_restaurant_id"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false

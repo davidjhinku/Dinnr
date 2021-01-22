@@ -1,6 +1,7 @@
 class Restaurant < ApplicationRecord
     validates :name, :bio, :cuisine_type, :price_range, :lat, :lng, :address, :city, :state, :zip, presence: true
     validates :name, uniqueness: true
+    validates :bio, length: {maximum: 2000}
     
     # has_many :business_hours
     # has_many :menus
