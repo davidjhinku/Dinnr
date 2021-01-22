@@ -56,6 +56,26 @@ hr {
     filter: brightness(85%);
 }
 
+.demo-user-button {
+    width: 396px;
+    background-color: #d93744;
+    color: white;
+    font-size: 19.5px;
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    margin-left: 16px;
+    /* overflow: hidden; */
+    /* margin-bottom: 10px; */
+    border-radius: 3px;
+    transition: all 0.4s;
+    outline-color: silver;
+}
+
+.demo-user-button:hover {
+    filter: brightness(85%);
+}
+
 .modal-content span > a {
     color: #d93744;
     cursor: pointer;

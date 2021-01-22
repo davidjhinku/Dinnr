@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.delete_all
+User.delete_all
 # Restaurant.delete_all
 # Favorite.delete_all
 # Review.delete_all
@@ -14,8 +14,16 @@
 # Reservation.delete_all
 # Menu.delete_all
 # Item.delete_all
-
 #MenuItem.delete_all Do we do this for a joins table?
+
+User.create!(
+    first_name: 'demo',
+    last_name: 'user',
+    email: 'demo@gmail.com',
+    primary_location: 'New York',
+    password: 'password'
+)
+
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})

@@ -8,12 +8,18 @@ class SignIn extends React.Component {
             password: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDemoUser = this.handleDemoUser.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault()
         // this.props.processForm(this.state).then(() => this.props.history.push('/'))
         this.props.processForm(this.state).then(this.props.closeModal)
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault()
+        this.props.processForm({email: 'demo@gmail.com', password: 'password'}).then(this.props.closeModal)
     }
 
     handleChange(type) {
@@ -52,6 +58,7 @@ class SignIn extends React.Component {
                     <br/>
                     <button className='session-submit-button'>Sign In</button>
                 </form>
+                <button className='demo-user-button' onClick={this.handleDemoUser}>Demo User</button>
                 <hr/>
                 
                 <span>New to Dinnr? {props.otherForm}</span>
