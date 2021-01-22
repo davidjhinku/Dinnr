@@ -4,8 +4,8 @@ class Menu < ApplicationRecord
     # has_one :restaurant
 
     # has_many :menu_joins
-    # has_many :items
-    #     through: :menu_joins
+    # has_many :items,
+    #     through: :menu_joins,
     #     source: :item
 
 end
