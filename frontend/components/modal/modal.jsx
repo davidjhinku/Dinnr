@@ -1,7 +1,7 @@
 import React from 'react';
 import SigninFormContainer from '../session_form/signin_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import SearchContainer from '../search/search_container'
+import SearchContainer from '../search/search_form_container'
 import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 

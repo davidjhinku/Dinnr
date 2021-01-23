@@ -11,6 +11,10 @@ class SearchForm extends React.Component {
         }
     }
 
+    onSubmit(e) {
+        // send information to search page
+    }
+
     render() {
         return (
             <div className='search-form'>
