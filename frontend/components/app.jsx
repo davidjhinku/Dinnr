@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from './modal/modal'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import SplashContainer from './splash_page/splash_container'
+import SearchPageContainer from './search/search_page_container'
 import NavFooter from './nav_footer/nav_footer'
 import {Link, Route, Switch} from 'react-router-dom'
 // import SigninFormContainer from './session_form/signin_form_container'
@@ -18,7 +19,9 @@ const App = () => (
         </header>
 
         <Switch>
+            <Route path='/search' component={SearchPageContainer} />
             <Route path='/' component={SplashContainer} />
+            {/* route to the searchpagecomponent */}
         </Switch>
 
         <footer className='nav-footer'>

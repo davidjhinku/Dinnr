@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class SearchForm extends React.Component {
     }
 
     onSubmit(e) {
-        // send information to search page
+        // send information to search page inc state to pre-fill top container
+        //Link to='/restaurantsearch' maybe?
     }
 
     render() {

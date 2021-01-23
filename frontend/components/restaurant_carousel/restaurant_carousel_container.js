@@ -1,6 +1,6 @@
-import RestaurantIndex from './restaurant_index'
-import {connect} from 'react-redux'
-import {fetchRestaurants} from '../../actions/restaurant_actions'
+import RestaurantCarousel from './restaurant_carousel'
+import { connect } from 'react-redux'
+import { fetchRestaurants } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
     return {
@@ -15,4 +15,4 @@ const mDTP = dispatch => {
 }
 
 
-export default connect(mSTP, mDTP)(RestaurantIndex);
+export default connect(mSTP, mDTP)(RestaurantCarousel);

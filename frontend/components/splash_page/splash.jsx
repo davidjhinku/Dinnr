@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchContainer from '../search/search_form_container'
-import RestaurantIndex from '../restaurant/restaurant_index_container'
+import RestaurantCarouselContainer from '../restaurant_carousel/restaurant_carousel_container'
 
 class Splash extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class Splash extends React.Component {
                     <SearchContainer date={this.state.today} />
                 </div>
                 <div className="splash-restaurant-index">
-                    <RestaurantIndex />
+                    <RestaurantCarouselContainer />
                 </div>
             </div>
         )
