@@ -36,9 +36,21 @@ r1 = Restaurant.create!(
     state: 'NY',
     zip: '10003',
 )
-
 f1 = open('../restaurant_photos/hunan_counter/1.jpg')
 r1.photos.attach(io: f1, filename: '1.jpg')
+
+r2 = Restaurant.create!(
+    name: 'American Bistro',
+    bio: 'Burgers and fries, where could you possibly go wrong?',
+    cuisine_type: 'American',
+    price_range:'$',
+    lat: 40.78296,
+    lng: -73.97639,
+    address: '366 Colombus Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10024',
+)
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
@@ -46,5 +58,7 @@ r1.photos.attach(io: f1, filename: '1.jpg')
 #$.ajax({method: "POST", url: 'api/session', data: {user: {email: 'demo@demo.com', password: 'password'}}})
 #$.ajax({method: "DELETE", url: 'api/session'})
 
+# $.ajax({method: 'GET', url: 'api/restaurants'})
+# $.ajax({method: 'GET', url: 'api/restaurants/1'})
 
     

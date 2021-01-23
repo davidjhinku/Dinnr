@@ -1,4 +1,4 @@
-class Api::UsersController < ApplicationController
+class Api::RestaurantsController < ApplicationController
     def index
         @restaurants = Restaurant.all
         # need to .includes with reviews
