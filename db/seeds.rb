@@ -24,7 +24,7 @@ User.create!(
     password: 'password'
 )
 
-Restaurant.create!(
+r1 = Restaurant.create!(
     name: 'Hunan Counter',
     bio: 'A wide selection of spicy dishes sure to make you sweat',
     cuisine_type: 'Chinese',
@@ -35,8 +35,10 @@ Restaurant.create!(
     city: 'New York',
     state: 'NY',
     zip: '10003',
-
 )
+
+f1 = open('../restaurant_photos/hunan_counter/1.jpg')
+r1.photos.attach(io: f1, filename: '1.jpg')
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
