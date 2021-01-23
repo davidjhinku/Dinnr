@@ -15,7 +15,7 @@ class SearchForm extends React.Component {
         return (
             <div className='search-form'>
                 <h1>Find your table for any occasion</h1>
-                <div>This is the Search Form, background image/search component coming</div>
+                <div>This is the Search Form, search component coming</div>
             </div>
         )
     }
