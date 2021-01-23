@@ -13,6 +13,9 @@ class Restaurant < ApplicationRecord
         foreign_key: :restaurant_id,
         primary_key: :id
 
+    has_one_attached :profile_photo
+
+    has_many_attached :photos
     # has_many :reservations
     # has_many :reviews
     # has_many :favorited_by, might not need anymore without restaurant mgmt side.

@@ -24,6 +24,19 @@ User.create!(
     password: 'password'
 )
 
+Restaurant.create!(
+    name: 'Hunan Counter',
+    bio: 'A wide selection of spicy dishes sure to make you sweat',
+    cuisine_type: 'Chinese',
+    price_range:'$$',
+    lat: 40.73259,
+    lng: -73.98807,
+    address: '96 3rd Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10003',
+
+)
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
