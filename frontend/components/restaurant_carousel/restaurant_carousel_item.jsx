@@ -3,20 +3,18 @@ import React from 'react'
 class RestaurantCarouselItem extends React.Component {
     constructor(props){
         super(props)
-        this.handleClick = this.handleClick.bind(this)
+        this.visitRestaurant = this.visitRestaurant.bind(this)
     }
 
-    handleClick(e) {
+    visitRestaurant(e) {
         e.preventDefault()
-        // something to redirect to that restaurants show page, <a>?
+        this.props.history.push(`/restaurants/${this.props.restaurant.id}`)
     }
 
     render() {
         const rest = this.props.restaurant
-        debugger
         return (
-            <li className='carousel-item'>
-                {/* onclick directly on li */}
+            <li className='carousel-item' onClick={this.visitRestaurant} >
                 <img src={rest.photoUrl} alt="first image"/>
                 <div className='carousel-info-block'>
                     <p>{rest.name}</p>
@@ -27,7 +25,6 @@ class RestaurantCarouselItem extends React.Component {
                         <li>{rest.city}</li>
                     </ul>
                 </div>
-
             </li>
         )
     }

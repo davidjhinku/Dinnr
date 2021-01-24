@@ -17,7 +17,7 @@ class Splash extends React.Component {
                     <SearchContainer date={this.state.today} />
                 </div>
                 <div className="splash-restaurant-index">
-                    <RestaurantCarouselContainer />
+                    <RestaurantCarouselContainer {...this.props}/>
                 </div>
             </div>
         )
