@@ -20,7 +20,7 @@ class RestaurantCarouselItem extends React.Component {
                 <img src={rest.photoUrl} alt="first image"/>
                 <div className='carousel-info-block'>
                     <p>{rest.name}</p>
-                    {/* something for average_rating */}
+                    <span>Average Rating Component</span>
                     <ul className='carousel-info-list'>
                         <li>{rest.cuisine_type}</li>
                         <li>{rest.price_range}</li>

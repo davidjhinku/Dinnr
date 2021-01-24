@@ -9,7 +9,7 @@
 
 .splash-restaurant-index {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 45px auto;
     width: 90%;
