@@ -1,4 +1,6 @@
 import React from 'react'
+import RestaurantDetails from './restaurant_details'
+import RestaurantPhotos from './restaurant_photos'
 
 class RestaurantShow extends React.Component {
     constructor(props){
@@ -8,9 +10,9 @@ class RestaurantShow extends React.Component {
         this.props.fetchRestaurant(this.props.restId)
     }
 
-    componentWillUnmount() {
-        console.log('it unmounted')
-    }
+    // componentWillUnmount() {
+    //     console.log('it unmounted')
+    // }
 
     render(){
         const restaurant = this.props.restaurant
@@ -21,8 +23,25 @@ class RestaurantShow extends React.Component {
             )
         } else {
             return (
-                <div>
-                    This is the {restaurant.name} show page
+                <div className='show-page'>
+                    {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
+                    
+                    <div className='show-left-column'>
+                        <span>Links to jump down page</span>
+                        <RestaurantDetails restaurant={this.props.restaurant}/>
+                        <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
+                        {/* menu */}
+                        {/* reviews */}
+                    </div>
+                        
+                    <div className='show-right-column'>
+                        {/* reservation */}
+                        {/* map */}
+                        <h3>City</h3>
+                        <h4>{restaurant.city}</h4>
+                        <h3>Hours</h3>
+                        {/* <h4>Hours</h4> */}
+                    </div>
                 </div>
             )
         }
