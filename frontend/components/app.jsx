@@ -21,7 +21,7 @@ const App = () => (
         <Switch>
             <Route exact path='/' component={SplashContainer} />
             <Route path='/search' component={SearchPageContainer} />
-            {/* route to the searchpagecomponent */}
+            <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
         </Switch>
 
         <footer className='nav-footer'>
