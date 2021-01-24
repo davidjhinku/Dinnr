@@ -6,7 +6,7 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        @restaurant = Restaurant.find(params[:id])
+        @restaurant = Restaurant.with_attached_photos.find(params[:id])
         # need to .includes with business_hours, menus, 
         render :show
     end

@@ -19,8 +19,8 @@ const App = () => (
         </header>
 
         <Switch>
+            <Route exact path='/' component={SplashContainer} />
             <Route path='/search' component={SearchPageContainer} />
-            <Route path='/' component={SplashContainer} />
             {/* route to the searchpagecomponent */}
         </Switch>
 

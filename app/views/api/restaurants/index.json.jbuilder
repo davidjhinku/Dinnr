@@ -2,7 +2,7 @@
 @restaurants.each do |restaurant|
     json.set! restaurant.id do
         json.extract! restaurant, :id, :name, :cuisine_type, :price_range, :city
-        # :first_picture_url :average_review
+        json.photoUrl url_for(restaurant.photos[0])
     end
 
 end

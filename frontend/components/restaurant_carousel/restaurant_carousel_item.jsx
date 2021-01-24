@@ -1,15 +1,31 @@
 import React from 'react'
 
 class RestaurantCarouselItem extends React.Component {
+    constructor(props){
+        super(props)
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(e) {
+        e.preventDefault()
+        // something to redirect to that restaurants show page, <a>?
+    }
 
     render() {
-
+        const rest = this.props.restaurant
+        debugger
         return (
-            <li className='restaurant-item'>
+            <li className='carousel-item'>
                 {/* onclick directly on li */}
-                <span>Link to image</span>
-                <div className='restaurant-information'>
-
+                <img src={rest.photoUrl} alt="first image"/>
+                <div className='carousel-info-block'>
+                    <p>{rest.name}</p>
+                    {/* something for average_rating */}
+                    <ul className='carousel-info-list'>
+                        <li>{rest.cuisine_type}</li>
+                        <li>{rest.price_range}</li>
+                        <li>{rest.city}</li>
+                    </ul>
                 </div>
 
             </li>

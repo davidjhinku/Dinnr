@@ -4,7 +4,7 @@ import RestaurantCarouselItem from './restaurant_carousel_item'
 class RestaurantCarousel extends React.Component {
 
     componentDidMount() {
-        // this.props.fetchRestaurants()
+        this.props.fetchRestaurants()
     }
 
     render() {
@@ -12,8 +12,9 @@ class RestaurantCarousel extends React.Component {
             return <RestaurantCarouselItem key={idx} restaurant={restaurant} />
         })
         return (
-            <div>
-                <h2>Rotating restaurant index</h2>
+            <div className='carousel-component'>
+                <h2>Your picks for today</h2>
+                <hr/>
                 <ul>{restList}</ul>
             </div>
         )
