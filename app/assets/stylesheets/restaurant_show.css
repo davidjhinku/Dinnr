@@ -1,0 +1,38 @@
+.show-page img{
+    height: 460px;
+    width: 100%;
+    /* border: 1px solid black; */
+    object-fit: cover;
+}
+
+.show-page .show-content {
+    display: flex;
+    justify-content: center;
+}
+
+.show-left-column {
+    position: relative;
+    top: -50px;
+    width: 640px;
+    padding: 15px;
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 0;
+}
+
+.page-links {
+    width: inherit;
+    height: 50px;
+}
+
+.show-right-column {
+    position: relative;
+    top: -50px;
+    width: 320px;
+    padding: 15px;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 0;
+}

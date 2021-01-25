@@ -5,7 +5,7 @@ import { } from '../../actions/search_actions'
 
 const mSTP = (state, ownProps) => {
     return {
-
+        restaurants: state.entities.restaurants
     }
 }
 

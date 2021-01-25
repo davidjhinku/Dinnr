@@ -25,22 +25,24 @@ class RestaurantShow extends React.Component {
             return (
                 <div className='show-page'>
                     {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
-                    
-                    <div className='show-left-column'>
-                        <span>Links to jump down page</span>
-                        <RestaurantDetails restaurant={this.props.restaurant}/>
-                        <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
-                        {/* menu */}
-                        {/* reviews */}
-                    </div>
-                        
-                    <div className='show-right-column'>
-                        {/* reservation */}
-                        {/* map */}
-                        <h3>City</h3>
-                        <h4>{restaurant.city}</h4>
-                        <h3>Hours</h3>
-                        {/* <h4>Hours</h4> */}
+                    <img src="https://images.wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1600x900.jpg" alt=""/>
+                    <div className='show-content'>
+                        <div className='show-left-column'>
+                            <span className='page-links'>Links to jump down page</span>
+                            <RestaurantDetails restaurant={this.props.restaurant}/>
+                            <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
+                            {/* menu */}
+                            {/* reviews */}
+                        </div>
+                            
+                        <div className='show-right-column'>
+                            {/* reservation */}
+                            {/* map */}
+                            <h3>City</h3>
+                            <h4>{restaurant.city}</h4>
+                            <h3>Hours</h3>
+                            {/* <h4>Hours</h4> */}
+                        </div>
                     </div>
                 </div>
             )

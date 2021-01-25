@@ -10,6 +10,7 @@ const Modal = (props) => {
     
     let popupForm;
     let modalStyling;
+    let modalHeader
     if (props.modal === 'signin') {
         popupForm = <SigninFormContainer />
         modalStyling = 'modal-box'
@@ -18,12 +19,14 @@ const Modal = (props) => {
         modalStyling = 'modal-box'
     } else if (props.modal === 'search') {
         popupForm = <SearchContainer />
+        modalHeader = <h1>Find your table for any occasion</h1>
         modalStyling = 'search-modal-box'
     }
 
     return (
         <div className='modal-screen-background' onClick={props.closeModal}>
             <div className={modalStyling} onClick={e => e.stopPropagation()}>
+                {modalHeader}
                 {popupForm}
             </div>
         </div>

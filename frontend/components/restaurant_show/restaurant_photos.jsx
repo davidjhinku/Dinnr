@@ -7,7 +7,7 @@ const RestaurantPhotos = ({ photosArr }) => {
 
     return (
         <div className='show-restaurant-photos'>
-            <h2>{photosArr.length}</h2>
+            <h2>{photosArr.length} Photos</h2>
             <hr />
             <ul>
                 {photoList}

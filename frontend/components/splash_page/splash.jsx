@@ -5,16 +5,18 @@ import RestaurantCarouselContainer from '../restaurant_carousel/restaurant_carou
 class Splash extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            today: Date
-        }
+        // this.state = {
+        //     today: Date
+        // }
+        // date = { this.state.today } 
     }
 
     render() {
         return(
             <div className="splash-components">
                 <div className="splash-search-form">
-                    <SearchContainer date={this.state.today} />
+                    <h1>Find your table for any occasion</h1>
+                    <SearchContainer />
                 </div>
                 <div className="splash-restaurant-index">
                     <RestaurantCarouselContainer {...this.props}/>
