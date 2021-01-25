@@ -28,11 +28,27 @@ class RestaurantShow extends React.Component {
                     <img src="https://images.wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1600x900.jpg" alt=""/>
                     <div className='show-content'>
                         <div className='show-left-column'>
-                            <span className='page-links'>Links to jump down page</span>
-                            <RestaurantDetails restaurant={this.props.restaurant}/>
-                            <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
-                            {/* menu */}
-                            {/* reviews */}
+                            <nav className='page-links'>
+                                <ul>
+                                    <li><a href="#overview">Overview</a></li>    
+                                    <li><a href="#photos">Photos</a></li>    
+                                    <li><a href="#menu">Menu</a></li>    
+                                    <li><a href="#reviews">Reviews</a></li>    
+                                </ul>
+                            </nav>
+                            <nav id='overview' className='overview'>
+                                <RestaurantDetails restaurant={this.props.restaurant}/>
+                            </nav>
+                            <nav id='photos'>
+                                <RestaurantPhotos photosArr={this.props.restaurant.photoUrls} />
+                            </nav>
+
+                            <nav id='menu'>
+                                {/* menu */}
+                            </nav>
+                            <nav id='reviews'>
+                                {/* reviews */}
+                            </nav>
                         </div>
                             
                         <div className='show-right-column'>

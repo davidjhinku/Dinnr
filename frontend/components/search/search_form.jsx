@@ -18,7 +18,6 @@ class SearchForm extends React.Component {
     }
 
     handleChange(type) {
-        debugger
         return e => {
             this.setState({[type]: e.target.value})
         }

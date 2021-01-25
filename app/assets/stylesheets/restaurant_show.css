@@ -14,7 +14,7 @@
     position: relative;
     top: -50px;
     width: 640px;
-    padding: 15px;
+    /* padding: 15px; */
     margin-right: 10px;
     background-color: white;
     border: 1px solid black;
@@ -22,8 +22,40 @@
 }
 
 .page-links {
-    width: inherit;
+    padding: 15px;
     height: 50px;
+    border: 1px solid black;
+}
+
+.page-links ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.overview {
+    padding: 15px;
+}
+
+.show-restaurant-details  {
+    margin-bottom: 15px;
+}
+
+.show-details-list {
+    margin: 13px 0;
+}
+
+.show-restaurant-details h2 {
+    font-size: 45px;
+}
+
+.overview li{
+    display: inline-block;
+    font-weight: 600;
+    margin-right: 13px;
+}
+
+#photos {
+    padding: 15px;
 }
 
 .show-right-column {
