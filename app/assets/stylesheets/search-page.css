@@ -1,5 +1,9 @@
-.search-page .search-form {
+.search-page > nav {
     background-color: rgb(28, 28, 50);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search-page-columns {

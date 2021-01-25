@@ -8,7 +8,9 @@ class SearchPage extends React.Component {
         // render the searchformcomp, filter, restaurantsearchcomp
         return (
             <div className='search-page'>
-                <SearchFormContainer />
+                <nav>
+                    <SearchFormContainer />
+                </nav>
                 <div className='search-page-columns'>
                     <div className='filter-component'>
                         {/* Map */}

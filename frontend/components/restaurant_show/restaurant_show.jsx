@@ -10,10 +10,6 @@ class RestaurantShow extends React.Component {
         this.props.fetchRestaurant(this.props.restId)
     }
 
-    // componentWillUnmount() {
-    //     console.log('it unmounted')
-    // }
-
     render(){
         const restaurant = this.props.restaurant
 
@@ -28,19 +24,17 @@ class RestaurantShow extends React.Component {
                     <img src="https://images.wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1600x900.jpg" alt=""/>
                     <div className='show-content'>
                         <div className='show-left-column'>
-                            <nav className='page-links'>
-                                <ul>
-                                    <li><a href="#overview">Overview</a></li>    
-                                    <li><a href="#photos">Photos</a></li>    
-                                    <li><a href="#menu">Menu</a></li>    
-                                    <li><a href="#reviews">Reviews</a></li>    
-                                </ul>
+                            <nav className='page-nav'>
+                                <a href="#overview">Overview</a>    
+                                <a href="#photos">Photos</a>    
+                                <a href="#menu">Menu</a>    
+                                <a href="#reviews">Reviews</a> 
                             </nav>
                             <nav id='overview' className='overview'>
                                 <RestaurantDetails restaurant={this.props.restaurant}/>
                             </nav>
                             <nav id='photos'>
-                                <RestaurantPhotos photosArr={this.props.restaurant.photoUrls} />
+                                <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
                             </nav>
 
                             <nav id='menu'>
@@ -49,15 +43,27 @@ class RestaurantShow extends React.Component {
                             <nav id='reviews'>
                                 {/* reviews */}
                             </nav>
+                            <nav className='test-scrolling-block'>
+                                BIG BLOCK TO TEST SCROLLING
+
+                            </nav>
                         </div>
                             
                         <div className='show-right-column'>
-                            {/* reservation */}
+                            <nav className="reservation-block">
+                                Rservation block that will scroll
+
+                                {/* reservation */}
+                            </nav>
                             {/* map */}
                             <h3>City</h3>
                             <h4>{restaurant.city}</h4>
                             <h3>Hours</h3>
                             {/* <h4>Hours</h4> */}
+                            <nav className='test-scrolling-block'>
+                                BIG BLOCK TO TEST SCROLLING
+
+                            </nav>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,6 @@ import React from 'react'
 
 const RestaurantPhotos = ({ photosArr }) => {
 
-    debugger
     const photoList = photosArr.map((photo, idx) => {
         return <li key={idx}>{photo}</li>
     })
