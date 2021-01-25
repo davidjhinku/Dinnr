@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_23_012026) do
+ActiveRecord::Schema.define(version: 2021_01_25_152354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 2021_01_23_012026) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
-  create_table "business_hours", force: :cascade do |t|
-    t.integer "day_of_week", null: false
-    t.float "open_at", null: false
-    t.float "close_at", null: false
-    t.integer "restaurant_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_business_hours_on_restaurant_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -84,6 +74,8 @@ ActiveRecord::Schema.define(version: 2021_01_23_012026) do
     t.string "zip", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "open_at", null: false
+    t.float "close_at", null: false
     t.index ["city"], name: "index_restaurants_on_city"
     t.index ["cuisine_type"], name: "index_restaurants_on_cuisine_type"
     t.index ["name"], name: "index_restaurants_on_name", unique: true

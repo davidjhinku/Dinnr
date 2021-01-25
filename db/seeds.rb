@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.delete_all
-# Restaurant.delete_all
+Restaurant.delete_all
 # Favorite.delete_all
 # Review.delete_all
 # BusinessHour.delete_all
@@ -24,33 +24,33 @@ User.create!(
     password: 'password'
 )
 
-r1 = Restaurant.create!(
-    name: 'Hunan Counter',
-    bio: 'A wide selection of spicy dishes sure to make you sweat',
-    cuisine_type: 'Chinese',
-    price_range:'$$',
-    lat: 40.73259,
-    lng: -73.98807,
-    address: '96 3rd Ave',
-    city: 'New York',
-    state: 'NY',
-    zip: '10003',
-)
-f1 = open('../restaurant_photos/hunan_counter/1.jpg')
-r1.photos.attach(io: f1, filename: '1.jpg')
+# r1 = Restaurant.create!(
+#     name: 'Hunan Counter',
+#     bio: 'A wide selection of spicy dishes sure to make you sweat',
+#     cuisine_type: 'Chinese',
+#     price_range:'$$',
+#     lat: 40.73259,
+#     lng: -73.98807,
+#     address: '96 3rd Ave',
+#     city: 'New York',
+#     state: 'NY',
+#     zip: '10003',
+# )
+# f1 = open('../restaurant_photos/hunan_counter/1.jpg')
+# r1.photos.attach(io: f1, filename: '1.jpg')
 
-r2 = Restaurant.create!(
-    name: 'American Bistro',
-    bio: 'Burgers and fries, where could you possibly go wrong?',
-    cuisine_type: 'American',
-    price_range:'$',
-    lat: 40.78296,
-    lng: -73.97639,
-    address: '366 Colombus Ave',
-    city: 'New York',
-    state: 'NY',
-    zip: '10024',
-)
+# r2 = Restaurant.create!(
+#     name: 'American Bistro',
+#     bio: 'Burgers and fries, where could you possibly go wrong?',
+#     cuisine_type: 'American',
+#     price_range:'$',
+#     lat: 40.78296,
+#     lng: -73.97639,
+#     address: '366 Colombus Ave',
+#     city: 'New York',
+#     state: 'NY',
+#     zip: '10024',
+# )
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
