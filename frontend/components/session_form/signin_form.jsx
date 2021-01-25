@@ -51,7 +51,7 @@ class SignIn extends React.Component {
                 <hr/>
 
                 {this.renderErrors()}
-                <form onSubmit={this.handleSubmit}>
+                <form className='session-form' onSubmit={this.handleSubmit}>
                     <input type="text" placeholder='Email' value={this.state.email} onChange={this.handleChange('email')} required/>
                     <br/>
                     <input type="password" placeholder='Password' value={this.state.password} onChange={this.handleChange('password')} required/>

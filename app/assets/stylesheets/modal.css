@@ -29,7 +29,16 @@ hr {
     width: 92%;
 }
 
-.modal-box form > input, select {
+.session-form > input {
+    width: 100%;
+    padding: 16px;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 15px;
+    outline-color: silver;
+}
+
+.session-form > select {
     width: 100%;
     padding: 16px;
     border: 0.5px solid rgba(0, 0, 0, 0.1);
@@ -97,6 +106,12 @@ hr {
     width: 1850px;
     height: 390px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.search-modal-box > h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
 }

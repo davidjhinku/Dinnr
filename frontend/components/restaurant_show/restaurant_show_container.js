@@ -4,9 +4,10 @@ import { fetchRestaurant } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
     const restId = ownProps.match.params.restId
+    const restaurant = state.entities.restaurants[restId]
     return {
         restId: restId,
-        restaurant: state.entities.restaurants[restId]
+        restaurant: restaurant
     }
 }
 

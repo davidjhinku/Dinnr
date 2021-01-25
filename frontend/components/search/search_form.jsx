@@ -36,32 +36,34 @@ class SearchForm extends React.Component {
         return `${hour}:${minute} ${dayTime}`
     }
 
-    render() {
-        return (
-            <div className='search-form'>
-                <form className='search-fiters'>
-                    <div className='search-div'>
-                        <input type="date" value={this.state.date} onChange={this.handleChange('date')}/>
-                        <select onChange={this.handleChange('time')}>
-                            <option value={this.state.time+0.5}>{this.numberToTime(this.state.time+0.5)}</option>
-                            <option value={this.state.time+1.0}>{this.numberToTime(this.state.time+1.0)}</option>
-                            <option value={this.state.time+1.5}>{this.numberToTime(this.state.time+1.5)}</option>
-                            <option value={this.state.time+2.0}>{this.numberToTime(this.state.time+2.0)}</option>
-                            <option value={this.state.time+2.5}>{this.numberToTime(this.state.time+2.5)}</option>
-                            <option value={this.state.time+3.0}>{this.numberToTime(this.state.time+3.0)}</option>
-                        </select>
-                        <select onChange={this.handleChange('people')}>
-                            <option value="2">2 people</option>
-                            <option value="3">3 people</option>
-                            <option value="4">4 people</option>
-                            <option value="5">5 people</option>
-                        </select>
-                    </div>
 
-                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('search_filter')}/>
-                    <button className='search-form-button'>Let's go</button>
-                </form>
-            </div>
+    render() {
+        const currentDate = new Date().toLocaleDateString();
+        const currentTime = new Date().getHours() + 1;
+        
+        return (
+            <form className='search-form'>
+                <div className='search-div'>
+                    <input type="date" defaultValue={currentDate} onChange={this.handleChange('date')}/>
+                    <select onChange={this.handleChange('time')}>
+                        <option value={currentTime+0.5}>{this.numberToTime(currentTime+0.5)}</option>
+                        <option value={currentTime+1.0}>{this.numberToTime(currentTime+1.0)}</option>
+                        <option value={currentTime+1.5}>{this.numberToTime(currentTime+1.5)}</option>
+                        <option value={currentTime+2.0}>{this.numberToTime(currentTime+2.0)}</option>
+                        <option value={currentTime+2.5}>{this.numberToTime(currentTime+2.5)}</option>
+                        <option value={currentTime+3.0}>{this.numberToTime(currentTime+3.0)}</option>
+                    </select>
+                    <select onChange={this.handleChange('people')}>
+                        <option value="2">2 people</option>
+                        <option value="3">3 people</option>
+                        <option value="4">4 people</option>
+                        <option value="5">5 people</option>
+                    </select>
+                </div>
+
+                <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('search_filter')}/>
+                <button className='search-form-button'>Let's go</button>
+            </form>
         )
     }
 }

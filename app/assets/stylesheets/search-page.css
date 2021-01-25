@@ -2,28 +2,6 @@
     background-color: rgb(28, 28, 50);
 }
 
-.search-page .search-form form {
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-}
-
-.search-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form.search-fiters input, select {
-    width: 150px;
-    height: 50px;
-    margin: 5px 0;
-    border: 0.5px solid #f3f3f3;
-    text-align: center;
-    border-radius: 0px;
-}
-
 .search-page-columns {
     display: flex;
     justify-content: center;

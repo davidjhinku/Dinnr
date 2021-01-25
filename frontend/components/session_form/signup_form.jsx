@@ -48,7 +48,7 @@ class SignUp extends React.Component {
                 <hr/>
 
                 {this.renderErrors()}
-                <form onSubmit={this.handleSubmit}>
+                <form className='session-form' onSubmit={this.handleSubmit}>
                     <input type="text" placeholder='First Name' value={this.state.first_name} onChange={this.handleChange('first_name')} required/>
                     <br />
                     <input type="text" placeholder='Last Name' value={this.state.last_name} onChange={this.handleChange('last_name')} required/>

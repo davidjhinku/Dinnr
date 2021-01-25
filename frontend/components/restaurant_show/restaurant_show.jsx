@@ -17,7 +17,7 @@ class RestaurantShow extends React.Component {
     render(){
         const restaurant = this.props.restaurant
 
-        if (!restaurant) {
+        if (!restaurant || !restaurant.photoUrls) {
             return (
                 <div>Loading Restaurant...</div>
             )
