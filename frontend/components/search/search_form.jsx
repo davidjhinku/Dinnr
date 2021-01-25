@@ -5,14 +5,16 @@ class SearchForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            date: new Date().toLocaleDateString(),
-            time: new Date().getHours() + 1,
+            date: null,
+            time: null,
             people: 2,
             search_filter: '',
         }
     }
 
     handleSubmit(e) {
+        e.preventDefault()
+        
         // send information to search page inc state to pre-fill top container
         //Link to='/restaurantsearch' maybe?
     }

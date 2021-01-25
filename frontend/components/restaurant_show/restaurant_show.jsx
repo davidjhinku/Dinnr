@@ -1,6 +1,7 @@
 import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
+import RestaurantMap from './restaurant_map'
 
 class RestaurantShow extends React.Component {
     constructor(props){
@@ -51,19 +52,17 @@ class RestaurantShow extends React.Component {
                             
                         <div className='show-right-column'>
                             <nav className="reservation-block">
-                                Rservation block that will scroll
+                                Reservation block that will scroll
 
                                 {/* reservation */}
                             </nav>
-                            {/* map */}
-                            <h3>City</h3>
-                            <h4>{restaurant.city}</h4>
-                            <h3>Hours</h3>
-                            {/* <h4>Hours</h4> */}
-                            <nav className='test-scrolling-block'>
-                                BIG BLOCK TO TEST SCROLLING
+                            
+                            <RestaurantMap restaurant={restaurant} />
 
-                            </nav>
+                            <h3>City</h3>
+                            <p>{restaurant.city}</p>
+                            <h3>Hours</h3>
+                            <p>Daily: {restaurant.open_at}-{restaurant.close_at}</p>
                         </div>
                     </div>
                 </div>
