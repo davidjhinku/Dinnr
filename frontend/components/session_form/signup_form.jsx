@@ -60,8 +60,8 @@ class SignUp extends React.Component {
                     <select value={this.state.primary_location} onChange={this.handleChange('primary_location')} required>
                         <option value="" disabled hidden>Primary Dining Location</option>
                         <option value="New York">New York</option>
-                        <option value="Chicago">Chicago</option>
-                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Brooklyn">Brooklyn</option>
+                        <option value="Queens">Queens</option>
                     </select>
                     <br/>
                     <button className='session-submit-button'>Create Account</button>
