@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.delete_all
 # Restaurant.delete_all
 # Favorite.delete_all
@@ -36,8 +38,8 @@ r1 = Restaurant.create!(
     state: 'NY',
     zip: '10003',
 )
-f1 = open('../restaurant_photos/hunan_counter/1.jpg')
-r1.photos.attach(io: f1, filename: '1.jpg')
+# f1 = open('https://dinnr-aa-dev.s3.amazonaws.com/HCmTH8yj6NfWMzuyKhxAG74p')
+# r1.photos.attach(io: f1, filename: '1.jpg')
 
 r2 = Restaurant.create!(
     name: 'American Bistro',
