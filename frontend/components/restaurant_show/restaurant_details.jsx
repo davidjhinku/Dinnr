@@ -4,7 +4,7 @@ const RestaurantDetails = ({restaurant}) => {
     return (
         <div className='show-restaurant-details'>
             <h2>{restaurant.name}</h2>
-            <hr/>
+            <hr className='show-hr'/>
             <ul className='show-details-list'>
                 <li>Average_Rating</li>
                 <li>10 reviews</li>

@@ -28,14 +28,28 @@
 
 .page-nav {
     padding: 15px;
-    height: 50px;
-    border: 1px solid black;
+    height: 47px;
+    /* border: 1px solid black; */
     display: flex;
     /* justify-content: center; */
     align-items: center;
     position: sticky;
     top: 0;
     background-color: white;
+    margin-bottom: -9px;
+}
+
+.nav-hr {
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    width: 95%;
+    height: 2px;
+    background: rgb(0 0 0 / 0%);
+    position: sticky;
+    top: 47px;
+}
+
+.show-hr {
+    width: 100%;
 }
 
 .page-nav > a {
@@ -69,6 +83,21 @@
 
 #photos {
     padding: 15px;
+}
+
+ul.photo-list {
+    display: flex;
+    padding: 10px 0;
+}
+
+ul.photo-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+}
+ul.photo-list > li > img {
+    height: 12rem;
 }
 
 .show-right-column {

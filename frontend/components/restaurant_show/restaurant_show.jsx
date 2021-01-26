@@ -31,6 +31,7 @@ class RestaurantShow extends React.Component {
                                 <a href="#menu">Menu</a>    
                                 <a href="#reviews">Reviews</a> 
                             </nav>
+                            <hr className='nav-hr'/>
                             <nav id='overview' className='overview'>
                                 <RestaurantDetails restaurant={this.props.restaurant}/>
                             </nav>
