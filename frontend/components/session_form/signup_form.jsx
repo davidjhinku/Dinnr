@@ -45,7 +45,7 @@ class SignUp extends React.Component {
         return (
             <div className="modal-content">
                 <h2>Welcome to Dinnr!</h2>
-                <hr/>
+                <hr className='modal-hr'/>
 
                 {this.renderErrors()}
                 <form className='session-form' onSubmit={this.handleSubmit}>
@@ -66,7 +66,7 @@ class SignUp extends React.Component {
                     <br/>
                     <button className='session-submit-button'>Create Account</button>
                 </form>
-                <hr/>
+                <hr className='modal-hr'/>
 
                 <span>Already a member? {props.otherForm}</span>
             </div>

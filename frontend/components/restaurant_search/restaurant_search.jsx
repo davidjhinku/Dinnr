@@ -12,12 +12,12 @@ class RestaurantSearch extends React.Component {
             return <RestaurantSearchItem key={idx} restaurant={restaurant}/>
         })
 
-        debugger
+        // debugger
         return(
             <div>
-                <h2>List of restaurants matching filter</h2>
+                <p>{restList.length} restaurants available</p>
+                <hr/>
                 <ul>{restList}</ul>
-                none above?
             </div>
         )
     }

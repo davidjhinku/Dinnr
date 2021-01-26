@@ -1,4 +1,4 @@
-CITIES = ['New York', 'Brooklym', 'Queens'].freeze
+CITIES = ['New York', 'Brooklyn', 'Queens'].freeze
 
 
 class Restaurant < ApplicationRecord

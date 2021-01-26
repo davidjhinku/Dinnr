@@ -16,8 +16,8 @@
     flex-direction: column;
     /* border: 1px solid lightgray; */
     border-radius: 5px;
-    width: 240px;
-    height: 255px;
+    width: 220px;
+    height: 250px;
     margin-right: 15px;
     transition: all .3s;
 }
@@ -29,7 +29,7 @@ li.carousel-item:hover {
 }
 
 .carousel-item img {
-    width: 100%;
+    /* width: 100%; */
     height: 130px;
     object-fit: cover;
     border-radius: 5px 5px 0 0;

@@ -6,7 +6,7 @@ class SearchPage extends React.Component {
 
     render() {
         // render the searchformcomp, filter, restaurantsearchcomp
-        debugger
+        // debugger
         return (
             <div className='search-page'>
                 <nav>

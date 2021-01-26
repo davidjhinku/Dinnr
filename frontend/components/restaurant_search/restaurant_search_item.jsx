@@ -4,15 +4,17 @@ class RestaurantSearchItem extends React.Component {
 
     render() {
 
-        debugger
+        // debugger
         return(
-            <li className='restaurant-item'>
-                <span>Link to image</span>
-                <div className='restaurant-information'>
-                    {this.props.restaurant.name}
-                    end of search item component
+            <li className='search-restaurant-item'>
+                <div className='search-restaurant-item'>
+                    <span className='img standin'>200x200 img</span>
+                    <div className='restaurant-information'>
+                        {this.props.restaurant.name}
+                        end of search item component
+                    </div>
                 </div>
-
+                <hr/>
             </li>
         )
     }
