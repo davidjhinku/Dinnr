@@ -1,3 +1,6 @@
+CITIES = ['New York', 'Brooklym', 'Queens'].freeze
+
+
 class Restaurant < ApplicationRecord
     validates :name, :bio, :cuisine_type, :price_range, :lat, :lng, :address, :city, :state, :zip, presence: true
     validates :name, uniqueness: true
@@ -20,4 +23,18 @@ class Restaurant < ApplicationRecord
     # has_many :reviews
     # has_many :favorited_by, might not need anymore without restaurant mgmt side.
 
+    def self.search(terms)
+        # debugger
+
+        city = CITIES.include?(terms[:wildcard])
+        if city
+
+            # debugger
+            @restaurants = self.where(city: terms[:wildcard])
+        else
+
+            # debugger
+            @restaurants = {}
+        end
+    end
 end

@@ -16,7 +16,7 @@ class Splash extends React.Component {
             <div className="splash-components">
                 <div className="splash-search-form">
                     <h1>Find your table for any occasion</h1>
-                    <SearchContainer />
+                    <SearchContainer {...this.props}/>
                 </div>
                 <div className="splash-restaurant-index">
                     <RestaurantCarouselContainer {...this.props}/>

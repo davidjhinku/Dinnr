@@ -7,8 +7,8 @@ class SearchForm extends React.Component {
         this.state = {
             date: null,
             time: null,
-            people: 2,
-            search_filter: '',
+            party_size: 2,
+            wildcard: '',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -16,6 +16,9 @@ class SearchForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         debugger
+        this.props.fetchRestaurants(this.state)
+            .then(this.props.history.push('./search'))
+        //then go to the search page
         // send information to search page inc state to pre-fill top container
         //Link to='/restaurantsearch' maybe?
     }
@@ -56,7 +59,7 @@ class SearchForm extends React.Component {
                         <option value={currentTime+2.5}>{this.numberToTime(currentTime+2.5)}</option>
                         <option value={currentTime+3.0}>{this.numberToTime(currentTime+3.0)}</option>
                     </select>
-                    <select onChange={this.handleChange('people')}>
+                    <select onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>
                         <option value="4">4 people</option>
@@ -64,7 +67,7 @@ class SearchForm extends React.Component {
                     </select>
                 </div>
 
-                <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('search_filter')}/>
+                <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('wildcard')}/>
                 <button className='search-form-button'>Let's go</button>
             </form>
         )

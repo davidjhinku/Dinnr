@@ -6,10 +6,11 @@ class SearchPage extends React.Component {
 
     render() {
         // render the searchformcomp, filter, restaurantsearchcomp
+        debugger
         return (
             <div className='search-page'>
                 <nav>
-                    <SearchFormContainer />
+                    <SearchFormContainer {...this.props} />
                 </nav>
                 <div className='search-page-columns'>
                     <div className='filter-component'>
@@ -17,7 +18,7 @@ class SearchPage extends React.Component {
                         <p>List of filter options</p>
                     </div>
                     <div className='search-restaurants'>
-                        <RestaurantSearchContainer />
+                        <RestaurantSearchContainer restaurants={this.props.restaurants}/>
                     </div>
                 </div>
 

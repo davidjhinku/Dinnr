@@ -61,6 +61,7 @@ class NavBar extends React.Component {
     render() {
         let session
 
+
         this.props.currentUser ? session = this.displayLoggout() : session = this.displaySessionLinks()
 
         return (

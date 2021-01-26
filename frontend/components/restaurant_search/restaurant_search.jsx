@@ -11,10 +11,13 @@ class RestaurantSearch extends React.Component {
         const restList = this.props.restaurants.map((restaurant, idx) => {
             return <RestaurantSearchItem key={idx} restaurant={restaurant}/>
         })
+
+        debugger
         return(
             <div>
                 <h2>List of restaurants matching filter</h2>
                 <ul>{restList}</ul>
+                none above?
             </div>
         )
     }

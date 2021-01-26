@@ -1,7 +1,8 @@
-export const fetchRestaurants = () => {
+export const fetchRestaurants = search => {
     return $.ajax({
         method: 'GET',
-        url: 'api/restaurants'
+        url: 'api/restaurants',
+        data: {search}
     })
 }
 // eventually add data which used to get specific ones

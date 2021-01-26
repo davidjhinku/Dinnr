@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchForm from './search_form'
 import { connect } from 'react-redux'
-import {} from '../../actions/search_actions'
+import {fetchRestaurants} from '../../actions/restaurant_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-
+        fetchRestaurants: search => dispatch(fetchRestaurants(search))
     }
 }
 
