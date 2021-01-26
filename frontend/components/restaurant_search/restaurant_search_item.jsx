@@ -4,7 +4,7 @@ class RestaurantSearchItem extends React.Component {
 
     render() {
         const rest = this.props.restaurant
-        // debugger
+        debugger
         return(
             <li>
                 <div className='search-restaurant-item'>

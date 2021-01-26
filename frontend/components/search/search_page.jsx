@@ -18,7 +18,7 @@ class SearchPage extends React.Component {
                         <p>List of filter options</p>
                     </div>
                     <div className='search-restaurants'>
-                        <RestaurantSearchContainer restaurants={this.props.restaurants}/>
+                        <RestaurantSearchContainer restaurants={this.props.restaurants} history={this.props.history}/>
                     </div>
                 </div>
 

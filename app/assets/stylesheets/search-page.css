@@ -31,7 +31,8 @@
 }
 
 .search-restaurant-item {
-    display: flex
+    display: flex;
+    margin: 20px 0;
 }
 
 .search-restaurant-item > img {

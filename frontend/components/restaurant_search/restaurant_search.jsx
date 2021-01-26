@@ -9,7 +9,7 @@ class RestaurantSearch extends React.Component {
 
     render() {
         const restList = this.props.restaurants.map((restaurant, idx) => {
-            return <RestaurantSearchItem key={idx} restaurant={restaurant}/>
+            return <RestaurantSearchItem key={idx} restaurant={restaurant} history={this.props.history}/>
         })
 
         // debugger
