@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 const Modal = (props) => {
     if (!props.modal) return null;
 
-
+    // debugger
     let popupForm;
     let modalStyling;
     let modalHeader

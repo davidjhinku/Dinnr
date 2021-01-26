@@ -21,8 +21,8 @@ class RestaurantShow extends React.Component {
         } else {
             return (
                 <div className='show-page'>
-                    <img src={restaurant.photoUrls[0]} alt="show header image"/>
-                    {/* <img src="https://images.wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1600x900.jpg" alt=""/> */}
+                    {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
+                    <img src="https://images.wallpaperscraft.com/image/restaurant_table_interior_modern_style_39288_1600x900.jpg" alt=""/>
                     <div className='show-content'>
                         <div className='show-left-column'>
                             <nav className='page-nav'>

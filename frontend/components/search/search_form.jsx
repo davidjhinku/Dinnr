@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class SearchForm extends React.Component {
         e.preventDefault()
         debugger
         this.props.fetchRestaurants(this.state)
-            .then(this.props.history.push('./search'))
+            .then(this.props.closeModal).then(this.props.history.push('./search'))
         //then go to the search page
         // send information to search page inc state to pre-fill top container
         //Link to='/restaurantsearch' maybe?
@@ -74,4 +74,4 @@ class SearchForm extends React.Component {
     }
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);

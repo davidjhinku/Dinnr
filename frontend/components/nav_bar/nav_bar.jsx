@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom';
+import {withRouter} from 'react-router-dom'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -60,9 +61,9 @@ class NavBar extends React.Component {
     
     render() {
         let session
-
-
         this.props.currentUser ? session = this.displayLoggout() : session = this.displaySessionLinks()
+
+        // debugger
 
         return (
             <nav>
@@ -74,3 +75,4 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+// export default withRouter(NavBar);

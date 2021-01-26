@@ -1,12 +1,13 @@
 import React from 'react'
 import SearchFormContainer from './search_form_container'
 import RestaurantSearchContainer from '../restaurant_search/restaurant_search_container'
+import RestaurantSearch from '../restaurant_search/restaurant_search'
 
 class SearchPage extends React.Component {
 
     render() {
         // render the searchformcomp, filter, restaurantsearchcomp
-        debugger
+        // debugger
         return (
             <div className='search-page'>
                 <nav>
@@ -18,11 +19,9 @@ class SearchPage extends React.Component {
                         <p>List of filter options</p>
                     </div>
                     <div className='search-restaurants'>
-                        <RestaurantSearchContainer restaurants={this.props.restaurants} history={this.props.history}/>
+                        <RestaurantSearch restaurants={this.props.restaurants} history={this.props.history}/>
                     </div>
                 </div>
-
-
             </div>
         )
     }

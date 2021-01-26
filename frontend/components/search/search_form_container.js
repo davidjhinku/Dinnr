@@ -2,6 +2,7 @@ import React from 'react'
 import SearchForm from './search_form'
 import { connect } from 'react-redux'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
+import {closeModal} from '../../actions/modal_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchRestaurants: search => dispatch(fetchRestaurants(search))
+        fetchRestaurants: search => dispatch(fetchRestaurants(search)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 
