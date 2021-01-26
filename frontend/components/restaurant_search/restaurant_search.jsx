@@ -12,7 +12,7 @@ class RestaurantSearch extends React.Component {
             return <RestaurantSearchItem key={idx} restaurant={restaurant} history={this.props.history}/>
         })
 
-        // debugger
+        debugger
         return(
             <div>
                 <p>{restList.length} restaurants available</p>

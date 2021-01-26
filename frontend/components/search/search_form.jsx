@@ -15,7 +15,7 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // debugger
+        debugger
         this.props.fetchRestaurants(this.state)
             .then(this.props.history.push('./search'))
         //then go to the search page
