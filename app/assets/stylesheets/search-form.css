@@ -34,6 +34,13 @@
     color: white;
     font-weight: 600;
     font-size: 17px;
+    transition: all 0.4s;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.search-form > button:hover {
+    filter: brightness(85%);
 }
 
 /* .search-page .search-form {

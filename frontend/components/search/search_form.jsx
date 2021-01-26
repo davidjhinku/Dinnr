@@ -10,11 +10,12 @@ class SearchForm extends React.Component {
             people: 2,
             search_filter: '',
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault()
-        
+        debugger
         // send information to search page inc state to pre-fill top container
         //Link to='/restaurantsearch' maybe?
     }
@@ -44,7 +45,7 @@ class SearchForm extends React.Component {
         const currentTime = new Date().getHours() + 1;
         
         return (
-            <form className='search-form'>
+            <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-div'>
                     <input type="date" defaultValue={currentDate} onChange={this.handleChange('date')}/>
                     <select onChange={this.handleChange('time')}>
