@@ -42,4 +42,13 @@
     margin-right: 18px;
     object-fit: cover;
     border-radius: 4px;
+    cursor: pointer;
+}
+
+.rest-information > p {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 22px;
+    color: #247f9e;
+    margin-bottom: 10px;
 }

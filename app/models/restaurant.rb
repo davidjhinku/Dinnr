@@ -26,13 +26,17 @@ class Restaurant < ApplicationRecord
     def self.search(terms)
         # debugger
 
-        city = CITIES.include?(terms[:wildcard])
-        if city
-
+        
+        results = Restaurant.where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")
+        
+        # city = CITIES.include?(terms[:wildcard])
+        # city = Restaurant.find_by(name: terms[:])
+        # cuisine = Restaurant.find_by()
+        # restaurant = 
+        if results.length > 0
             # debugger
-            @restaurants = self.where(city: terms[:wildcard])
+            @restaurants = results
         else
-
             # debugger
             @restaurants = {}
         end
