@@ -48,15 +48,15 @@ li.carousel-item:hover {
     margin-bottom: 5px;
 }
 
-.carousel-info-list li {
+.rest-info-list li {
     display: inline-block;
     margin-right: 3px;
     color: #606775;
 }
 
-.carousel-info-list li:after {
+.rest-info-list li:after {
     content: " \00b7";
 }
-.carousel-info-list li:last-child:after {
+.rest-info-list li:last-child:after {
     content: none;
 }

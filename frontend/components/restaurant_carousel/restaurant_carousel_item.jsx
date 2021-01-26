@@ -19,7 +19,7 @@ class RestaurantCarouselItem extends React.Component {
                 <div className='carousel-info-block'>
                     <p>{rest.name}</p>
                     <span>Average Rating Component</span>
-                    <ul className='carousel-info-list'>
+                    <ul className='rest-info-list'>
                         <li>{rest.cuisine_type}</li>
                         <li>{rest.price_range}</li>
                         <li>{rest.city}</li>

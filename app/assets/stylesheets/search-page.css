@@ -30,3 +30,15 @@
     border: 1px solid blue
 }
 
+.search-restaurant-item {
+    display: flex
+}
+
+.search-restaurant-item > img {
+    /* border: 1px solid red; */
+    height: 200px;
+    width: 200px;
+    margin-right: 18px;
+    object-fit: cover;
+    border-radius: 4px;
+}
