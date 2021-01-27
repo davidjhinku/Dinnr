@@ -49,6 +49,50 @@
 # r1.photos.attach(io: f14, filename: '4.jpg')
 # r1.photos.attach(io: f15, filename: '5.jpg')
 
+m11 = Menu.create!(
+	name: 'Lunch',
+)
+
+m11i1 = Item.create!(
+	name: 'Mala Pot',
+	description: 'A spicy pot of assorted meats, vegetables and noodles',
+	price: 39.99
+)
+
+m11i2 = Item.create!(
+	name: 'Szechuan chicken',
+	description: 'Mouth-numbing chicken dish from Szechuan',
+	price: 25.99
+)
+
+m11i3 = Item.create!(
+	name: 'Szechuan Fried Rice',
+	description: 'Szechuan style fried rice with pickled chilies',
+	price: 16.99
+)
+
+m12 = Menu.create!(
+	name: 'Dinner',
+)
+
+m12i1 = Item.create!(
+	name: 'Hunan Fried Lamb Chops',
+	description: 'Mala seasoned fried lamb chops',
+	price: 35.99
+)
+
+m12i2 = Item.create!(
+	name: 'River Spinach Delight',
+	description: 'Stir fried river spinach in house special sauce',
+	price: 19.99
+)
+
+m12i3 = Item.create!(
+	name: 'Chili Fish Soup',
+	description: 'Striped bass simmered in pickled chili soup',
+	price: 29.99
+)
+
 # r2 = Restaurant.create!(
 #     name: 'American Bistro',
 #     bio: 'Burgers and fries, where could you possibly go wrong?',
@@ -74,6 +118,50 @@
 # r2.photos.attach(io: f23, filename: '3.jpg')
 # r2.photos.attach(io: f24, filename: '4.jpg')
 # r2.photos.attach(io: f25, filename: '5.jpg')
+
+m21 = Menu.create!(
+	name: 'Lunch',
+)
+
+m21i1 = Item.create!(
+	name: 'Nicoise Salad',
+	description: 'French inspired nicoise salad with boiled eggs, olives, and Spanish tuna',
+	price: 19.99
+)
+
+m21i2 = Item.create!(
+	name: 'Club Sandwich with Fries',
+	description: 'Traditional club sandwich with truffle fries',
+	price: 14.99
+)
+
+m21i3 = Item.create!(
+	name: 'French Onion Soup and Baguette',
+	description: 'Classic french onion soup with house made baguette topped with gruyere',
+	price: 14.99
+)
+
+m22 = Menu.create!(
+	name: 'Dinner',
+)
+
+m22i1 = Item.create!(
+	name: 'Steak Dinner',
+	description: 'Classic 48 oz t-bone steak with side veggies',
+	price: 27.99
+)
+
+m22i2 = Item.create!(
+	name: 'Angus Burger',
+	description: 'Quarter pounder Angus beef burger served with fries',
+	price: 19.99
+)
+
+m22i3 = Item.create!(
+	name: 'Fried Chicken and Biscuits',
+	description: 'Southern style fried chicken with biscuits and gravy',
+	price: 21.99
+)
 
 # r3 = Restaurant.create!(
 #     name: 'Island Grill',
@@ -101,6 +189,50 @@
 # r3.photos.attach(io: f34, filename: '4.jpg')
 # r3.photos.attach(io: f35, filename: '5.jpg')
 
+m31 = Menu.create!(
+	name: 'Lunch',
+)
+
+m31i1 = Item.create!(
+	name: 'Spam Musubi',
+	description: 'Three spam musubis with homemade teriyaki sauce',
+	price: 11.99
+)
+
+m31i2 = Item.create!(
+	name: 'Salmon poke',
+	description: 'Atlantic salmon over sushi rice with select toppings',
+	price: 16.99
+)
+
+m31i3 = Item.create!(
+	name: 'Teriyaki over Rice',
+	description: 'Choice of chicken, beef or pork teriyaki over rice with vegetables',
+	price: 16.99
+)
+
+m32 = Menu.create!(
+	name: 'Dinner',
+)
+
+m32i1 = Item.create!(
+	name: 'Pork Lau Lau',
+	description: 'Smoked pork shoulder cooked in taro leaves',
+	price: 22.99
+)
+
+m32i2 = Item.create!(
+	name: 'Grand Poke Bowl',
+	description: 'Tuna, salmon, yellowtail, and scallop poke over rice with traditional island sauces',
+	price: 27.99
+)
+
+m32i3 = Item.create!(
+	name: 'Mochi Fried Chicken Wings',
+	description: 'Chicken wings coated with mochi flour and deep fried, tossed into house special seasoning powder',
+	price: 22.99
+)
+
 # r4 = Restaurant.create!(
 #     name: 'Green Curry',
 #     bio: "Extra spicy authentic Thai food. Our curry's can't be beat, perfect for a chilly winters day or a summer sweat.",
@@ -126,6 +258,50 @@
 # r4.photos.attach(io: f43, filename: '3.jpg')
 # r4.photos.attach(io: f44, filename: '4.jpg')
 # r4.photos.attach(io: f45, filename: '5.jpg')
+
+m41 = Menu.create!(
+	name: 'Lunch',
+)
+
+m41i1 = Item.create!(
+	name: 'Green Curry over Rice',
+	description: 'Thai green curry with choice of either pork, beef, or chicken over rice',
+	price: 12.99
+)
+
+m41i2 = Item.create!(
+	name: 'Pork Satay',
+	description: 'Grilled pork skewers served with peanut sauce',
+	price: 9.99
+)
+
+m41i3 = Item.create!(
+	name: 'Red Curry over Rice',
+	description: 'Thai red curry with choice of either pork, beef, or chicken over rice',
+	price: 12.99
+)
+
+m42 = Menu.create!(
+	name: 'Dinner',
+)
+
+m42i1 = Item.create!(
+	name: 'Thai Duck Fried Rice',
+	description: 'Roast duck fried rice served with house sauce and cucumbers',
+	price: 22.99
+)
+
+m42i2 = Item.create!(
+	name: 'Massaman Curry over Rice',
+	description: 'Beef Massaman curry over rice',
+	price: 17.99
+)
+
+m42i3 = Item.create!(
+	name: 'Pad See Ew',
+	description: 'Stir fried rice noodles with beef, veggies, and egg',
+	price: 17.99
+)
 
 # r5 = Restaurant.create!(
 #     name: 'Sweet Escape',
@@ -153,6 +329,50 @@
 # r5.photos.attach(io: f54, filename: '4.jpg')
 # r5.photos.attach(io: f55, filename: '5.jpg')
 
+m51 = Menu.create!(
+	name: 'Lunch',
+)
+
+m51i1 = Item.create!(
+	name: 'French Toast',
+	description: 'Classic french toast served with housemade mascarpone dipping sauce',
+	price: 14.99
+)
+
+m51i2 = Item.create!(
+	name: 'Golden Pancake Stacks',
+	description: 'Stack of six fluffy pancakes served with maple syrup ad whipped butter',
+	price: 14.99
+)
+
+m51i3 = Item.create!(
+	name: 'Acai Bowl',
+	description: 'Frozen acai puree topped with seasonal fruits and hemp seeds',
+	price: 14.99
+)
+
+m52 = Menu.create!(
+	name: 'Dinner',
+)
+
+m52i1 = Item.create!(
+	name: 'Russian Blintzes',
+	description: 'Russian crepes filled with cottage cheese mixture and topped with raspberry coulis',
+	price: 19.99
+)
+
+m52i2 = Item.create!(
+	name: 'Mudslide',
+	description: "Boozy chocolate milkshake with Kahlua, Bailey's, and Amaretto",
+	price: 15.99
+)
+
+m52i3 = Item.create!(
+	name: 'Pies Pies Pies',
+	description: 'Surprise sort of three different slices of pies courtesy of our pastry chef',
+	price: 15.99
+)
+
 # r6 = Restaurant.create!(
 #     name: 'Bangalore Spices',
 #     bio: 'With freshly imported spices and flavors just like your mum used to make, our dishes will warm your soul.',
@@ -178,6 +398,50 @@
 # r6.photos.attach(io: f63, filename: '3.jpg')
 # r6.photos.attach(io: f64, filename: '4.jpg')
 # r6.photos.attach(io: f65, filename: '5.jpg')
+
+m61 = Menu.create!(
+	name: 'Lunch',
+)
+
+m61i1 = Item.create!(
+	name: 'Kati Roll',
+	description: 'Roti filled with channa masala served with dahl',
+	price: 12.99
+)
+
+m61i2 = Item.create!(
+	name: 'Tandoori Skewers',
+	description: 'Chicken tandoori skewers served with naan',
+	price: 16.99
+)
+
+m61i3 = Item.create!(
+	name: 'Chicken Biryani',
+	description: 'Chicken cooked with basmati rice and spices',
+	price: 14.99
+)
+
+m62 = Menu.create!(
+	name: 'Dinner',
+)
+
+m62i1 = Item.create!(
+	name: 'Lamb Biryani',
+	description: 'New Zealand lamb cooked with basmati rice and spices',
+	price: 22.99
+)
+
+m62i2 = Item.create!(
+	name: 'Chicken Korma',
+	description: 'Chicken cooked in cashew based curry served with naan',
+	price: 20.99
+)
+
+m62i3 = Item.create!(
+	name: 'Saag Paneer',
+	description: 'Spinach curry with chunks of paneer cheese served with naan',
+	price: 17.99
+)
 
 # r7 = Restaurant.create!(
 #     name: 'Pancake Heaven',
@@ -205,6 +469,50 @@
 # r7.photos.attach(io: f74, filename: '4.jpg')
 # r7.photos.attach(io: f75, filename: '5.jpg')
 
+m71 = Menu.create!(
+	name: 'Lunch',
+)
+
+m71i1 = Item.create!(
+	name: 'Chocolate Chip Pancakes',
+	description: 'Classic chocolate chip pancake with maple syrup',
+	price: 9.99
+)
+
+m71i2 = Item.create!(
+	name: 'Banana Pancakes',
+	description: 'Banana pancakes with whipped cream and maple syrup',
+	price: 9.99
+)
+
+m71i3 = Item.create!(
+	name: 'Breakfast Platter',
+	description: 'Sausage, eggs, pancakes, what more do you want?',
+	price: 13.99
+)
+
+m72 = Menu.create!(
+	name: 'Dinner',
+)
+
+m72i1 = Item.create!(
+	name: 'Seafood Platter',
+	description: 'Fried shrimp, cod, and scallops served with pancakes',
+	price: 21.99
+)
+
+m72i2 = Item.create!(
+	name: 'Savory Crepes',
+	description: 'Ham and cheese buckwheat crepe served with side salad',
+	price: 17.99
+)
+
+m72i3 = Item.create!(
+	name: 'Decadent Pancakes',
+	description: "S'mores pancakes served for dinner, never a bad idea",
+	price: 14.99
+)
+
 # r8 = Restaurant.create!(
 #     name: 'Pho 77',
 #     bio: "The ultimate soup with rich delicious flavors. Our large bowls leave you full and give the best value.",
@@ -230,6 +538,50 @@
 # r8.photos.attach(io: f83, filename: '3.jpg')
 # r8.photos.attach(io: f84, filename: '4.jpg')
 # r8.photos.attach(io: f85, filename: '5.jpg')
+
+m81 = Menu.create!(
+	name: 'Lunch',
+)
+
+m81i1 = Item.create!(
+	name: 'Combo Pho',
+	description: 'Pho with beef flank, tendon, and beef balls',
+	price: 14.99
+)
+
+m81i2 = Item.create!(
+	name: 'Beef Ball Pho',
+	description: 'Pho with beef balls',
+	price: 10.99
+)
+
+m81i3 = Item.create!(
+	name: 'Pho Ga',
+	description: 'Chicken pho',
+	price: 12.99
+)
+
+m82 = Menu.create!(
+	name: 'Dinner',
+)
+
+m82i1 = Item.create!(
+	name: 'Combo Rice Platter',
+	description: 'BBQ pork, egg meatloaf, shredded pork, and salad over rice',
+	price: 17.99
+)
+
+m82i2 = Item.create!(
+	name: 'Deluxe Pho',
+	description: 'Beef pho with beef flank, tendon, tripe, brisket, beef balls, and toppings. XL size only',
+	price: 17.99
+)
+
+m82i3 = Item.create!(
+	name: 'Vietnamese Fish Sauce Wings',
+	description: 'Fried chicken wings in fish sauce dressing',
+	price: 10.99
+)
 
 # r9 = Restaurant.create!(
 #     name: 'Mediterranean Seafood',
@@ -257,6 +609,50 @@
 # r9.photos.attach(io: f94, filename: '4.jpg')
 # r9.photos.attach(io: f95, filename: '5.jpg')
 
+m91 = Menu.create!(
+	name: 'Lunch',
+)
+
+m91i1 = Item.create!(
+	name: 'Tuna tartare',
+	description: 'Raw tuna melange with seasonal citrus, avocado, and pickled onions',
+	price: 14.99
+)
+
+m91i2 = Item.create!(
+	name: 'Fried Calamari',
+	description: 'Fried squid with housemade aioli',
+	price: 14.99
+)
+
+m91i3 = Item.create!(
+	name: 'Mediterranean Tuna Salad',
+	description: 'Mediterranean tuna salad with seasonal greens, boiled eggs, olives, and feta',
+	price: 12.99
+)
+
+m92 = Menu.create!(
+	name: 'Dinner',
+)
+
+m92i1 = Item.create!(
+	name: 'Seafood pasta',
+	description: 'Squid ink pasta with calamari, shrimp, and mussels',
+	price: 25.99
+)
+
+m92i2 = Item.create!(
+	name: 'Seafood paella',
+	description: 'Smoked paella with shrimp, calamari, mussels and clams',
+	price: 27.99
+)
+
+m92i3 = Item.create!(
+	name: 'Frutti di Mare',
+	description: 'Tomato pasta with clams, shrimp, and calamari topped with homegrown basil',
+	price: 25.99
+)
+
 # r10 = Restaurant.create!(
 #     name: 'Bonchan',
 #     bio: "We offer great BBQ cooked right at your table, it doesn't get fresher than this. Our meat is sourced straight from a private supplier for the best flavor",
@@ -282,6 +678,50 @@
 # r10.photos.attach(io: f103, filename: '3.jpg')
 # r10.photos.attach(io: f104, filename: '4.jpg')
 # r10.photos.attach(io: f105, filename: '5.jpg')
+
+m101 = Menu.create!(
+	name: 'Lunch',
+)
+
+m101i1 = Item.create!(
+	name: 'Kimchi Fried Rice',
+	description: 'Kimchi fried rice with caramelized spam',
+	price: 14.99
+)
+
+m101i2 = Item.create!(
+	name: 'Jjajangmyeon',
+	description: 'Black bean noodles with pork and zucchini',
+	price: 14.99
+)
+
+m101i3 = Item.create!(
+	name: 'Kimchi Jjigae',
+	description: 'Kimchi stew with tofu',
+	price: 9.99
+)
+
+m102 = Menu.create!(
+	name: 'Dinner',
+)
+
+m102i1 = Item.create!(
+	name: 'Bulgogi',
+	description: 'Stewed Korean beef with rice',
+	price: 19.99
+)
+
+m102i2 = Item.create!(
+	name: 'Seafood Pajeon',
+	description: 'Korean seafood pancakes',
+	price: 14.99
+)
+
+m102i3 = Item.create!(
+	name: 'Army Base Stew',
+	description: 'Spicy stew with kimchi, spam, sausages, mushrooms, tofu, and noodles',
+	price: 19.99
+)
 
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})

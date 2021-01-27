@@ -41,7 +41,6 @@ class RestaurantShow extends React.Component {
                 <div>Loading Restaurant...</div>
             )
         } else {
-            debugger
             return (
                 <div className='show-page'>
                     {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
