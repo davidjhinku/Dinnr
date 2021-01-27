@@ -9,6 +9,46 @@
 
 .carousel-component ul {
     display: flex;
+    overflow: scroll;
+}
+
+.carousel-component ul::-webkit-scrollbar {
+    display: none;
+}
+
+.left-scroll-button {
+    border-radius: 50px;
+    height: 43px;
+    width: 43px;
+    background: white;
+    font-size: 20px;
+    top: 120px;
+    right: 20px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+
+.left-scroll-button::before {
+    content: '<';
+}
+
+.right-scroll-button {
+    border-radius: 50px;
+    height: 43px;
+    width: 43px;
+    background: white;
+    font-size: 20px;
+    top: 120px;
+    right: -1227px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.right-scroll-button::before {
+    content: '>';
 }
 
 .carousel-item {

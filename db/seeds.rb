@@ -153,57 +153,57 @@
 # r5.photos.attach(io: f54, filename: '4.jpg')
 # r5.photos.attach(io: f55, filename: '5.jpg')
 
-r6 = Restaurant.create!(
-    name: 'Bangalore Spices',
-    bio: 'With freshly imported spices and flavors just like your mum used to make, our dishes will warm your soul.',
-    cuisine_type: 'Indian',
-    price_range:'$$',
-    lat: 40.71952,
-    lng: -73.95671,
-    open_at: 8.00,
-    close_at: 22.00,
-    address: '148 Bedford Ave',
-    city: 'Brooklyn',
-    state: 'NY',
-    zip: '11201',
-)
+# r6 = Restaurant.create!(
+#     name: 'Bangalore Spices',
+#     bio: 'With freshly imported spices and flavors just like your mum used to make, our dishes will warm your soul.',
+#     cuisine_type: 'Indian',
+#     price_range:'$$',
+#     lat: 40.71952,
+#     lng: -73.95671,
+#     open_at: 8.00,
+#     close_at: 22.00,
+#     address: '148 Bedford Ave',
+#     city: 'Brooklyn',
+#     state: 'NY',
+#     zip: '11201',
+# )
 
-f61 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
-f62 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
-f63 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
-f64 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
-f65 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
-r6.photos.attach(io: f61, filename: '1.jpg')
-r6.photos.attach(io: f62, filename: '2.jpg')
-r6.photos.attach(io: f63, filename: '3.jpg')
-r6.photos.attach(io: f64, filename: '4.jpg')
-r6.photos.attach(io: f65, filename: '5.jpg')
+# f61 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
+# f62 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
+# f63 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
+# f64 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
+# f65 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
+# r6.photos.attach(io: f61, filename: '1.jpg')
+# r6.photos.attach(io: f62, filename: '2.jpg')
+# r6.photos.attach(io: f63, filename: '3.jpg')
+# r6.photos.attach(io: f64, filename: '4.jpg')
+# r6.photos.attach(io: f65, filename: '5.jpg')
 
-r7 = Restaurant.create!(
-    name: 'Pancake Heaven',
-    bio: "Light and fluffy towers of syrupy goodness. Your dentist might not be too happy but we bet that's not your top priority.",
-    cuisine_type: 'American',
-    price_range:'$',
-    lat: 40.71428,
-    lng: -73.95577,
-    open_at: 6.00,
-    close_at: 16.00,
-    address: '87 Havemeyer',
-    city: 'Brooklyn',
-    state: 'NY',
-    zip: '11201',
-)
+# r7 = Restaurant.create!(
+#     name: 'Pancake Heaven',
+#     bio: "Light and fluffy towers of syrupy goodness. Your dentist might not be too happy but we bet that's not your top priority.",
+#     cuisine_type: 'American',
+#     price_range:'$',
+#     lat: 40.71428,
+#     lng: -73.95577,
+#     open_at: 6.00,
+#     close_at: 16.00,
+#     address: '87 Havemeyer',
+#     city: 'Brooklyn',
+#     state: 'NY',
+#     zip: '11201',
+# )
 
-f71 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
-f72 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
-f73 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
-f74 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
-f75 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
-r7.photos.attach(io: f71, filename: '1.jpg')
-r7.photos.attach(io: f72, filename: '2.jpg')
-r7.photos.attach(io: f73, filename: '3.jpg')
-r7.photos.attach(io: f74, filename: '4.jpg')
-r7.photos.attach(io: f75, filename: '5.jpg')
+# f71 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
+# f72 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
+# f73 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
+# f74 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
+# f75 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
+# r7.photos.attach(io: f71, filename: '1.jpg')
+# r7.photos.attach(io: f72, filename: '2.jpg')
+# r7.photos.attach(io: f73, filename: '3.jpg')
+# r7.photos.attach(io: f74, filename: '4.jpg')
+# r7.photos.attach(io: f75, filename: '5.jpg')
 
 # r8 = Restaurant.create!(
 #     name: 'Pho 77',

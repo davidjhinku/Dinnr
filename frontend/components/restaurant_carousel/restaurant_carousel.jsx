@@ -15,7 +15,11 @@ class RestaurantCarousel extends React.Component {
             <div className='carousel-component'>
                 <h2>Your picks for today</h2>
                 <hr/>
-                <ul>{restList}</ul>
+                <ul>
+                    <button className='left-scroll-button'></button>
+                    <button className='right-scroll-button'></button>
+                    {restList}
+                </ul>
             </div>
         )
     }

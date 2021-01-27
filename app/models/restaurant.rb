@@ -28,17 +28,24 @@ class Restaurant < ApplicationRecord
 
         
         results = Restaurant.where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")
-        
-        # city = CITIES.include?(terms[:wildcard])
-        # city = Restaurant.find_by(name: terms[:])
-        # cuisine = Restaurant.find_by()
-        # restaurant = 
+    
         if results.length > 0
+            withinHours = results.select { |restaurant| Restaurant.withinOpenHours(restaurant, terms[:time]) }
+
             # debugger
-            @restaurants = results
+            withinHours.length > 0 ? @restaurants = withinHours : @restaurants = {}
         else
             # debugger
             @restaurants = {}
         end
+    end
+
+    def self.withinOpenHours(rest, time)
+        t = time.to_f
+        open = rest.open_at
+        close = rest.close_at
+
+        # debugger
+        return ((t > open) && (t < close))
     end
 end

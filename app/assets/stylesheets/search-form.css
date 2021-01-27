@@ -1,5 +1,18 @@
 .search-form {
     display: flex;
+    height: 50px;
+}
+
+.search-div {
+    margin-right: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+
+.search-form {
+    display: flex;
     justify-content: center;
     height: 50px;
 }
@@ -43,24 +56,11 @@
     filter: brightness(85%);
 }
 
-/* .search-page .search-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
+/* ion-icon {
+    font-size: 32px;
+    color: black;
+}
 
-/* .search-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* form.search-form input, select {
-    width: 150px;
-    height: 50px;
-    margin: 5px 0;
-    border: 0.5px solid #f3f3f3;
-    text-align: center;
-    border-radius: 0px;
+.wildcard-box {
+    hei
 } */

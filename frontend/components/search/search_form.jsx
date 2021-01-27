@@ -5,8 +5,8 @@ class SearchForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            date: null,
-            time: null,
+            date: this.startingDate(),
+            time: new Date().getHours() + 1,
             party_size: 2,
             wildcard: '',
         }
@@ -15,12 +15,8 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
         this.props.fetchRestaurants(this.state)
             .then(this.props.closeModal).then(this.props.history.push('./search'))
-        //then go to the search page
-        // send information to search page inc state to pre-fill top container
-        //Link to='/restaurantsearch' maybe?
     }
 
     handleChange(type) {
@@ -29,6 +25,21 @@ class SearchForm extends React.Component {
         }
     }
     
+    startingDate(){
+        const today = new Date()
+        let dd = today.getDate()
+        let mm = today.getMonth() + 1
+        const yyyy = today.getFullYear()
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        return `${yyyy}-${mm}-${dd}`
+    }
+
     numberToTime(num){
         let dayTime = 'AM'
         if (num >= 12) dayTime = 'PM'
@@ -42,22 +53,24 @@ class SearchForm extends React.Component {
         return `${hour}:${minute} ${dayTime}`
     }
 
+    timeSlots() {
+        let options = []
+
+        for (let i = 0; i <=24; i ++) {
+            options.push(<option key={i} value={i}>{this.numberToTime(i)}</option>)
+        }
+
+        return options
+    }
+
 
     render() {
-        const currentDate = new Date().toLocaleDateString();
-        const currentTime = new Date().getHours() + 1;
-        
         return (
             <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-div'>
-                    <input type="date" defaultValue={currentDate} onChange={this.handleChange('date')}/>
-                    <select onChange={this.handleChange('time')}>
-                        <option value={currentTime+0.5}>{this.numberToTime(currentTime+0.5)}</option>
-                        <option value={currentTime+1.0}>{this.numberToTime(currentTime+1.0)}</option>
-                        <option value={currentTime+1.5}>{this.numberToTime(currentTime+1.5)}</option>
-                        <option value={currentTime+2.0}>{this.numberToTime(currentTime+2.0)}</option>
-                        <option value={currentTime+2.5}>{this.numberToTime(currentTime+2.5)}</option>
-                        <option value={currentTime+3.0}>{this.numberToTime(currentTime+3.0)}</option>
+                    <input type="date" value={this.state.date} onChange={this.handleChange('date')}/>
+                    <select defaultValue={this.state.time} onChange={this.handleChange('time')}>
+                        {this.timeSlots()}
                     </select>
                     <select onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
@@ -67,8 +80,10 @@ class SearchForm extends React.Component {
                     </select>
                 </div>
 
-                <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('wildcard')}/>
-                <button className='search-form-button'>Let's go</button>
+                <div className='wildcard-box'>
+                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('wildcard')}/>
+                    <button className='search-form-button'>Let's go</button>
+                </div>
             </form>
         )
     }

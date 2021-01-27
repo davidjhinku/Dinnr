@@ -1,6 +1,4 @@
 import React from 'react'
-import { render } from 'react-dom';
-import {withRouter} from 'react-router-dom'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -75,4 +73,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-// export default withRouter(NavBar);

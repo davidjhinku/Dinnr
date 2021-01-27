@@ -1,6 +1,7 @@
 class Api::RestaurantsController < ApplicationController
     def index
         # debugger
+
         if !params[:search]
 
             # debugger
