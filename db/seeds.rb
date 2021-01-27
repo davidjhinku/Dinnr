@@ -1153,7 +1153,545 @@ mc1025 = MenuItemJoin.create!(
     item_id: m101i2.id
 )
 
+r11 = Restaurant.create!(
+    name: 'Salty Squid',
+    bio: "What's better than deep fried seafood? The answer is nothing! Come on down and get yourself some delicious and healthy fried goods.",
+    cuisine_type: 'Seafood',
+    price_range:'$',
+    lat: 40.74709,
+    lng: -73.91524,
+    open_at: 11.00,
+    close_at: 20.00,
+    address: '41-11 49th St',
+    city: 'Queens',
+    state: 'NY',
+    zip: '11104',
+)
 
+f111 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/1.jpg')
+f112 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/2.jpg')
+f113 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/3.jpg')
+f114 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/4.jpg')
+f115 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/5.jpg')
+r11.photos.attach(io: f111, filename: '1.jpg')
+r11.photos.attach(io: f112, filename: '2.jpg')
+r11.photos.attach(io: f113, filename: '3.jpg')
+r11.photos.attach(io: f114, filename: '4.jpg')
+r11.photos.attach(io: f115, filename: '5.jpg')
+
+m111 = Menu.create!(
+    name: 'Lunch',
+    restaurant_id: r11.id
+)
+m111i1 = Item.create!(
+	name: 'Calamari',
+	description: 'Crispy and served with lemon and dip',
+	price: 12.99
+)
+m111i2 = Item.create!(
+	name: 'Oysters (Dozen)',
+	description: 'Delicious Hudson Bay oysters',
+	price: 16.99
+)
+m111i3 = Item.create!(
+	name: 'Burger with Fries',
+	description: 'A favorite American staple served with fries',
+	price: 9.99
+)
+
+m112 = Menu.create!(
+    name: 'Dinner',
+    restaurant_id: r11.id
+)
+m112i1 = Item.create!(
+	name: 'Marinated Squid',
+	description: 'Served raw with rice',
+	price: 15.99
+)
+m112i2 = Item.create!(
+	name: 'Catch of the day',
+	description: "Let our chefs decide, you're sure to love it",
+	price: 24.99
+)
+m112i3 = Item.create!(
+	name: 'Fried Cod',
+	description: 'Tender slices of Cod fried to perfection',
+	price: 19.99
+)
+
+mc1111 = MenuItemJoin.create!(
+    menu_id: m111.id,
+    item_id: m111i1.id
+)
+mc1112 = MenuItemJoin.create!(
+    menu_id: m111.id,
+    item_id: m111i2.id
+)
+mc1113 = MenuItemJoin.create!(
+    menu_id: m111.id,
+    item_id: m111i3.id
+)
+mc1114 = MenuItemJoin.create!(
+    menu_id: m111.id,
+    item_id: m112i1.id
+)
+mc1115 = MenuItemJoin.create!(
+    menu_id: m111.id,
+    item_id: m112i2.id
+)
+
+mc1121 = MenuItemJoin.create!(
+    menu_id: m112.id,
+    item_id: m112i1.id
+)
+mc1122 = MenuItemJoin.create!(
+    menu_id: m112.id,
+    item_id: m112i2.id
+)
+mc1123 = MenuItemJoin.create!(
+    menu_id: m112.id,
+    item_id: m112i3.id
+)
+mc1124 = MenuItemJoin.create!(
+    menu_id: m112.id,
+    item_id: m111i1.id
+)
+mc1125 = MenuItemJoin.create!(
+    menu_id: m112.id,
+    item_id: m111i2.id
+)
+
+r12 = Restaurant.create!(
+    name: 'Shanghai Mountain House',
+    bio: "The best Shanghainese cuisine in the whole city, possibly the whole state. We don't make that claim lightly, come try our vibrant dishes",
+    cuisine_type: 'Chinese',
+    price_range:'$$',
+    lat: 40.76107,
+    lng: -73.92005,
+    open_at: 6.00,
+    close_at: 23.00,
+    address: '37-15 Broadway',
+    city: 'Queens',
+    state: 'NY',
+    zip: '11103',
+)
+
+f121 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/1.jpg')
+f122 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/2.jpg')
+f123 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/3.jpg')
+f124 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/4.jpg')
+f125 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/5.jpg')
+r12.photos.attach(io: f121, filename: '1.jpg')
+r12.photos.attach(io: f122, filename: '2.jpg')
+r12.photos.attach(io: f123, filename: '3.jpg')
+r12.photos.attach(io: f124, filename: '4.jpg')
+r12.photos.attach(io: f125, filename: '5.jpg')
+
+m121 = Menu.create!(
+    name: 'Lunch',
+    restaurant_id: r12.id
+)
+m121i1 = Item.create!(
+	name: 'Xiao Long Bao',
+	description: 'Delicious soup dumplings with a rich soup captured in a tender wrapper',
+	price: 11.99
+)
+m121i2 = Item.create!(
+	name: 'Sauteed Bok Choy',
+	description: 'Medley of bok choy and mushrooms sauteed in savory Shanghai sauce.',
+	price: 16.99
+)
+m121i3 = Item.create!(
+	name: 'Mung Bean Noodles',
+	description: 'Kimchi stew with tofu',
+	price: 9.99
+)
+
+m122 = Menu.create!(
+    name: 'Dinner',
+    restaurant_id: r12.id
+)
+m122i1 = Item.create!(
+	name: 'House Special Soup',
+	description: 'Served with noodles and pork, shrimp, and chicken with vegetables.',
+	price: 9.95
+)
+m122i2 = Item.create!(
+	name: 'Veggie Fried Spicy Rice Cakes',
+	description: 'Soft rice cakes with vegetables drenched with spicy sauce.',
+	price: 13.99
+)
+m122i3 = Item.create!(
+	name: 'Steamed Whole Fish',
+	description: 'Soy and chilie base with a whole steamed fish. Served with rice.',
+	price: 22.99
+)
+
+mc1211 = MenuItemJoin.create!(
+    menu_id: m121.id,
+    item_id: m121i1.id
+)
+mc1212 = MenuItemJoin.create!(
+    menu_id: m121.id,
+    item_id: m121i2.id
+)
+mc1213 = MenuItemJoin.create!(
+    menu_id: m121.id,
+    item_id: m121i3.id
+)
+mc1214 = MenuItemJoin.create!(
+    menu_id: m121.id,
+    item_id: m122i1.id
+)
+mc1215 = MenuItemJoin.create!(
+    menu_id: m121.id,
+    item_id: m122i2.id
+)
+
+mc1221 = MenuItemJoin.create!(
+    menu_id: m122.id,
+    item_id: m122i1.id
+)
+mc1222 = MenuItemJoin.create!(
+    menu_id: m122.id,
+    item_id: m122i2.id
+)
+mc1223 = MenuItemJoin.create!(
+    menu_id: m122.id,
+    item_id: m122i3.id
+)
+mc1224 = MenuItemJoin.create!(
+    menu_id: m122.id,
+    item_id: m121i1.id
+)
+mc1225 = MenuItemJoin.create!(
+    menu_id: m122.id,
+    item_id: m121i2.id
+)
+
+r13 = Restaurant.create!(
+    name: 'Bombay Grill House',
+    bio: "Flame grilled to perfection, heavy on the spice, and soothing beverages to cool you down. You won't be able to escape the flavor overload",
+    cuisine_type: 'Indian',
+    price_range:'$$$',
+    lat: 40.75463,
+    lng: -73.93911,
+    open_at: 14.00,
+    close_at: 23.00,
+    address: '24-08 40th Ave',
+    city: 'Queens',
+    state: 'NY',
+    zip: '11101',
+)
+
+f131 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/1.jpg')
+f132 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/2.jpg')
+f133 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/3.jpg')
+f134 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/4.jpg')
+f135 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/5.jpg')
+r13.photos.attach(io: f131, filename: '1.jpg')
+r13.photos.attach(io: f132, filename: '2.jpg')
+r13.photos.attach(io: f133, filename: '3.jpg')
+r13.photos.attach(io: f134, filename: '4.jpg')
+r13.photos.attach(io: f135, filename: '5.jpg')
+
+m131 = Menu.create!(
+    name: 'Lunch',
+    restaurant_id: r13.id
+)
+m131i1 = Item.create!(
+	name: 'Paneer Taash Kebab',
+	description: 'Tandoor style smoked paneer cheese with creamy peppercorn marinade. Spicy.',
+	price: 11.50
+)
+m131i2 = Item.create!(
+	name: 'Gilafi Reshmi',
+	description: 'Skewered chicken rolls, paneer cheese and bell peppers.',
+	price: 12.99
+)
+m131i3 = Item.create!(
+	name: 'Baigan Bhartha',
+	description: 'Roasted and mashed eggplant, baby green pea, onion, and tomato. Served with basmati rice.',
+	price: 16.99
+)
+
+m132 = Menu.create!(
+    name: 'Dinner',
+    restaurant_id: r13.id
+)
+m132i1 = Item.create!(
+	name: 'Lamb Saag',
+	description: 'Spinach, peppercorns, onion, ginger, garlic, and tomato. Served with basmati rice.',
+	price: 18.99
+)
+m132i2 = Item.create!(
+	name: 'Lamb Curry',
+	description: 'Cardamom cinnamon curry sauce, cloves, and nutmeg. Served with basmati rice.',
+	price: 17.99
+)
+m132i3 = Item.create!(
+	name: 'Tandoori Chicken Tikka',
+	description: 'Earthen oven grilled, yoghurt marinade, paprika, and lemon. Served with basmati rice.',
+	price: 16.99
+)
+
+mc1311 = MenuItemJoin.create!(
+    menu_id: m131.id,
+    item_id: m131i1.id
+)
+mc1312 = MenuItemJoin.create!(
+    menu_id: m131.id,
+    item_id: m131i2.id
+)
+mc1313 = MenuItemJoin.create!(
+    menu_id: m131.id,
+    item_id: m131i3.id
+)
+mc1314 = MenuItemJoin.create!(
+    menu_id: m131.id,
+    item_id: m132i1.id
+)
+mc1315 = MenuItemJoin.create!(
+    menu_id: m131.id,
+    item_id: m132i2.id
+)
+
+mc1321 = MenuItemJoin.create!(
+    menu_id: m132.id,
+    item_id: m132i1.id
+)
+mc1322 = MenuItemJoin.create!(
+    menu_id: m132.id,
+    item_id: m132i2.id
+)
+mc1323 = MenuItemJoin.create!(
+    menu_id: m132.id,
+    item_id: m132i3.id
+)
+mc1324 = MenuItemJoin.create!(
+    menu_id: m132.id,
+    item_id: m131i1.id
+)
+mc1325 = MenuItemJoin.create!(
+    menu_id: m132.id,
+    item_id: m131i2.id
+)
+
+r14 = Restaurant.create!(
+    name: 'Seoul Express',
+    bio: "Warm and homestyle Korean food served fast. We can't wait for you to try our grilled meats and experience the beauty of Korean food",
+    cuisine_type: 'Korean',
+    price_range:'$',
+    lat: 40.76997,
+    lng: -73.92554,
+    open_at: 10.00,
+    close_at: 18.00,
+    address: '21-02 30th Ave',
+    city: 'Queens',
+    state: 'NY',
+    zip: '11102',
+)
+
+f141 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/1.jpg')
+f142 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/2.jpg')
+f143 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/3.jpg')
+f144 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/4.jpg')
+f145 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/5.jpg')
+r14.photos.attach(io: f141, filename: '1.jpg')
+r14.photos.attach(io: f142, filename: '2.jpg')
+r14.photos.attach(io: f143, filename: '3.jpg')
+r14.photos.attach(io: f144, filename: '4.jpg')
+r14.photos.attach(io: f145, filename: '5.jpg')
+
+m141 = Menu.create!(
+    name: 'Lunch',
+    restaurant_id: r14.id
+)
+m141i1 = Item.create!(
+	name: 'Beef Bibimbap',
+	description: 'Marinated Beef, 7 kinds of Seasoned Vegetables & Egg Over Rice',
+	price: 14.99
+)
+m141i2 = Item.create!(
+	name: 'Spicy Raw Blue Crab',
+	description: 'Marinated raw softshell blue crab.',
+	price: 18.99
+)
+m141i3 = Item.create!(
+	name: 'Corn and Cream Croquettes',
+	description: "Han's signature Corn and Cream Croquettes. 2pcs.",
+	price: 9.99
+)
+
+m142 = Menu.create!(
+    name: 'Dinner',
+    restaurant_id: r14.id
+)
+m142i1 = Item.create!(
+	name: 'Slow Cooked Pork Belly',
+	description: 'Served with kimchi and berry wine sauce, jalapeno soybean paste, assorted home-made pickles, and bossam kimchi.',
+	price: 19.99
+)
+m142i2 = Item.create!(
+	name: 'Galbi BBQ',
+	description: "Fire-grilled Beef Marinated in Chef's Soy Sauce.",
+	price: 28.99
+)
+m142i3 = Item.create!(
+	name: 'Kimchi JJim',
+	description: 'Steamed Home-made Kimchi and Pork Ribs, Squash and Tofu in Anchovy Broth.',
+	price: 26.99
+)
+
+mc1411 = MenuItemJoin.create!(
+    menu_id: m141.id,
+    item_id: m141i1.id
+)
+mc1412 = MenuItemJoin.create!(
+    menu_id: m141.id,
+    item_id: m141i2.id
+)
+mc1413 = MenuItemJoin.create!(
+    menu_id: m141.id,
+    item_id: m141i3.id
+)
+mc1414 = MenuItemJoin.create!(
+    menu_id: m141.id,
+    item_id: m142i1.id
+)
+mc1415 = MenuItemJoin.create!(
+    menu_id: m141.id,
+    item_id: m142i2.id
+)
+
+mc1421 = MenuItemJoin.create!(
+    menu_id: m142.id,
+    item_id: m142i1.id
+)
+mc1422 = MenuItemJoin.create!(
+    menu_id: m142.id,
+    item_id: m142i2.id
+)
+mc1423 = MenuItemJoin.create!(
+    menu_id: m142.id,
+    item_id: m142i3.id
+)
+mc1424 = MenuItemJoin.create!(
+    menu_id: m142.id,
+    item_id: m141i1.id
+)
+mc1425 = MenuItemJoin.create!(
+    menu_id: m142.id,
+    item_id: m141i2.id
+)
+
+r15 = Restaurant.create!(
+    name: 'Thai Kitchen',
+    bio: "And upscale taste of South East Asia. We've combined the best flavors from Bankok to Chiang Mai into a lovely fusion that will ignite your taste buds",
+    cuisine_type: 'Thai',
+    price_range:'$$$$',
+    lat: 40.77605,
+    lng: -73.90804,
+    open_at: 15.00,
+    close_at: 23.00,
+    address: '35-12 Ditmars Boulevard',
+    city: 'Queens',
+    state: 'NY',
+    zip: '11105',
+)
+
+f151 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/1.jpg')
+f152 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/2.jpg')
+f153 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/3.jpg')
+f154 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/4.jpg')
+f155 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/5.jpg')
+r15.photos.attach(io: f151, filename: '1.jpg')
+r15.photos.attach(io: f152, filename: '2.jpg')
+r15.photos.attach(io: f153, filename: '3.jpg')
+r15.photos.attach(io: f154, filename: '4.jpg')
+r15.photos.attach(io: f155, filename: '5.jpg')
+
+m151 = Menu.create!(
+    name: 'Lunch',
+    restaurant_id: r15.id
+)
+m151i1 = Item.create!(
+	name: 'Curry Puffs',
+	description: 'Ground chicken, sweet potato, onion, curry powder, and white paper wrapped in fresh puff pastry dough sheets.',
+	price: 14.99
+)
+m151i2 = Item.create!(
+	name: 'Pla Muk Tod',
+	description: 'Crispy calamari served with sweet and sour sauce.',
+	price: 15.99
+)
+m151i3 = Item.create!(
+	name: 'Thai Salad',
+	description: 'Mixed fresh green salad with tomatoes, cucumbers, carrots, red cabbage, and bean curd.',
+	price: 12.99
+)
+
+m152 = Menu.create!(
+    name: 'Dinner',
+    restaurant_id: r15.id
+)
+m152i1 = Item.create!(
+	name: 'Panang Curry',
+	description: 'SPanang curry paste in coconut milk with pineapple, fresh basil, kaffir lime leaves, and bell peppers.',
+	price: 19.99
+)
+m152i2 = Item.create!(
+	name: 'Pad Gra Tiam',
+	description: 'Sauteed mixed vegetables (baby corn, carrot, zucchini, string beans, napa cabbage, broccoli, cauliflower, mushrooms, and scallions) with garlic sauce.',
+	price: 18.99
+)
+m152i3 = Item.create!(
+	name: 'Duck Tamarind',
+	description: "Crispy duck topped with chef's special Thai tamarind sauce, garlic, and steamed, mixed vegetables (baby corn, carrots, and zucchini).",
+	price: 23.99
+)
+
+mc1511 = MenuItemJoin.create!(
+    menu_id: m151.id,
+    item_id: m151i1.id
+)
+mc1512 = MenuItemJoin.create!(
+    menu_id: m151.id,
+    item_id: m151i2.id
+)
+mc1513 = MenuItemJoin.create!(
+    menu_id: m151.id,
+    item_id: m151i3.id
+)
+mc1514 = MenuItemJoin.create!(
+    menu_id: m151.id,
+    item_id: m152i1.id
+)
+mc1515 = MenuItemJoin.create!(
+    menu_id: m151.id,
+    item_id: m152i2.id
+)
+
+mc1521 = MenuItemJoin.create!(
+    menu_id: m152.id,
+    item_id: m152i1.id
+)
+mc1522 = MenuItemJoin.create!(
+    menu_id: m152.id,
+    item_id: m152i2.id
+)
+mc1523 = MenuItemJoin.create!(
+    menu_id: m152.id,
+    item_id: m152i3.id
+)
+mc1524 = MenuItemJoin.create!(
+    menu_id: m152.id,
+    item_id: m151i1.id
+)
+mc1525 = MenuItemJoin.create!(
+    menu_id: m152.id,
+    item_id: m151i2.id
+)
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
 #{first_name: 'demo1', last_name: 'account1', email: 'demo1@demo.com', primary_location: 'New York', password: 'password'}
@@ -1162,45 +1700,3 @@ mc1025 = MenuItemJoin.create!(
 
 # $.ajax({method: 'GET', url: 'api/restaurants'})
 # $.ajax({method: 'GET', url: 'api/restaurants/1'})
-
-    mc311 = MenuItemJoin.create!(
-    menu_id: 
-    item_id: 
-)
-mc312 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc313 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc314 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc315 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-
-mc321 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc322 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc323 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc324 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
-mc325 = MenuItemJoin.create!(
-    menu_id: ,
-    item_id: 
-)
