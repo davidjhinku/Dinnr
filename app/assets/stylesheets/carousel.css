@@ -12,9 +12,9 @@
     overflow: scroll;
 }
 
-.carousel-component ul::-webkit-scrollbar {
+/* .carousel-component ul::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .left-scroll-button {
     border-radius: 50px;

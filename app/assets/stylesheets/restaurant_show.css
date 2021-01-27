@@ -39,6 +39,21 @@
     margin-bottom: -9px;
 }
 
+.page-nav > a {
+    text-decoration: none;
+    color: black;
+    margin-right: 25px;
+    font-size: 14px;
+    padding: 15px 0;
+}
+
+.page-nav > a:hover {
+    /* position: relative; */
+    /* top: 50px; */
+    border-bottom: red 2px solid;
+    transform: translateY(1px);
+}
+
 .nav-hr {
     border: 1px solid rgba(0, 0, 0, 0.07);
     width: 95%;
@@ -52,12 +67,6 @@
     width: 100%;
 }
 
-.page-nav > a {
-    text-decoration: none;
-    color: black;
-    margin-right: 25px;
-    font-size: 14px;
-}
 
 .overview {
     padding: 15px;

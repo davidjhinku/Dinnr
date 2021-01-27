@@ -16,7 +16,7 @@ class SearchForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.fetchRestaurants(this.state)
-            .then(this.props.closeModal).then(this.props.history.push('./search'))
+            .then(this.props.closeModal).then(this.props.history.push('/search'))
     }
 
     handleChange(type) {
@@ -65,13 +65,17 @@ class SearchForm extends React.Component {
 
 
     render() {
+        let currState = this.state
+
         return (
             <form className='search-form' onSubmit={this.handleSubmit}>
-                <div className='search-div'>
-                    <input type="date" value={this.state.date} onChange={this.handleChange('date')}/>
-                    <select defaultValue={this.state.time} onChange={this.handleChange('time')}>
+                <div className='search-left'>
+                    <input type="date" value={currState.date} onChange={this.handleChange('date')}/>
+
+                    <select defaultValue={currState.time} onChange={this.handleChange('time')}>
                         {this.timeSlots()}
                     </select>
+                    
                     <select onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>
@@ -80,8 +84,8 @@ class SearchForm extends React.Component {
                     </select>
                 </div>
 
-                <div className='wildcard-box'>
-                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('wildcard')}/>
+                <div className='search-right'>
+                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={currState.search_filter} onChange={this.handleChange('wildcard')}/>
                     <button className='search-form-button'>Let's go</button>
                 </div>
             </form>

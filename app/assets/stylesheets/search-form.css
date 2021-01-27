@@ -11,17 +11,7 @@
 
 
 
-.search-form {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-}
-
-.search-div {
-    margin-right: 20px;
-    /* border-radius: 20px; */
-}
-.search-div > input {
+/* .search-div > input {
     height: 100%;
     width: 145px;
     border: 1px solid #e4e3e3;
@@ -54,7 +44,7 @@
 
 .search-form > button:hover {
     filter: brightness(85%);
-}
+} */
 
 /* ion-icon {
     font-size: 32px;
