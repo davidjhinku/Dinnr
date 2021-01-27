@@ -7,7 +7,11 @@
     width: 100%;
 }
 
-.carousel-component ul {
+.carousel-list {
+    position: relative;
+}
+
+.carousel-list > ul {
     display: flex;
     overflow: scroll;
 }
@@ -16,7 +20,7 @@
     display: none;
 } */
 
-.left-scroll-button {
+/* .left-scroll-button {
     border-radius: 50px;
     height: 43px;
     width: 43px;
@@ -49,7 +53,7 @@
 
 .right-scroll-button::before {
     content: '>';
-}
+} */
 
 .carousel-item {
     display: flex;
