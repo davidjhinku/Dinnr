@@ -6,9 +6,31 @@ import RestaurantMap from './restaurant_map'
 class RestaurantShow extends React.Component {
     constructor(props){
         super(props);
+        // this.scrollClick = this.scrollClick.bind(this)
+        this.overview = React.createRef();
+        this.photos = React.createRef();
+        this.menu = React.createRef();
+        this.reviews = React.createRef();
     }
+
     componentDidMount(){
         this.props.fetchRestaurant(this.props.restId)
+    }
+
+    scrollOverview() {
+        this.overview.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    scrollPhotos() {
+        this.photos.current.scrollIntoView({behavior: 'smooth'});
+    }
+
+    scrollMenu() {
+        this.menu.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    scrollReviews() {
+        this.reviews.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     render(){
@@ -19,6 +41,7 @@ class RestaurantShow extends React.Component {
                 <div>Loading Restaurant...</div>
             )
         } else {
+            debugger
             return (
                 <div className='show-page'>
                     {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
@@ -26,24 +49,24 @@ class RestaurantShow extends React.Component {
                     <div className='show-content'>
                         <div className='show-left-column'>
                             <nav className='page-nav'>
-                                <a href="#overview">Overview</a>    
-                                <a href="#photos">Photos</a>    
-                                <a href="#menu">Menu</a>    
-                                <a href="#reviews">Reviews</a> 
+                                <a onClick={this.scrollOverview.bind(this)}>Overview</a>    
+                                <a onClick={this.scrollPhotos.bind(this)}>Photos</a>    
+                                <a onClick={this.scrollMenu.bind(this)}>Menu</a>    
+                                <a onClick={this.scrollReviews.bind(this)}>Reviews</a> 
                             </nav>
                             <hr className='nav-hr'/>
-                            <nav id='overview' className='overview'>
+                            <nav ref={this.overview} className='overview'>
                                 <RestaurantDetails restaurant={this.props.restaurant}/>
                             </nav>
-                            <nav id='photos'>
+                            <nav ref={this.photos}>
                                 <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />
                             </nav>
 
-                            <nav id='menu'>
-                                {/* menu */}
+                            <nav ref={this.menu}>
+                                <h1>Menu to be added</h1>
                             </nav>
-                            <nav id='reviews'>
-                                {/* reviews */}
+                            <nav ref={this.reviews}>
+                                <h1>Reviews to be added</h1>
                             </nav>
                             <nav className='test-scrolling-block'>
                                 BIG BLOCK TO TEST SCROLLING
