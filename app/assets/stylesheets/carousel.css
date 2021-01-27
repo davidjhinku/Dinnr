@@ -14,9 +14,11 @@
 .carousel-list > ul {
     display: flex;
     overflow: scroll;
+    transition: 1s ease-in;
+    scroll-behavior: smooth;
 }
 
-.carousel-component ul::-webkit-scrollbar {
+.carousel-list > ul::-webkit-scrollbar {
     display: none;
 }
 

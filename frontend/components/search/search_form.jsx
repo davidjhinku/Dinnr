@@ -71,12 +71,9 @@ class SearchForm extends React.Component {
             <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-left'>
                     <input type="date" value={currState.date} onChange={this.handleChange('date')}/>
-                    
-                    <i class="far fa-clock"></i>
                     <select className='search-time' defaultValue={currState.time} onChange={this.handleChange('time')}>
                         {this.timeSlots()}
                     </select>
-                    <i class="far fa-clock"></i>
                     <select className='search-people' onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>

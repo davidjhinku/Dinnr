@@ -22,7 +22,7 @@ class RestaurantSearchItem extends React.Component {
 
                     <div className='rest-information'>
                         <p onClick={this.handleClick}>{rest.name}</p>
-                        <p>Restaurant Star Rating</p>
+                        <img src={window.starUrl} alt="rating"/>
                         <ul className='rest-info-list'>
                             <li>{rest.price_range}</li>
                             <li>{rest.cuisine_type}</li>

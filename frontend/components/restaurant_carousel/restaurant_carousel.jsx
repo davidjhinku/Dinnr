@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import RestaurantCarouselItem from './restaurant_carousel_item'
 
 class RestaurantCarousel extends React.Component {
@@ -7,14 +7,18 @@ class RestaurantCarousel extends React.Component {
         this.props.fetchRestaurants()
     }
 
-    leftScroll(e){
-        // e.preventDefault()
-        document.documentElement.scrollBy(50, 50)
-    }
+    // leftScroll(e){
+    //     document.documentElement.scrollBy(50, 50)
+    // }
 
-    rightScroll(e){
-        // e.preventDefault()
-        document.documentElement.scrollBy(50, 50)
+    // rightScroll(e){
+    //     document.documentElement.scrollBy(50, 50)
+    // }
+
+    scroll(distance){
+        // const ref = useRef(null);
+        // ref.current.scrollLeft += distance
+        document.getElementById('carousel-ul').scrollLeft += distance
     }
 
     render() {
@@ -26,10 +30,12 @@ class RestaurantCarousel extends React.Component {
                 <h2>Your picks for today</h2>
                 <hr/>
                 <div className='carousel-list'>
-                    <button className='left-scroll-button'></button>
-                    <button className='right-scroll-button'></button>
 
-                    <ul>
+                    <ul id='carousel-ul'>
+                        {/* <button className='left-scroll-button' onClick={this.leftScroll}></button>
+                        <button className='right-scroll-button' onClick={this.rightScroll}></button> */}
+                        <button className='left-scroll-button' onClick={() => this.scroll(-600)}></button>
+                        <button className='right-scroll-button' onClick={() => this.scroll(600)}></button>
                         {restList}
                     </ul>
                 </div>
