@@ -6,51 +6,52 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.delete_all
-# Restaurant.delete_all
+User.delete_all
+Restaurant.delete_all
+Menu.delete_all
+Item.delete_all
+MenuItem.delete_all
 # Favorite.delete_all
 # Review.delete_all
 # Reservation.delete_all
-# Menu.delete_all
-# Item.delete_all
-#MenuItem.delete_all Do we do this for a joins table?
+    
+User.create!(
+    first_name: 'demo',
+    last_name: 'user',
+    email: 'demo@gmail.com',
+    primary_location: 'New York',
+    password: 'password'
+)
 
-# User.create!(
-#     first_name: 'demo',
-#     last_name: 'user',
-#     email: 'demo@gmail.com',
-#     primary_location: 'New York',
-#     password: 'password'
-# )
+r1 = Restaurant.create!(
+    name: 'Hunan Counter',
+    bio: 'A wide selection of spicy dishes sure to make you sweat.',
+    cuisine_type: 'Chinese',
+    price_range:'$$',
+    lat: 40.73259,
+    lng: -73.98807,
+    open_at: 8.00,
+    close_at: 22.00,
+    address: '96 3rd Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10003',
+)
 
-# r1 = Restaurant.create!(
-#     name: 'Hunan Counter',
-#     bio: 'A wide selection of spicy dishes sure to make you sweat.',
-#     cuisine_type: 'Chinese',
-#     price_range:'$$',
-#     lat: 40.73259,
-#     lng: -73.98807,
-#     open_at: 8.00,
-#     close_at: 22.00,
-#     address: '96 3rd Ave',
-#     city: 'New York',
-#     state: 'NY',
-#     zip: '10003',
-# )
-
-# f11 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/1.jpg')
-# f12 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/2.jpg')
-# f13 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/3.jpg')
-# f14 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/4.jpg')
-# f15 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/5.jpg')
-# r1.photos.attach(io: f11, filename: '1.jpg')
-# r1.photos.attach(io: f12, filename: '2.jpg')
-# r1.photos.attach(io: f13, filename: '3.jpg')
-# r1.photos.attach(io: f14, filename: '4.jpg')
-# r1.photos.attach(io: f15, filename: '5.jpg')
+f11 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/1.jpg')
+f12 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/2.jpg')
+f13 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/3.jpg')
+f14 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/4.jpg')
+f15 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/5.jpg')
+r1.photos.attach(io: f11, filename: '1.jpg')
+r1.photos.attach(io: f12, filename: '2.jpg')
+r1.photos.attach(io: f13, filename: '3.jpg')
+r1.photos.attach(io: f14, filename: '4.jpg')
+r1.photos.attach(io: f15, filename: '5.jpg')
 
 m11 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r1.id
 )
 
 m11i1 = Item.create!(
@@ -58,13 +59,11 @@ m11i1 = Item.create!(
 	description: 'A spicy pot of assorted meats, vegetables and noodles',
 	price: 39.99
 )
-
 m11i2 = Item.create!(
 	name: 'Szechuan chicken',
 	description: 'Mouth-numbing chicken dish from Szechuan',
 	price: 25.99
 )
-
 m11i3 = Item.create!(
 	name: 'Szechuan Fried Rice',
 	description: 'Szechuan style fried rice with pickled chilies',
@@ -72,7 +71,8 @@ m11i3 = Item.create!(
 )
 
 m12 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r1.id
 )
 
 m12i1 = Item.create!(
@@ -80,47 +80,88 @@ m12i1 = Item.create!(
 	description: 'Mala seasoned fried lamb chops',
 	price: 35.99
 )
-
 m12i2 = Item.create!(
 	name: 'River Spinach Delight',
 	description: 'Stir fried river spinach in house special sauce',
 	price: 19.99
 )
-
 m12i3 = Item.create!(
 	name: 'Chili Fish Soup',
 	description: 'Striped bass simmered in pickled chili soup',
 	price: 29.99
 )
 
-# r2 = Restaurant.create!(
-#     name: 'American Bistro',
-#     bio: 'Burgers and fries, where could you possibly go wrong?',
-#     cuisine_type: 'American',
-#     price_range:'$',
-#     lat: 40.78296,
-#     lng: -73.97639,
-#     open_at: 8.00,
-#     close_at: 22.00,
-#     address: '366 Colombus Ave',
-#     city: 'New York',
-#     state: 'NY',
-#     zip: '10024',
-# )
+mc111 = MenuItemJoin.create!(
+    menu_id: m11.id,
+    item_id: m11i1.id
+)
+mc112 = MenuItemJoin.create!(
+    menu_id: m11.id,
+    item_id: m11i2.id
+)
+mc113 = MenuItemJoin.create!(
+    menu_id: m11.id,
+    item_id: m11i3.id
+)
+mc114 = MenuItemJoin.create!(
+    menu_id: m11.id,
+    item_id: m12i1.id
+)
+mc115 = MenuItemJoin.create!(
+    menu_id: m11.id,
+    item_id: m12i2.id
+)
 
-# f21 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/1.jpg')
-# f22 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/2.jpg')
-# f23 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/3.jpg')
-# f24 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/4.jpg')
-# f25 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/5.jpg')
-# r2.photos.attach(io: f21, filename: '1.jpg')
-# r2.photos.attach(io: f22, filename: '2.jpg')
-# r2.photos.attach(io: f23, filename: '3.jpg')
-# r2.photos.attach(io: f24, filename: '4.jpg')
-# r2.photos.attach(io: f25, filename: '5.jpg')
+mc121 = MenuItemJoin.create!(
+    menu_id: m12.id,
+    item_id: m12i1.id
+)
+mc122 = MenuItemJoin.create!(
+    menu_id: m12.id,
+    item_id: m12i2.id
+)
+mc123 = MenuItemJoin.create!(
+    menu_id: m12.id,
+    item_id: m12i3.id
+)
+mc124 = MenuItemJoin.create!(
+    menu_id: m12.id,
+    item_id: m11i2.id
+)
+mc125 = MenuItemJoin.create!(
+    menu_id: m12.id,
+    item_id: m11i3.id
+)
+
+r2 = Restaurant.create!(
+    name: 'American Bistro',
+    bio: 'Burgers and fries, where could you possibly go wrong?',
+    cuisine_type: 'American',
+    price_range:'$',
+    lat: 40.78296,
+    lng: -73.97639,
+    open_at: 8.00,
+    close_at: 22.00,
+    address: '366 Colombus Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10024',
+)
+
+f21 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/1.jpg')
+f22 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/2.jpg')
+f23 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/3.jpg')
+f24 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/4.jpg')
+f25 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/5.jpg')
+r2.photos.attach(io: f21, filename: '1.jpg')
+r2.photos.attach(io: f22, filename: '2.jpg')
+r2.photos.attach(io: f23, filename: '3.jpg')
+r2.photos.attach(io: f24, filename: '4.jpg')
+r2.photos.attach(io: f25, filename: '5.jpg')
 
 m21 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r2.id
 )
 
 m21i1 = Item.create!(
@@ -128,13 +169,11 @@ m21i1 = Item.create!(
 	description: 'French inspired nicoise salad with boiled eggs, olives, and Spanish tuna',
 	price: 19.99
 )
-
 m21i2 = Item.create!(
 	name: 'Club Sandwich with Fries',
 	description: 'Traditional club sandwich with truffle fries',
 	price: 14.99
 )
-
 m21i3 = Item.create!(
 	name: 'French Onion Soup and Baguette',
 	description: 'Classic french onion soup with house made baguette topped with gruyere',
@@ -142,7 +181,8 @@ m21i3 = Item.create!(
 )
 
 m22 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r2.id
 )
 
 m22i1 = Item.create!(
@@ -150,47 +190,87 @@ m22i1 = Item.create!(
 	description: 'Classic 48 oz t-bone steak with side veggies',
 	price: 27.99
 )
-
 m22i2 = Item.create!(
 	name: 'Angus Burger',
 	description: 'Quarter pounder Angus beef burger served with fries',
 	price: 19.99
 )
-
 m22i3 = Item.create!(
 	name: 'Fried Chicken and Biscuits',
 	description: 'Southern style fried chicken with biscuits and gravy',
 	price: 21.99
 )
 
-# r3 = Restaurant.create!(
-#     name: 'Island Grill',
-#     bio: "We have all the tropical flavors that you've been missing during this pandemic. Your tastebuds will be on the adventure of a lifetime.",
-#     cuisine_type: 'Seafood',
-#     price_range:'$',
-#     lat: 40.75961,
-#     lng: -73.96796,
-#     open_at: 11.00,
-#     close_at: 23.00,
-#     address: '217 E 51st St',
-#     city: 'New York',
-#     state: 'NY',
-#     zip: '10022',
-# )
+mc211 = MenuItemJoin.create!(
+    menu_id: m21.id,
+    item_id: m21i1.id
+)
+mc212 = MenuItemJoin.create!(
+    menu_id: m21.id,
+    item_id: m21i2.id
+)
+mc213 = MenuItemJoin.create!(
+    menu_id: m21.id,
+    item_id: m21i3.id
+)
+mc214 = MenuItemJoin.create!(
+    menu_id: m21.id,
+    item_id: m22i1.id
+)
+mc215 = MenuItemJoin.create!(
+    menu_id: m21.id,
+    item_id: m22i2.id
+)
 
-# f31 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/1.jpg')
-# f32 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/2.jpg')
-# f33 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/3.jpg')
-# f34 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/4.jpg')
-# f35 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/5.jpg')
-# r3.photos.attach(io: f31, filename: '1.jpg')
-# r3.photos.attach(io: f32, filename: '2.jpg')
-# r3.photos.attach(io: f33, filename: '3.jpg')
-# r3.photos.attach(io: f34, filename: '4.jpg')
-# r3.photos.attach(io: f35, filename: '5.jpg')
+mc221 = MenuItemJoin.create!(
+    menu_id: m22.id,
+    item_id: m22i1.id
+)
+mc222 = MenuItemJoin.create!(
+    menu_id: m22.id,
+    item_id: m22i2.id
+)
+mc223 = MenuItemJoin.create!(
+    menu_id: m22.id,
+    item_id: m22i3.id
+)
+mc224 = MenuItemJoin.create!(
+    menu_id: m22.id,
+    item_id: m21i2.id
+)
+mc225 = MenuItemJoin.create!(
+    menu_id: m22.id,
+    item_id: m21i3.id
+)
+r3 = Restaurant.create!(
+    name: 'Island Grill',
+    bio: "We have all the tropical flavors that you've been missing during this pandemic. Your tastebuds will be on the adventure of a lifetime.",
+    cuisine_type: 'Seafood',
+    price_range:'$',
+    lat: 40.75961,
+    lng: -73.96796,
+    open_at: 11.00,
+    close_at: 23.00,
+    address: '217 E 51st St',
+    city: 'New York',
+    state: 'NY',
+    zip: '10022',
+)
+
+f31 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/1.jpg')
+f32 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/2.jpg')
+f33 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/3.jpg')
+f34 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/4.jpg')
+f35 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/5.jpg')
+r3.photos.attach(io: f31, filename: '1.jpg')
+r3.photos.attach(io: f32, filename: '2.jpg')
+r3.photos.attach(io: f33, filename: '3.jpg')
+r3.photos.attach(io: f34, filename: '4.jpg')
+r3.photos.attach(io: f35, filename: '5.jpg')
 
 m31 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r3.id
 )
 
 m31i1 = Item.create!(
@@ -212,7 +292,8 @@ m31i3 = Item.create!(
 )
 
 m32 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r3.id
 )
 
 m32i1 = Item.create!(
@@ -233,34 +314,76 @@ m32i3 = Item.create!(
 	price: 22.99
 )
 
-# r4 = Restaurant.create!(
-#     name: 'Green Curry',
-#     bio: "Extra spicy authentic Thai food. Our curry's can't be beat, perfect for a chilly winters day or a summer sweat.",
-#     cuisine_type: 'Thai',
-#     price_range:'$$$',
-#     lat: 40.73880,
-#     lng: -74.00212,
-#     open_at: 10.00,
-#     close_at: 20.00,
-#     address: '60 Greenwich Ave',
-#     city: 'New York',
-#     state: 'NY',
-#     zip: '10011',
-# )
+mc311 = MenuItemJoin.create!(
+    menu_id: m31.id,
+    item_id: m31i1.id
+)
+mc312 = MenuItemJoin.create!(
+    menu_id: m31.id,
+    item_id: m31i2.id
+)
+mc313 = MenuItemJoin.create!(
+    menu_id: m31.id,
+    item_id: m31i3.id
+)
+mc314 = MenuItemJoin.create!(
+    menu_id: m31.id,
+    item_id: m32i1.id
+)
+mc315 = MenuItemJoin.create!(
+    menu_id: m31.id,
+    item_id: m32i2.id
+)
 
-# f41 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/1.jpg')
-# f42 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/2.jpg')
-# f43 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/3.jpg')
-# f44 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/4.jpg')
-# f45 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/5.jpg')
-# r4.photos.attach(io: f41, filename: '1.jpg')
-# r4.photos.attach(io: f42, filename: '2.jpg')
-# r4.photos.attach(io: f43, filename: '3.jpg')
-# r4.photos.attach(io: f44, filename: '4.jpg')
-# r4.photos.attach(io: f45, filename: '5.jpg')
+mc321 = MenuItemJoin.create!(
+    menu_id: m32.id,
+    item_id: m32i1.id
+)
+mc322 = MenuItemJoin.create!(
+    menu_id: m32.id,
+    item_id: m32i2.id
+)
+mc323 = MenuItemJoin.create!(
+    menu_id: m32.id,
+    item_id: m32i3.id
+)
+mc324 = MenuItemJoin.create!(
+    menu_id: m32.id,
+    item_id: m31i2.id
+)
+mc325 = MenuItemJoin.create!(
+    menu_id: m32.id,
+    item_id: m31i3.id
+)
+r4 = Restaurant.create!(
+    name: 'Green Curry',
+    bio: "Extra spicy authentic Thai food. Our curry's can't be beat, perfect for a chilly winters day or a summer sweat.",
+    cuisine_type: 'Thai',
+    price_range:'$$$',
+    lat: 40.73880,
+    lng: -74.00212,
+    open_at: 10.00,
+    close_at: 20.00,
+    address: '60 Greenwich Ave',
+    city: 'New York',
+    state: 'NY',
+    zip: '10011',
+)
+
+f41 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/1.jpg')
+f42 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/2.jpg')
+f43 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/3.jpg')
+f44 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/4.jpg')
+f45 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/5.jpg')
+r4.photos.attach(io: f41, filename: '1.jpg')
+r4.photos.attach(io: f42, filename: '2.jpg')
+r4.photos.attach(io: f43, filename: '3.jpg')
+r4.photos.attach(io: f44, filename: '4.jpg')
+r4.photos.attach(io: f45, filename: '5.jpg')
 
 m41 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r4.id
 )
 
 m41i1 = Item.create!(
@@ -282,7 +405,8 @@ m41i3 = Item.create!(
 )
 
 m42 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r4.id
 )
 
 m42i1 = Item.create!(
@@ -303,34 +427,77 @@ m42i3 = Item.create!(
 	price: 17.99
 )
 
-# r5 = Restaurant.create!(
-#     name: 'Sweet Escape',
-#     bio: "Ice cream for breakfast, we say why not? After a tough year you deserve to treat yo self.",
-#     cuisine_type: 'Dessert',
-#     price_range:'$',
-#     lat: 40.71669,
-#     lng: -73.99216,
-#     open_at: 14.00,
-#     close_at: 22.00,
-#     address: '150 E Broadway',
-#     city: 'New York',
-#     state: 'NY',
-#     zip: '10002',
-# )
+mc411 = MenuItemJoin.create!(
+    menu_id: m41.id,
+    item_id: m41i1.id
+)
+mc412 = MenuItemJoin.create!(
+    menu_id: m41.id,
+    item_id: m41i2.id
+)
+mc413 = MenuItemJoin.create!(
+    menu_id: m41.id,
+    item_id: m41i3.id
+)
+mc414 = MenuItemJoin.create!(
+    menu_id: m41.id,
+    item_id: m42i1.id
+)
+mc415 = MenuItemJoin.create!(
+    menu_id: m41.id,
+    item_id: m42i2.id
+)
 
-# f51 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/1.jpg')
-# f52 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/2.jpg')
-# f53 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/3.jpg')
-# f54 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/4.jpg')
-# f55 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/5.jpg')
-# r5.photos.attach(io: f51, filename: '1.jpg')
-# r5.photos.attach(io: f52, filename: '2.jpg')
-# r5.photos.attach(io: f53, filename: '3.jpg')
-# r5.photos.attach(io: f54, filename: '4.jpg')
-# r5.photos.attach(io: f55, filename: '5.jpg')
+mc421 = MenuItemJoin.create!(
+    menu_id: m42.id,
+    item_id: m42i1.id
+)
+mc422 = MenuItemJoin.create!(
+    menu_id: m42.id,
+    item_id: m42i2.id
+)
+mc423 = MenuItemJoin.create!(
+    menu_id: m42.id,
+    item_id: m42i3.id
+)
+mc424 = MenuItemJoin.create!(
+    menu_id: m42.id,
+    item_id: m41i1.id
+)
+mc425 = MenuItemJoin.create!(
+    menu_id: m42.id,
+    item_id: m41i2.id
+)
+
+r5 = Restaurant.create!(
+    name: 'Sweet Escape',
+    bio: "Ice cream for breakfast, we say why not? After a tough year you deserve to treat yo self.",
+    cuisine_type: 'Dessert',
+    price_range:'$',
+    lat: 40.71669,
+    lng: -73.99216,
+    open_at: 14.00,
+    close_at: 22.00,
+    address: '150 E Broadway',
+    city: 'New York',
+    state: 'NY',
+    zip: '10002',
+)
+
+f51 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/1.jpg')
+f52 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/2.jpg')
+f53 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/3.jpg')
+f54 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/4.jpg')
+f55 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/5.jpg')
+r5.photos.attach(io: f51, filename: '1.jpg')
+r5.photos.attach(io: f52, filename: '2.jpg')
+r5.photos.attach(io: f53, filename: '3.jpg')
+r5.photos.attach(io: f54, filename: '4.jpg')
+r5.photos.attach(io: f55, filename: '5.jpg')
 
 m51 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r5.id
 )
 
 m51i1 = Item.create!(
@@ -352,7 +519,8 @@ m51i3 = Item.create!(
 )
 
 m52 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r5.id
 )
 
 m52i1 = Item.create!(
@@ -373,34 +541,77 @@ m52i3 = Item.create!(
 	price: 15.99
 )
 
-# r6 = Restaurant.create!(
-#     name: 'Bangalore Spices',
-#     bio: 'With freshly imported spices and flavors just like your mum used to make, our dishes will warm your soul.',
-#     cuisine_type: 'Indian',
-#     price_range:'$$',
-#     lat: 40.71952,
-#     lng: -73.95671,
-#     open_at: 8.00,
-#     close_at: 22.00,
-#     address: '148 Bedford Ave',
-#     city: 'Brooklyn',
-#     state: 'NY',
-#     zip: '11201',
-# )
+mc511 = MenuItemJoin.create!(
+    menu_id: m51.id,
+    item_id: m51i1.id
+)
+mc512 = MenuItemJoin.create!(
+    menu_id: m51.id,
+    item_id: m51i2.id
+)
+mc513 = MenuItemJoin.create!(
+    menu_id: m51.id,
+    item_id: m51i3.id
+)
+mc514 = MenuItemJoin.create!(
+    menu_id: m51.id,
+    item_id: m52i1.id
+)
+mc515 = MenuItemJoin.create!(
+    menu_id: m51.id,
+    item_id: m52i2.id
+)
 
-# f61 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
-# f62 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
-# f63 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
-# f64 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
-# f65 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
-# r6.photos.attach(io: f61, filename: '1.jpg')
-# r6.photos.attach(io: f62, filename: '2.jpg')
-# r6.photos.attach(io: f63, filename: '3.jpg')
-# r6.photos.attach(io: f64, filename: '4.jpg')
-# r6.photos.attach(io: f65, filename: '5.jpg')
+mc521 = MenuItemJoin.create!(
+    menu_id: m52.id,
+    item_id: m52i1.id
+)
+mc522 = MenuItemJoin.create!(
+    menu_id: m52.id,
+    item_id: m52i2.id
+)
+mc523 = MenuItemJoin.create!(
+    menu_id: m52.id,
+    item_id: m52i3.id
+)
+mc524 = MenuItemJoin.create!(
+    menu_id: m52.id,
+    item_id: m51i1.id
+)
+mc525 = MenuItemJoin.create!(
+    menu_id: m52.id,
+    item_id: m51i2.id
+)
+
+r6 = Restaurant.create!(
+    name: 'Bangalore Spices',
+    bio: 'With freshly imported spices and flavors just like your mum used to make, our dishes will warm your soul.',
+    cuisine_type: 'Indian',
+    price_range:'$$',
+    lat: 40.71952,
+    lng: -73.95671,
+    open_at: 8.00,
+    close_at: 22.00,
+    address: '148 Bedford Ave',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+)
+
+f61 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
+f62 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
+f63 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
+f64 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
+f65 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
+r6.photos.attach(io: f61, filename: '1.jpg')
+r6.photos.attach(io: f62, filename: '2.jpg')
+r6.photos.attach(io: f63, filename: '3.jpg')
+r6.photos.attach(io: f64, filename: '4.jpg')
+r6.photos.attach(io: f65, filename: '5.jpg')
 
 m61 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r6.id
 )
 
 m61i1 = Item.create!(
@@ -422,7 +633,8 @@ m61i3 = Item.create!(
 )
 
 m62 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r6.id
 )
 
 m62i1 = Item.create!(
@@ -443,34 +655,77 @@ m62i3 = Item.create!(
 	price: 17.99
 )
 
-# r7 = Restaurant.create!(
-#     name: 'Pancake Heaven',
-#     bio: "Light and fluffy towers of syrupy goodness. Your dentist might not be too happy but we bet that's not your top priority.",
-#     cuisine_type: 'American',
-#     price_range:'$',
-#     lat: 40.71428,
-#     lng: -73.95577,
-#     open_at: 6.00,
-#     close_at: 16.00,
-#     address: '87 Havemeyer',
-#     city: 'Brooklyn',
-#     state: 'NY',
-#     zip: '11201',
-# )
+mc611 = MenuItemJoin.create!(
+    menu_id: m61.id,
+    item_id: m61i1.id
+)
+mc612 = MenuItemJoin.create!(
+    menu_id: m61.id,
+    item_id: m61i2.id
+)
+mc613 = MenuItemJoin.create!(
+    menu_id: m61.id,
+    item_id: m61i3.id
+)
+mc614 = MenuItemJoin.create!(
+    menu_id: m61.id,
+    item_id: m62i1.id
+)
+mc615 = MenuItemJoin.create!(
+    menu_id: m61.id,
+    item_id: m62i2.id
+)
 
-# f71 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
-# f72 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
-# f73 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
-# f74 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
-# f75 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
-# r7.photos.attach(io: f71, filename: '1.jpg')
-# r7.photos.attach(io: f72, filename: '2.jpg')
-# r7.photos.attach(io: f73, filename: '3.jpg')
-# r7.photos.attach(io: f74, filename: '4.jpg')
-# r7.photos.attach(io: f75, filename: '5.jpg')
+mc621 = MenuItemJoin.create!(
+    menu_id: m62.id,
+    item_id: m62i1.id
+)
+mc622 = MenuItemJoin.create!(
+    menu_id: m62.id,
+    item_id: m62i2.id
+)
+mc623 = MenuItemJoin.create!(
+    menu_id: m62.id,
+    item_id: m62i3.id
+)
+mc624 = MenuItemJoin.create!(
+    menu_id: m62.id,
+    item_id: m61i1.id
+)
+mc625 = MenuItemJoin.create!(
+    menu_id: m62.id,
+    item_id: m61i2.id
+)
+
+r7 = Restaurant.create!(
+    name: 'Pancake Heaven',
+    bio: "Light and fluffy towers of syrupy goodness. Your dentist might not be too happy but we bet that's not your top priority.",
+    cuisine_type: 'American',
+    price_range:'$',
+    lat: 40.71428,
+    lng: -73.95577,
+    open_at: 6.00,
+    close_at: 16.00,
+    address: '87 Havemeyer',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+)
+
+f71 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
+f72 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
+f73 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
+f74 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
+f75 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
+r7.photos.attach(io: f71, filename: '1.jpg')
+r7.photos.attach(io: f72, filename: '2.jpg')
+r7.photos.attach(io: f73, filename: '3.jpg')
+r7.photos.attach(io: f74, filename: '4.jpg')
+r7.photos.attach(io: f75, filename: '5.jpg')
 
 m71 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r7.id
 )
 
 m71i1 = Item.create!(
@@ -492,7 +747,8 @@ m71i3 = Item.create!(
 )
 
 m72 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r7.id
 )
 
 m72i1 = Item.create!(
@@ -513,34 +769,77 @@ m72i3 = Item.create!(
 	price: 14.99
 )
 
-# r8 = Restaurant.create!(
-#     name: 'Pho 77',
-#     bio: "The ultimate soup with rich delicious flavors. Our large bowls leave you full and give the best value.",
-#     cuisine_type: 'Vietnamese',
-#     price_range:'$',
-#     lat: 40.70508,
-#     lng: -73.98710,
-#     open_at: 10.00,
-#     close_at: 20.00,
-#     address: '20 Pearl St',
-#     city: 'Brooklyn',
-#     state: 'NY',
-#     zip: '11201',
-# )
+mc711 = MenuItemJoin.create!(
+    menu_id: m71.id,
+    item_id: m71i1.id
+)
+mc712 = MenuItemJoin.create!(
+    menu_id: m71.id,
+    item_id: m71i2.id
+)
+mc713 = MenuItemJoin.create!(
+    menu_id: m71.id,
+    item_id: m71i3.id
+)
+mc714 = MenuItemJoin.create!(
+    menu_id: m71.id,
+    item_id: m72i1.id
+)
+mc715 = MenuItemJoin.create!(
+    menu_id: m71.id,
+    item_id: m72i2.id
+)
 
-# f81 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/1.jpg')
-# f82 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/2.jpg')
-# f83 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/3.jpg')
-# f84 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/4.jpg')
-# f85 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/5.jpg')
-# r8.photos.attach(io: f81, filename: '1.jpg')
-# r8.photos.attach(io: f82, filename: '2.jpg')
-# r8.photos.attach(io: f83, filename: '3.jpg')
-# r8.photos.attach(io: f84, filename: '4.jpg')
-# r8.photos.attach(io: f85, filename: '5.jpg')
+mc721 = MenuItemJoin.create!(
+    menu_id: m72.id,
+    item_id: m72i1.id
+)
+mc722 = MenuItemJoin.create!(
+    menu_id: m72.id,
+    item_id: m72i2.id
+)
+mc723 = MenuItemJoin.create!(
+    menu_id: m72.id,
+    item_id: m72i3.id
+)
+mc724 = MenuItemJoin.create!(
+    menu_id: m72.id,
+    item_id: m71i1.id
+)
+mc725 = MenuItemJoin.create!(
+    menu_id: m72.id,
+    item_id: m71i2.id
+)
+
+r8 = Restaurant.create!(
+    name: 'Pho 77',
+    bio: "The ultimate soup with rich delicious flavors. Our large bowls leave you full and give the best value.",
+    cuisine_type: 'Vietnamese',
+    price_range:'$',
+    lat: 40.70508,
+    lng: -73.98710,
+    open_at: 10.00,
+    close_at: 20.00,
+    address: '20 Pearl St',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+)
+
+f81 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/1.jpg')
+f82 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/2.jpg')
+f83 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/3.jpg')
+f84 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/4.jpg')
+f85 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/5.jpg')
+r8.photos.attach(io: f81, filename: '1.jpg')
+r8.photos.attach(io: f82, filename: '2.jpg')
+r8.photos.attach(io: f83, filename: '3.jpg')
+r8.photos.attach(io: f84, filename: '4.jpg')
+r8.photos.attach(io: f85, filename: '5.jpg')
 
 m81 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r8.id
 )
 
 m81i1 = Item.create!(
@@ -562,7 +861,8 @@ m81i3 = Item.create!(
 )
 
 m82 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r8.id
 )
 
 m82i1 = Item.create!(
@@ -583,34 +883,77 @@ m82i3 = Item.create!(
 	price: 10.99
 )
 
-# r9 = Restaurant.create!(
-#     name: 'Mediterranean Seafood',
-#     bio: "Fresh local catch, straight from our local fishermen to your plate. Kick off the year with some healthy locally sourced foods.",
-#     cuisine_type: 'Seafood',
-#     price_range:'$$$$',
-#     lat: 40.71116,
-#     lng: -73.96538,
-#     open_at: 12.00,
-#     close_at: 22.00,
-#     address: '85 Broadway',
-#     city: 'Brooklyn',
-#     state: 'NY',
-#     zip: '11201',
-# )
+mc811 = MenuItemJoin.create!(
+    menu_id: m81.id,
+    item_id: m81i1.id
+)
+mc812 = MenuItemJoin.create!(
+    menu_id: m81.id,
+    item_id: m81i2.id
+)
+mc813 = MenuItemJoin.create!(
+    menu_id: m81.id,
+    item_id: m81i3.id
+)
+mc814 = MenuItemJoin.create!(
+    menu_id: m81.id,
+    item_id: m82i1.id
+)
+mc815 = MenuItemJoin.create!(
+    menu_id: m81.id,
+    item_id: m82i2.id
+)
 
-# f91 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/1.jpg')
-# f92 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/2.jpg')
-# f93 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/3.jpg')
-# f94 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/4.jpg')
-# f95 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/5.jpg')
-# r9.photos.attach(io: f91, filename: '1.jpg')
-# r9.photos.attach(io: f92, filename: '2.jpg')
-# r9.photos.attach(io: f93, filename: '3.jpg')
-# r9.photos.attach(io: f94, filename: '4.jpg')
-# r9.photos.attach(io: f95, filename: '5.jpg')
+mc821 = MenuItemJoin.create!(
+    menu_id: m82.id,
+    item_id: m82i1.id
+)
+mc822 = MenuItemJoin.create!(
+    menu_id: m82.id,
+    item_id: m82i2.id
+)
+mc823 = MenuItemJoin.create!(
+    menu_id: m82.id,
+    item_id: m82i3.id
+)
+mc824 = MenuItemJoin.create!(
+    menu_id: m82.id,
+    item_id: m81i1.id
+)
+mc825 = MenuItemJoin.create!(
+    menu_id: m82.id,
+    item_id: m81i2.id
+)
+
+r9 = Restaurant.create!(
+    name: 'Mediterranean Seafood',
+    bio: "Fresh local catch, straight from our local fishermen to your plate. Kick off the year with some healthy locally sourced foods.",
+    cuisine_type: 'Seafood',
+    price_range:'$$$$',
+    lat: 40.71116,
+    lng: -73.96538,
+    open_at: 12.00,
+    close_at: 22.00,
+    address: '85 Broadway',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+)
+
+f91 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/1.jpg')
+f92 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/2.jpg')
+f93 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/3.jpg')
+f94 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/4.jpg')
+f95 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/5.jpg')
+r9.photos.attach(io: f91, filename: '1.jpg')
+r9.photos.attach(io: f92, filename: '2.jpg')
+r9.photos.attach(io: f93, filename: '3.jpg')
+r9.photos.attach(io: f94, filename: '4.jpg')
+r9.photos.attach(io: f95, filename: '5.jpg')
 
 m91 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r9.id
 )
 
 m91i1 = Item.create!(
@@ -632,7 +975,8 @@ m91i3 = Item.create!(
 )
 
 m92 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r9.id
 )
 
 m92i1 = Item.create!(
@@ -653,34 +997,77 @@ m92i3 = Item.create!(
 	price: 25.99
 )
 
-# r10 = Restaurant.create!(
-#     name: 'Bonchan',
-#     bio: "We offer great BBQ cooked right at your table, it doesn't get fresher than this. Our meat is sourced straight from a private supplier for the best flavor",
-#     cuisine_type: 'Korean',
-#     price_range:'$$$$',
-#     lat: 40.70283,
-#     lng: -73.98770,
-#     open_at: 10.00,
-#     close_at: 22.00,
-#     address: '81 Washington St',
-#     city: 'Brooklyn',
-#     state: 'NY',
-#     zip: '11201',
-# )
+mc911 = MenuItemJoin.create!(
+    menu_id: m91.id,
+    item_id: m91i1.id
+)
+mc912 = MenuItemJoin.create!(
+    menu_id: m91.id,
+    item_id: m91i2.id
+)
+mc913 = MenuItemJoin.create!(
+    menu_id: m91.id,
+    item_id: m91i3.id
+)
+mc914 = MenuItemJoin.create!(
+    menu_id: m91.id,
+    item_id: m92i1.id
+)
+mc915 = MenuItemJoin.create!(
+    menu_id: m91.id,
+    item_id: m92i2.id
+)
 
-# f101 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/1.jpg')
-# f102 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/2.jpg')
-# f103 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/3.jpg')
-# f104 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/4.jpg')
-# f105 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/5.jpg')
-# r10.photos.attach(io: f101, filename: '1.jpg')
-# r10.photos.attach(io: f102, filename: '2.jpg')
-# r10.photos.attach(io: f103, filename: '3.jpg')
-# r10.photos.attach(io: f104, filename: '4.jpg')
-# r10.photos.attach(io: f105, filename: '5.jpg')
+mc921 = MenuItemJoin.create!(
+    menu_id: m92.id,
+    item_id: m92i1.id
+)
+mc922 = MenuItemJoin.create!(
+    menu_id: m92.id,
+    item_id: m92i2.id
+)
+mc923 = MenuItemJoin.create!(
+    menu_id: m92.id,
+    item_id: m92i3.id
+)
+mc924 = MenuItemJoin.create!(
+    menu_id: m92.id,
+    item_id: m91i1.id
+)
+mc925 = MenuItemJoin.create!(
+    menu_id: m92.id,
+    item_id: m91i2.id
+)
+
+r10 = Restaurant.create!(
+    name: 'Bonchan',
+    bio: "We offer great BBQ cooked right at your table, it doesn't get fresher than this. Our meat is sourced straight from a private supplier for the best flavor",
+    cuisine_type: 'Korean',
+    price_range:'$$$$',
+    lat: 40.70283,
+    lng: -73.98770,
+    open_at: 10.00,
+    close_at: 22.00,
+    address: '81 Washington St',
+    city: 'Brooklyn',
+    state: 'NY',
+    zip: '11201',
+)
+
+f101 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/1.jpg')
+f102 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/2.jpg')
+f103 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/3.jpg')
+f104 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/4.jpg')
+f105 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/5.jpg')
+r10.photos.attach(io: f101, filename: '1.jpg')
+r10.photos.attach(io: f102, filename: '2.jpg')
+r10.photos.attach(io: f103, filename: '3.jpg')
+r10.photos.attach(io: f104, filename: '4.jpg')
+r10.photos.attach(io: f105, filename: '5.jpg')
 
 m101 = Menu.create!(
-	name: 'Lunch',
+    name: 'Lunch',
+    restaurant_id: r10.id
 )
 
 m101i1 = Item.create!(
@@ -702,7 +1089,8 @@ m101i3 = Item.create!(
 )
 
 m102 = Menu.create!(
-	name: 'Dinner',
+    name: 'Dinner',
+    restaurant_id: r10.id
 )
 
 m102i1 = Item.create!(
@@ -723,6 +1111,49 @@ m102i3 = Item.create!(
 	price: 19.99
 )
 
+mc1011 = MenuItemJoin.create!(
+    menu_id: m101.id,
+    item_id: m101i1.id
+)
+mc1012 = MenuItemJoin.create!(
+    menu_id: m101.id,
+    item_id: m101i2.id
+)
+mc1013 = MenuItemJoin.create!(
+    menu_id: m101.id,
+    item_id: m101i3.id
+)
+mc1014 = MenuItemJoin.create!(
+    menu_id: m101.id,
+    item_id: m102i1.id
+)
+mc1015 = MenuItemJoin.create!(
+    menu_id: m101.id,
+    item_id: m102i2.id
+)
+
+mc1021 = MenuItemJoin.create!(
+    menu_id: m102.id,
+    item_id: m102i1.id
+)
+mc1022 = MenuItemJoin.create!(
+    menu_id: m102.id,
+    item_id: m102i2.id
+)
+mc1023 = MenuItemJoin.create!(
+    menu_id: m102.id,
+    item_id: m102i3.id
+)
+mc1024 = MenuItemJoin.create!(
+    menu_id: m102.id,
+    item_id: m101i1.id
+)
+mc1025 = MenuItemJoin.create!(
+    menu_id: m102.id,
+    item_id: m101i2.id
+)
+
+
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
 #{first_name: 'demo1', last_name: 'account1', email: 'demo1@demo.com', primary_location: 'New York', password: 'password'}
@@ -732,4 +1163,44 @@ m102i3 = Item.create!(
 # $.ajax({method: 'GET', url: 'api/restaurants'})
 # $.ajax({method: 'GET', url: 'api/restaurants/1'})
 
-    
+    mc311 = MenuItemJoin.create!(
+    menu_id: 
+    item_id: 
+)
+mc312 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc313 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc314 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc315 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+
+mc321 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc322 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc323 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc324 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
+mc325 = MenuItemJoin.create!(
+    menu_id: ,
+    item_id: 
+)
