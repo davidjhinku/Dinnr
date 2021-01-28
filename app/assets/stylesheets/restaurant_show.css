@@ -1,8 +1,3 @@
-.test-scrolling-block {
-    border: 1px black solid;
-    height: 900px;
-}
-
 .show-page img{
     height: 430px;
     width: 100%;
@@ -166,3 +161,5 @@ ul.photo-list > li > img {
     margin-top: 18px;
     margin-bottom: 5px;
 }
+
+/* Menu Styling */

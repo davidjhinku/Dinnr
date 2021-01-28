@@ -18,8 +18,10 @@ class Api::RestaurantsController < ApplicationController
     end
 
     def show
-        @restaurant = Restaurant.with_attached_photos.find(params[:id])
-        # need to .includes with business_hours, menus, 
+        # @restaurant = Restaurant.with_attached_photos.find(params[:id])
+        @restaurant = Restaurant.includes(menus: :items).with_attached_photos.find(params[:id])
+        
+        # debugger
         render :show
     end
 

@@ -10,7 +10,7 @@ User.delete_all
 Restaurant.delete_all
 Menu.delete_all
 Item.delete_all
-MenuItem.delete_all
+MenuItemJoin.delete_all
 # Favorite.delete_all
 # Review.delete_all
 # Reservation.delete_all

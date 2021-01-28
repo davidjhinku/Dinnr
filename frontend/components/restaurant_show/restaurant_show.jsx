@@ -1,6 +1,7 @@
 import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
+import Menu from './menu'
 import RestaurantMap from './restaurant_map'
 
 class RestaurantShow extends React.Component {
@@ -62,14 +63,11 @@ class RestaurantShow extends React.Component {
                             </nav>
 
                             <nav ref={this.menu}>
-                                <h1>Menu to be added</h1>
+                                <Menu menus={this.props.restaurant.menus} />
                             </nav>
+                            
                             <nav ref={this.reviews}>
-                                <h1>Reviews to be added</h1>
-                            </nav>
-                            <nav className='test-scrolling-block'>
-                                BIG BLOCK TO TEST SCROLLING
-
+                                <p>Reviews to be added</p>
                             </nav>
                         </div>
                             
