@@ -27,7 +27,6 @@
     margin-left: 20px;
     padding: 5px;
     width: 800px;
-    /* border: 1px solid blue */
 }
 
 .search-restaurant-item {
@@ -36,7 +35,6 @@
 }
 
 .search-restaurant-item > img {
-    /* border: 1px solid red; */
     height: 200px;
     width: 200px;
     margin-right: 18px;

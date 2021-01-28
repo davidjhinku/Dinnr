@@ -1,4 +1,3 @@
-import React from 'react'
 import Spash from './splash'
 import {connect} from 'react-redux'
 

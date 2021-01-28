@@ -2,6 +2,7 @@ import React from 'react'
 import SearchFormContainer from './search_form_container'
 import RestaurantSearch from '../restaurant_search/restaurant_search'
 import FilterForm from './filter_form'
+
 class SearchPage extends React.Component {
 
     render() {

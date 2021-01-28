@@ -33,7 +33,6 @@
  .main-app {
    margin: 0px auto;
    max-width: 1600px;
-   /* width: 1850px; */
    background-color: white;
    display: flex;
    flex-direction: column;

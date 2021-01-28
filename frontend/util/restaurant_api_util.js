@@ -5,7 +5,6 @@ export const fetchRestaurants = search => {
         data: {search}
     })
 }
-// eventually add data which used to get specific ones
 
 export const fetchRestaurant = restId => {
     return $.ajax({

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import RestaurantCarouselItem from './restaurant_carousel_item'
 
 class RestaurantCarousel extends React.Component {
@@ -7,17 +7,7 @@ class RestaurantCarousel extends React.Component {
         this.props.fetchRestaurants()
     }
 
-    // leftScroll(e){
-    //     document.documentElement.scrollBy(50, 50)
-    // }
-
-    // rightScroll(e){
-    //     document.documentElement.scrollBy(50, 50)
-    // }
-
     scroll(distance){
-        // const ref = useRef(null);
-        // ref.current.scrollLeft += distance
         document.getElementById('carousel-ul').scrollLeft += distance
     }
 
@@ -32,8 +22,6 @@ class RestaurantCarousel extends React.Component {
                 <div className='carousel-list'>
 
                     <ul id='carousel-ul'>
-                        {/* <button className='left-scroll-button' onClick={this.leftScroll}></button>
-                        <button className='right-scroll-button' onClick={this.rightScroll}></button> */}
                         <button className='left-scroll-button' onClick={() => this.scroll(-600)}></button>
                         <button className='right-scroll-button' onClick={() => this.scroll(600)}></button>
                         {restList}

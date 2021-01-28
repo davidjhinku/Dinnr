@@ -43,11 +43,9 @@ class NavBar extends React.Component {
         return (
             <ul className='session-links'>
                 <li>
-                    {/* <Link to='/signup' >Sign up</Link> */}
                     <button className='signup-button' onClick={() => this.props.openModal('signup')}>Sign up</button>
                 </li>
                 <li>
-                    {/* <Link to='/signin' >Sign in</Link> */}
                     <button className='signin-button' onClick={() => this.props.openModal('signin')}>Sign in</button>
                 </li>
                 <li onClick={() => this.props.openModal('search')} >
@@ -60,9 +58,7 @@ class NavBar extends React.Component {
     render() {
         let session
         this.props.currentUser ? session = this.displayLoggout() : session = this.displaySessionLinks()
-
-        // debugger
-
+        
         return (
             <nav>
                 {session}

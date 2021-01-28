@@ -19,7 +19,6 @@ class Menu extends React.Component {
         const menuNames = Object.keys(this.props.menus)
         const menuItems = Object.values(this.props.menus)[this.state.selectedMenu]
 
-        // debugger
         return(
             <div className='show-restaurant-menu'>
                 <h2>Menu</h2>

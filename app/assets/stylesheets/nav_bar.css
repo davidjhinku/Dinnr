@@ -115,12 +115,4 @@ ul.nav-dropdown > li {
     cursor: pointer;
     vertical-align: middle;
     margin-left: 8px;
-    /* margin-top: 35px; */
 }
-
-/* .dropdown-options li:hover {
-    filter: brightness(85%);
-} */
-/* .dropdown-options li :link:hover {
-    filter: brightness(85%);
-} */

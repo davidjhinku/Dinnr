@@ -1,4 +1,3 @@
-import React from 'react'
 import SearchForm from './search_form'
 import { connect } from 'react-redux'
 import {fetchRestaurants} from '../../actions/restaurant_actions'
