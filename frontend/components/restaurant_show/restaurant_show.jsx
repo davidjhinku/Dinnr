@@ -65,7 +65,7 @@ class RestaurantShow extends React.Component {
                             <nav ref={this.menu}>
                                 <Menu menus={this.props.restaurant.menus} />
                             </nav>
-                            
+
                             <nav ref={this.reviews}>
                                 <p>Reviews to be added</p>
                             </nav>

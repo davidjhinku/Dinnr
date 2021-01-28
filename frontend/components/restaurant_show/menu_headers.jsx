@@ -3,15 +3,15 @@ import React from 'react'
 const MenuHeader = ({ menus, selectedMenu, clickMenu }) => {
     const headers = menus.map((menu, idx) => {
         const currentMenu = idx === selectedMenu ? 'active' : '';
-        debugger
+        // debugger
         return (
             <li key={idx} className={currentMenu} onClick={() => clickMenu(idx)}>
-                {menu.name}
+                {menu}
             </li>
         )
     })
     
-    debugger
+    // debugger
     return(
         <ul className='menu-header'>
             {headers}

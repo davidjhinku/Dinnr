@@ -99,6 +99,7 @@ ul.photo-list {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-gap: 5px;
+    margin-bottom: 10px;
 }
 ul.photo-list > li > img {
     height: 12rem;

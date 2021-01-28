@@ -9,11 +9,19 @@
     # :first_picture_url, :photos, :average_review, :reviews
     json.photoUrls @restaurant.photos.map {|file| url_for(file) }
     
+    # debugger
     json.menus do
         @restaurant.menus.each do |menu|
+
+            # debugger
             json.set! menu.name do
+
+                # debugger
                 menu.items.each do |item|
-                    json.extract! item, :name, :description, :price
+
+                    json.set! item.id do# debugger
+                        json.extract! item, :name, :description, :price
+                    end
                 end
             end
         end

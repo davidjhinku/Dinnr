@@ -23,5 +23,8 @@ export const fetchRestaurants = search => dispatch => {
 // eventually takes in filter data
 
 export const fetchRestaurant = restId => dispatch => {
-    return APIUTIL.fetchRestaurant(restId).then(restaurant => dispatch(receiveRestaurant(restaurant)))
+    return APIUTIL.fetchRestaurant(restId).then(restaurant => {
+        return dispatch(receiveRestaurant(restaurant))
+    })
+    
 }

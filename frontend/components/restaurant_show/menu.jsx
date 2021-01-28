@@ -1,5 +1,6 @@
 import React from 'react'
 import MenuHeader from './menu_headers'
+import MenuItems from './menu_items'
 
 class Menu extends React.Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Menu extends React.Component {
                 <hr/>
 
                 <div className='menu-content'>
-                    <p>{menuItems.name}</p>
+                    <MenuItems items={Object.values(menuItems)} />
                 </div>
             </div>
         )
