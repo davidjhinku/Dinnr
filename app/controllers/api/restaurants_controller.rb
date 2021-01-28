@@ -1,13 +1,20 @@
 class Api::RestaurantsController < ApplicationController
     def index
-        @restaurants = Restaurant.all
-        # need to .includes with reviews
+        if !params[:search]
+            @restaurants = Restaurant.all
+        else 
+            @restaurants = Restaurant.search(search_terms)
+        end
         render :index
     end
 
     def show
-        @restaurant = Restaurant.with_attached_photos.find(params[:id])
-        # need to .includes with business_hours, menus, 
+        @restaurant = Restaurant.includes(menus: :items).with_attached_photos.find(params[:id])
         render :show
+    end
+
+    private
+    def search_terms
+        params.require(:search).permit(:date, :time, :party_size, :wildcard)
     end
 end

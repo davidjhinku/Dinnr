@@ -15,7 +15,6 @@ class SignUp extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // this.props.processForm(this.state).then(() => this.props.history.push('/'))
         this.props.processForm(this.state).then(this.props.closeModal)
     }
 
@@ -45,7 +44,7 @@ class SignUp extends React.Component {
         return (
             <div className="modal-content">
                 <h2>Welcome to Dinnr!</h2>
-                <hr/>
+                <hr className='modal-hr'/>
 
                 {this.renderErrors()}
                 <form className='session-form' onSubmit={this.handleSubmit}>
@@ -60,13 +59,13 @@ class SignUp extends React.Component {
                     <select value={this.state.primary_location} onChange={this.handleChange('primary_location')} required>
                         <option value="" disabled hidden>Primary Dining Location</option>
                         <option value="New York">New York</option>
-                        <option value="Chicago">Chicago</option>
-                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Brooklyn">Brooklyn</option>
+                        <option value="Queens">Queens</option>
                     </select>
                     <br/>
                     <button className='session-submit-button'>Create Account</button>
                 </form>
-                <hr/>
+                <hr className='modal-hr'/>
 
                 <span>Already a member? {props.otherForm}</span>
             </div>

@@ -7,6 +7,10 @@ class RestaurantCarousel extends React.Component {
         this.props.fetchRestaurants()
     }
 
+    scroll(distance){
+        document.getElementById('carousel-ul').scrollLeft += distance
+    }
+
     render() {
         const restList = this.props.restaurants.map((restaurant, idx) => {
             return <RestaurantCarouselItem key={idx} restaurant={restaurant} {...this.props}/>
@@ -15,7 +19,14 @@ class RestaurantCarousel extends React.Component {
             <div className='carousel-component'>
                 <h2>Your picks for today</h2>
                 <hr/>
-                <ul>{restList}</ul>
+                <div className='carousel-list'>
+
+                    <ul id='carousel-ul'>
+                        <button className='left-scroll-button' onClick={() => this.scroll(-600)}></button>
+                        <button className='right-scroll-button' onClick={() => this.scroll(600)}></button>
+                        {restList}
+                    </ul>
+                </div>
             </div>
         )
     }

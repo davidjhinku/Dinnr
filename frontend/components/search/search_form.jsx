@@ -1,20 +1,22 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class SearchForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            date: new Date().toLocaleDateString(),
+            date: this.startingDate(),
             time: new Date().getHours() + 1,
-            people: 2,
-            search_filter: '',
+            party_size: 2,
+            wildcard: '',
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
-        // send information to search page inc state to pre-fill top container
-        //Link to='/restaurantsearch' maybe?
+        e.preventDefault()
+        this.props.fetchRestaurants(this.state)
+            .then(this.props.closeModal).then(this.props.history.push('/search'))
     }
 
     handleChange(type) {
@@ -23,6 +25,21 @@ class SearchForm extends React.Component {
         }
     }
     
+    startingDate(){
+        const today = new Date()
+        let dd = today.getDate()
+        let mm = today.getMonth() + 1
+        const yyyy = today.getFullYear()
+
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        return `${yyyy}-${mm}-${dd}`
+    }
+
     numberToTime(num){
         let dayTime = 'AM'
         if (num >= 12) dayTime = 'PM'
@@ -36,24 +53,28 @@ class SearchForm extends React.Component {
         return `${hour}:${minute} ${dayTime}`
     }
 
+    timeSlots() {
+        let options = []
+
+        for (let i = 0; i <=24; i ++) {
+            options.push(<option key={i} value={i}>{this.numberToTime(i)}</option>)
+        }
+
+        return options
+    }
+
 
     render() {
-        const currentDate = new Date().toLocaleDateString();
-        const currentTime = new Date().getHours() + 1;
-        
+        let currState = this.state
+
         return (
-            <form className='search-form'>
-                <div className='search-div'>
-                    <input type="date" defaultValue={currentDate} onChange={this.handleChange('date')}/>
-                    <select onChange={this.handleChange('time')}>
-                        <option value={currentTime+0.5}>{this.numberToTime(currentTime+0.5)}</option>
-                        <option value={currentTime+1.0}>{this.numberToTime(currentTime+1.0)}</option>
-                        <option value={currentTime+1.5}>{this.numberToTime(currentTime+1.5)}</option>
-                        <option value={currentTime+2.0}>{this.numberToTime(currentTime+2.0)}</option>
-                        <option value={currentTime+2.5}>{this.numberToTime(currentTime+2.5)}</option>
-                        <option value={currentTime+3.0}>{this.numberToTime(currentTime+3.0)}</option>
+            <form className='search-form' onSubmit={this.handleSubmit}>
+                <div className='search-left'>
+                    <input type="date" value={currState.date} onChange={this.handleChange('date')}/>
+                    <select className='search-time' defaultValue={currState.time} onChange={this.handleChange('time')}>
+                        {this.timeSlots()}
                     </select>
-                    <select onChange={this.handleChange('people')}>
+                    <select className='search-people' onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>
                         <option value="4">4 people</option>
@@ -61,11 +82,13 @@ class SearchForm extends React.Component {
                     </select>
                 </div>
 
-                <input type="text" placeholder='Location, Restaurant, or Cuisine' value={this.state.search_filter} onChange={this.handleChange('search_filter')}/>
-                <button className='search-form-button'>Let's go</button>
+                <div className='search-right'>
+                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={currState.search_filter} onChange={this.handleChange('wildcard')}/>
+                    <button className='search-form-button'>Let's go</button>
+                </div>
             </form>
         )
     }
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);

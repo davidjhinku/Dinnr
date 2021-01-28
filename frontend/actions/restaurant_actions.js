@@ -17,11 +17,13 @@ const receiveRestaurant = restaurant => {
     }
 }
 
-export const fetchRestaurants = () => dispatch => {
-    return APIUTIL.fetchRestaurants().then(restaurants => dispatch(receiveRestaurants(restaurants)))
+export const fetchRestaurants = search => dispatch => {
+    return APIUTIL.fetchRestaurants(search).then(restaurants => dispatch(receiveRestaurants(restaurants)))
 }
-// eventually takes in filter data
 
 export const fetchRestaurant = restId => dispatch => {
-    return APIUTIL.fetchRestaurant(restId).then(restaurant => dispatch(receiveRestaurant(restaurant)))
+    return APIUTIL.fetchRestaurant(restId).then(restaurant => {
+        return dispatch(receiveRestaurant(restaurant))
+    })
+    
 }

@@ -1,0 +1,33 @@
+.search-right > input {
+    background-image: image-url('search-icon');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 15px;
+}
+
+.search-time {
+    background-image: image-url('clock-icon');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 14px; 
+}
+
+.search-people {
+    background-image: image-url('people-icon');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 14px;
+}
+
+.search-left > input {
+    background-image: image-url('calendar-icon');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 14px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: image-url('arrow-icon');
+    background-position: 1px 3px;
+    width: 10px;
+}

@@ -6,8 +6,6 @@ import SearchPageContainer from './search/search_page_container'
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container'
 import NavFooter from './nav_footer/nav_footer'
 import {Link, Route, Switch} from 'react-router-dom'
-// import SigninFormContainer from './session_form/signin_form_container'
-// import SignupFormContainer from './session_form/signup_form_container'
 
 const App = () => (
     <div className="main-app">
