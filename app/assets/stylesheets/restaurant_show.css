@@ -85,6 +85,10 @@
     margin-right: 13px;
 }
 
+.show-restaurant-photos {
+    padding: 15px;
+}
+
 #photos {
     padding: 15px;
 }
@@ -164,3 +168,42 @@ ul.photo-list > li > img {
 }
 
 /* Menu Styling */
+.show-restaurant-menu {
+    padding: 15px;
+}
+
+.menu-header {
+    display: flex;
+}
+
+.menu-header > li {
+    padding: 7px 15px;
+    border: 1px solid #dadada;
+    margin-right: 16px;
+    text-transform: uppercase;
+}
+
+.menu-header > li:hover {
+    cursor: pointer;
+}
+
+li.active {
+    border: 2px solid #e83c48;
+}
+
+ul.item-list {
+    font-size: 15px;
+}
+
+ul.item-list > li {
+    /* margin-top: 5px; */
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+p.item-name, p.item-price {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Reviews styling */
