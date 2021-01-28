@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from './store/store'
-import Root from './components/root'
+import configureStore from './store/store';
+import Root from './components/root';
 
 //testing
 // import {signup, signin, logout} from './actions/session_actions'
-import {fetchRestaurants, fetchRestaurant} from './actions/restaurant_actions'
+// import {fetchRestaurants, fetchRestaurant} from './actions/restaurant_actions'
 //testing
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,15 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore()
     }
 
-
     //testing
     // window.signup = signup
     // window.signin = signin
     // window.logout = logout
-    window.fetchRestaurants = fetchRestaurants
-    window.fetchRestaurant = fetchRestaurant
-    window.getState = store.getState
-    window.dispatch = store.dispatch
+    // window.fetchRestaurants = fetchRestaurants
+    // window.fetchRestaurant = fetchRestaurant
+    // window.getState = store.getState
+    // window.dispatch = store.dispatch
     //testing
 
     ReactDOM.render(<Root store={store} />, root)
