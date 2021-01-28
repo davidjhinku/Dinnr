@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 User.delete_all
 Restaurant.delete_all
 Menu.delete_all
@@ -38,11 +40,11 @@ r1 = Restaurant.create!(
     zip: '10003',
 )
 
-f11 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/1.jpg')
-f12 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/2.jpg')
-f13 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/3.jpg')
-f14 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/4.jpg')
-f15 = open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/5.jpg')
+f11 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/1.jpg')
+f12 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/2.jpg')
+f13 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/3.jpg')
+f14 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/4.jpg')
+f15 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/1.+hunan_counter/5.jpg')
 r1.photos.attach(io: f11, filename: '1.jpg')
 r1.photos.attach(io: f12, filename: '2.jpg')
 r1.photos.attach(io: f13, filename: '3.jpg')
@@ -148,11 +150,11 @@ r2 = Restaurant.create!(
     zip: '10024',
 )
 
-f21 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/1.jpg')
-f22 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/2.jpg')
-f23 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/3.jpg')
-f24 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/4.jpg')
-f25 = open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/5.jpg')
+f21 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/1.jpg')
+f22 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/2.jpg')
+f23 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/3.jpg')
+f24 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/4.jpg')
+f25 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/2.+american_bistro/5.jpg')
 r2.photos.attach(io: f21, filename: '1.jpg')
 r2.photos.attach(io: f22, filename: '2.jpg')
 r2.photos.attach(io: f23, filename: '3.jpg')
@@ -257,11 +259,11 @@ r3 = Restaurant.create!(
     zip: '10022',
 )
 
-f31 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/1.jpg')
-f32 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/2.jpg')
-f33 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/3.jpg')
-f34 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/4.jpg')
-f35 = open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/5.jpg')
+f31 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/1.jpg')
+f32 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/2.jpg')
+f33 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/3.jpg')
+f34 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/4.jpg')
+f35 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/3.+island_grill/5.jpg')
 r3.photos.attach(io: f31, filename: '1.jpg')
 r3.photos.attach(io: f32, filename: '2.jpg')
 r3.photos.attach(io: f33, filename: '3.jpg')
@@ -370,11 +372,11 @@ r4 = Restaurant.create!(
     zip: '10011',
 )
 
-f41 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/1.jpg')
-f42 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/2.jpg')
-f43 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/3.jpg')
-f44 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/4.jpg')
-f45 = open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/5.jpg')
+f41 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/1.jpg')
+f42 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/2.jpg')
+f43 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/3.jpg')
+f44 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/4.jpg')
+f45 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/4.+green_curry/5.jpg')
 r4.photos.attach(io: f41, filename: '1.jpg')
 r4.photos.attach(io: f42, filename: '2.jpg')
 r4.photos.attach(io: f43, filename: '3.jpg')
@@ -484,11 +486,11 @@ r5 = Restaurant.create!(
     zip: '10002',
 )
 
-f51 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/1.jpg')
-f52 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/2.jpg')
-f53 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/3.jpg')
-f54 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/4.jpg')
-f55 = open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/5.jpg')
+f51 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/1.jpg')
+f52 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/2.jpg')
+f53 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/3.jpg')
+f54 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/4.jpg')
+f55 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/5.+sweet_escape/5.jpg')
 r5.photos.attach(io: f51, filename: '1.jpg')
 r5.photos.attach(io: f52, filename: '2.jpg')
 r5.photos.attach(io: f53, filename: '3.jpg')
@@ -598,11 +600,11 @@ r6 = Restaurant.create!(
     zip: '11201',
 )
 
-f61 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
-f62 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
-f63 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
-f64 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
-f65 = open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
+f61 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/1.jpg')
+f62 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/2.jpg')
+f63 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/3.jpg')
+f64 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/4.jpg')
+f65 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/6.+bangalore_spices/5.jpg')
 r6.photos.attach(io: f61, filename: '1.jpg')
 r6.photos.attach(io: f62, filename: '2.jpg')
 r6.photos.attach(io: f63, filename: '3.jpg')
@@ -712,11 +714,11 @@ r7 = Restaurant.create!(
     zip: '11201',
 )
 
-f71 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
-f72 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
-f73 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
-f74 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
-f75 = open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
+f71 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/1.jpg')
+f72 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/2.jpg')
+f73 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/3.jpg')
+f74 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/4.jpg')
+f75 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/7.+pancake_heaven/5.jpg')
 r7.photos.attach(io: f71, filename: '1.jpg')
 r7.photos.attach(io: f72, filename: '2.jpg')
 r7.photos.attach(io: f73, filename: '3.jpg')
@@ -826,11 +828,11 @@ r8 = Restaurant.create!(
     zip: '11201',
 )
 
-f81 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/1.jpg')
-f82 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/2.jpg')
-f83 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/3.jpg')
-f84 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/4.jpg')
-f85 = open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/5.jpg')
+f81 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/1.jpg')
+f82 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/2.jpg')
+f83 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/3.jpg')
+f84 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/4.jpg')
+f85 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/8.+pho_77/5.jpg')
 r8.photos.attach(io: f81, filename: '1.jpg')
 r8.photos.attach(io: f82, filename: '2.jpg')
 r8.photos.attach(io: f83, filename: '3.jpg')
@@ -940,11 +942,11 @@ r9 = Restaurant.create!(
     zip: '11201',
 )
 
-f91 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/1.jpg')
-f92 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/2.jpg')
-f93 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/3.jpg')
-f94 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/4.jpg')
-f95 = open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/5.jpg')
+f91 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/1.jpg')
+f92 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/2.jpg')
+f93 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/3.jpg')
+f94 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/4.jpg')
+f95 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/9.+mediterra_seafood/5.jpg')
 r9.photos.attach(io: f91, filename: '1.jpg')
 r9.photos.attach(io: f92, filename: '2.jpg')
 r9.photos.attach(io: f93, filename: '3.jpg')
@@ -1054,11 +1056,11 @@ r10 = Restaurant.create!(
     zip: '11201',
 )
 
-f101 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/1.jpg')
-f102 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/2.jpg')
-f103 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/3.jpg')
-f104 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/4.jpg')
-f105 = open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/5.jpg')
+f101 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/1.jpg')
+f102 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/2.jpg')
+f103 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/3.jpg')
+f104 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/4.jpg')
+f105 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/10.+bonchan/5.jpg')
 r10.photos.attach(io: f101, filename: '1.jpg')
 r10.photos.attach(io: f102, filename: '2.jpg')
 r10.photos.attach(io: f103, filename: '3.jpg')
@@ -1168,11 +1170,11 @@ r11 = Restaurant.create!(
     zip: '11104',
 )
 
-f111 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/1.jpg')
-f112 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/2.jpg')
-f113 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/3.jpg')
-f114 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/4.jpg')
-f115 = open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/5.jpg')
+f111 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/1.jpg')
+f112 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/2.jpg')
+f113 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/3.jpg')
+f114 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/4.jpg')
+f115 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/11.+salty_squid/5.jpg')
 r11.photos.attach(io: f111, filename: '1.jpg')
 r11.photos.attach(io: f112, filename: '2.jpg')
 r11.photos.attach(io: f113, filename: '3.jpg')
@@ -1276,11 +1278,11 @@ r12 = Restaurant.create!(
     zip: '11103',
 )
 
-f121 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/1.jpg')
-f122 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/2.jpg')
-f123 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/3.jpg')
-f124 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/4.jpg')
-f125 = open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/5.jpg')
+f121 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/1.jpg')
+f122 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/2.jpg')
+f123 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/3.jpg')
+f124 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/4.jpg')
+f125 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/12.+shanghai_mountain_house/5.jpg')
 r12.photos.attach(io: f121, filename: '1.jpg')
 r12.photos.attach(io: f122, filename: '2.jpg')
 r12.photos.attach(io: f123, filename: '3.jpg')
@@ -1384,11 +1386,11 @@ r13 = Restaurant.create!(
     zip: '11101',
 )
 
-f131 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/1.jpg')
-f132 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/2.jpg')
-f133 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/3.jpg')
-f134 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/4.jpg')
-f135 = open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/5.jpg')
+f131 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/1.jpg')
+f132 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/2.jpg')
+f133 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/3.jpg')
+f134 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/4.jpg')
+f135 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/13.+bombay_grill_house/5.jpg')
 r13.photos.attach(io: f131, filename: '1.jpg')
 r13.photos.attach(io: f132, filename: '2.jpg')
 r13.photos.attach(io: f133, filename: '3.jpg')
@@ -1492,11 +1494,11 @@ r14 = Restaurant.create!(
     zip: '11102',
 )
 
-f141 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/1.jpg')
-f142 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/2.jpg')
-f143 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/3.jpg')
-f144 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/4.jpg')
-f145 = open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/5.jpg')
+f141 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/1.jpg')
+f142 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/2.jpg')
+f143 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/3.jpg')
+f144 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/4.jpg')
+f145 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/14.+seoul_express/5.jpg')
 r14.photos.attach(io: f141, filename: '1.jpg')
 r14.photos.attach(io: f142, filename: '2.jpg')
 r14.photos.attach(io: f143, filename: '3.jpg')
@@ -1600,11 +1602,11 @@ r15 = Restaurant.create!(
     zip: '11105',
 )
 
-f151 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/1.jpg')
-f152 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/2.jpg')
-f153 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/3.jpg')
-f154 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/4.jpg')
-f155 = open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/5.jpg')
+f151 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/1.jpg')
+f152 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/2.jpg')
+f153 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/3.jpg')
+f154 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/4.jpg')
+f155 = URI.open('https://dinnr-aa-seeds.s3.amazonaws.com/15.+thai_kitchen/5.jpg')
 r15.photos.attach(io: f151, filename: '1.jpg')
 r15.photos.attach(io: f152, filename: '2.jpg')
 r15.photos.attach(io: f153, filename: '3.jpg')
@@ -1694,7 +1696,6 @@ mc1525 = MenuItemJoin.create!(
 )
 #Test
 #$.ajax({method: "POST", url: 'api/users', data: {user: {first_name: 'demo', last_name: 'account', email: 'demo@demo.com', primary_location: 'New York', password: 'password'}}})
-#{first_name: 'demo1', last_name: 'account1', email: 'demo1@demo.com', primary_location: 'New York', password: 'password'}
 #$.ajax({method: "POST", url: 'api/session', data: {user: {email: 'demo@demo.com', password: 'password'}}})
 #$.ajax({method: "DELETE", url: 'api/session'})
 

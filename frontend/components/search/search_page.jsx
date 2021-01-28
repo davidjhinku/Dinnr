@@ -15,7 +15,7 @@ class SearchPage extends React.Component {
                     <div className='filter-component'>
                         {/* Map */}
 
-                        <FilterForm fetchRestaurants={this.props.fetchRestaurants}/>
+                        {/* <FilterForm fetchRestaurants={this.props.fetchRestaurants}/> */}
                     </div>
                     <div className='search-restaurants'>
                         <RestaurantSearch restaurants={this.props.restaurants} history={this.props.history}/>
