@@ -121,7 +121,11 @@ ul.photo-list > li > img {
     align-items: center;
 }
 
-.map-container > img {
+.map-container > a {
+    text-decoration: none;
+}
+
+.map-container > a > img {
     width: 310px;
     height: 155px;
     display: flex;
@@ -129,7 +133,7 @@ ul.photo-list > li > img {
     margin-bottom: 18px;
 }
 
-.map-container > p {
+.map-container > a > p {
     font-weight: 400;
     font-size: 14px;
     align-self: flex-start;
