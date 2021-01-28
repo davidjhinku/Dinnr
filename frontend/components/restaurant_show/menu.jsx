@@ -12,7 +12,7 @@ class Menu extends React.Component {
     }
 
     selectMenu(num) {
-        this.setState
+        this.setState({selectedMenu: num})
     }
 
     render() {

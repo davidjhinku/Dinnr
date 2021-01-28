@@ -1637,7 +1637,7 @@ m152 = Menu.create!(
 )
 m152i1 = Item.create!(
 	name: 'Panang Curry',
-	description: 'SPanang curry paste in coconut milk with pineapple, fresh basil, kaffir lime leaves, and bell peppers.',
+	description: 'Panang curry paste in coconut milk with pineapple, fresh basil, kaffir lime leaves, and bell peppers.',
 	price: 19.99
 )
 m152i2 = Item.create!(

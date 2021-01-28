@@ -193,10 +193,17 @@ li.active {
 
 ul.item-list {
     font-size: 15px;
+    margin-bottom: 20px;
 }
 
-ul.item-list > li {
-    /* margin-top: 5px; */
+.item-bold {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin: 25px 0 10px;
+}
+
+/* ul.item-list > li {
     margin: 20px 0;
     display: flex;
     justify-content: space-between;
@@ -204,6 +211,6 @@ ul.item-list > li {
 p.item-name, p.item-price {
     font-weight: 600;
     margin-bottom: 10px;
-}
+} */
 
 /* Reviews styling */
