@@ -2,6 +2,7 @@ import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
 import Menu from './menu'
+import MakeReservation from './reservation_form'
 import RestaurantMap from './restaurant_map'
 
 class RestaurantShow extends React.Component {
@@ -32,6 +33,19 @@ class RestaurantShow extends React.Component {
     
     scrollReviews() {
         this.reviews.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    numberToTime(num) {
+        let dayTime = 'AM'
+        if (num >= 12) dayTime = 'PM'
+
+        let hour = Math.floor(num % 12) + ''
+        if (hour === '0') hour = '12'
+
+        let minute = num - Math.floor(num)
+        minute === 0.5 ? minute = '30' : minute = '00'
+
+        return `${hour}:${minute} ${dayTime}`
     }
 
     render(){
@@ -67,15 +81,13 @@ class RestaurantShow extends React.Component {
                             </nav>
 
                             <nav ref={this.reviews}>
-                                <p>Reviews to be added</p>
+                                <p className='temp-reviews'>Reviews coming soon !</p>
                             </nav>
                         </div>
                             
                         <div className='show-right-column'>
                             <nav className="reservation-block">
-                                Reservation block that will scroll
-
-                                {/* reservation */}
+                                <MakeReservation numberToTime={this.numberToTime}/>
                             </nav>
                             
                             <RestaurantMap restaurant={restaurant} />
@@ -83,7 +95,8 @@ class RestaurantShow extends React.Component {
                             <h3>City</h3>
                             <p>{restaurant.city}</p>
                             <h3>Hours</h3>
-                            <p>Daily: {restaurant.open_at}-{restaurant.close_at}</p>
+                            <p>Daily: {this.numberToTime(restaurant.open_at)} - {this.numberToTime(restaurant.close_at)}</p>
+
                         </div>
                     </div>
                 </div>
