@@ -27,7 +27,7 @@
     margin-left: 20px;
     padding: 5px;
     width: 800px;
-    border: 1px solid blue
+    /* border: 1px solid blue */
 }
 
 .search-restaurant-item {
@@ -45,10 +45,42 @@
     cursor: pointer;
 }
 
+.rest-information {
+    width: 100%;
+}
+
 .rest-information > p {
     cursor: pointer;
     font-weight: 600;
     font-size: 22px;
     color: #247f9e;
     margin-bottom: 10px;
+}
+
+div.search-reservation {
+    width: 100%;
+}
+
+ul.search-reservation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+ul.search-reservation > li {
+    width: 110px;
+    height: 30px;
+    background-color: #d2343f;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+ul.search-reservation > li:hover {
+    cursor: pointer;
+    filter: brightness(85%);
 }

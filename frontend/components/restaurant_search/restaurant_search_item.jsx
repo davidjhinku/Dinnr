@@ -1,4 +1,5 @@
 import React from 'react'
+import SearchReservation from './restaurant_search_reservation'
 
 class RestaurantSearchItem extends React.Component {
     constructor(props){
@@ -24,14 +25,14 @@ class RestaurantSearchItem extends React.Component {
                         <p onClick={this.handleClick}>{rest.name}</p>
                         <div className='search-star'>
                             <img src={window.starUrl} alt="rating"/>
-                            <p>Exceptional (10)</p>
+                            <p>Exceptional ({Math.floor(Math.random() * 50)})</p>
                         </div>
                         <ul className='rest-info-list'>
                             <li>{rest.price_range}</li>
                             <li>{rest.cuisine_type}</li>
                             <li>{rest.city}</li>
                         </ul>
-                        <p>Booking a reservation component</p>
+                        <SearchReservation />
                     </div>
                 </div>
                 <hr/>

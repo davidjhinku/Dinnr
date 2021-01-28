@@ -7,7 +7,7 @@ const RestaurantDetails = ({restaurant}) => {
             <hr className='show-hr'/>
             <ul className='show-details-list'>
                 <li className='temp-show-star'><img src={window.starUrl} alt="rating" /></li>
-                <li>10 reviews</li>
+                <li>{Math.floor(Math.random()*50)} reviews</li>
                 <li>{restaurant.price_range}</li>
                 <li>{restaurant.cuisine_type}</li>
             </ul>

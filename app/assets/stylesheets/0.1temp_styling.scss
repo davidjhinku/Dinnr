@@ -24,4 +24,19 @@ li.temp-show-star > img {
     align-self: center;
 }
 
+// .carousel-star {
+//     height: 20px;
+// }
+img.carousel-star {
+    width: 70px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+span.carousel-star {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
 /* Temporary styling */
