@@ -13,9 +13,11 @@ class SearchPage extends React.Component {
                 </nav>
                 <div className='search-page-columns'>
                     <div className='filter-component'>
-                        {/* Map */}
+                        <button className='search-map-link'>
+                            <span className='search-map-icon'>Map</span>
+                        </button>
 
-                        {/* <FilterForm fetchRestaurants={this.props.fetchRestaurants}/> */}
+                        <FilterForm fetchRestaurants={this.props.fetchRestaurants}/>
                     </div>
                     <div className='search-restaurants'>
                         <RestaurantSearch restaurants={this.props.restaurants} history={this.props.history}/>
