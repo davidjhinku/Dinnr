@@ -23,13 +23,39 @@ Dinnr is a single-page fullstack clone of OpenTable where users can find top rat
 ## Standout Features
 * User authentication with persistence
 * Search bar accesible from spash, search index, and modal on any screen
-* 
+* Restaurants can have multiple menus with individual items available across multiple menus
 
 ### Restaurant carousel
-Splash page features a clickable carousel of restaurants with styled info blocks for each restaurant. 
+Splash page features a clickable carousel of restaurants with styled info blocks for each restaurant. Each restaurant card includes key information and is styled to encourage users to click through to view more information and book a reservation. The carousel is formated into a horizontal list with overflow hidden and JS built into overlayed buttons which handles scrolling through the list.
+
+```javascript
+scroll(distance){
+    document.getElementById('carousel-ul').scrollLeft += distance
+}
+
+render() {
+    const restList = this.props.restaurants.map((restaurant, idx) => {
+        return <RestaurantCarouselItem key={idx} restaurant={restaurant} {...this.props}/>
+    })
+    return (
+        <div className='carousel-component'>
+            <h2>Your picks for today</h2>
+            <hr/>
+            <div className='carousel-list'>
+
+                <ul id='carousel-ul'>
+                    <button className='left-scroll-button' onClick={() => this.scroll(-600)}></button>
+                    <button className='right-scroll-button' onClick={() => this.scroll(600)}></button>
+                    {restList}
+                </ul>
+            </div>
+        </div>
+    )
+}
+```
 
 ### Search wildcards
-Searches include a `date`, `time`, and `party size` however at present, `time` is the only required. An optional case insensitive wildcard can be keyed in for `location`, `cuisine`, or `restaurant name` which is handled by the restaurant model. Validations for required inputs are modular and can be added or removed to integrate with the main `search(terms)` function similar to the `withinOpenHours(rest, time)` function below
+Searches include a `date`, `time`, and `party size`. An optional case insensitive wildcard can be keyed in for `location`, `cuisine`, or `restaurant name` which is handled by the restaurant model. Validations for inputs are modular and can be added or removed to integrate with the main `search(terms)` function similar to the `withinOpenHours(rest, time)` function below
 
 ```ruby
 def self.search(terms)
