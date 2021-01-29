@@ -26,6 +26,7 @@ Dinnr is a single-page fullstack clone of OpenTable where users can find top rat
 * Restaurants can have multiple menus with individual items available across multiple menus
 
 ### Restaurant carousel
+
 Splash page features a clickable carousel of restaurants with styled info blocks for each restaurant. Each restaurant card includes key information and is styled to encourage users to click through to view more information and book a reservation. The carousel is formated into a horizontal list with overflow hidden and JS built into overlayed buttons which handles scrolling through the list.
 
 ```javascript
