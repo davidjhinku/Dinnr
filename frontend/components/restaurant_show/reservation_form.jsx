@@ -1,4 +1,5 @@
 import React from 'react'
+import { numberToTime } from '../../util/util_functions'
 
 class MakeReservation extends React.Component {
     constructor(props){
@@ -35,7 +36,8 @@ class MakeReservation extends React.Component {
         let options = []
 
         for (let i = 0; i <= 24; i++) {
-            options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
+            // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
+            options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
         }
 
         return options
