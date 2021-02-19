@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberToTime } from '../../util/util_functions'
+import { numberToTime, timeSlots } from '../../util/util_functions'
 
 class MakeReservation extends React.Component {
     constructor(props){
@@ -32,16 +32,16 @@ class MakeReservation extends React.Component {
         return `${yyyy}-${mm}-${dd}`
     }
 
-    timeSlots() {
-        let options = []
+    // timeSlots() {
+    //     let options = []
 
-        for (let i = 0; i <= 24; i++) {
-            // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
-            options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
-        }
+    //     for (let i = 0; i <= 24; i++) {
+    //         // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
+    //         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
+    //     }
 
-        return options
-    }
+    //     return options
+    // }
 
     render(){
         let currState = this.state
@@ -67,7 +67,8 @@ class MakeReservation extends React.Component {
                         <div className='bottom-input'>
                             <p>Time</p>
                             <select defaultValue={currState.time} onChange={this.handleChange('time')}>
-                                {this.timeSlots()}
+                                {/* {this.timeSlots()} */}
+                                {timeSlots()}
                             </select>
                         </div>
                     </div>
