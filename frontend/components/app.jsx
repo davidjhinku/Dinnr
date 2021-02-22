@@ -7,6 +7,7 @@ import RestaurantShowContainer from './restaurant_show/restaurant_show_container
 import ProfileContainer from './profile/profile_container'
 import NavFooter from './nav_footer/nav_footer'
 import {Link, Route, Switch} from 'react-router-dom'
+import {AuthRoute, ProtectedRoute} from '../util/route_util'
 
 const App = () => (
     <div className="main-app">
@@ -22,7 +23,7 @@ const App = () => (
             <Route exact path='/' component={SplashContainer} />
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
-            <AuthRoute path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute path='/profile' component={ProfileContainer}/>
         </Switch>
 
         <footer className='nav-footer'>
