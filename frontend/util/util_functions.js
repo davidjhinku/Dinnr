@@ -1,3 +1,5 @@
+import React from 'react'
+
 export const numberToTime = (num) => {
     let dayTime = 'AM'
     if (num >= 12) dayTime = 'PM'
