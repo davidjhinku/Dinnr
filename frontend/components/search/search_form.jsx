@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import { timeSlotOption } from '../../util/util_functions'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -40,28 +41,28 @@ class SearchForm extends React.Component {
         return `${yyyy}-${mm}-${dd}`
     }
 
-    numberToTime(num){
-        let dayTime = 'AM'
-        if (num >= 12) dayTime = 'PM'
+    // numberToTime(num){
+    //     let dayTime = 'AM'
+    //     if (num >= 12) dayTime = 'PM'
 
-        let hour = Math.floor(num % 12) + ''
-        if (hour === '0') hour = '12'
+    //     let hour = Math.floor(num % 12) + ''
+    //     if (hour === '0') hour = '12'
 
-        let minute = num - Math.floor(num)
-        minute === 0.5 ? minute = '30' : minute = '00'
+    //     let minute = num - Math.floor(num)
+    //     minute === 0.5 ? minute = '30' : minute = '00'
         
-        return `${hour}:${minute} ${dayTime}`
-    }
+    //     return `${hour}:${minute} ${dayTime}`
+    // }
 
-    timeSlots() {
-        let options = []
+    // timeSlots() {
+    //     let options = []
 
-        for (let i = 0; i <=24; i ++) {
-            options.push(<option key={i} value={i}>{this.numberToTime(i)}</option>)
-        }
+    //     for (let i = 0; i <=24; i ++) {
+    //         options.push(<option key={i} value={i}>{this.numberToTime(i)}</option>)
+    //     }
 
-        return options
-    }
+    //     return options
+    // }
 
 
     render() {
@@ -72,7 +73,8 @@ class SearchForm extends React.Component {
                 <div className='search-left'>
                     <input type="date" value={currState.date} onChange={this.handleChange('date')}/>
                     <select className='search-time' defaultValue={currState.time} onChange={this.handleChange('time')}>
-                        {this.timeSlots()}
+                        {/* {this.timeSlots()} */}
+                        {timeSlotOption()}
                     </select>
                     <select className='search-people' onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberToTime, timeSlots } from '../../util/util_functions'
+import { numberToTime, timeSlotOption } from '../../util/util_functions'
 
 class MakeReservation extends React.Component {
     constructor(props){
@@ -68,7 +68,7 @@ class MakeReservation extends React.Component {
                             <p>Time</p>
                             <select defaultValue={currState.time} onChange={this.handleChange('time')}>
                                 {/* {this.timeSlots()} */}
-                                {timeSlots()}
+                                {timeSlotOption()}
                             </select>
                         </div>
                     </div>

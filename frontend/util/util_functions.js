@@ -13,12 +13,23 @@ export const numberToTime = (num) => {
     return `${hour}:${minute} ${dayTime}`
 }
 
-export const timeSlots = (time = 0) => {
+export const timeSlotOption = (time = 0) => {
     let options = []
 
     for (let i = time; i <= 24; i++) {
         // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
+    }
+
+    return options
+}
+
+export const timeSlotLi = (time = 0) => {
+    let options = []
+
+    for (let i = time; options.length < 5; i++) {
+        // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
+        options.push(<li key={i} value={i}>{numberToTime(i)}</li>)
     }
 
     return options

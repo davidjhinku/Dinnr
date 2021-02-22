@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberToTime, timeSlots } from '../../util/util_functions'
+import { numberToTime, timeSlotLi } from '../../util/util_functions'
 
 class SearchReservation extends React.Component {
 
@@ -35,7 +35,7 @@ class SearchReservation extends React.Component {
             <div className='search-reservation'>
                 <ul className='search-reservation'>
                     {/* {this.timeSlots(time)} */}
-                    {timeSlots(time)}
+                    {timeSlotLi(time)}
                 </ul>
             </div>
         )
