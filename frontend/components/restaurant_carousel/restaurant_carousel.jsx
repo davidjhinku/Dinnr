@@ -1,10 +1,26 @@
 import React from 'react'
 import RestaurantCarouselItem from './restaurant_carousel_item'
 
+const CITIES = [
+    "Brooklyn",
+    "Queens",
+    "New York"
+]
+
 class RestaurantCarousel extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            city: this.pickRandCity()
+        }
+    }
+
+    pickRandCity() {
+        return CITIES[Math.floor(Math.random() * CITIES.length)]
+    }
 
     componentDidMount() {
-        this.props.fetchRestaurants()
+        this.props.fetchRestaurants({wildcard: this.state.city})
     }
 
     scroll(distance){
@@ -17,7 +33,7 @@ class RestaurantCarousel extends React.Component {
         })
         return (
             <div className='carousel-component'>
-                <h2>Your picks for today</h2>
+                <h2>{`Your picks today in ${this.state.city}`}</h2>
                 <hr/>
                 <div className='carousel-list'>
 

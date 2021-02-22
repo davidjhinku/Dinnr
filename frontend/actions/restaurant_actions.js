@@ -18,7 +18,8 @@ const receiveRestaurant = restaurant => {
 }
 
 export const fetchRestaurants = search => dispatch => {
-    return APIUTIL.fetchRestaurants(search).then(restaurants => dispatch(receiveRestaurants(restaurants)))
+    return APIUTIL.fetchRestaurants(search).then(restaurants => {
+        return dispatch(receiveRestaurants(restaurants))})
 }
 
 export const fetchRestaurant = restId => dispatch => {
