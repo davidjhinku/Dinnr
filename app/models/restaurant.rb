@@ -23,7 +23,9 @@ class Restaurant < ApplicationRecord
     def self.search(terms)
         results = Restaurant.where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")
     
-        if results.length > 0
+        if !terms[:time] #for carousel rando city
+            @restaurants = results
+        elsif results.length > 0
             withinHours = results.select { |restaurant| Restaurant.withinOpenHours(restaurant, terms[:time]) }
             withinHours.length > 0 ? @restaurants = withinHours : @restaurants = {}
         else

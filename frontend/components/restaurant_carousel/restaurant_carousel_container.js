@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchRestaurants: () => dispatch(fetchRestaurants())
+        fetchRestaurants: (search) => dispatch(fetchRestaurants(search))
     }
 }
 
