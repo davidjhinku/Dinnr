@@ -23,6 +23,8 @@ const App = () => (
             <Route exact path='/' component={SplashContainer} />
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
+            <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute path='/profile' component={ProfileContainer}/>
             <ProtectedRoute path='/profile' component={ProfileContainer}/>
         </Switch>
 
