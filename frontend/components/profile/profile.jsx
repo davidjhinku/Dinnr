@@ -16,9 +16,9 @@ class Profile extends React.Component {
                 </div>
                 <div className='profile-content'>
                     <nav className='profile-nav'>
-                        <a href="#">Reservations</a>
-                        <a href="#">Saved Restaurants</a>
-                        <a href="#">Account Details</a>
+                        <a href="">Reservations</a>
+                        <a href="">Saved Restaurants</a>
+                        <a href="">Account Details</a>
                     </nav>
                     <div className='profile-components'>
                         <UpcomingReservation />
