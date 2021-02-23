@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -22,7 +23,8 @@ class NavBar extends React.Component {
                         <h3>{`Hello, ${this.props.currentUser.first_name}!`}</h3>
                         <hr />
                         <ul>
-                            <li><button>My Profile</button></li>
+                            <li><button><Link to="/profile">My Profile</Link></button></li>
+                            {/* <li><Link to="/profile">My Profile</Link></li> */}
                             <li><button>My Reservations</button></li>
                             <li><button>My Saved Restaurants</button></li>
                             <li><button className='signout-button' onClick={() => this.props.logout()}>Sign out</button></li>
