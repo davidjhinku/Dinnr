@@ -17,7 +17,6 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
         this.props.fetchRestaurants(this.state)
             .then(this.props.setSearchParams(this.state))
             .then(this.props.closeModal)
@@ -71,7 +70,6 @@ class SearchForm extends React.Component {
 
     render() {
         let currState = this.state
-        debugger
         return (
             <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-left'>
