@@ -71,16 +71,24 @@ class SearchForm extends React.Component {
 
     render() {
         let currState = this.state
-
+        debugger
         return (
             <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-left'>
-                    <input type="date" value={currState.date} onChange={this.handleChange('date')}/>
-                    <select className='search-time' defaultValue={currState.time} onChange={this.handleChange('time')}>
+                    <input type="date"
+                        value={currState.date}
+                        onChange={this.handleChange('date')}/>
+
+                    <select className='search-time'
+                        defaultValue={currState.time}
+                        onChange={this.handleChange('time')}>
                         {/* {this.timeSlots()} */}
                         {timeSlotOption()}
                     </select>
-                    <select className='search-people' onChange={this.handleChange('party_size')}>
+
+                    <select className='search-people'
+                        defaultValue={currState.party_size}
+                        onChange={this.handleChange('party_size')}>
                         <option value="2">2 people</option>
                         <option value="3">3 people</option>
                         <option value="4">4 people</option>
@@ -89,7 +97,10 @@ class SearchForm extends React.Component {
                 </div>
 
                 <div className='search-right'>
-                    <input type="text" placeholder='Location, Restaurant, or Cuisine' value={currState.search_filter} onChange={this.handleChange('wildcard')}/>
+                    <input type="text"
+                        placeholder={currState.wildcard === '' ? 'Location, Restaurant, or Cuisine' : currState.wildcard}
+                        value={currState.search_filter}
+                        onChange={this.handleChange('wildcard')}/>
                     <button className='search-form-button'>Let's go</button>
                 </div>
             </form>
