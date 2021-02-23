@@ -3,7 +3,11 @@ import React from 'react'
 class PastReservation extends React.Component {
     render() {
         return (
-            <div>Past Reservation</div>
+            <div className='component'>
+                <h1>Past Reservation</h1>
+                <hr/>
+                <div>past componenetsss</div>
+            </div>
         )
     }
 }

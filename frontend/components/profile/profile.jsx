@@ -9,10 +9,12 @@ class Profile extends React.Component {
         return(
             <div className='profile-page'>
                 <div className='profile-header'>
-                    <h1>The Name</h1>
-                    <p>The Points</p>
+                    <div>
+                        <h1>The Name</h1>
+                        <p>The Points</p>
+                    </div>
                 </div>
-                <div>
+                <div className='profile-content'>
                     <nav className='profile-nav'>
                         <a href="#">Reservations</a>
                         <a href="#">Saved Restaurants</a>

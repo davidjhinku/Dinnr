@@ -1,12 +1,80 @@
 .profile-page {
     width: inherit;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: #f7f7f7;
 
     .profile-header {
         width: inherit;
         height: 80px;
-        border: solid 1px blue;
-        // text-align: ;
+        border-top: solid 1px #e4e3e3;
+        box-shadow: 0 1px 1px #eeeeee;
+        background-color: white;
+        // height: 80px;
+        // line-height: 80px;
+        
+        div {
+            margin-top: 1%;
+            // margin-left: 10%;
+            // display: inline-block;
+            // vertical-align: middle;
+        }
+
+    }
+
+    .profile-content {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+        .profile-nav {
+            width: 200px;
+            min-height: 69vh;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            // border: 1px solid pink;
+
+            a {
+                font-weight: 400;
+                font-size: 16px;
+                margin: 8px;
+                padding: 4px;
+                color: #8e8e8e;
+                text-decoration: none;
+            }
+
+            a.selected {
+                color: black;
+            }
+            a:hover {
+                color: #c6000d;
+            }
+        }
+
+        .profile-components {
+            width: 1080px;
+            padding: 10px;
+            border: 1px  solid lightblue;
+
+            .component {
+                width: inherit;
+                min-height: 158px;
+                margin-bottom: 35px;
+                background-color: white;
+
+                hr {
+                    margin: 0;
+                }
+
+                h1 {
+                    padding: 24px;
+                }
+
+                div {
+                    padding: 32px;
+                }
+            }
+
+        }
     }
 }
