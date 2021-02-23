@@ -5,12 +5,16 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     attr_reader :password
-
+    
+    has_many :reservations,
+        class_name: :Reservation,
+        foreign_key: :user_id,
+        primary_key: :id
+        
     # has_many :favorites
     # has_many :favorite_restaurants,
     #     through: :favorites,
     #     source: :restaurant
-    # has_many :reservations
     # has_many :reviews dependent destroy
 
     def self.find_by_credentials(email, password)

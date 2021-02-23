@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchContainer from '../search/search_form_container'
+import SearchFormContainer from '../search_form/search_form_container'
 import RestaurantCarouselContainer from '../restaurant_carousel/restaurant_carousel_container'
 
 class Splash extends React.Component {
@@ -12,7 +12,7 @@ class Splash extends React.Component {
             <div className="splash-components">
                 <div className="splash-search-form">
                     <h1>Find your table for any occasion</h1>
-                    <SearchContainer {...this.props}/>
+                    <SearchFormContainer {...this.props}/>
                 </div>
                 <div className="splash-restaurant-index">
                     <RestaurantCarouselContainer {...this.props}/>

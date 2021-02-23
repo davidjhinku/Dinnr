@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from './modal/modal'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import SplashContainer from './splash_page/splash_container'
-import SearchPageContainer from './search/search_page_container'
+import SearchPageContainer from './search_page/search_page_container'
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container'
 import ProfileContainer from './profile/profile_container'
 import NavFooter from './nav_footer/nav_footer'
@@ -24,7 +24,7 @@ const App = () => (
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
-            <ProtectedRoute path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute exact path='/reservation' component={ProfileContainer}/>
         </Switch>
 
         <footer className='nav-footer'>

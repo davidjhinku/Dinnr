@@ -1,7 +1,7 @@
 import React from 'react';
 import SigninFormContainer from '../session_form/signin_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
-import SearchContainer from '../search/search_form_container'
+import SearchFormContainer from '../search_form/search_form_container'
 import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 
@@ -18,7 +18,7 @@ const Modal = (props) => {
         popupForm = <SignupFormContainer />
         modalStyling = 'modal-box'
     } else if (props.modal === 'search') {
-        popupForm = <SearchContainer />
+        popupForm = <SearchFormContainer />
         modalHeader = <h1>Find your table for any occasion</h1>
         modalStyling = 'search-modal-box'
     }

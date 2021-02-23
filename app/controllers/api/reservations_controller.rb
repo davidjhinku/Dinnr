@@ -1,5 +1,10 @@
 class Api::ReservationsController < ApplicationController
 
+    def index
+        @reservations = Reservation.available(search_terms)
+        render :show
+    end
+
     def show
         @reservation = Reservation.find(params[:id])
         render :show
@@ -32,7 +37,10 @@ class Api::ReservationsController < ApplicationController
 
     private
     def reservation_params
-        params.require(:reservation).permit(:date, :time, :party_size, :user_id, :restaurant_id)
+        params.require(:reservation).permit(:date, :time, :party_size, :user_id, :restaurant_id, :phone, :email, :occasion, :special_request)
     end
 
+    def search_terms
+        params.require(:search).permit(:date, :time, :restaurant_id)
+    end
 end
