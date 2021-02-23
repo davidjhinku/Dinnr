@@ -1,3 +1,11 @@
+export const fetchReservations = search => { //date/time/restaurant
+    return $.ajax({
+        method: 'GET',
+        url: 'api/reservations',
+        data: {search}
+    })
+}
+
 export const fetchReservation = resId => {
     return $.ajax({
         method: 'GET',
