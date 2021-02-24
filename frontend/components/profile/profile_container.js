@@ -2,7 +2,6 @@ import Profile from './profile'
 import {connect} from 'react-redux'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
     }
 }

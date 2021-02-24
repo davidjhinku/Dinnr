@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchReservation from './restaurant_search_reservation'
+import ReservationTimeslotsContainer from './reservation_timeslots_container'
 
 class RestaurantSearchItem extends React.Component {
     constructor(props){
@@ -14,7 +14,7 @@ class RestaurantSearchItem extends React.Component {
 
     render() {
         const rest = this.props.restaurant
-
+        
         return(
             <li>
                 <div className='search-restaurant-item'>
@@ -32,7 +32,7 @@ class RestaurantSearchItem extends React.Component {
                             <li>{rest.cuisine_type}</li>
                             <li>{rest.city}</li>
                         </ul>
-                        <SearchReservation />
+                        <ReservationTimeslotsContainer restId={rest.id}/>
                     </div>
                 </div>
                 <hr/>

@@ -6,7 +6,6 @@ import {closeModal} from '../../actions/modal_actions'
 
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         searchState: state.entities.search_params
     }
