@@ -22,6 +22,7 @@ const receiveReservations = reservations => {
 export const checkTimeslots = search => dispatch => {
     return APIUTIL.fetchReservations(search)
         .then(timeslots => {
+            debugger
             return dispatch(receiveTimeslots(timeslots))
         })
 }
@@ -30,5 +31,12 @@ export const fetchReservations = userId => dispatch => {
     return APIUTIL.fetchReservations(userId)
         .then(reservations => {
             return dispatch(receiveReservations(reservations))
+        })
+}
+
+export const createReservation = reservation => dispatch => {
+    return APIUTIL.createReservation(reservation)
+        .then(reservation => {
+            return dispatch(receiveReservations(reservation))
         })
 }

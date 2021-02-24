@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const numberToTime = (num) => {
     let dayTime = 'AM'
@@ -39,12 +40,17 @@ export const timeSlotOption = (time = 0) => {
     return options
 }
 
-export const timeSlotLi = (time = 0) => {
+export const timeSlotLi = (time = 0, restId) => {
     let options = []
-
+    
     for (let i = time; options.length < 5; i++) {
         // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
-        options.push(<li key={i} value={i}>{numberToTime(i)}</li>)
+        options.push(
+            <li key={i} value={i}>
+                {/* {numberToTime(i)} */}
+                <Link to={`/reservation/${restId}`}>{numberToTime(i)}</Link>
+            </li>
+        )
     }
 
     return options

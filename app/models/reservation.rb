@@ -11,7 +11,27 @@ class Reservation < ApplicationRecord
         foreign_key: :user_id,
         primary_key: :id
 
-    def available(terms) #to return the available timeslots
+    
 
+
+    def self.available(terms) #to return the available timeslots
+        slots = {
+
+        }
+        # debugger
+
+        slotsStart = terms[:time].to_i - 2
+        5.times do 
+            slots[slotsStart] = "available"
+            slotsStart += 1
+        end
+
+        # debugger
+        availSlots = Reservation.availableSlots(slots, terms[:date], terms[:time])
+    end
+
+    def self.availableSlots(hash, date, time)
+        # debugger
+        # add in methods to check if there is a reservation here
     end
 end

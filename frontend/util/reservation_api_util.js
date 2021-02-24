@@ -1,4 +1,5 @@
 export const fetchReservations = search => { //date/time/restaurant
+    debugger
     return $.ajax({
         method: 'GET',
         url: 'api/reservations',
