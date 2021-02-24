@@ -20,16 +20,30 @@ class ReservationPage extends React.Component {
 
     render() {
         let currUser = this.props.currentUser
+        let rest = this.props.restaurant
         debugger
         return(
             <div className='reservation-page'>
                 <div className='reservation-left'>
                     <h3>You're almost done!</h3>
                     <div className='header info'>
-                        Restaurant Information
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
+                        {/* <img src={rest.photoUrl}/> */}
+                        <div>
+                            <h2>{rest.name}</h2>
+                            <div>
+                                <ul>
+                                    <li>{this.props.searchParams.date}</li>
+                                    <li>{this.props.searchParams.time}</li>
+                                    <li>{this.props.searchParams.party_size}</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
+
                     <h4>Diner details</h4>
                     <h4>{currUser.first_name} {currUser.last_name}</h4>
+                    
                     <form onSubmit={this.handleSubmit}>
                         <div>
                             <input type="tel"
@@ -74,7 +88,8 @@ class ReservationPage extends React.Component {
                     <h4>Important dining information</h4>
                     <p>
                         We have a 15 minute grace period. Please call us if you are running later than 15 minutes after your reservation time.
-                        <br/>
+                    </p>
+                    <p>
                         Your table will be reserved for 1 hour 30 minutes for parties of up to 2; and 2 hours for parties of 3+.
                     </p>
                     <h4>A note from the restaurant</h4>

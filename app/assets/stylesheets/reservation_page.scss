@@ -3,22 +3,35 @@
     justify-content: center;
     margin-top: 30px;
 
+    h2 {
+        font-size: 24px;
+        font-weight: 600px;
+    }
     h3 {
         font-size: 16px;
         font-weight: 600;
+        margin-bottom: 15px;
     }
 
     h4 {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
+        margin-bottom: 10px;
     }
 
     p {
         font-size: 14px;
+        font-weight: 300;
+        margin-bottom: 10px;
     }
 
     .reservation-left {
         width: 635px;
+
+        img {
+            height: 65px;
+            width: 65px;
+        }
     }
 
     .reservation-right {
