@@ -48,7 +48,7 @@ export const timeSlotLi = (time = 0, restId) => {
         options.push(
             <li key={i} value={i}>
                 {/* {numberToTime(i)} */}
-                <Link to={`/reservation/${restId}/${i}`}>{numberToTime(i)}</Link>
+                <Link to={`/reservation/${restId}`}>{numberToTime(i)}</Link>
             </li>
         )
     }
