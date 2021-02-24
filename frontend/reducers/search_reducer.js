@@ -27,7 +27,7 @@ const searchReducer = (state = _defaultState, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_SEARCH_PARAMS:
-            return action.search
+            return action.search;
         default:
             return state;
     }

@@ -6,6 +6,10 @@ class ReservationTimeslots extends React.Component {
     componentDidMount() {
         //function to fetch the reservation slots
     }
+    
+    componentDidUnmount(){
+        //function to clear reservation slots
+    }
 
     render() {
         const time = new Date().getHours() + 1

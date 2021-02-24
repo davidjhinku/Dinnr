@@ -1,7 +1,11 @@
 class Api::ReservationsController < ApplicationController
 
     def index
-        @reservations = Reservation.available(search_terms)
+        if params[:search][:userId] #to grab reservations for a user
+            @reservations = Reservation.where(user_id: params[:search][:userId])
+        else #to grab all avail timeslots
+            @reservations = Reservation.available(search_terms)
+        end
         render :show
     end
 
