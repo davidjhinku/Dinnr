@@ -18,7 +18,7 @@ class Reservation < ApplicationRecord
         slots = {
 
         }
-        debugger
+        # debugger
 
         slotsStart = terms[:time].to_i - 2
         5.times do 
@@ -26,12 +26,12 @@ class Reservation < ApplicationRecord
             slotsStart += 1
         end
 
-        debugger
+        # debugger
         availSlots = Reservation.availableSlots(slots, terms[:date], terms[:time])
     end
 
     def self.availableSlots(hash, date, time)
-        debugger
+        # debugger
         # add in methods to check if there is a reservation here
     end
 end

@@ -5,6 +5,7 @@ import SplashContainer from './splash_page/splash_container'
 import SearchPageContainer from './search_page/search_page_container'
 import RestaurantShowContainer from './restaurant_show/restaurant_show_container'
 import ProfileContainer from './profile/profile_container'
+import ReservationPageContainer from './reservation_page/reservation_page_container'
 import NavFooter from './nav_footer/nav_footer'
 import {Link, Route, Switch} from 'react-router-dom'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
@@ -24,7 +25,7 @@ const App = () => (
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
-            <ProtectedRoute exact path='/reservation' component={ProfileContainer}/>
+            <ProtectedRoute exact path='/reservation/:restId/:time' component={ReservationPageContainer}/>
         </Switch>
 
         <footer className='nav-footer'>
