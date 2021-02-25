@@ -26,6 +26,7 @@ const App = () => (
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
             <ProtectedRoute exact path='/reservation/:restId' component={ReservationPageContainer}/>
+            <ProtectedRoute exact path='/reservation/:userId/:resId' component={ReservationPageContainer}/>
         </Switch>
 
         <footer className='nav-footer'>
