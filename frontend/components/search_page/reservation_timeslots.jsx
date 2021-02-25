@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberToTime, timeSlotLi } from '../../util/util_functions'
+import { numberToTime, timeSlotLi, timeslotHashToLi } from '../../util/util_functions'
 
 class ReservationTimeslots extends React.Component {
 
@@ -19,17 +19,17 @@ class ReservationTimeslots extends React.Component {
         const timeslotHash = this.props.timeslots
         debugger
         return(
+            // <div className='search-reservation'>
+            //     <ul className='search-reservation'>
+            //         {/* {this.timeSlots(time)} */}
+            //         {timeSlotLi(time, this.props.restId)}
+            //     </ul>
+            // </div>
             <div className='search-reservation'>
                 <ul className='search-reservation'>
-                    {/* {this.timeSlots(time)} */}
-                    {timeSlotLi(time, this.props.restId)}
+                    {timeslotHashToLi(timeslotHash, 5, this.props.restId)}
                 </ul>
             </div>
-            // <div>
-                // <ul>
-
-                // </ul>
-            // </div>
         )
     }
 }
