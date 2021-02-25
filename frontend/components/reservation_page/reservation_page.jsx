@@ -1,4 +1,5 @@
 import React from 'react'
+import { numberToTime} from '../../util/util_functions'
 
 class ReservationPage extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ class ReservationPage extends React.Component {
             <div className='reservation-page'>
                 <div className='reservation-left'>
                     <h3>You're almost done!</h3>
-                    <div className='header info'>
+                    <div className='header-info'>
                         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
                         {/* <img src={rest.photoUrl}/> */}
                         <div>
@@ -34,8 +35,8 @@ class ReservationPage extends React.Component {
                             <div>
                                 <ul>
                                     <li>{this.props.searchParams.date}</li>
-                                    <li>{this.props.searchParams.time}</li>
-                                    <li>{this.props.searchParams.party_size}</li>
+                                    <li>{numberToTime(this.props.searchParams.time)}</li>
+                                    <li>{this.props.searchParams.party_size} people</li>
                                 </ul>
                             </div>
                         </div>
@@ -73,7 +74,7 @@ class ReservationPage extends React.Component {
                                 placeholder="Add a special request (optional)"
                                 onChange={this.handleChange('special_request')}>    
                             </textarea>
-                            occasion - request
+
                         </div>
                         <button className="submit-reservation">{this.props.formType}</button>
 
