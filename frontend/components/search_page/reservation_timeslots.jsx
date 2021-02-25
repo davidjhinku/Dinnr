@@ -26,7 +26,9 @@ class ReservationTimeslots extends React.Component {
                 </ul>
             </div>
             // <div>
-                // pass in the hash now to get the timeslots back
+                // <ul>
+
+                // </ul>
             // </div>
         )
     }

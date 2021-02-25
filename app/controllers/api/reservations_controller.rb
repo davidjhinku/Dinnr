@@ -9,6 +9,8 @@ class Api::ReservationsController < ApplicationController
         else #to grab all avail timeslots
             debugger
             @timeslots = Reservation.available(search_terms)
+
+            debugger
             render json: @timeslots
         end
         

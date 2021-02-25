@@ -40,11 +40,18 @@ class Reservation < ApplicationRecord
         debugger
         # todaysReservations = Reservation.where(date: date, time: {between: (time-2..time+2)})
         # Reservation.where(restaurant_id: terms[:restId], time: 14).select("id, time")
-        reservations = Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2))).select("id, time")
+        bookedHash = {}
+        reservations = Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2))).select("id, time").as_json
+
+        reservations.each do |booking|
+            debugger
+            bookedHash[booking["time"]] = "booked"
+        end
 
         debugger
 
-        return Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2)))
+        return bookedHash
+        # return Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2)))
 
     end
 end
