@@ -14,6 +14,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchRestaurants: search => dispatch(fetchRestaurants(search)),
+        // clearRestaurants: () => dispatch(clearRestaurants()),
         setSearchParams: search => dispatch(setSearchParams(search)),
         closeModal: () => dispatch(closeModal())
     }

@@ -8,7 +8,15 @@ class ReservationTimeslots extends React.Component {
         let timeslotParams = Object.assign({}, this.props.searchParams, { restId: this.props.restId })
         this.props.checkTimeslots(timeslotParams)
     }
-    
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevProps.searchParams !== this.props.searchParams) {
+            // console.log('it changed yo')
+            let timeslotParams = Object.assign({}, this.props.searchParams, { restId: this.props.restId })
+            this.props.checkTimeslots(timeslotParams)
+        }
+    }
+
     // componentWillUnmount(){
     //     //function to clear reservation slots
     // }
