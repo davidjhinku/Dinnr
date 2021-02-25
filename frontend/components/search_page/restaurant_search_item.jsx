@@ -24,8 +24,12 @@ class RestaurantSearchItem extends React.Component {
                     <div className='rest-information'>
                         <p onClick={this.handleClick}>{rest.name}</p>
                         <div className='search-star'>
-                            <img src={window.starUrl} alt="rating"/>
-                            <p>Exceptional ({Math.floor(Math.random() * 50)})</p>
+
+                            <h6>Stars</h6>
+                            <h6>Rating</h6>
+
+                            {/* <img src={window.starUrl} alt="rating"/>
+                            <p>Exceptional ({Math.floor(Math.random() * 50)})</p> */}
                         </div>
                         <ul className='rest-info-list'>
                             <li>{rest.price_range}</li>

@@ -1,0 +1,171 @@
+.search-page {
+
+    nav {
+        background-color: rgb(28, 28, 50);
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-page-columns {
+        display: flex;
+        justify-content: center;
+
+        .filter-component {
+            margin-top: 20px;
+            margin-right: 20px;
+            padding: 5px;
+            width: 230px;
+            /* border: 1px solid red; */
+
+            .search-map-link {
+                width: 100%;
+                border: 1px solid #61bddb;
+                background: url('http://cdn.otstatic.com/cfe/6/images/map-fragment-9d072d.png');
+                height: 73px;
+                background-color: #fafafa;
+                border-radius: 3px;
+                margin-bottom: 20px;
+
+                .search-map-icon {
+                    background-color: #247f9e;
+                    color: white;
+                    padding: 6px 18px;
+                    border-radius: inherit;
+                }
+            }
+
+            .search-map-link:hover {
+                cursor: pointer;
+            }
+
+            .filter-form {
+                h1 {
+                    font-size: 17px;
+                    margin-bottom: 10px;
+                }
+
+                .filter-price {
+                    display: flex;
+                    border: 1px solid rgba(0,0,0,0.2);
+                    border-radius: 3px;
+                    height: 45px;
+                    margin-bottom: 15px;
+
+                    li {
+                        position: relative;
+                        height: 100%;
+                        width: 100%;
+                        border-right: 1px solid rgba(0,0,0,0.2);
+
+                        label {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            font-size: 15px;
+                        }
+                    }
+
+                    li:last-child {
+                        border-right: none;
+                    }
+
+                    input[type=checkbox] {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        opacity: 0;
+                        cursor: pointer;
+                        box-sizing: border-box;
+                    }
+                }
+
+                .filter-submit {
+                    margin-top: 7px;
+                    width: 100%;
+                    height: 45px;
+                    color: white;
+                    font-size: 16px;
+                    background: #247f9e;
+                    border: none;
+                    border-radius: 3px;
+                }
+
+                .filter-submit:hover {
+                    filter: brightness(85%);
+                }
+            }
+        }
+
+        .search-restaurants {
+            margin-top: 20px;
+            margin-left: 20px;
+            padding: 5px;
+            width: 800px;
+
+            .search-restaurant-item {
+                display: flex;
+                margin: 20px 0;
+
+                img {
+                    height: 200px;
+                    width: 200px;
+                    margin-right: 18px;
+                    object-fit: cover;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+
+                .rest-information {
+                    width: 100%;
+
+                    .search-star {
+                        display: flex;
+                        margin: 8px 0;
+                    }
+                    
+                    p {
+                        cursor: pointer;
+                        font-weight: 600;
+                        font-size: 22px;
+                        color: #247f9e;
+                        margin-bottom: 10px;
+                    }
+
+                    .search-reservation {
+                        div {
+                            width: 100%;
+                        }
+
+                        ul {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 20px;
+
+                            li {
+                                width: 110px;
+                                height: 30px;
+                                background-color: #d2343f;
+                                margin-left: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                border-radius: 3px;
+                                transition: all 0.2s;
+                            }
+
+                            li:hover {
+                                cursor: pointer;
+                                filter: brightness(85%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
