@@ -1,15 +1,29 @@
 import React from 'react'
+import { numberToTime} from '../../util/util_functions'
+import { withRouter } from 'react-router-dom'
 
 class ReservationPage extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.reservation
+        this.state = {
+            "date": this.props.searchParams.date,
+            "time": this.props.searchParams.time,
+            "party_size": this.props.searchParams.party_size,
+            "user_id": this.props.currentUser.id,
+            "restaurant_id": this.props.restaurant.id,
+            "phone": "",
+            "email": this.props.currentUser.email,
+            "occasion": "",
+            "special_request": "",
+        }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault()
+        debugger
         this.props.action(this.state)
+            .then(this.props.history.push('/profile'))
     }
 
     handleChange(type){
@@ -26,16 +40,16 @@ class ReservationPage extends React.Component {
             <div className='reservation-page'>
                 <div className='reservation-left'>
                     <h3>You're almost done!</h3>
-                    <div className='header info'>
+                    <div className='header-info'>
                         <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
                         {/* <img src={rest.photoUrl}/> */}
                         <div>
                             <h2>{rest.name}</h2>
                             <div>
                                 <ul>
-                                    <li>{this.props.searchParams.date}</li>
-                                    <li>{this.props.searchParams.time}</li>
-                                    <li>{this.props.searchParams.party_size}</li>
+                                    <li>{this.state.date}</li>
+                                    <li>{numberToTime(this.state.time)}</li>
+                                    <li>{this.state.party_size} people</li>
                                 </ul>
                             </div>
                         </div>
@@ -58,10 +72,13 @@ class ReservationPage extends React.Component {
                                 value={this.state.email}
                                 onChange={this.handleChange('email')}
                                 required
+                                disabled
                             />
                         </div>
                         <div>
-                            <select value={this.state.occasion}>
+                            <select value={this.state.occasion}
+                                onChange={this.handleChange('occasion')}
+                            >
                                 <option value="" disabled hidden>Select an occasion (optional)</option>
                                 <option value="Birthday">Birthday</option>
                                 <option value="Anniversary">Anniversary</option>
@@ -73,7 +90,7 @@ class ReservationPage extends React.Component {
                                 placeholder="Add a special request (optional)"
                                 onChange={this.handleChange('special_request')}>    
                             </textarea>
-                            occasion - request
+
                         </div>
                         <button className="submit-reservation">{this.props.formType}</button>
 
@@ -102,4 +119,4 @@ class ReservationPage extends React.Component {
     }
 }
 
-export default ReservationPage;
+export default withRouter(ReservationPage);

@@ -4,6 +4,7 @@ export const RECEIVE_RESERVATION_TIMESLOTS = "RECEIVE_RESERVATION_TIMESLOTS";
 //send to searchParams cause its seperate from reservations
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 //send to it's own reducer under entities
+// export const CREATED_RESERVATION = 'CREATED_RESERVATION'
 
 const receiveTimeslots = timeslots => {
     return {
@@ -18,6 +19,12 @@ const receiveReservations = reservations => {
         reservations
     }
 }
+
+// const createdReservation = () => {
+//     return {
+//         type: CREATED_RESERVATION,
+//     }
+// }
 
 export const checkTimeslots = search => dispatch => {
     return APIUTIL.fetchReservations(search)
@@ -37,6 +44,7 @@ export const fetchReservations = userId => dispatch => {
 export const createReservation = reservation => dispatch => {
     return APIUTIL.createReservation(reservation)
         .then(reservation => {
+            debugger
             return dispatch(receiveReservations(reservation))
         })
 }
