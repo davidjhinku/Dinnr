@@ -5,7 +5,8 @@ class ReservationTimeslots extends React.Component {
 
     componentDidMount() {
         debugger
-        this.props.checkTimeslots(this.props.searchParams)
+        let timeslotParams = Object.assign({}, this.props.searchParams, { restId: this.props.restId })
+        this.props.checkTimeslots(timeslotParams)
     }
     
     // componentWillUnmount(){

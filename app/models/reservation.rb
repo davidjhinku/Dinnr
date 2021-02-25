@@ -15,14 +15,19 @@ class Reservation < ApplicationRecord
 
 
     def self.available(terms) #to return the available timeslots
-        slots = {
+        slots = {}
+        bookedSlots = Reservation.currReservations(terms[:restId], terms[:date], terms[:time])
 
-        }
-        debugger
 
         slotsStart = terms[:time].to_i - 2
+        debugger
+
         5.times do 
-            slots[slotsStart] = "available"
+            if !bookedSlots[slotsStart]
+                slots[slotsStart] = "available"
+            else
+                slots[slotsStart] = "booked"
+            end
             slotsStart += 1
         end
 
@@ -31,8 +36,15 @@ class Reservation < ApplicationRecord
         @timeslots = slots
     end
 
-    def self.availableSlots(hash, date, time)
+    def self.currReservations(restId, date, time)
         debugger
-        # add in methods to check if there is a reservation here
+        # todaysReservations = Reservation.where(date: date, time: {between: (time-2..time+2)})
+        # Reservation.where(restaurant_id: terms[:restId], time: 14).select("id, time")
+        reservations = Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2))).select("id, time")
+
+        debugger
+
+        return Reservation.where(restaurant_id: restId, date: date, time: ((time.to_i-2)..(time.to_i+2)))
+
     end
 end

@@ -50,6 +50,6 @@ class Api::ReservationsController < ApplicationController
     end
 
     def search_terms
-        params.require(:search).permit(:date, :time, :restaurant_id)
+        params.require(:search).permit(:date, :time, :restId)
     end
 end
