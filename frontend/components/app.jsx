@@ -27,7 +27,7 @@ const App = () => (
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
-            <ProtectedRoute exact path='/reservation/:restId' component={ReservationPageContainer}/>
+            <ProtectedRoute exact path='/reservation/:restId/:time' component={ReservationPageContainer}/>
             <ProtectedRoute exact path='/:userId/reservation/:resId' component={ReservationConfirmationContainer}/>
         </Switch>
 

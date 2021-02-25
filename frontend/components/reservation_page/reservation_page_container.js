@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => {
         currentUser: Object.values(state.entities.users)[0],
         restaurant: state.entities.restaurants[ownProps.match.params.restId],
         restId: ownProps.match.params.restId,
+        time: ownProps.match.params.time,
         searchParams: state.entities.search_params,
         formType: "Complete reservation"
         // restaurants: Object.values(state.entities.restaurants)

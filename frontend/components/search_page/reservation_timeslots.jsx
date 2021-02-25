@@ -14,17 +14,9 @@ class ReservationTimeslots extends React.Component {
     // }
 
     render() {
-        // const time = new Date().getHours() + 1
-        const time = this.props.searchParams.time
         const timeslotHash = this.props.timeslots
         debugger
         return(
-            // <div className='search-reservation'>
-            //     <ul className='search-reservation'>
-            //         {/* {this.timeSlots(time)} */}
-            //         {timeSlotLi(time, this.props.restId)}
-            //     </ul>
-            // </div>
             <div className='search-reservation'>
                 <ul className='search-reservation'>
                     {timeslotHashToLi(timeslotHash, 5, this.props.restId)}
