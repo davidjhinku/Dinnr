@@ -7,6 +7,11 @@ class Splash extends React.Component {
         super(props)
     }
 
+    // componentWillUnmount() {
+    //     debugger
+    //     this.props.clearRestaurants();
+    // }
+
     render() {
         return(
             <div className="splash-components">

@@ -1,6 +1,7 @@
 import * as APIUTIL from '../util/restaurant_api_util'
 
 export const RECEIVE_RESTAURANTS = 'RECEIVE_RESTAURANTS';
+export const CLEAR_RESTAURANTS = 'CLEAR_RESTAURANTS';
 export const RECEIVE_RESTAURANT = 'RECEIVE_RESTAURANT';
 
 const receiveRestaurants = restaurants => {
@@ -16,6 +17,12 @@ const receiveRestaurant = restaurant => {
         restaurant
     }
 }
+
+// export const clearRestaurants = () => {
+//     return {
+//         type: CLEAR_RESTAURANTS
+//     }
+// }
 
 export const fetchRestaurants = search => dispatch => {
     return APIUTIL.fetchRestaurants(search).then(restaurants => {

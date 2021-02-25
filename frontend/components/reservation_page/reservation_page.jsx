@@ -7,7 +7,8 @@ class ReservationPage extends React.Component {
         super(props)
         this.state = {
             "date": this.props.searchParams.date,
-            "time": this.props.searchParams.time,
+            // "time": this.props.searchParams.time,
+            "time": this.props.time,
             "party_size": this.props.searchParams.party_size,
             "user_id": this.props.currentUser.id,
             "restaurant_id": this.props.restaurant.id,
