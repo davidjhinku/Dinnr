@@ -3,17 +3,20 @@ import { numberToTime, timeSlotLi } from '../../util/util_functions'
 
 class ReservationTimeslots extends React.Component {
 
-    // componentDidMount() {
-    //     debugger
-    //     this.props.checkTimeslots(this.props.searchParams)
-    // }
+    componentDidMount() {
+        debugger
+        let timeslotParams = Object.assign({}, this.props.searchParams, { restId: this.props.restId })
+        this.props.checkTimeslots(timeslotParams)
+    }
     
     // componentWillUnmount(){
     //     //function to clear reservation slots
     // }
 
     render() {
-        const time = new Date().getHours() + 1
+        // const time = new Date().getHours() + 1
+        const time = this.props.searchParams.time
+        const timeslotHash = this.props.timeslots
         debugger
         return(
             <div className='search-reservation'>
@@ -22,6 +25,11 @@ class ReservationTimeslots extends React.Component {
                     {timeSlotLi(time, this.props.restId)}
                 </ul>
             </div>
+            // <div>
+                // <ul>
+
+                // </ul>
+            // </div>
         )
     }
 }
