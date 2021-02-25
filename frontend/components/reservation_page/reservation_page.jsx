@@ -23,7 +23,7 @@ class ReservationPage extends React.Component {
         e.preventDefault()
         debugger
         this.props.action(this.state)
-            .then(this.props.history.push('/profile'))
+            .then(reservation => this.props.history.push(`/${reservation.user_id}/reservation/${reservation.id}`))
     }
 
     handleChange(type){
