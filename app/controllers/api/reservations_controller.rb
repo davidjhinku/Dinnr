@@ -1,14 +1,17 @@
 class Api::ReservationsController < ApplicationController
 
     def index
-        # debugger
+        debugger
         # will need diff rendering for timeslots
         if params[:search][:userId] #to grab reservations for a user
             @reservations = Reservation.where(user_id: params[:search][:userId])
+            render :show
         else #to grab all avail timeslots
-            @reservations = Reservation.available(search_terms)
+            debugger
+            @timeslots = Reservation.available(search_terms)
+            render json: @timeslots
         end
-        render :show
+        
     end
 
     def show
