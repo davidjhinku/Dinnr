@@ -8,6 +8,33 @@
     .confirmation-left {
         border: 1px solid yellow;
         width: 745px;
+
+        .confirmation-thanks {
+            display: flex;
+            align-items: center;
+            width: inherit;
+            height: 73px;
+            padding: 16px 20px;
+            background-color: #55b68d;
+            color: white;
+
+            div {
+                margin-left: 10px;
+
+                h2 {   
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+
+            
+        }
     }
 
     .confirmation-right {

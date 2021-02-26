@@ -24,7 +24,11 @@ class ReservationConfirmation extends React.Component {
                     <div className="confirmation-left">
                         <div className="confirmation-summary">
                             <div className="confirmation-thanks">
-                                <h2>Thanks! Your reservation is confirmed.</h2>
+                                <i class="fas fa-check-circle fa-3x"></i>
+                                <div>
+                                    <h2>Thanks! Your reservation is confirmed.</h2>
+                                    <p>{`Confirmation #${reservation.id}`}</p>
+                                </div>
                             </div>
                             <div className="reservation-details">
                                 {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
