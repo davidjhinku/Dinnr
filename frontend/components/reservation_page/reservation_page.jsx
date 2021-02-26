@@ -24,7 +24,7 @@ class ReservationPage extends React.Component {
         e.preventDefault()
         // debugger
         this.props.action(this.state)
-            .then(reservation => this.props.history.push(`/${reservation.user_id}/reservation/${reservation.id}`))
+            .then(this.props.history.push(`/${this.props.reservation.user_id}/reservation/${this.props.reservation.id}`))
     }
 
     handleChange(type){

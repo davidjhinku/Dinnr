@@ -5,9 +5,10 @@ import { connect } from 'react-redux'
 //Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    debugger
     return {
-        // reservation: state.entities.reservations,
+        reservation: state.entities.reservations,
+        restaurant: Object.values(state.entities.restaurants)
         // currentUser: Object.values(state.entities.users)[0],
         // restaurant: state.entities.restaurants[ownProps.match.params.restId],
         // restId: ownProps.match.params.restId,
