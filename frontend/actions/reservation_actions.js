@@ -19,12 +19,12 @@ const receiveReservations = reservations => {
     }
 }
 
-const receiveReservation = reservation => {
+const receiveReservation = reservationData => {
     return {
         type: RECEIVE_RESERVATION,
-        reservation
+        reservationData
     }
-}
+}  //convention could change to payload
 
 // const createdReservation = () => {
 //     return {

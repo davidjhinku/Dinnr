@@ -22,10 +22,15 @@ class ReservationPage extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        // debugger
+        debugger
+
         this.props.action(this.state)
-            .then(this.props.history.push(`/${this.props.reservation.user_id}/reservation/${this.props.reservation.id}`))
-    }
+            // .then(this.props.history.push(`/${this.props.reservation.user_id}/reservation/${this.props.reservation.id}`))
+            .then((res) => {
+                debugger
+                this.props.history.push(`/${res.reservations.user_id}/reservation/${res.reservations.id}`)
+            })
+    } 
 
     handleChange(type){
         return e => {

@@ -33,7 +33,7 @@ const reservationReducer = (state = _defaultState, action) => {
         case RECEIVE_RESERVATION:
             // const newRes = {[action.reservation.id]: action.reservation}
             // return Object.assign({}, state, newRes)
-            return action.reservation
+            return action.reservationData.reservations
         default:
             return _defaultState;
     }

@@ -1,5 +1,6 @@
 import {RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT, CLEAR_RESTAURANTS} from '../actions/restaurant_actions'
 import {RECEIVE_SEARCH_PARAMS} from '../actions/search_actions'
+import {RECEIVE_RESERVATION} from '../actions/reservation_actions'
 
 const restaurantsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -13,6 +14,8 @@ const restaurantsReducer = (state = {}, action) => {
         //     return {}
         case RECEIVE_SEARCH_PARAMS:
             return {}
+        case RECEIVE_RESERVATION:
+            return Object.assign({}, state, { [action.reservationData.restaurants.id]: action.reservationData.restaurants })
         default:
             return state;
     }
