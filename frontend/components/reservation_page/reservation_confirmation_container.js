@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 //Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         // reservation: state.entities.reservations,
         // currentUser: Object.values(state.entities.users)[0],

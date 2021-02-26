@@ -9,26 +9,14 @@
     # :first_picture_url, :photos, :average_review, :reviews
     json.photoUrls @restaurant.photos.map {|file| url_for(file) }
     
-    # debugger
     json.menus do
-        @restaurant.menus.each do |menu|
-
-            # debugger
+        @restaurant.menus.each do |menu|   
             json.set! menu.name do
-
-                # debugger
                 menu.items.each do |item|
-
-                    json.set! item.id do# debugger
+                    json.set! item.id do
                         json.extract! item, :name, :description, :price
                     end
                 end
             end
         end
     end
-
-    # debugger
-    # json.menus @restaurant.
-# end add in when there's multiple layers of data being returned
-
-# json.photoUrls @restaurant.photos.map { |file| url_for(file) }

@@ -22,7 +22,7 @@ class ReservationPage extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
+        // debugger
         this.props.action(this.state)
             .then(reservation => this.props.history.push(`/${reservation.user_id}/reservation/${reservation.id}`))
     }
@@ -36,7 +36,7 @@ class ReservationPage extends React.Component {
     render() {
         let currUser = this.props.currentUser
         let rest = this.props.restaurant
-        debugger
+        // debugger
         return(
             <div className='reservation-page'>
                 <div className='reservation-left'>

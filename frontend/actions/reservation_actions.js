@@ -29,6 +29,7 @@ const receiveReservations = reservations => {
 export const checkTimeslots = search => dispatch => {
     return APIUTIL.fetchReservations(search)
         .then(timeslots => {
+            debugger
             return dispatch(receiveTimeslots(timeslots))
         })
 }

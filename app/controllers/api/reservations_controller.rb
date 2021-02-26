@@ -5,8 +5,13 @@ class Api::ReservationsController < ApplicationController
             @reservations = Reservation.where(user_id: params[:search][:userId])
             render :show
         else #to grab all avail timeslots
+            @restId = params[:search][:restId]
             @timeslots = Reservation.available(search_terms)
-            render json: @timeslots
+
+            render :timeslot
+            # render json: @timeslots
+            # debugger
+            # render json: {params[:search][:restId]: @timeslots}
         end
         
     end
