@@ -1,5 +1,5 @@
 import React from 'react'
-import {numberToTime} from '../../util/util_functions'
+import {numberToTime, dayOfWeek, readableDate} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
@@ -10,6 +10,7 @@ class ReservationConfirmation extends React.Component {
         let currUser = this.props.currentUser
         let rest = this.props.restaurant
         let reservation = this.props.reservation
+        let date = new Date(reservation.date)
         // debugger
 
         if (reservation.user_id !== currUser.id ||
@@ -37,7 +38,7 @@ class ReservationConfirmation extends React.Component {
                                     <h2>{rest.name}</h2>
                                     <div>
                                         <ul>
-                                            <li>{reservation.date}</li>
+                                            <li>{`${dayOfWeek(date)}, ${readableDate(date)}`}</li>
                                             <li>{numberToTime(reservation.time)}</li>
                                             <li>{reservation.party_size} people</li>
                                         </ul>

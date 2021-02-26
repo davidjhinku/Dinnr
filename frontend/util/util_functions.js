@@ -75,3 +75,17 @@ export const timeslotHashToLi = (hash, restId) => {
     
     return options
 }
+
+export const dayOfWeek = (date) => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    return days[date.getDay()]
+}
+
+export const readableDate = (date) => {
+    return date.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })
+}

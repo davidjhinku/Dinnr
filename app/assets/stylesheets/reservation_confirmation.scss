@@ -9,10 +9,13 @@
         border: 1px solid yellow;
         width: 745px;
 
-        .confirmation-thanks {
+        .confirmation-summary {
+            background-color: white;
+            width: inherit;
+
+            .confirmation-thanks {
             display: flex;
             align-items: center;
-            width: inherit;
             height: 73px;
             padding: 16px 20px;
             background-color: #55b68d;
@@ -35,6 +38,8 @@
 
             
         }
+        }
+        
     }
 
     .confirmation-right {
