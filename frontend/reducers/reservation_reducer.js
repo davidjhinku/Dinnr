@@ -1,4 +1,4 @@
-import { RECEIVE_RESERVATIONS } from '../actions/reservation_actions'
+import { RECEIVE_RESERVATIONS, RECEIVE_RESERVATION } from '../actions/reservation_actions'
 
 const _defaultState = {
     "date": 0,
@@ -29,7 +29,11 @@ const reservationReducer = (state = _defaultState, action) => {
 
     switch (action.type) {
         case RECEIVE_RESERVATIONS:
-            return action.reservations
+            return action.reservations;
+        case RECEIVE_RESERVATION:
+            // const newRes = {[action.reservation.id]: action.reservation}
+            // return Object.assign({}, state, newRes)
+            return action.reservation
         default:
             return _defaultState;
     }
