@@ -5,7 +5,7 @@ import { fetchRestaurant} from '../../actions/restaurant_actions'
 //Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         reservation: state.entities.reservations,
         restaurant: Object.values(state.entities.restaurants)[0],

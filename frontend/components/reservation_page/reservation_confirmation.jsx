@@ -10,7 +10,7 @@ class ReservationConfirmation extends React.Component {
         let currUser = this.props.currentUser
         let rest = this.props.restaurant
         let reservation = this.props.reservation
-        debugger
+        // debugger
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
@@ -24,7 +24,7 @@ class ReservationConfirmation extends React.Component {
                     <div className="confirmation-left">
                         <div className="confirmation-summary">
                             <div className="confirmation-thanks">
-                                <h2>Thans! Your reservation is confirmed.</h2>
+                                <h2>Thanks! Your reservation is confirmed.</h2>
                             </div>
                             <div className="reservation-details">
                                 {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}

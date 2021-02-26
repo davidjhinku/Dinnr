@@ -30,7 +30,7 @@ class ReservationTimeslots extends React.Component {
         return(
             <div className='search-reservation'>
                 <ul className='search-reservation'>
-                    {timeslotHashToLi(timeslotHash, 5, this.props.restId)}
+                    {timeslotHashToLi(timeslotHash, this.props.restId)}
                 </ul>
             </div>
         )

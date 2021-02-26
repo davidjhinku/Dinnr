@@ -56,7 +56,7 @@ export const timeSlotLi = (time = 0, restId) => {
     return options
 }
 
-export const timeslotHashToLi = (hash, num, restId) => {
+export const timeslotHashToLi = (hash, restId) => {
     let options = []
 
     for (let key in hash) {

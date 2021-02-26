@@ -9,9 +9,6 @@ class Api::ReservationsController < ApplicationController
             @timeslots = Reservation.available(search_terms)
 
             render :timeslot
-            # render json: @timeslots
-            # debugger
-            # render json: {params[:search][:restId]: @timeslots}
         end
         
     end
