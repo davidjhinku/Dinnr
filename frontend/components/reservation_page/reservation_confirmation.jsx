@@ -32,25 +32,45 @@ class ReservationConfirmation extends React.Component {
                                 </div>
                             </div>
                             <div className="reservation-details">
-                                {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
                                 {/* <img src={rest.photoUrl}/> */}
                                 <div>
                                     <h2>{rest.name}</h2>
                                     <div>
                                         <ul>
-                                            <li>{`${dayOfWeek(date)}, ${readableDate(date)}`}</li>
-                                            <li>{numberToTime(reservation.time)}</li>
-                                            <li>{reservation.party_size} people</li>
+                                            <span>
+                                                <i class="far fa-calendar-alt"></i>
+                                                <li>{`${dayOfWeek(date)}, ${readableDate(date)}, ${numberToTime(reservation.time)}`}</li>
+                                            </span>
+                                            <span>
+                                                <i class="far fa-user"></i>
+                                                <li>{reservation.party_size} people</li>
+                                            </span>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                         <div className="confirmation-details">
-                            <h2>Reservation details</h2>
-                            <p>The occasion</p>
-                            <p>Special requests</p>
+                            <span>
+                                <i class="far fa-clipboard fa-3x"></i>
+                                <h2>Reservation details</h2>
+                            </span>
+                            <div>{reservation.occasion}</div>
+                            <div>{reservation.special_request}</div>
+
+                            <h3>What to know before you go</h3>
+                            <h4>Important dining information</h4>
+                            <p>
+                                We have a 15 minute grace period. Please call us if you are running later than 15 minutes after your reservation time.
+                            </p>
+
+                            <p>
+                                We may contact you about this reservation, so please ensure your email and phone number are up to date.
+                            </p>
                         </div>
+
                         <div className="restaurant">
                             <div className="details">
                                 <p>The details again</p>
