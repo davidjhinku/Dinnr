@@ -64,20 +64,30 @@ class ReservationPage extends React.Component {
                                 <h2>{rest.name}</h2>
                                 <div>
                                     <ul>
-                                        <li>{date.toDateString().split(0, 10)}</li>
-                                        <li>{numberToTime(this.state.time)}</li>
-                                        <li>{this.state.party_size} people</li>
+                                        <span>
+                                            <i class="far fa-calendar"></i>
+                                            <li>{date.toDateString().slice(0, 10)}</li>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-clock"></i>
+                                            <li>{numberToTime(this.state.time)}</li>
+                                        </span>
+                                        <span>
+                                            <i class="far fa-user"></i>
+                                            <li>{this.state.party_size} people</li>
+                                        </span>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <h4>Diner details</h4>
-                        <h4>{currUser.first_name} {currUser.last_name}</h4>
+                        <h4 className="name">{currUser.first_name} {currUser.last_name}</h4>
                         
                         <form onSubmit={this.handleSubmit}>
                             <div>
                                 <input type="tel"
+                                    className="editable"
                                     placeholder="123-456-7891"
                                     value={this.state.phone}
                                     onChange={this.handleChange('phone')}
@@ -95,6 +105,7 @@ class ReservationPage extends React.Component {
                             <div>
                                 <select value={this.state.occasion}
                                     onChange={this.handleChange('occasion')}
+                                    className="editable"
                                 >
                                     <option value="" disabled hidden>Select an occasion (optional)</option>
                                     <option value="Birthday">Birthday</option>
@@ -104,12 +115,15 @@ class ReservationPage extends React.Component {
                                     <option value="Celebration">Celebration</option>
                                 </select>
                                 <textarea value={this.state.special_request}
+                                    className="editable"
                                     placeholder="Add a special request (optional)"
                                     onChange={this.handleChange('special_request')}>    
                                 </textarea>
 
                             </div>
-                            <button className="submit-reservation">{this.props.formType}</button>
+                            <div>
+                                <button className="submit-reservation">{this.props.formType}</button>
+                            </div>
 
                         </form>
                         <p>
