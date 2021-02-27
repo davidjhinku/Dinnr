@@ -61,8 +61,8 @@
                 min-height: 158px;
                 margin-bottom: 35px;
                 background-color: white;
-                box-shadow: 0 2px 1px #eeeeee;
-                border-radius: 0 0 4px 4px;
+                // box-shadow: 0 2px 1px #eeeeee;
+                border-radius: 4px;
 
                 hr {
                     margin: 0;
@@ -117,6 +117,17 @@
 
                                 a:hover {
                                     filter: brightness(70%);
+                                }
+
+                                button {
+                                    color: red;
+                                    background-color: white;
+                                    border: none;
+                                }
+
+                                button:hover {
+                                    cursor: pointer;
+                                    color: rgb(179, 0, 0);
                                 }
                             }
                         }
