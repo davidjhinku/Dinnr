@@ -121,6 +121,16 @@ class ReservationPage extends React.Component {
                                 </textarea>
 
                             </div>
+                            <div className="unused">
+                                <div>
+                                    <input type="checkbox"/>
+                                    <label>Sign me up to receive dining offers and news from this   restaurant by email.</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" label="points"/>
+                                    <label id="points">Yes, I want to collect 100 points for this reservation.</label>
+                                </div>
+                            </div>
                             <div>
                                 <button className="submit-reservation">{this.props.formType}</button>
                             </div>

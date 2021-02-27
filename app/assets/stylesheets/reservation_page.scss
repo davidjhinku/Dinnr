@@ -87,8 +87,33 @@
                 .editable:hover {
                     border: 1px solid black;
                 }
+
             }
 
+            .unused {
+                width: 100%;
+                height: 55px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                div {
+                    display: flex;
+                    height: 50%;
+
+                    input[type=checkbox] {
+                        width: 18px;
+                        height: 18px;
+                        margin: 0;
+                    }
+
+                    label {
+                        margin-left: 10px;
+                        width: inherit;
+                    }
+                }
+
+            }
 
             button {
                 width: inherit;
