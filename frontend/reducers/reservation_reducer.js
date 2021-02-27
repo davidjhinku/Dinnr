@@ -40,7 +40,6 @@ const reservationReducer = (state = _defaultState, action) => {
         //     debugger
         //     return action.payload.reservations
         case RECEIVE_USER_DATA:
-            debugger
             return action.payload.reservations
         default:
             return _defaultState;

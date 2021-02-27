@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {fetchUserData} from '../../actions/user_actions'
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     return {
         currentUser: Object.values(state.entities.users)[0],
         reservations: state.entities.reservations,

@@ -15,11 +15,11 @@ class PastReservation extends React.Component {
             <div className='component'>
                 <h1>Past Reservation</h1>
                 <hr/>
-                <div className="profile-reservations">
+                {/* <div className="profile-reservations"> */}
                     <ul>
                         {reservations}
                     </ul>
-                </div>
+                {/* </div> */}
             </div>
         )
     }

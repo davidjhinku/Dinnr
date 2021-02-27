@@ -7,12 +7,10 @@ import { updateReservation } from '../../util/reservation_api_util';
 class Profile extends React.Component {
 
     componentDidMount() {
-        debugger
         this.props.fetchUserData(this.props.currentUser.id)
     }
 
     render() {
-        debugger
         if (this.props.reservations["default"]) {
             return(
                 <div>
@@ -20,13 +18,11 @@ class Profile extends React.Component {
                 </div>
             )
         } else {
-            debugger
             let currentTime = Date.now()
             let pastReservations = Object.values(this.props.reservations).filter(reservation => new Date(reservation.date) <= currentTime)
 
             let upcomingReservations = Object.values(this.props.reservations).filter(reservation => new Date(reservation.date) > currentTime)
 
-            debugger
             return(
                 <div className='profile-page'>
                     <div className='profile-header'>
@@ -42,7 +38,7 @@ class Profile extends React.Component {
                             <a href="">Account Details</a>
                         </nav>
                         <div className='profile-components'>
-                            <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants}/>
+                            <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants} userId={this.props.currentUser.id}/>
                             <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants}/>
                             <Favorite />
                         </div>
