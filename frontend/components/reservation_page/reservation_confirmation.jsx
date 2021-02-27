@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {numberToTime, dayOfWeek, readableDate} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
@@ -73,13 +74,19 @@ class ReservationConfirmation extends React.Component {
 
                         <div className="restaurant">
                             <div className="details">
-                                <p>The details again</p>
+                                <h3>{rest.name}</h3>
+                                <h4>{rest.address}, {rest.city}</h4>
+                                <Link to={`/restaurants/${rest.id}`} target="_blank">{"View Hours, Transportation, and Other Details >"}</Link>
+                                {/* <a href={`/#/restaurants/${rest.id}`} target="_blank" >{"View Hours, Transportation, and Other Details >"}</a> */}
                             </div>
                             <div className="map">
-                                <p>A map</p>
+                                <a href={`https://maps.google.com/?q= ${rest.address}, ${rest.city}, ${rest.state}, ${rest.zip}`} target="_blank">
+                                    {/* <img src={`https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=310x155&maptype=roadmap&markers=color:blue%7C${rest.lat},${rest.lng}&key=${window.googleAPIKey}`} alt="map"/> */}
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <div className="confirmation-right">
                         <div>The users name, location, review count</div>
                     </div>
