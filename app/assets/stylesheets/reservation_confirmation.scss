@@ -6,7 +6,6 @@
     padding: 20px;
 
     .confirmation-left {
-        border: 1px solid yellow;
         width: 745px;
 
         .confirmation-summary {
@@ -116,6 +115,27 @@
 
             p:last-child {
                 margin-bottom: 0;
+            }
+        }
+
+        .restaurant {
+            display: flex;
+            width: inherit;
+            height: 180px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px #eeeeee;
+            margin-bottom: 20px;
+
+            .details {
+                width: 50%;
+                padding: 24px;
+                border: 1px solid yellow;
+            }
+
+            .map {
+                width: 50%;
+                border: 1px solid blue;
             }
         }
     }
