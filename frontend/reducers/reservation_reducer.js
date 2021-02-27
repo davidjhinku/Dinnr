@@ -1,15 +1,19 @@
 import { RECEIVE_RESERVATIONS, RECEIVE_RESERVATION } from '../actions/reservation_actions'
+import {RECEIVE_CURRENT_USER} from '../actions/session_actions'
+import {RECEIVE_USER_DATA} from '../actions/user_actions'
 
-const _defaultState = {
-    "date": 0,
-    "time": 0,
-    "party_size": 0,
-    "user_id": 0,
-    "restaurant_id": 0,
-    "phone": "",
-    "email": "",
-    "occasion": "",
-    "special_request": "",
+const _defaultState = {"default":
+    {
+        "date": 0,
+        "time": 0,
+        "party_size": 0,
+        "user_id": 0,
+        "restaurant_id": 0,
+        "phone": "",
+        "email": "",
+        "occasion": "",
+        "special_request": "",
+    }
 }
 
 // const _defaultState = {
@@ -31,9 +35,13 @@ const reservationReducer = (state = _defaultState, action) => {
         case RECEIVE_RESERVATIONS:
             return action.reservations;
         case RECEIVE_RESERVATION:
-            // const newRes = {[action.reservation.id]: action.reservation}
-            // return Object.assign({}, state, newRes)
             return action.reservationData.reservations
+        // case RECEIVE_CURRENT_USER:
+        //     debugger
+        //     return action.payload.reservations
+        case RECEIVE_USER_DATA:
+            debugger
+            return action.payload.reservations
         default:
             return _defaultState;
     }

@@ -1,6 +1,7 @@
 import {RECEIVE_RESTAURANTS, RECEIVE_RESTAURANT, CLEAR_RESTAURANTS} from '../actions/restaurant_actions'
 import {RECEIVE_SEARCH_PARAMS} from '../actions/search_actions'
 import {RECEIVE_RESERVATION} from '../actions/reservation_actions'
+import {receiveUserData, RECEIVE_USER_DATA} from '../actions/user_actions'
 
 const restaurantsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -16,6 +17,8 @@ const restaurantsReducer = (state = {}, action) => {
             return {}
         case RECEIVE_RESERVATION:
             return Object.assign({}, state, { [action.reservationData.restaurants.id]: action.reservationData.restaurants })
+        case RECEIVE_USER_DATA:
+            return action.payload.restaurants
         default:
             return state;
     }

@@ -3,6 +3,9 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if @user
             login!(@user)
+            # @reservations = @user.reservations
+
+            # debugger
             render 'api/users/show.json.jbuilder'
         else
             render json: ["Your email and password don't match. Please try again."], status: 401
@@ -13,6 +16,7 @@ class Api::SessionsController < ApplicationController
         @user = current_user
         if @user
             logout!
+            # @reservations = []
             render 'api/users/show.json.jbuilder'
         else
             render json: ['Not logged in'], status: 404
