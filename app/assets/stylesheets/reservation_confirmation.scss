@@ -11,7 +11,7 @@
         .confirmation-summary {
             background-color: white;
             width: inherit;
-            box-shadow: 0 1px 1px #eeeeee;
+            box-shadow: 0 2px 1px #eeeeee;
             border-radius: 0 0 4px 4px;
             margin-bottom: 20px;
 
@@ -72,7 +72,7 @@
             padding: 24px;
             background-color: white;
             border-radius: 4px;
-            box-shadow: 0 1px 1px #eeeeee;
+            box-shadow: 0 2px 1px #eeeeee;
             margin-bottom: 20px;
 
             span {
@@ -124,7 +124,7 @@
             height: 180px;
             background-color: white;
             border-radius: 4px;
-            box-shadow: 0 1px 1px #eeeeee;
+            box-shadow: 0 2px 1px #eeeeee;
             margin-bottom: 20px;
 
             .details {
@@ -163,8 +163,56 @@
     }
 
     .confirmation-right {
-        border: 1px solid red;
         width: 340px;
         margin-left: 25px; 
+
+        h2 {
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #999999;
+            margin-bottom: 20px;
+        }
+
+        .user {
+            display: flex;
+            padding: 24px;
+            width: inherit;
+            border-radius: 4px;
+            box-shadow: 0 2px 1px #eeeeee;
+            background-color: white;
+
+            .avatar {
+                display: flex;
+                justify-content: center;
+                color: white;
+                text-transform: uppercase;
+                align-items: center;
+                width: 65px;
+                height: 65px;
+                font-size: 24px;
+                border-radius: 50%;
+                background-color: #e69b84;
+                margin-right: 10px;
+            }
+
+            span {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+
+                i {
+                    margin-right: 15px;
+                }
+
+                h4 {
+                    margin-bottom: 0;
+                }
+            };
+        }
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {numberToTime, dayOfWeek, readableDate} from '../../util/util_functions'
+import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
@@ -9,10 +9,11 @@ class ReservationConfirmation extends React.Component {
 
     render() {
         let currUser = this.props.currentUser
+        let currUserJoined = new Date(currUser.created_at)
         let rest = this.props.restaurant
         let reservation = this.props.reservation
         let date = new Date(reservation.date)
-        // debugger
+        debugger
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
@@ -88,7 +89,29 @@ class ReservationConfirmation extends React.Component {
                     </div>
 
                     <div className="confirmation-right">
-                        <div>The users name, location, review count</div>
+                        <div className="user">
+                            <div className='avatar'>
+                                {currUser.first_name.charAt(0)}{currUser.last_name.charAt(0)}
+                            </div>
+                            <div className='details'>
+                                <h2>{currUser.first_name} {currUser.last_name}</h2>
+                                <h4>Joined in {readableMonth(currUserJoined)} {currUserJoined.getFullYear()}</h4>
+
+                                <span>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>{currUser.primary_location}</h4>
+                                </span>
+                                <span>
+                                    <i class="far fa-comment-alt fa-flip-horizontal"></i>
+                                    <h4>0 reviews</h4>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div className="history">
+
+                        </div>
                     </div>
                 </div>
             )
