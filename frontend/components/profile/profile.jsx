@@ -11,13 +11,13 @@ class Profile extends React.Component {
     }
 
     render() {
-        if (this.props.reservations["default"]) {
-            return(
-                <div>
-                    Loading...
-                </div>
-            )
-        } else {
+        // if (this.props.reservations["default"]) {
+        //     return(
+        //         <div>
+        //             Loading...
+        //         </div>
+        //     )
+        // } else {
             let currentTime = Date.now()
             let pastReservations = Object.values(this.props.reservations).filter(reservation => new Date(reservation.date) <= currentTime)
 
@@ -46,7 +46,7 @@ class Profile extends React.Component {
 
                 </div>
             )
-        }
+        // }
     }
 }
 

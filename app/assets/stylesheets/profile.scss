@@ -76,6 +76,16 @@
                     padding: 32px;
                 }
 
+                .no-reservations {
+                    padding: 34px;
+                    color: #a1a1a1;
+                    text-decoration: none;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
                 .profile-reservation {
                     width: inherit;
                     padding: 0;
