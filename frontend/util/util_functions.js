@@ -56,7 +56,7 @@ export const timeSlotLi = (time = 0, restId) => {
     return options
 }
 
-export const timeslotHashToLi = (hash, num, restId) => {
+export const timeslotHashToLi = (hash, restId) => {
     let options = []
 
     for (let key in hash) {
@@ -74,4 +74,18 @@ export const timeslotHashToLi = (hash, num, restId) => {
     }
     
     return options
+}
+
+export const dayOfWeek = (date) => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    return days[date.getDay()]
+}
+
+export const readableDate = (date) => {
+    return date.toLocaleDateString(undefined, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })
 }

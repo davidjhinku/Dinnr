@@ -1,9 +1,8 @@
 import * as APIUTIL from '../util/reservation_api_util'
 
 export const RECEIVE_RESERVATION_TIMESLOTS = "RECEIVE_RESERVATION_TIMESLOTS";
-//send to searchParams cause its seperate from reservations
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
-//send to it's own reducer under entities
+export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 // export const CREATED_RESERVATION = 'CREATED_RESERVATION'
 
 const receiveTimeslots = timeslots => {
@@ -20,6 +19,13 @@ const receiveReservations = reservations => {
     }
 }
 
+const receiveReservation = reservationData => {
+    return {
+        type: RECEIVE_RESERVATION,
+        reservationData
+    }
+}  //convention could change to payload
+
 // const createdReservation = () => {
 //     return {
 //         type: CREATED_RESERVATION,
@@ -29,6 +35,7 @@ const receiveReservations = reservations => {
 export const checkTimeslots = search => dispatch => {
     return APIUTIL.fetchReservations(search)
         .then(timeslots => {
+            debugger
             return dispatch(receiveTimeslots(timeslots))
         })
 }
@@ -40,9 +47,18 @@ export const fetchReservations = userId => dispatch => {
         })
 }
 
+export const fetchReservation = resId => dispatch => {
+    return APIUTIL.fetchReservation(resId)
+        .then(reservation => {
+            debugger
+            return dispatch(receiveReservation(reservation))
+        })
+}
+
 export const createReservation = reservation => dispatch => {
     return APIUTIL.createReservation(reservation)
         .then(reservation => {
+            debugger
             return dispatch(receiveReservations(reservation))
         })
 }

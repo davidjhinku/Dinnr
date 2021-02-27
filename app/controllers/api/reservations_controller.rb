@@ -5,14 +5,17 @@ class Api::ReservationsController < ApplicationController
             @reservations = Reservation.where(user_id: params[:search][:userId])
             render :show
         else #to grab all avail timeslots
+            @restId = params[:search][:restId]
             @timeslots = Reservation.available(search_terms)
-            render json: @timeslots
+
+            render :timeslot
         end
         
     end
 
     def show
         @reservation = Reservation.find(params[:id])
+        @restaurant = @reservation.restaurant
         render :show
     end
 
@@ -20,7 +23,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
 
         if @reservation.save!
-            render :show
+            render :create
         else
             render json: @reservation.errors.full_messages, status: 422
         end
