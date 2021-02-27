@@ -82,6 +82,12 @@ export const dayOfWeek = (date) => {
     return days[date.getDay()]
 }
 
+export const readableMonth = (date) => {
+    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    
+    return month[date.getMonth()]
+}
+
 export const readableDate = (date) => {
     return date.toLocaleDateString(undefined, {
         year: 'numeric',

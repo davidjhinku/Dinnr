@@ -17,7 +17,8 @@ class ReservationUpcomingDetails extends React.Component {
                         <h4>{`${reservation.date} at ${numberToTime(reservation.time)}`}</h4>
                         <h4>{`Table for ${reservation.party_size} people.`}</h4>
                         <div className="links">
-                            <Link to={`${this.props.userId}/reservations/${reservation.id}`} target="_blank">View</Link>
+                            <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">View</Link>
+                            {/* <a href={`/#/${this.props.userId}/reservation/${reservation.id}`}>View</a> */}
                             <Link>Modify</Link>
                             <Link>Cancel</Link>
                         </div>

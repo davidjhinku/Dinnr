@@ -4,6 +4,7 @@ import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
+        debugger
         this.props.fetchReservation(this.props.resId)
     }
 
