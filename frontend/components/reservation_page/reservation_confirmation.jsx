@@ -1,5 +1,6 @@
 import React from 'react'
-import {numberToTime, dayOfWeek, readableDate} from '../../util/util_functions'
+import {Link} from 'react-router-dom'
+import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
@@ -8,10 +9,11 @@ class ReservationConfirmation extends React.Component {
 
     render() {
         let currUser = this.props.currentUser
+        let currUserJoined = new Date(currUser.created_at)
         let rest = this.props.restaurant
         let reservation = this.props.reservation
         let date = new Date(reservation.date)
-        // debugger
+        debugger
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
@@ -57,8 +59,8 @@ class ReservationConfirmation extends React.Component {
                                 <i class="far fa-clipboard fa-3x"></i>
                                 <h2>Reservation details</h2>
                             </span>
-                            <div>{reservation.occasion}</div>
-                            <div>{reservation.special_request}</div>
+                            <div>{reservation.occasion === '' ? 'No occasion selected' : reservation.occasion}</div>
+                            <div>{reservation.special_request === '' ? 'No special requests' : reservation.special_request}</div>
 
                             <h3>What to know before you go</h3>
                             <h4>Important dining information</h4>
@@ -73,15 +75,43 @@ class ReservationConfirmation extends React.Component {
 
                         <div className="restaurant">
                             <div className="details">
-                                <p>The details again</p>
+                                <h3>{rest.name}</h3>
+                                <h4>{rest.address}, {rest.city}</h4>
+                                <Link to={`/restaurants/${rest.id}`} target="_blank">{"View Hours, Transportation, and Other Details >"}</Link>
+                                {/* <a href={`/#/restaurants/${rest.id}`} target="_blank" >{"View Hours, Transportation, and Other Details >"}</a> */}
                             </div>
                             <div className="map">
-                                <p>A map</p>
+                                <a href={`https://maps.google.com/?q= ${rest.address}, ${rest.city}, ${rest.state}, ${rest.zip}`} target="_blank">
+                                    {/* <img src={`https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=310x155&maptype=roadmap&markers=color:blue%7C${rest.lat},${rest.lng}&key=${window.googleAPIKey}`} alt="map"/> */}
+                                </a>
                             </div>
                         </div>
                     </div>
+
                     <div className="confirmation-right">
-                        <div>The users name, location, review count</div>
+                        <div className="user">
+                            <div className='avatar'>
+                                {currUser.first_name.charAt(0)}{currUser.last_name.charAt(0)}
+                            </div>
+                            <div className='details'>
+                                <h2>{currUser.first_name} {currUser.last_name}</h2>
+                                <h4>Joined in {readableMonth(currUserJoined)} {currUserJoined.getFullYear()}</h4>
+
+                                <span>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <h4>{currUser.primary_location}</h4>
+                                </span>
+                                <span>
+                                    <i class="far fa-comment-alt fa-flip-horizontal"></i>
+                                    <h4>0 reviews</h4>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div className="history">
+
+                        </div>
                     </div>
                 </div>
             )
