@@ -59,8 +59,8 @@ class ReservationConfirmation extends React.Component {
                                 <i class="far fa-clipboard fa-3x"></i>
                                 <h2>Reservation details</h2>
                             </span>
-                            <div>{reservation.occasion}</div>
-                            <div>{reservation.special_request}</div>
+                            <div>{reservation.occasion === '' ? 'No occasion selected' : reservation.occasion}</div>
+                            <div>{reservation.special_request === '' ? 'No special requests' : reservation.special_request}</div>
 
                             <h3>What to know before you go</h3>
                             <h4>Important dining information</h4>

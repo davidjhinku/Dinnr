@@ -154,6 +154,10 @@ class ReservationPage extends React.Component {
                         <p>
                             Reservation policies are to ensure proper sanitation between parties. Thank you for your understanding and support while we adapt to the changing times.
                         </p>
+                        <h4>Points</h4>
+                        <p>
+                            Reservation policies are to ensure proper sanitation between parties. Thank you for your understanding and support while we adapt to the changing times.
+                        </p>
                     </article>
                 </div>
             )
