@@ -23,7 +23,8 @@ class NavBar extends React.Component {
                         <h3>{`Hello, ${this.props.currentUser.first_name}!`}</h3>
                         <hr />
                         <ul>
-                            <li><button><Link to="/profile">My Profile</Link></button></li>
+                            <li><button><Link to="/profile" className="nav-dropdown" >My Profile</Link></button></li>
+                            {/* <li><Link to="/profile" className="nav-dropdown" >My Profile</Link></li> */}
                             {/* <li><Link to="/profile">My Profile</Link></li> */}
                             <li><button>My Reservations</button></li>
                             <li><button>My Saved Restaurants</button></li>
