@@ -18,9 +18,10 @@ class ReservationUpcomingDetails extends React.Component {
                         <h4>{`Table for ${reservation.party_size} people.`}</h4>
                         <div className="links">
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">View</Link>
-                            {/* <a href={`/#/${this.props.userId}/reservation/${reservation.id}`}>View</a> */}
-                            <Link to='/'>Modify</Link>
-                            <Link to='/'>Cancel</Link>
+                            <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">Modify</Link>
+                            <Link to={`${this.props.userId}/delete/reservation/${reservation.id}`} reservation={reservation} restaurant={restaurant} target="_blank">
+                                Cancel
+                            </Link>
                         </div>
                     </div>
                 </li>

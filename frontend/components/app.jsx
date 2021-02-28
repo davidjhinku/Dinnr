@@ -7,6 +7,7 @@ import RestaurantShowContainer from './restaurant_show/restaurant_show_container
 import ProfileContainer from './profile/profile_container'
 import ReservationPageContainer from './reservation_page/reservation_page_container'
 import ReservationConfirmationContainer from './reservation_page/reservation_confirmation_container'
+import DeleteReservationContainer from './reservation_page/delete_reservation_container'
 import NavFooter from './nav_footer/nav_footer'
 import {Link, Route, Switch} from 'react-router-dom'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
@@ -29,6 +30,7 @@ const App = () => (
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
             <ProtectedRoute exact path='/reservation/:restId/:time' component={ReservationPageContainer}/>
             <ProtectedRoute exact path='/:userId/reservation/:resId' component={ReservationConfirmationContainer}/>
+            <ProtectedRoute exact path='/:userId/delete/reservation/:resId' component={DeleteReservationContainer}/>
         </Switch>
 
         <footer className='nav-footer'>
