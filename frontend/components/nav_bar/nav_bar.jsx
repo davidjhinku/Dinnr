@@ -24,8 +24,6 @@ class NavBar extends React.Component {
                         <hr />
                         <ul>
                             <li><button><Link to="/profile" className="nav-dropdown" >My Profile</Link></button></li>
-                            {/* <li><Link to="/profile" className="nav-dropdown" >My Profile</Link></li> */}
-                            {/* <li><Link to="/profile">My Profile</Link></li> */}
                             <li><button>My Reservations</button></li>
                             <li><button>My Saved Restaurants</button></li>
                             <li><button className='signout-button' onClick={() => this.props.logout()}>Sign out</button></li>
