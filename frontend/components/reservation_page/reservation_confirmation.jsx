@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/util_functions'
+import { numberToTime, dayOfWeek, readableDate, readableMonth, newDate} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
@@ -12,7 +12,8 @@ class ReservationConfirmation extends React.Component {
         let currUserJoined = new Date(currUser.created_at)
         let rest = this.props.restaurant
         let reservation = this.props.reservation
-        let date = new Date(reservation.date)
+        // let date = new Date(reservation.date)
+        let date = newDate(reservation.date, reservation.time)
 
         if (reservation.user_id !== currUser.id ||
             !rest ||

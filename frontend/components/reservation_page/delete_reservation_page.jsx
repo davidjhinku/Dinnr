@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link, withRouter} from 'react-router-dom'
-import { dayOfWeek, readableDate, numberToTime } from '../../util/util_functions'
+import { dayOfWeek, readableDate, numberToTime, newDate } from '../../util/util_functions'
 
 class DeleteReservation extends React.Component {
     constructor(props) {
@@ -24,7 +24,7 @@ class DeleteReservation extends React.Component {
         let currUser = this.props.currentUser
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
-        let date = new Date(reservation.date)
+        let date = newDate(reservation.date, reservation.time)
 
         debugger
         if (reservation.user_id !== currUser.id) {
@@ -58,9 +58,7 @@ class DeleteReservation extends React.Component {
                                 </div>
                             </div>
                             <hr/>
-                            {/* <div className="button"> */}
-                                <button onClick={this.handleClick}>Cancel Reservation</button>
-                            {/* </div> */}
+                            <button onClick={this.handleClick}>Cancel Reservation</button>
                         </div>
                     </div>
                 </div>

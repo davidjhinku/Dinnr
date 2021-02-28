@@ -90,3 +90,7 @@ export const readableDate = (date) => {
         day: 'numeric',
     })
 }
+
+export const newDate = (date, time) => {
+    return new Date(`${date}T${time}:00:00Z`)
+}

@@ -63,5 +63,7 @@ export const createReservation = reservation => dispatch => {
 
 export const deleteReservation = resId => dispatch => {
     return APIUTIL.deleteReservation(resId)
-    
+        .then(reservation => {
+            
+        })
 }

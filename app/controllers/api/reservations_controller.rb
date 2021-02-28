@@ -40,11 +40,11 @@ class Api::ReservationsController < ApplicationController
 
     def destroy
         @reservation = Reservation.find_by(id: params[:id])       
-        debugger
+        # debugger
 
         @reservation.destroy
         # render :show
-        debugger
+        # debugger
 
         render json: @reservation
     end

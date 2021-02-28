@@ -73,11 +73,39 @@
             border-radius: 4px;
             font-size: 16px;
             color: white;
+            transition: all 0.3s;
         }
 
         button:hover {
             cursor: pointer;
             filter: brightness(85%);
+        }
+    }
+}
+
+.delete-res-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #eeeeee;
+    min-height: 90vh;
+
+    
+    .content {
+        h2 {
+            padding: 50px 0;
+            font-size: 30px;
+        }
+        
+        h2::first-letter {
+            text-transform: capitalize;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 25px 0;
         }
     }
 }
