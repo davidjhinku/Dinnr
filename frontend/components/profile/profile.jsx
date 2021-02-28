@@ -12,6 +12,7 @@ class Profile extends React.Component {
     }
 
     render() {
+        let currentUser = this.props.currentUser
         let currentTime = Date.now()
         // let pastReservations = Object.values(this.props.reservations).filter(reservation => new Date(`${reservation.date}T${reservation.time}:00:00Z`) <= currentTime)
         let pastReservations = Object.values(this.props.reservations).filter(reservation => newDate(reservation.date, reservation.time) <= currentTime)
@@ -29,8 +30,8 @@ class Profile extends React.Component {
             <div className='profile-page'>
                 <div className='profile-header'>
                     <div>
-                        <h1>The Name</h1>
-                        <p>The Points</p>
+                        <h1>{currentUser.first_name} {currentUser.last_name}</h1>
+                        <p>0 points</p>
                     </div>
                 </div>
                 <div className='profile-content'>
