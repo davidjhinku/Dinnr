@@ -5,19 +5,20 @@ import { fetchReservation, deleteReservation } from '../../actions/reservation_a
 //Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
+    const resId = ownProps.match.params.resId
     debugger
     return {
-        // reservation: state.entities.reservations,
-        // restaurant: Object.values(state.entities.restaurants)[0],
+        reservation: state.entities.reservations,
+        restaurant: Object.values(state.entities.restaurants)[0],
         currentUser: Object.values(state.entities.users)[0],
-        resId: ownProps.match.params.resId
+        resId: resId
     }
 }
 
 const mDTP = dispatch => {
     return {
-        deleteReservation: resId => dispatch(deleteReservation(resId))
-        // fetchReservation: resId => dispatch(fetchReservation(resId)),
+        deleteReservation: resId => dispatch(deleteReservation(resId)),
+        fetchReservation: resId => dispatch(fetchReservation(resId)),
         // fetchRestaurant: restId => dispatch(fetchRestaurant(restId))
     }
 }

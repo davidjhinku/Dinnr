@@ -3,6 +3,10 @@ import { numberToTime} from '../../util/util_functions';
 import {Link} from 'react-router-dom';
 
 class ReservationUpcomingDetails extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+    
     render(){
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
@@ -19,8 +23,8 @@ class ReservationUpcomingDetails extends React.Component {
                         <div className="links">
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">View</Link>
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">Modify</Link>
-                            <Link to={`${this.props.userId}/delete/reservation/${reservation.id}`} reservation={reservation} restaurant={restaurant} target="_blank">
-                                Cancel
+                            <Link to={`${this.props.userId}/delete/reservation/${reservation.id}`} reservation={reservation} restaurant={restaurant}>
+                            Cancel
                             </Link>
                         </div>
                     </div>
