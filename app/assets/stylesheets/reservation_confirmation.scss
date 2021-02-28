@@ -47,11 +47,30 @@
 
                 span {
                     display: flex;
-                    margin-bottom: 15px;
+                    margin-bottom: 10px;
                     font-size: 17px;
 
                     i {
                         margin-right: 15px;
+                        color: rgb(181, 181, 181);
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: #237b98;
+                        font-size: 16px;
+                    }
+
+                    a:hover {
+                        filter: brightness(70%);
+                    }
+
+                    .vert-line {
+                        border-left: 1px solid rgb(235, 233, 233);
+                        height: 16px;
+                        vertical-align: middle;
+                        margin: 0 10px;
+                        width: 1px;
                     }
                 }
 

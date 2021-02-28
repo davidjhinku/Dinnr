@@ -41,12 +41,18 @@ class ReservationConfirmation extends React.Component {
                                     <div>
                                         <ul>
                                             <span>
-                                                <i class="far fa-calendar-alt"></i>
+                                                <i className="far fa-calendar-alt"></i>
                                                 <li>{`${dayOfWeek(date)}, ${readableDate(date)}, ${numberToTime(reservation.time)}`}</li>
                                             </span>
                                             <span>
-                                                <i class="far fa-user"></i>
+                                                <i className="far fa-user"></i>
                                                 <li>{reservation.party_size} people</li>
+                                            </span>
+                                            <span>
+                                                <Link to='#'>Modify</Link>
+                                                <hr className='vert-line'/>
+                                                <Link to={`/${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link>
+                                                {/* <Link to={`${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link> */}
                                             </span>
                                         </ul>
                                     </div>
