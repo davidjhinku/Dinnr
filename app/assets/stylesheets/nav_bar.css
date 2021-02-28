@@ -83,6 +83,21 @@ ul.nav-dropdown > li {
 }
 
 
+/* .dropdown-options a {
+    background-color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown-options a:hover {
+    filter: brightness(85%)
+} */
+
 .dropdown-options button {
     background-color: white;
     border: none;
@@ -116,4 +131,11 @@ ul.nav-dropdown > li {
     cursor: pointer;
     vertical-align: middle;
     margin-left: 8px;
+}
+
+a.nav-dropdown {
+    padding: 6px 0;
+    padding-right: 217px;
+    text-decoration: none;
+    color: black;
 }

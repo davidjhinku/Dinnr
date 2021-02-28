@@ -33,7 +33,7 @@
  .main-app {
    margin: 0px auto;
    max-width: 1600px;
-   background-color: white;
+   /* background-color: white; */
    display: flex;
    flex-direction: column;
    min-height: 100vh;

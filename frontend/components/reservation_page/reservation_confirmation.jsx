@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/util_functions'
+import { numberToTime, dayOfWeek, readableDate, readableMonth, newDate} from '../../util/util_functions'
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
@@ -12,7 +12,8 @@ class ReservationConfirmation extends React.Component {
         let currUserJoined = new Date(currUser.created_at)
         let rest = this.props.restaurant
         let reservation = this.props.reservation
-        let date = new Date(reservation.date)
+        // let date = new Date(reservation.date)
+        let date = newDate(reservation.date, reservation.time)
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
@@ -40,12 +41,18 @@ class ReservationConfirmation extends React.Component {
                                     <div>
                                         <ul>
                                             <span>
-                                                <i class="far fa-calendar-alt"></i>
+                                                <i className="far fa-calendar-alt"></i>
                                                 <li>{`${dayOfWeek(date)}, ${readableDate(date)}, ${numberToTime(reservation.time)}`}</li>
                                             </span>
                                             <span>
-                                                <i class="far fa-user"></i>
+                                                <i className="far fa-user"></i>
                                                 <li>{reservation.party_size} people</li>
+                                            </span>
+                                            <span>
+                                                <Link to='#'>Modify</Link>
+                                                <hr className='vert-line'/>
+                                                <Link to={`/${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link>
+                                                {/* <Link to={`${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link> */}
                                             </span>
                                         </ul>
                                     </div>

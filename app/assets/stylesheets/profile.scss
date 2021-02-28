@@ -3,6 +3,8 @@
     background-color: #f7f7f7;
 
     .profile-header {
+        display: flex;
+        align-items: center;
         width: inherit;
         height: 80px;
         border-top: solid 1px #e4e3e3;
@@ -10,9 +12,15 @@
         background-color: white;
         
         div {
-            margin-top: 1%;
+            // margin-top: 1%;
+            margin-left: 180px;
+            // margin-left: 10vw;
         }
 
+        h1 {
+            font-size: 30px;
+            text-transform: capitalize;
+        }
     }
 
     .profile-content {

@@ -2,7 +2,9 @@
     display: flex;
     justify-content: center;
     padding-top: 40px;
-    border-top: 0.1px solid rgba(0, 0, 0, 0.07);;
+    border-top: 0.1px solid rgba(0, 0, 0, 0.07);
+    background-color: white;
+    min-height: 90vh;
 
     h2 {
         font-size: 24px;

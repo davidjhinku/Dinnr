@@ -60,3 +60,10 @@ export const createReservation = reservation => dispatch => {
             return dispatch(receiveReservations(reservation))
         })
 }
+
+export const deleteReservation = resId => dispatch => {
+    return APIUTIL.deleteReservation(resId)
+        .then(reservation => {
+            
+        })
+}

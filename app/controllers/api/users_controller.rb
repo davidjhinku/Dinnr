@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
         @user = User.find(params[:id])
         @reservations = @user.reservations
         @restaurants = Restaurant.all
+        # @restaurants = @user.restaurants
         
         # debugger find a method to only get restaurants needed
         render 'api/users/data.json.jbuilder'
