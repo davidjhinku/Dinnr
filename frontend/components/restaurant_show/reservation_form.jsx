@@ -32,17 +32,6 @@ class MakeReservation extends React.Component {
         return `${yyyy}-${mm}-${dd}`
     }
 
-    // timeSlots() {
-    //     let options = []
-
-    //     for (let i = 0; i <= 24; i++) {
-    //         // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
-    //         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
-    //     }
-
-    //     return options
-    // }
-
     render(){
         let currState = this.state
         return(

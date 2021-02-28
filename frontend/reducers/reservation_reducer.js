@@ -16,18 +16,6 @@ const _defaultState = {"default":
     }
 }
 
-// const _defaultState = {
-//     "date": null,
-//     "time": null,
-//     "party_size": null,
-//     "user_id": null,
-//     "restaurant_id": null,
-//     "phone": null,
-//     "email": null,
-//     "occasion": null,
-//     "special_request": null
-// }
-
 const reservationReducer = (state = _defaultState, action) => {
     Object.freeze(state);
 

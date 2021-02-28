@@ -1,6 +1,5 @@
 .profile-page {
     width: inherit;
-    // border: 1px solid black;
     background-color: #f7f7f7;
 
     .profile-header {
@@ -9,14 +8,9 @@
         border-top: solid 1px #e4e3e3;
         box-shadow: 0 1px 1px #eeeeee;
         background-color: white;
-        // height: 80px;
-        // line-height: 80px;
         
         div {
             margin-top: 1%;
-            // margin-left: 10%;
-            // display: inline-block;
-            // vertical-align: middle;
         }
 
     }
@@ -32,7 +26,6 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-            // border: 1px solid pink;
 
             a {
                 font-weight: 400;
@@ -54,14 +47,12 @@
         .profile-components {
             width: 1080px;
             padding: 10px;
-            border: 1px  solid lightblue;
 
             .component {
                 width: inherit;
                 min-height: 158px;
                 margin-bottom: 35px;
                 background-color: white;
-                // box-shadow: 0 2px 1px #eeeeee;
                 border-radius: 4px;
 
                 hr {

@@ -33,7 +33,6 @@ export const timeSlotOption = (time = 0) => {
     let options = []
 
     for (let i = time; i <= 24; i++) {
-        // options.push(<option key={i} value={i}>{this.props.numberToTime(i)}</option>)
         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
     }
 
@@ -47,7 +46,6 @@ export const timeSlotLi = (time = 0, restId) => {
 
         options.push(
             <li key={i} value={i}>
-                {/* {numberToTime(i)} */}
                 <Link to={`/reservation/${restId}`}>{numberToTime(i)}</Link>
             </li>
         )
@@ -61,9 +59,6 @@ export const timeslotHashToLi = (hash, restId) => {
 
     for (let key in hash) {
         options.push(
-            // <li key={`slot-${key}`} value={key} className={hash[key]}>
-            //     <Link to={`/reservation/${restId}/${key}`}>{numberToTime(key)}</Link>
-            // </li>
             <Link to={`/reservation/${restId}/${key}`}>
                 <li key={`slot-${key}`} value={key} className={hash[key]}>
                     {numberToTime(key)}

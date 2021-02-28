@@ -4,7 +4,6 @@ import { numberToTime, dayOfWeek, readableDate, readableMonth} from '../../util/
 
 class ReservationConfirmation extends React.Component {
     componentDidMount() {
-        debugger
         this.props.fetchReservation(this.props.resId)
     }
 
@@ -14,7 +13,6 @@ class ReservationConfirmation extends React.Component {
         let rest = this.props.restaurant
         let reservation = this.props.reservation
         let date = new Date(reservation.date)
-        debugger
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
