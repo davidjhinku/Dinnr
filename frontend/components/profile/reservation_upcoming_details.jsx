@@ -6,7 +6,7 @@ class ReservationUpcomingDetails extends React.Component {
     render(){
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
-        debugger
+        
         return (
             <div className="profile-reservation">
                 <li>
@@ -19,8 +19,8 @@ class ReservationUpcomingDetails extends React.Component {
                         <div className="links">
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">View</Link>
                             {/* <a href={`/#/${this.props.userId}/reservation/${reservation.id}`}>View</a> */}
-                            <Link>Modify</Link>
-                            <Link>Cancel</Link>
+                            <Link to='/'>Modify</Link>
+                            <Link to='/'>Cancel</Link>
                         </div>
                     </div>
                 </li>

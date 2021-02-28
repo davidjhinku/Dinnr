@@ -12,9 +12,15 @@ class Profile extends React.Component {
 
     render() {
             let currentTime = Date.now()
-            let pastReservations = Object.values(this.props.reservations).filter(reservation => new Date(reservation.date) <= currentTime)
+            let pastReservations = Object.values(this.props.reservations).filter(reservation => new Date(`${reservation.date}T${reservation.time}:00:00Z`) <= currentTime)
 
-            let upcomingReservations = Object.values(this.props.reservations).filter(reservation => new Date(reservation.date) > currentTime)
+            let upcomingReservations = Object.values(this.props.reservations).filter(reservation => new Date(`${reservation.date}T${reservation.time}:00:00Z`) > currentTime)
+
+            if (this.props.reservations['default']) {
+                return (
+                    <div>Loading...</div>
+                )
+            }
 
             return(
                 <div className='profile-page'>

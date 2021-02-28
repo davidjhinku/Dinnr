@@ -17,8 +17,8 @@ class ReservationPastDetails extends React.Component {
                         <h3>{reservation.date}</h3>
                         <h4>{`Table for ${reservation.party_size} people.`}</h4>
                         <div className="links">
-                            <button><i class="far fa-comment-alt"></i>  Write Review</button>
-                            <button><i class="far fa-bookmark"></i>  Save this restaurant</button>
+                            <button><i className="far fa-comment-alt"></i>  Write Review</button>
+                            <button><i className="far fa-bookmark"></i>  Save this restaurant</button>
                         </div>
                     </div>
                 </li>

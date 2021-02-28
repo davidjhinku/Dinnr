@@ -6,6 +6,7 @@ class UpcomingReservation extends React.Component {
 
     render() {
         let reservations;
+        
         if (this.props.upcomingReservations.length < 1) {
             reservations = <li className='no-reservations'>No Upcoming Resevations <Link to='/'>Book a Table</Link></li>
         } else {
