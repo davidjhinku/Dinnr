@@ -13,7 +13,6 @@ const mSTP = (state, ownProps) => {
         time: ownProps.match.params.time,
         searchParams: state.entities.search_params,
         formType: "Complete reservation"
-        // restaurants: Object.values(state.entities.restaurants)
     }
 }
 

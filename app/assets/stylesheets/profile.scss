@@ -1,6 +1,5 @@
 .profile-page {
     width: inherit;
-    // border: 1px solid black;
     background-color: #f7f7f7;
 
     .profile-header {
@@ -9,14 +8,9 @@
         border-top: solid 1px #e4e3e3;
         box-shadow: 0 1px 1px #eeeeee;
         background-color: white;
-        // height: 80px;
-        // line-height: 80px;
         
         div {
             margin-top: 1%;
-            // margin-left: 10%;
-            // display: inline-block;
-            // vertical-align: middle;
         }
 
     }
@@ -32,7 +26,6 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-            // border: 1px solid pink;
 
             a {
                 font-weight: 400;
@@ -54,13 +47,13 @@
         .profile-components {
             width: 1080px;
             padding: 10px;
-            border: 1px  solid lightblue;
 
             .component {
                 width: inherit;
                 min-height: 158px;
                 margin-bottom: 35px;
                 background-color: white;
+                border-radius: 4px;
 
                 hr {
                     margin: 0;
@@ -72,6 +65,79 @@
 
                 div {
                     padding: 32px;
+                }
+
+                .no-reservations {
+                    padding: 34px;
+                    color: #a1a1a1;
+                    text-decoration: none;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+
+                .profile-reservation {
+                    width: inherit;
+                    padding: 0;
+
+                    li {
+                        display: flex;
+                        width: inherit;
+                        padding: 24px;
+
+                        img {
+                           width: 80px; 
+                           height: 80px;
+                           margin-right: 15px;
+                        }
+    
+                        div {
+                            padding: 0;
+    
+                            h3 {
+                                font-size: 16px;
+                                margin-bottom: 10px;
+                            }
+        
+                            h4 {
+                                font-size: 14px;
+                                color: #6d6d6d;
+                                margin-bottom: 10px;
+                            }
+
+                            .links {
+                                display: flex;
+
+                                a {
+                                    font-size: 14px;
+                                    text-decoration: none;
+                                    color: #237b98;
+                                    margin-right: 15px;
+                                }
+
+                                a:hover {
+                                    filter: brightness(70%);
+                                }
+
+                                button {
+                                    color: red;
+                                    background-color: white;
+                                    border: none;
+                                }
+
+                                button:hover {
+                                    cursor: pointer;
+                                    color: rgb(179, 0, 0);
+                                }
+                            }
+                        }
+                    }
+
+                    hr {
+                        width: inherit;
+                        margin: 20px 0;
+                    }
                 }
             }
 

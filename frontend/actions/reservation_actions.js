@@ -50,7 +50,6 @@ export const fetchReservations = userId => dispatch => {
 export const fetchReservation = resId => dispatch => {
     return APIUTIL.fetchReservation(resId)
         .then(reservation => {
-            debugger
             return dispatch(receiveReservation(reservation))
         })
 }
@@ -58,7 +57,6 @@ export const fetchReservation = resId => dispatch => {
 export const createReservation = reservation => dispatch => {
     return APIUTIL.createReservation(reservation)
         .then(reservation => {
-            debugger
             return dispatch(receiveReservations(reservation))
         })
 }

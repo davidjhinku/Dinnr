@@ -5,12 +5,6 @@ import { timeSlotOption } from '../../util/util_functions'
 class SearchForm extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     date: this.startingDate(),
-        //     time: new Date().getHours() + 1,
-        //     party_size: 2,
-        //     wildcard: '',
-        // }
         this.state = this.props.searchState
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -28,45 +22,6 @@ class SearchForm extends React.Component {
             this.setState({[type]: e.target.value})
         }
     }
-    
-    // startingDate(){
-    //     const today = new Date()
-    //     let dd = today.getDate()
-    //     let mm = today.getMonth() + 1
-    //     const yyyy = today.getFullYear()
-
-    //     if (dd < 10) {
-    //         dd = '0' + dd
-    //     }
-    //     if (mm < 10) {
-    //         mm = '0' + mm
-    //     }
-    //     return `${yyyy}-${mm}-${dd}`
-    // }
-
-    // numberToTime(num){
-    //     let dayTime = 'AM'
-    //     if (num >= 12) dayTime = 'PM'
-
-    //     let hour = Math.floor(num % 12) + ''
-    //     if (hour === '0') hour = '12'
-
-    //     let minute = num - Math.floor(num)
-    //     minute === 0.5 ? minute = '30' : minute = '00'
-        
-    //     return `${hour}:${minute} ${dayTime}`
-    // }
-
-    // timeSlots() {
-    //     let options = []
-
-    //     for (let i = 0; i <=24; i ++) {
-    //         options.push(<option key={i} value={i}>{this.numberToTime(i)}</option>)
-    //     }
-
-    //     return options
-    // }
-
 
     render() {
         let currState = this.state
