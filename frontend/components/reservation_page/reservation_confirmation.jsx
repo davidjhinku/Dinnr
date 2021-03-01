@@ -49,7 +49,7 @@ class ReservationConfirmation extends React.Component {
                                                 <li>{reservation.party_size} people</li>
                                             </span>
                                             <span>
-                                                <Link to='#'>Modify</Link>
+                                                <Link to={`/modify/reservation/${reservation.id}`}>Modify</Link>
                                                 <hr className='vert-line'/>
                                                 <Link to={`/${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link>
                                                 {/* <Link to={`${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link> */}

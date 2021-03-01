@@ -39,8 +39,6 @@ export const timeSlotOption = (searchState) => {
         time = 0
     }
 
-    debugger
-
     for (let i = time; i <= 24; i++) {
         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
     }
