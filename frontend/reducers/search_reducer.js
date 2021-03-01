@@ -3,7 +3,7 @@ import {formsDateFormat} from '../util/util_functions'
 
 const _defaultState = {
     date: formsDateFormat(),
-    time: new Date().getHours() + 1,
+    time: new Date().getHours() + 3,
     party_size: 2,
     wildcard: '',
 }

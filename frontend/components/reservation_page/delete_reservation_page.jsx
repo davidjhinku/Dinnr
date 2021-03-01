@@ -24,7 +24,6 @@ class DeleteReservation extends React.Component {
         let currUser = this.props.currentUser
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
-        let date = newDate(reservation.date, reservation.time)
 
         debugger
         if (reservation.user_id !== currUser.id) {
@@ -32,6 +31,7 @@ class DeleteReservation extends React.Component {
                 <div>Loading</div>
             )
         } else {
+            let date = newDate(reservation.date, reservation.time)
             return(
                 <div className='delete-page'>
                     <div className='header'>Cancel Your Reservation</div>

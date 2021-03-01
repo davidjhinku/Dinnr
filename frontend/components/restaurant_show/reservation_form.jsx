@@ -1,12 +1,12 @@
 import React from 'react'
-import { numberToTime, timeSlotOption } from '../../util/util_functions'
+import { formsDateFormat, timeSlotOption } from '../../util/util_functions'
 
 class MakeReservation extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             party_size: 2,
-            date: this.startingDate(),
+            date: formsDateFormat(),
             time: new Date().getHours() + 1
         }
     }
@@ -17,20 +17,20 @@ class MakeReservation extends React.Component {
         }
     }
 
-    startingDate() {
-        const today = new Date()
-        let dd = today.getDate()
-        let mm = today.getMonth() + 1
-        const yyyy = today.getFullYear()
+    // startingDate() {
+    //     const today = new Date()
+    //     let dd = today.getDate()
+    //     let mm = today.getMonth() + 1
+    //     const yyyy = today.getFullYear()
 
-        if (dd < 10) {
-            dd = '0' + dd
-        }
-        if (mm < 10) {
-            mm = '0' + mm
-        }
-        return `${yyyy}-${mm}-${dd}`
-    }
+    //     if (dd < 10) {
+    //         dd = '0' + dd
+    //     }
+    //     if (mm < 10) {
+    //         mm = '0' + mm
+    //     }
+    //     return `${yyyy}-${mm}-${dd}`
+    // }
 
     render(){
         let currState = this.state
@@ -57,7 +57,7 @@ class MakeReservation extends React.Component {
                             <p>Time</p>
                             <select defaultValue={currState.time} onChange={this.handleChange('time')}>
                                 {/* {this.timeSlots()} */}
-                                {timeSlotOption()}
+                                {timeSlotOption(this.state)}
                             </select>
                         </div>
                     </div>

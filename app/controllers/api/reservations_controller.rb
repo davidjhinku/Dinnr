@@ -31,7 +31,9 @@ class Api::ReservationsController < ApplicationController
 
     def update
         @reservation = Reservation.find_by(id: params[:id])
+
         if @reservation.update(reservation_params)
+            @restaurant = @reservation.restaurant
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422

@@ -3,6 +3,7 @@ import * as APIUTIL from '../util/reservation_api_util'
 export const RECEIVE_RESERVATION_TIMESLOTS = "RECEIVE_RESERVATION_TIMESLOTS";
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
+export const RECEIVE_RESERVATION_ERRORS = 'RECEIVE_RESERVATION_ERRORS'
 // export const CREATED_RESERVATION = 'CREATED_RESERVATION'
 
 const receiveTimeslots = timeslots => {
@@ -25,6 +26,13 @@ const receiveReservation = reservationData => {
         reservationData
     }
 }  //convention could change to payload
+
+const receiveReservationErrors = errors => {
+    return {
+        type: RECEIVE_RESERVATION_ERRORS,
+        errors
+    }
+}
 
 // const createdReservation = () => {
 //     return {
@@ -59,6 +67,18 @@ export const createReservation = reservation => dispatch => {
         .then(reservation => {
             return dispatch(receiveReservations(reservation))
         })
+}
+
+export const updateReservation = reservation => dispatch => {
+    debugger
+    return APIUTIL.updateReservation(reservation)
+        .then(reservation => {
+            debugger
+            return dispatch(receiveReservations(reservation))
+        })
+        // .catch(errors => {
+        //     return dispatch(receiveReservationErrors(errors.responseJSON))
+        // })
 }
 
 export const deleteReservation = resId => dispatch => {

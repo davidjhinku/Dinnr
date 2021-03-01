@@ -1,6 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
-import { timeSlotOption } from '../../util/util_functions'
+import { formsDateFormat, timeSlotOption } from '../../util/util_functions'
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -11,6 +11,8 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        debugger
+        
         this.props.fetchRestaurants(this.state)
             .then(this.props.setSearchParams(this.state))
             .then(this.props.closeModal)
@@ -24,19 +26,23 @@ class SearchForm extends React.Component {
     }
 
     render() {
+        let currDate = formsDateFormat()
         let currState = this.state
+
         return (
             <form className='search-form' onSubmit={this.handleSubmit}>
                 <div className='search-left'>
                     <input type="date"
                         value={currState.date}
-                        onChange={this.handleChange('date')}/>
+                        onChange={this.handleChange('date')}
+                        min={currDate}
+                    />
 
                     <select className='search-time'
                         defaultValue={currState.time}
                         onChange={this.handleChange('time')}>
                         {/* {this.timeSlots()} */}
-                        {timeSlotOption()}
+                        {timeSlotOption(currState)}
                     </select>
 
                     <select className='search-people'

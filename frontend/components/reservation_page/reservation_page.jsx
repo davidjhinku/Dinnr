@@ -1,5 +1,5 @@
 import React from 'react'
-import { numberToTime} from '../../util/util_functions'
+import { numberToTime, newDate} from '../../util/util_functions'
 import { withRouter } from 'react-router-dom'
 
 class ReservationPage extends React.Component {
@@ -43,7 +43,8 @@ class ReservationPage extends React.Component {
     render() {
         let currUser = this.props.currentUser
         let rest = this.props.restaurant
-        let date = new Date(this.state.date)
+        let date = newDate(this.state.date, this.state.time)
+
         debugger
         if (!rest) {
             return(
@@ -62,15 +63,15 @@ class ReservationPage extends React.Component {
                                 <div>
                                     <ul>
                                         <span>
-                                            <i class="far fa-calendar"></i>
+                                            <i className="far fa-calendar"></i>
                                             <li>{date.toDateString().slice(0, 10)}</li>
                                         </span>
                                         <span>
-                                            <i class="far fa-clock"></i>
+                                            <i className="far fa-clock"></i>
                                             <li>{numberToTime(this.state.time)}</li>
                                         </span>
                                         <span>
-                                            <i class="far fa-user"></i>
+                                            <i className="far fa-user"></i>
                                             <li>{this.state.party_size} people</li>
                                         </span>
                                     </ul>
