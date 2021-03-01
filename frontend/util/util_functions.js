@@ -115,6 +115,15 @@ export const readableDate = (date) => {
     })
 }
 
+// new Date(year, month, date, hours, minutes, seconds, ms)
 export const newDate = (date, time) => {
-    return new Date(`${date}T${time}:00:00Z`)
+    debugger
+    // return new Date(`${date}T${time}:00:00Z`) Greenwich time, doesn't work on comparison
+
+
+    let y = date.slice(0, 4)
+    let m = date.slice(5, 7) - 1
+    let d = date.slice(8, 11)
+
+    return new Date(y, m, d, time)
 }
