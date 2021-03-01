@@ -1,6 +1,6 @@
 import ModifyReservation from './modify_reservation'
 import { connect } from 'react-redux'
-import { fetchReservation, deleteReservation } from '../../actions/reservation_actions'
+import { fetchReservation, updateReservation } from '../../actions/reservation_actions'
 
 const mSTP = (state, ownProps) => {
     // const resId = ownProps.match.params.resId
@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        // deleteReservation: resId => dispatch(deleteReservation(resId)),
+        updateReservation: reservation => dispatch(updateReservation(reservation)),
         fetchReservation: resId => dispatch(fetchReservation(resId)),
         // fetchRestaurant: restId => dispatch(fetchRestaurant(restId))
     }

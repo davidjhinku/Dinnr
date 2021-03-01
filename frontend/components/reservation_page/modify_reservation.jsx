@@ -5,9 +5,16 @@ class ModifyReservation extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            id: this.props.reservation.id,
             date: this.props.reservation.date,
             time: this.props.reservation.time,
             party_size: this.props.reservation.party_size,
+            user_id: this.props.reservation.user_id,
+            restaurant_id: this.props.reservation.restaurant_id,
+            phone: this.props.reservation.phone,
+            email: this.props.reservation.email,
+            occasion: this.props.reservation.occasion,
+            special_request: this.props.reservation.special_request,
         }
         // this.state = this.props.reservation
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -17,10 +24,11 @@ class ModifyReservation extends React.Component {
         e.preventDefault()
         debugger
 
-        // this.props.fetchRestaurants(this.state)
-        //     .then(this.props.setSearchParams(this.state))
-        //     .then(this.props.closeModal)
-        //     .then(this.props.history.push('/search'))
+        this.props.updateReservation(this.state)
+            .then((res) => {
+                debugger
+                this.props.history.push(`/${res["reservations"].reservations.user_id}/reservation/${res["reservations"].reservations.id}`)
+        })
     }
 
     handleChange(type) {
@@ -37,10 +45,18 @@ class ModifyReservation extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.reservation !== this.props.reservation) {
             this.setState({
+                id: this.props.reservation.id,
                 date: this.props.reservation.date,
                 time: this.props.reservation.time,
                 party_size: this.props.reservation.party_size,
+                user_id: this.props.reservation.user_id,
+                restaurant_id: this.props.reservation.restaurant_id,
+                phone: this.props.reservation.phone,
+                email: this.props.reservation.email,
+                occasion: this.props.reservation.occasion,
+                special_request: this.props.reservation.special_request,
             })
+            // this.setState(this.props.reservation)
         }
     }
     
@@ -49,9 +65,10 @@ class ModifyReservation extends React.Component {
         let restaurant = this.props.restaurant
         let currDate = formsDateFormat()
         let currState = this.state
+        let currUser = this.props.currentUser
         debugger
 
-        if (!restaurant) {
+        if (!restaurant || reservation.restaurant_id !== restaurant.id) {
             return (
                 <div>loading...</div>
             )

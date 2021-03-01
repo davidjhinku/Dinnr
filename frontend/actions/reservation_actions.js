@@ -69,14 +69,16 @@ export const createReservation = reservation => dispatch => {
         })
 }
 
-export const updateReservation = resrvation => dispatch => {
+export const updateReservation = reservation => dispatch => {
+    debugger
     return APIUTIL.updateReservation(reservation)
         .then(reservation => {
+            debugger
             return dispatch(receiveReservations(reservation))
         })
-        .catch(errors => {
-            return dispatch(receiveReservationErrors(errors.responseJSON))
-        })
+        // .catch(errors => {
+        //     return dispatch(receiveReservationErrors(errors.responseJSON))
+        // })
 }
 
 export const deleteReservation = resId => dispatch => {
