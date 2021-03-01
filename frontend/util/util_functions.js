@@ -34,7 +34,8 @@ export const timeSlotOption = (searchState) => {
     let time;
 
     if (formsDateFormat() === searchState.date) {
-        time = searchState.time
+        // time = searchState.time //So the options hash can't be happen in the past
+        time = new Date().getHours() + 3 //So the options hash can't be happen in the past
     } else {
         time = 0
     }
