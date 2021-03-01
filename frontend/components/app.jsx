@@ -30,11 +30,11 @@ const App = () => (
             <Route path='/search' component={SearchPageContainer} />
             <Route path='/restaurants/:restId' component={RestaurantShowContainer} />
             <ProtectedRoute exact path='/profile' component={ProfileContainer}/>
+            <ProtectedRoute exact path='/modify/reservation/:resId' component={ModifyReservationContainer}/>
+            <ProtectedRoute exact path='/delete/reservation/:resId/canceled' component={DeleteReservationConfirmation}/>
             <ProtectedRoute exact path='/reservation/:restId/:time' component={ReservationPageContainer}/>
             <ProtectedRoute exact path='/:userId/reservation/:resId' component={ReservationConfirmationContainer}/>
-            <ProtectedRoute exact path='/modify/reservation/:resId' component={ModifyReservationContainer}/>
             <ProtectedRoute exact path='/:userId/delete/reservation/:resId' component={DeleteReservationContainer}/>
-            <ProtectedRoute exact path='/delete/reservation/:resId/canceled' component={DeleteReservationConfirmation}/>
         </Switch>
 
         <footer className='nav-footer'>

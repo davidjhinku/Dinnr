@@ -27,7 +27,7 @@ class ReservationConfirmation extends React.Component {
                     <div className="confirmation-left">
                         <div className="confirmation-summary">
                             <div className="confirmation-thanks">
-                                <i class="fas fa-check-circle fa-3x"></i>
+                                <i className="fas fa-check-circle fa-3x"></i>
                                 <div>
                                     <h2>Thanks! Your reservation is confirmed.</h2>
                                     <p>{`Confirmation #${reservation.id}`}</p>
@@ -62,7 +62,7 @@ class ReservationConfirmation extends React.Component {
                         
                         <div className="confirmation-details">
                             <span>
-                                <i class="far fa-clipboard fa-3x"></i>
+                                <i className="far fa-clipboard fa-3x"></i>
                                 <h2>Reservation details</h2>
                             </span>
                             <div>{reservation.occasion === '' ? 'No occasion selected' : reservation.occasion}</div>
@@ -104,11 +104,11 @@ class ReservationConfirmation extends React.Component {
                                 <h4>Joined in {readableMonth(currUserJoined)} {currUserJoined.getFullYear()}</h4>
 
                                 <span>
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i className="fas fa-map-marker-alt"></i>
                                     <h4>{currUser.primary_location}</h4>
                                 </span>
                                 <span>
-                                    <i class="far fa-comment-alt fa-flip-horizontal"></i>
+                                    <i className="far fa-comment-alt fa-flip-horizontal"></i>
                                     <h4>0 reviews</h4>
                                 </span>
 
