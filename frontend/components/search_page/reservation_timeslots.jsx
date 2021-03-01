@@ -20,6 +20,7 @@ class ReservationTimeslots extends React.Component {
     // }
 
     render() {
+        // debugger
         const timeslots = this.props.timeslots
         let timeslotHash = timeslots[this.props.restId] ? timeslots[this.props.restId] : timeslots["loading"]
 

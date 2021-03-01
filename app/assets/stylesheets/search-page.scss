@@ -150,7 +150,20 @@
                                 text-decoration: none;
                             }
 
-                            li {
+                            li.loading {
+                                width: 110px;
+                                height: 30px;
+                                background-color: #dedede;
+                                margin-left: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                border-radius: 3px;
+                                transition: all 0.2s;
+                            }
+
+                            li.available {
                                 width: 110px;
                                 height: 30px;
                                 background-color: #d2343f;
@@ -163,7 +176,20 @@
                                 transition: all 0.2s;
                             }
 
-                            li:hover {
+                            li.booked {
+                                width: 110px;
+                                height: 30px;
+                                background-color: #dedede;
+                                margin-left: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                border-radius: 3px;
+                                transition: all 0.2s;
+                            }
+
+                            li.available:hover {
                                 cursor: pointer;
                                 filter: brightness(85%);
                             }

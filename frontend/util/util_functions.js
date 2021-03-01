@@ -58,16 +58,32 @@ export const timeslotHashToLi = (hash, restId) => {
     let options = []
 
     for (let key in hash) {
-        options.push(
-            <Link to={`/reservation/${restId}/${key}`}>
-                <li key={`slot-${key}`} value={key} className={hash[key]}>
-                    {numberToTime(key)}
-                </li>
-            </Link>
-                        
-        )
+
+        switch(hash[key]) {
+            case "available":
+                options.push(
+                    <Link to={`/reservation/${restId}/${key}`}>
+                        <li key={`slot-${key}`} value={key} className={hash[key]}>
+                            {numberToTime(key)}
+                        </li>
+                    </Link>          
+                )
+                break
+            case "booked":
+                options.push(
+                        <li key={`slot-${key}`} value={key} className={hash[key]}>
+                        </li>
+                )
+                break
+            case "loading":
+                options.push(
+                    <li key={`slot-${key}`} value={key} className={hash[key]}>
+                    </li>
+                )
+                break
+        }
     }
-    
+
     return options
 }
 
