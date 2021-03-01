@@ -29,8 +29,17 @@ export const formsDateFormat = () => {
     return `${yyyy}-${mm}-${dd}`
 }
 
-export const timeSlotOption = (time = 0) => {
+export const timeSlotOption = (searchState) => {
     let options = []
+    let time;
+
+    if (formsDateFormat() === searchState.date) {
+        time = searchState.time
+    } else {
+        time = 0
+    }
+
+    debugger
 
     for (let i = time; i <= 24; i++) {
         options.push(<option key={i} value={i}>{numberToTime(i)}</option>)
