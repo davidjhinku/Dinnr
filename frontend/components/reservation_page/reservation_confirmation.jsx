@@ -13,7 +13,7 @@ class ReservationConfirmation extends React.Component {
         let rest = this.props.restaurant
         let reservation = this.props.reservation
         // let date = new Date(reservation.date)
-        let date = newDate(reservation.date, reservation.time)
+
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
@@ -22,6 +22,7 @@ class ReservationConfirmation extends React.Component {
                 <div>Loading</div>
             )
         } else {  
+            let date = newDate(reservation.date, reservation.time)
             return(
                 <div className="reservation-confirmation">
                     <div className="confirmation-left">

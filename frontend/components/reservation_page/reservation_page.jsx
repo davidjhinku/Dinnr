@@ -63,15 +63,15 @@ class ReservationPage extends React.Component {
                                 <div>
                                     <ul>
                                         <span>
-                                            <i class="far fa-calendar"></i>
+                                            <i className="far fa-calendar"></i>
                                             <li>{date.toDateString().slice(0, 10)}</li>
                                         </span>
                                         <span>
-                                            <i class="far fa-clock"></i>
+                                            <i className="far fa-clock"></i>
                                             <li>{numberToTime(this.state.time)}</li>
                                         </span>
                                         <span>
-                                            <i class="far fa-user"></i>
+                                            <i className="far fa-user"></i>
                                             <li>{this.state.party_size} people</li>
                                         </span>
                                     </ul>
