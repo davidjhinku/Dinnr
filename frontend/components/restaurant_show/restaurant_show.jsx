@@ -2,7 +2,7 @@ import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
 import Menu from './menu'
-import MakeReservation from './reservation_form'
+import ReservationFormContainer from './reservation_form_container'
 import RestaurantMap from './restaurant_map'
 import {numberToTime} from '../../util/util_functions'
 
@@ -18,6 +18,12 @@ class RestaurantShow extends React.Component {
     componentDidMount(){
         this.props.fetchRestaurant(this.props.restId)
     }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (prevProps.restaurant !== this.props.restaurant) {
+    //         this.props.fetchRestaurant(this.props.restId)
+    //     }
+    // }
 
     scrollOverview() {
         this.overview.current.scrollIntoView({ behavior: 'smooth' });
@@ -37,6 +43,7 @@ class RestaurantShow extends React.Component {
 
     render(){
         const restaurant = this.props.restaurant
+        debugger
 
         if (!restaurant || !restaurant.photoUrls) {
             return (
@@ -74,7 +81,7 @@ class RestaurantShow extends React.Component {
                             
                         <div className='show-right-column'>
                             <nav className="reservation-block">
-                                <MakeReservation />
+                                <ReservationFormContainer restId={restaurant.id}/>
                             </nav>
                             
                             <RestaurantMap restaurant={restaurant} />
