@@ -255,12 +255,13 @@
                     }
                 }
 
-                .timeslots {
+                #timeslots {
                     // display: flex;
                     // justify-content: flex-start;
                     width: inherit;
                     height: auto;
                     margin-top: 16px;
+                    display: none;
 
                     span {
                         font-weight: 600;

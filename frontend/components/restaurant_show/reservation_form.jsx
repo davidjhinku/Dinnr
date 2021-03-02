@@ -16,6 +16,8 @@ class MakeReservation extends React.Component {
     handleSubmit(e){
         e.preventDefault()
         debugger
+        document.getElementById('timeslot-button').style.display="none"
+        document.getElementById('timeslots').style.display="block"
 
         let timeslotParams = Object.assign({}, this.state, { restId: this.props.restId })
 
@@ -25,6 +27,8 @@ class MakeReservation extends React.Component {
 
     handleChange(type) {
         return e => {
+            document.getElementById('timeslot-button').style.display = "block"
+            document.getElementById('timeslots').style.display = "none"
             this.setState({ [type]: e.target.value })
         }
     }
@@ -75,9 +79,9 @@ class MakeReservation extends React.Component {
                             </select>
                         </div>
                     </div>
-                    <button>Find a table</button>
+                    <button id='timeslot-button'>Find a table</button>
                 </form>
-                <div className='timeslots'>
+                <div id='timeslots'>
                     <span>Select a Time:</span>
                     <ul className='slots'>
                         {timeslotHashToLi(timeslotHash, this.props.restId)}
