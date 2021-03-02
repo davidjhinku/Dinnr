@@ -2,7 +2,7 @@ import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
 import Menu from './menu'
-import MakeReservation from './reservation_form'
+import ReservationFormContainer from './reservation_form_container'
 import RestaurantMap from './restaurant_map'
 import {numberToTime} from '../../util/util_functions'
 
@@ -74,7 +74,7 @@ class RestaurantShow extends React.Component {
                             
                         <div className='show-right-column'>
                             <nav className="reservation-block">
-                                <MakeReservation />
+                                <ReservationFormContainer restId={restaurant.id}/>
                             </nav>
                             
                             <RestaurantMap restaurant={restaurant} />
