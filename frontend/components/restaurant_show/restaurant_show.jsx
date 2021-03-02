@@ -74,17 +74,33 @@ class RestaurantShow extends React.Component {
                             
                         <div className='show-right-column'>
                             <nav className="reservation-block">
-                                {/* <MakeReservation numberToTime={this.numberToTime}/> */}
                                 <MakeReservation />
                             </nav>
                             
                             <RestaurantMap restaurant={restaurant} />
 
-                            <h3>City</h3>
-                            <p>{restaurant.city}</p>
-                            <h3>Hours</h3>
-                            {/* <p>Daily: {this.numberToTime(restaurant.open_at)} - {this.numberToTime(restaurant.close_at)}</p> */}
-                            <p>Daily: {numberToTime(restaurant.open_at)} - {numberToTime(restaurant.close_at)}</p>
+                            <div className='detail-items'>
+                                <i class="fas fa-city"></i>
+                                <div >
+                                    <h3 className='detail-items'>City</h3>
+                                    <p>{restaurant.city}</p>
+                                </div>
+                            </div>
+                            <div className='detail-items'>
+                                <i class="far fa-clock"></i>
+                                <div >
+                                    <h3 className='detail-items'>Hours</h3>
+                                    <p>Daily: {numberToTime(restaurant.open_at)} - {numberToTime(restaurant.close_at)}</p>
+                                </div>
+                            </div>
+                            <div className='detail-items'>
+                                <i class="fas fa-utensils"></i>
+                                <div >
+                                    <h3 className='detail-items'>Cuisine</h3>
+                                    <p>{restaurant.cuisine_type}</p>
+                                </div>
+                            </div>
+
 
                         </div>
                     </div>
