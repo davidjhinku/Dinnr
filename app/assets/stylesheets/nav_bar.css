@@ -64,6 +64,7 @@ ul.nav-dropdown > li {
     border-radius: 3px;
     border: 1px solid silver;
     display: none;
+    z-index: 5;
 }
 
 .dropdown-options.active {
