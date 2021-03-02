@@ -1,6 +1,8 @@
 import ReservationForm from './reservation_form'
 import { connect } from 'react-redux'
-import { fetchRestaurant } from '../../actions/reservation_actions'
+import { checkTimeslots } from '../../actions/reservation_actions'
+import { setSearchParams } from '../../actions/search_actions'
+import { fetchRestaurant } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -13,8 +15,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        checkTimeslots: search => dispatch(checkTimeslots(search))
-        // fetchRestaurant: restId => dispatch(fetchRestaurant(restId))
+        checkTimeslots: search => dispatch(checkTimeslots(search)),
+        setSearchParams: search => dispatch(setSearchParams(search)),
+        fetchRestaurant: restId => dispatch(fetchRestaurant(restId))
     }
 }
 

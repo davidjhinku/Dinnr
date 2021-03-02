@@ -254,6 +254,80 @@
                         cursor: pointer;
                     }
                 }
+
+                .timeslots {
+                    // display: flex;
+                    // justify-content: flex-start;
+                    width: inherit;
+                    height: auto;
+                    margin-top: 16px;
+
+                    span {
+                        font-weight: 600;
+                        font-size: 18px;
+                    }
+
+                    .slots {
+                        display: grid;
+                        // justify-content: space-between;
+                        /* grid-template-columns: repeat(auto-fill, minmax(88px, 88px)); */
+                        /* grid-column-gap: 10px; */
+                        grid-row-gap: 10px;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        width: inherit;
+                        height: auto;
+                        margin-top: 16px;
+                        margin-top: 15px;
+
+                        a {
+                            text-decoration: none;
+                        }
+
+                        li.loading {
+                            width: 88px;
+                            height: 30px;
+                            background-color: #dedede;
+                            margin-right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: white;
+                            border-radius: 3px;
+                            transition: all 0.2s;
+                        }
+
+                        li.available {
+                            width: 88px;
+                            height: 30px;
+                            background-color: #d2343f;
+                            margin-right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: white;
+                            border-radius: 3px;
+                            transition: all 0.2s;
+                        }
+
+                        li.booked {
+                            width: 88px;
+                            height: 30px;
+                            background-color: #dedede;
+                            margin-right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: white;
+                            border-radius: 3px;
+                            transition: all 0.2s;
+                        }
+
+                        li.available:hover {
+                            cursor: pointer;
+                            filter: brightness(85%);
+                        }
+                    }
+                }
             }
         }
 

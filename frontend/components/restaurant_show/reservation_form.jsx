@@ -20,11 +20,20 @@ class MakeReservation extends React.Component {
         let timeslotParams = Object.assign({}, this.state, { restId: this.props.restId })
 
         this.props.checkTimeslots(timeslotParams)
+            // .then(this.props.setSearchParams(this.state))
     }
 
     handleChange(type) {
         return e => {
             this.setState({ [type]: e.target.value })
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        debugger
+        if (prevState !== this.state) {
+            this.props.setSearchParams(this.state)
+            this.props.fetchRestaurant(this.props.restId)
         }
     }
 
@@ -69,8 +78,8 @@ class MakeReservation extends React.Component {
                     <button>Find a table</button>
                 </form>
                 <div className='timeslots'>
-                    <h1>Select a Time</h1>
-                    <ul className='search-reservation'>
+                    <span>Select a Time:</span>
+                    <ul className='slots'>
                         {timeslotHashToLi(timeslotHash, this.props.restId)}
                     </ul>
                 </div>
