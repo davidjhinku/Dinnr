@@ -43,7 +43,6 @@ const receiveReservationErrors = errors => {
 export const checkTimeslots = search => dispatch => {
     return APIUTIL.fetchReservations(search)
         .then(timeslots => {
-            debugger
             return dispatch(receiveTimeslots(timeslots))
         })
 }
@@ -70,10 +69,8 @@ export const createReservation = reservation => dispatch => {
 }
 
 export const updateReservation = reservation => dispatch => {
-    debugger
     return APIUTIL.updateReservation(reservation)
         .then(reservation => {
-            debugger
             return dispatch(receiveReservations(reservation))
         })
         // .catch(errors => {

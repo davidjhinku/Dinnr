@@ -15,14 +15,13 @@ class MakeReservation extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        debugger
+
         document.getElementById('timeslot-button').style.display="none"
         document.getElementById('timeslots').style.display="block"
 
         let timeslotParams = Object.assign({}, this.state, { restId: this.props.restId })
 
         this.props.checkTimeslots(timeslotParams)
-            // .then(this.props.setSearchParams(this.state))
     }
 
     handleChange(type) {
@@ -34,7 +33,6 @@ class MakeReservation extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        debugger
         if (prevState !== this.state) {
             this.props.setSearchParams(this.state)
             this.props.fetchRestaurant(this.props.restId)
@@ -42,7 +40,6 @@ class MakeReservation extends React.Component {
     }
 
     render(){
-        debugger
         let currState = this.state
         const timeslots = this.props.timeslots
         let timeslotHash = timeslots[this.props.restId] ? timeslots[this.props.restId] : timeslots["loading"]

@@ -11,7 +11,6 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
         
         this.props.fetchRestaurants(this.state)
             .then(this.props.setSearchParams(this.state))

@@ -6,7 +6,6 @@ import { fetchReservation, deleteReservation } from '../../actions/reservation_a
 
 const mSTP = (state, ownProps) => {
     const resId = ownProps.match.params.resId
-    debugger
     return {
         reservation: state.entities.reservations,
         restaurant: Object.values(state.entities.restaurants)[0],

@@ -22,11 +22,9 @@ class ModifyReservation extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        debugger
 
         this.props.updateReservation(this.state)
             .then((res) => {
-                debugger
                 this.props.history.push(`/${res["reservations"].reservations.user_id}/reservation/${res["reservations"].reservations.id}`)
         })
     }
@@ -38,7 +36,6 @@ class ModifyReservation extends React.Component {
     }
     
     componentDidMount() {
-        debugger
         this.props.fetchReservation(this.props.resId)
     }
 
@@ -66,7 +63,6 @@ class ModifyReservation extends React.Component {
         let currDate = formsDateFormat()
         let currState = this.state
         let currUser = this.props.currentUser
-        debugger
 
         if (!restaurant || reservation.restaurant_id !== restaurant.id) {
             return (

@@ -20,7 +20,6 @@ class ReservationPage extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchRestaurant(this.props.restId)
     }
 
@@ -29,7 +28,6 @@ class ReservationPage extends React.Component {
 
         this.props.action(this.state)
             .then((res) => {
-                debugger
                 this.props.history.push(`/${res.reservations.user_id}/reservation/${res.reservations.id}`)
             })
     } 
@@ -45,7 +43,6 @@ class ReservationPage extends React.Component {
         let rest = this.props.restaurant
         let date = newDate(this.state.date, this.state.time)
 
-        debugger
         if (!rest) {
             return(
                 <div>loading...</div>

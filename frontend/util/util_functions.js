@@ -117,7 +117,6 @@ export const readableDate = (date) => {
 
 // new Date(year, month, date, hours, minutes, seconds, ms)
 export const newDate = (date, time) => {
-    debugger
     // return new Date(`${date}T${time}:00:00Z`) Greenwich time, doesn't work on comparison
 
 

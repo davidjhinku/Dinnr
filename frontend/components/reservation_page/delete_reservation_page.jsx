@@ -9,7 +9,6 @@ class DeleteReservation extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.fetchReservation(this.props.resId)
     }
 
@@ -20,12 +19,10 @@ class DeleteReservation extends React.Component {
     }
 
     render() {
-        debugger
         let currUser = this.props.currentUser
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
 
-        debugger
         if (reservation.user_id !== currUser.id) {
             return (
                 <div>Loading</div>

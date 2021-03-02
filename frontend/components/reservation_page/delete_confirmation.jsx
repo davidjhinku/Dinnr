@@ -2,7 +2,6 @@ import React from 'react'
 import SearchFormContainer from '../search_form/search_form_container'
 
 const DeleteConfirmation = (props) => {
-    debugger
 
     return(
         <div className="delete-res-confirmation">

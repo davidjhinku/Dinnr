@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 class PastReservation extends React.Component {
     render() {
         let reservations;
-        debugger
 
         if (this.props.pastReservations.length < 1 || this.props.pastReservations[0].user_id === 0) {
             reservations = <li className='no-reservations'>No Past Reservations <Link to='/'>Book a Table</Link></li>

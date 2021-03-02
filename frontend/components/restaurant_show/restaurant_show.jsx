@@ -43,7 +43,6 @@ class RestaurantShow extends React.Component {
 
     render(){
         const restaurant = this.props.restaurant
-        debugger
 
         if (!restaurant || !restaurant.photoUrls) {
             return (
@@ -87,21 +86,21 @@ class RestaurantShow extends React.Component {
                             <RestaurantMap restaurant={restaurant} />
 
                             <div className='detail-items'>
-                                <i class="fas fa-city"></i>
+                                <i className="fas fa-city"></i>
                                 <div >
                                     <h3 className='detail-items'>City</h3>
                                     <p>{restaurant.city}</p>
                                 </div>
                             </div>
                             <div className='detail-items'>
-                                <i class="far fa-clock"></i>
+                                <i className="far fa-clock"></i>
                                 <div >
                                     <h3 className='detail-items'>Hours</h3>
                                     <p>Daily: {numberToTime(restaurant.open_at)} - {numberToTime(restaurant.close_at)}</p>
                                 </div>
                             </div>
                             <div className='detail-items'>
-                                <i class="fas fa-utensils"></i>
+                                <i className="fas fa-utensils"></i>
                                 <div >
                                     <h3 className='detail-items'>Cuisine</h3>
                                     <p>{restaurant.cuisine_type}</p>

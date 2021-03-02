@@ -9,16 +9,16 @@ const NavFooter = () => {
                     <h4>Join me on</h4>
                     <ul>
                         <li>
-                            <a href="https://github.com/davidjhinku" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                            <a href="https://github.com/davidjhinku" target="_blank"><i className="fab fa-github fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/davidjhinku/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                            <a href="https://www.linkedin.com/in/davidjhinku/" target="_blank"><i className="fab fa-linkedin fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="https://angel.co/u/david-jhinku" target="_blank"><i class="fab fa-angellist fa-2x"></i></a>
+                            <a href="https://angel.co/u/david-jhinku" target="_blank"><i className="fab fa-angellist fa-2x"></i></a>
                         </li>
                         <li>
-                            <a href="mailto: davidjhinku@gmail.com" target="_blank"><i class="fas fa-envelope fa-2x"></i></a>
+                            <a href="mailto: davidjhinku@gmail.com" target="_blank"><i className="fas fa-envelope fa-2x"></i></a>
                         </li>
                     </ul>
                 </div>
