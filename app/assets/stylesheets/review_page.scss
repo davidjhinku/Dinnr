@@ -1,0 +1,44 @@
+.review-page {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    .form-container {
+        margin-top: 25px;
+
+        .page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            .header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                .capitalize {
+                    text-transform: capitalize;
+                }
+            }
+    
+            .radio-ratings {
+                margin: 30px;
+    
+                .row {
+                    display: flex;
+    
+                
+                    .label {
+                        width: 80px;
+                        height: 35px;
+                        padding-right: 32px;
+                        font-weight: 600;
+                        text-transform: capitalize;
+
+                    }
+                }
+            }
+        }
+    }
+
+}
