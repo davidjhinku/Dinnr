@@ -10,6 +10,7 @@ import ReservationConfirmationContainer from './reservation_page/reservation_con
 import ModifyReservationContainer from './reservation_page/modify_reservation_container';
 import DeleteReservationContainer from './reservation_page/delete_reservation_container';
 import DeleteReservationConfirmation from './reservation_page/delete_confirmation_container';
+import CreateReviewContainer from './review_form/review_form_container'
 import NavFooter from './nav_footer/nav_footer';
 import {Link, Route, Switch} from 'react-router-dom';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
@@ -35,6 +36,7 @@ const App = () => (
             <ProtectedRoute exact path='/reservation/:restId/:time' component={ReservationPageContainer}/>
             <ProtectedRoute exact path='/:userId/reservation/:resId' component={ReservationConfirmationContainer}/>
             <ProtectedRoute exact path='/:userId/delete/reservation/:resId' component={DeleteReservationContainer}/>
+            <ProtectedRoute exact path='/:userId/review/:restId/:resId' component={CreateReviewContainer}/>
         </Switch>
 
         <footer className='nav-footer'>
