@@ -20,7 +20,7 @@ class ReservationUpcomingDetails extends React.Component {
                         <h3>{restaurant.name}</h3>
                         <h4>{`${reservation.date} at ${numberToTime(reservation.time)}`}</h4>
                         <h4>{`Table for ${reservation.party_size} people.`}</h4>
-                        <div className="links">
+                        <div className="upcoming-links">
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">View</Link>
                             <Link to={`${this.props.userId}/reservation/${reservation.id}`} target="_blank">Modify</Link>
                             <Link to={`${this.props.userId}/delete/reservation/${reservation.id}`} reservation={reservation} restaurant={restaurant}>
