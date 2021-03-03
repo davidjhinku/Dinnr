@@ -11,6 +11,11 @@ class Reservation < ApplicationRecord
         foreign_key: :user_id,
         primary_key: :id
 
+    has_one :review,
+        class_name: :Review,
+        foreign_key: :reservation_id,
+        primary_key: :id
+
     def self.available(terms) #to return the available timeslots
         slots = {}
         bookedSlots = Reservation.currReservations(terms[:restId], terms[:date], terms[:time])

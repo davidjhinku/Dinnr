@@ -15,9 +15,13 @@ class Restaurant < ApplicationRecord
         class_name: :Reservation,
         foreign_key: :restaurant_id,
         primary_key: :id
+
+    has_many :reviews,
+        class_name: :Review,
+        foreign_key: :restaurant_id,
+        primary_key: :id
         
     has_many_attached :photos
-    # has_many :reviews
 
     def self.search(terms)
         results = Restaurant.where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")

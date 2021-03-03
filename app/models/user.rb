@@ -14,11 +14,16 @@ class User < ApplicationRecord
     has_many :restaurants,
         through: :reservations,
         source: :restaurant
+    
+    has_many :reviews, # dependent destroy
+        class_name: :Review,
+        foreign_key: :user_id,
+        primary_key: :id
+
     # has_many :favorites
     # has_many :favorite_restaurants,
     #     through: :favorites,
     #     source: :restaurant
-    # has_many :reviews dependent destroy
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
