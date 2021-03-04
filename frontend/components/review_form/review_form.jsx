@@ -43,33 +43,36 @@ class ReviewForm extends React.Component {
                 <div className='options'>
                     <input type="radio"
                         name={type}
-                        id="stars5"
+                        id={`${type}-stars5`}
+                        // id="stars5"
                         value="5"
                         // checked={this.state.type === type}
-                        onClick={this.handleChange(type)}/><label htmlFor='stars5'></label>
+                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars5`}></label>  
+                        {/* onClick={this.handleChange(type)}/><label htmlFor='stars5' className="fas fa-star"></label>   */}
                     <input type="radio"
-                        name={type} id="stars4"
+                        name={type}
+                        id={`${type}-stars4`}
                         value="4"
                         // checked={this.state.type === type}
-                        onClick={this.handleChange(type)}/><label htmlFor='stars4'></label>
+                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars4`}></label>
                     <input type="radio"
                         name={type}
-                        id="stars3"
+                        id={`${type}-stars3`}
                         value="3"
                         // checked={this.state.type === type}
-                        onClick={this.handleChange(type)}/><label htmlFor='stars3'></label>
+                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars3`}></label>
                     <input type="radio"
                         name={type}
-                        id="stars2"
+                        id={`${type}-stars2`}
                         value="2"
                         // checked={this.state.type === type}
-                        onClick={this.handleChange(type)}/><label htmlFor='stars2'></label>
+                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars2`}></label>
                     <input type="radio"
                         name={type}
-                        id="stars1"
+                        id={`${type}-stars1`}
                         value="1"
                         // checked={this.state.type === type}
-                        onClick={this.handleChange(type)}/><label htmlFor='stars1'></label>
+                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars1`}></label>
                 </div>
                 <div className='reaction'>
                     <span></span>
