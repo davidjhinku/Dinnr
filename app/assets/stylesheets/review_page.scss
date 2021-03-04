@@ -24,6 +24,24 @@
             filter: brightness(85%);
         }
 
+        button.back {
+            width: 210px;
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid #E1E1E1;
+            background-color: white;
+            color: black;
+            font-weight: 400;
+            font-size: 14px;
+            transition: all 0.4s;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        button.back:hover {
+            filter: brightness(85%);
+        }
+
         .page {
             display: flex;
             flex-direction: column;
@@ -232,10 +250,48 @@
                     font-size: 14px;
                     color: #91949a;
                     margin-top: 7px;
-                    
+
                     span.short {
                         color: red
                     }
+
+                }
+            }
+
+            .recommend {
+                width: -webkit-fill-available;
+                padding: 30px;
+
+                .options {
+                    display: flex;
+                    margin-top: 7px;
+                    font-size: 14;
+                    font-weight: 900;
+
+                    i {
+                        margin-right: 7px;
+                    }
+
+                    div:hover {
+                        cursor: pointer
+                    }
+                    // i:hover {
+                    //     cursor: pointer;
+                    // }
+                    
+                    i.active:before {
+                        content: '\f192';
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                        color: #d93744;
+                    }
+
+                    .yes {
+                        margin-right: 20px;
+
+                    }
+
+
 
                 }
             }

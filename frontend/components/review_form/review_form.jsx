@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
             value: null,
             noise: null,
             review: '',
-            recommended: 0,
+            recommended: 1,
             user_id: this.props.currentUser.id,
             restaurant_id: this.props.restId,
             reservation_id: this.props.resId
@@ -135,6 +135,28 @@ class ReviewForm extends React.Component {
         )
     }
 
+    clickRecommend(type) {
+        if (type === 'no') {
+            let y = document.getElementById('recommend-yes');
+            let n = document.getElementById('recommend-no');
+
+            y.classList.remove('active')
+            // y.classList.add('far fa-circle')
+            // n.classList.remove('far fa-circle')
+            n.classList.add('active')
+            this.setState({recommended: 0})
+        } else {
+            let y = document.getElementById('recommend-yes');
+            let n = document.getElementById('recommend-no');
+
+            // y.classList.remove('far fa-circle')
+            y.classList.add('active')
+            n.classList.remove('active')
+            // n.classList.add('far fa-circle')
+            this.setState({ recommended: 1 })
+        }
+    }
+
     render() {
         debugger
         let currentUser = this.props.currentUser
@@ -169,7 +191,9 @@ class ReviewForm extends React.Component {
                                     {this.radioBars()}
 
                                 </div>
-                                <button className='next'>Next</button>
+                                <div className='buttons'>
+                                    <button className='next'>Next</button>
+                                </div>
                             </div>
 
                             <div className='page'>
@@ -193,18 +217,24 @@ class ReviewForm extends React.Component {
                                 </div>
                                 <div className='recommend'>
                                     <p>Would you recommend STK - NYC - Meatpacking to a friend?</p>
-                                    <div>
-                                        <div className='yes'>
-                                            <i class="fas fa-dot-circle"></i>
+                                    <div className='options'>
+                                        <div className='yes' onClick={() => this.clickRecommend('yes')}>
+                                            <i id='recommend-yes'
+                                                className="far fa-circle active"  
+                                            ></i>
                                             Yes
                                         </div>
-                                        <div className='no'>
-                                            <i class="far fa-circle"></i>
+                                        <div className='no' onClick={() => this.clickRecommend('no')}>
+                                            <i id='recommend-no'
+                                                className="far fa-circle"
+                                            ></i>
                                             No
                                         </div>
-
                                     </div>
-
+                                </div>
+                                <div className='buttons'>
+                                    <button className='back'>Back</button>
+                                    <button className='next'>Next</button>
                                 </div>
                             </div>
                         </form>
