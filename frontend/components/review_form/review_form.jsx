@@ -12,6 +12,8 @@ class ReviewForm extends React.Component {
             noise: null,
             review: '',
             recommended: 1,
+            nickname: `${this.props.currentUser.first_name.charAt(0).toUpperCase() + this.props.currentUser.first_name.slice(1)}${this.props.currentUser.last_name.charAt(0).toUpperCase()}`,
+            private_message: '',
             user_id: this.props.currentUser.id,
             restaurant_id: this.props.restId,
             reservation_id: this.props.resId
@@ -141,19 +143,35 @@ class ReviewForm extends React.Component {
             let n = document.getElementById('recommend-no');
 
             y.classList.remove('active')
-            // y.classList.add('far fa-circle')
-            // n.classList.remove('far fa-circle')
             n.classList.add('active')
             this.setState({recommended: 0})
         } else {
             let y = document.getElementById('recommend-yes');
             let n = document.getElementById('recommend-no');
 
-            // y.classList.remove('far fa-circle')
             y.classList.add('active')
             n.classList.remove('active')
-            // n.classList.add('far fa-circle')
             this.setState({ recommended: 1 })
+        }
+    }
+
+    toggleActive(type) {
+        if (type === 'yes') {
+            let y = document.getElementById('review-yes');
+            let n = document.getElementById('review-no');
+            let message = document.getElementById('private-review');
+            
+            y.classList.add('active')
+            n.classList.remove('active')
+            message.style.display = 'block'
+        } else {
+            let y = document.getElementById('review-yes');
+            let n = document.getElementById('review-no');
+            let message = document.getElementById('private-review');
+
+            y.classList.remove('active')
+            n.classList.add('active')
+            message.style.display = 'none'
         }
     }
 
@@ -216,7 +234,7 @@ class ReviewForm extends React.Component {
                                     </div>
                                 </div>
                                 <div className='recommend'>
-                                    <p>Would you recommend STK - NYC - Meatpacking to a friend?</p>
+                                    <p>Would you recommend {restaurant.name} to a friend?</p>
                                     <div className='options'>
                                         <div className='yes' onClick={() => this.clickRecommend('yes')}>
                                             <i id='recommend-yes'
@@ -235,6 +253,64 @@ class ReviewForm extends React.Component {
                                 <div className='buttons'>
                                     <button className='back'>Back</button>
                                     <button className='next'>Next</button>
+                                </div>
+                            </div>
+
+                            <div className='page'>
+                                <div className='header'>
+                                    <h1>What is your reviews nickname?</h1>
+                                    <p>Your nickname will be published on OpenTable alongside any reviews you create and publish.</p>
+                                    <p>For privacy reasons, don’t use your full name or email address.</p>
+                                </div>
+                                <div className='review-name'>
+                                    <div className='nickname'>
+                                        <span>Nickname</span>
+                                        <input type="text"
+                                            value={this.state.nickname}
+                                            onChange={this.handleChange('nickname')}
+                                            maxLength='24'    
+                                        />
+                                    </div>
+                                    <div className='characters'>
+                                        <div className='count'>
+                                            <span className={this.state.nickname.length < 4 ? "short" : "long"}>{`${this.state.nickname.length} `}</span> / 24 characters
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='recommend'>
+                                    <p>Do you want to send a private note to {restaurant.name}?</p>
+                                    <div className='options'>
+                                        <div className='yes' onClick={() => this.toggleActive('yes')}>
+                                            <i id='review-yes'
+                                                className="far fa-circle"
+                                            ></i>
+                                            Yes
+                                        </div>
+                                        <div className='no' onClick={() => this.toggleActive('no')}>
+                                            <i id='review-no'
+                                                className="far fa-circle active"
+                                            ></i>
+                                            No
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id='private-review' className='written-review'>
+                                    <textarea value={this.state.private_message}
+                                        placeholder="e.g. 'Our server David was very attentive and helpful all night. Please send him our thanks.'"
+                                        onChange={this.handleChange('private_message')}
+                                        minLength="50"
+                                    ></textarea>
+                                    <div className='characters'>
+                                        Minimum 50 characters
+                                        <div className='count'>
+                                            <span className={this.state.private_message.length < 50 ? "short" : "long"}>{`${this.state.private_message.length} `}</span> / 2000 characters
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div className='buttons'>
+                                    <button className='back'>Back</button>
+                                    <button className='next'>Submit your review</button>
                                 </div>
                             </div>
                         </form>

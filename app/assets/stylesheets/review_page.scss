@@ -291,9 +291,58 @@
 
                     }
 
-
-
                 }
+            }
+
+            .review-name {
+
+                .nickname {
+                    display: flex;
+                    flex-direction: column;
+                    width: 635px;
+                    height: 60px;
+                    border: 1px solid #E1E1E1;
+                    border-radius: 8px;
+                    padding: 8px 8px;
+                    position: relative;
+    
+                    span {
+                        font-size: 14px;
+                        margin-bottom: 4px;
+                        z-index: 1;
+                    }
+    
+                    input {
+                        border: none;
+                        width: 97%;
+                        padding: 19px 0 6px;
+                        position: absolute;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+    
+                    // input:focus {
+                    //     border: none;
+                    //     text-decoration: none;
+                    // }
+                }
+    
+                .characters {
+                    display: flex;
+                    justify-content: flex-end;
+                    font-size: 14px;
+                    color: #91949a;
+                    margin-top: 7px;
+    
+                    span.short {
+                        color: red
+                    }
+    
+                }
+            }
+
+            #private-review {
+                display: none;
             }
         }
     }
