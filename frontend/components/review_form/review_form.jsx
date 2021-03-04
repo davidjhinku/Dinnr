@@ -4,6 +4,12 @@ class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            overall: null,
+            food: null,
+            service: null,
+            ambiance: null,
+            value: null,
+            noise: null,
             user_id: this.props.currentUser.id,
             restaurant_id: this.props.restId,
             reservation_id: this.props.resId
@@ -21,6 +27,7 @@ class ReviewForm extends React.Component {
     }
 
     handleChange(type) {
+        debugger
         return e => {
             this.setState({[type]: e.target.value})
         }
@@ -29,15 +36,43 @@ class ReviewForm extends React.Component {
     radioStars(type) {
         return(
             <div className='row'>
-                <div className='label'>
-                    <label htmlFor={type}>{type}</label>
+                <div className='type'>
+                    {type}
+                    {/* <label htmlFor={type}>{type}</label> */}
                 </div>
-                <div>
-                    <input type="radio" name={type} id="stars5" value="5" />
-                    <input type="radio" name={type} id="stars4" value="4" />
-                    <input type="radio" name={type} id="stars3" value="3" />
-                    <input type="radio" name={type} id="stars2" value="2" />
-                    <input type="radio" name={type} id="stars1" value="1" />
+                <div className='options'>
+                    <input type="radio"
+                        name={type}
+                        id="stars5"
+                        value="5"
+                        // checked={this.state.type === type}
+                        onClick={this.handleChange(type)}/><label htmlFor='stars5'></label>
+                    <input type="radio"
+                        name={type} id="stars4"
+                        value="4"
+                        // checked={this.state.type === type}
+                        onClick={this.handleChange(type)}/><label htmlFor='stars4'></label>
+                    <input type="radio"
+                        name={type}
+                        id="stars3"
+                        value="3"
+                        // checked={this.state.type === type}
+                        onClick={this.handleChange(type)}/><label htmlFor='stars3'></label>
+                    <input type="radio"
+                        name={type}
+                        id="stars2"
+                        value="2"
+                        // checked={this.state.type === type}
+                        onClick={this.handleChange(type)}/><label htmlFor='stars2'></label>
+                    <input type="radio"
+                        name={type}
+                        id="stars1"
+                        value="1"
+                        // checked={this.state.type === type}
+                        onClick={this.handleChange(type)}/><label htmlFor='stars1'></label>
+                </div>
+                <div className='reaction'>
+                    <span></span>
                 </div>
             </div>
         )
@@ -46,14 +81,18 @@ class ReviewForm extends React.Component {
     radioBars() {
         return (
             <div className='row'>
-                <div className='label'>
-                    <label htmlFor='noise'>Noise level</label>
+                <div className='type'>
+                    Noise level
+                    {/* <label htmlFor='noise'>Noise level</label> */}
                 </div>
-                <div>
+                <div className='options'>
                     <input type="radio" name='noise' id="bars4" value="4" />
                     <input type="radio" name='noise' id="bars3" value="3" />
                     <input type="radio" name='noise' id="bars2" value="2" />
                     <input type="radio" name='noise' id="bars1" value="1" />
+                </div>
+                <div className='description'>
+
                 </div>
             </div>
         )
