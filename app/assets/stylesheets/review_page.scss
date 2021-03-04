@@ -7,16 +7,43 @@
     .form-container {
         margin-top: 25px;
 
+        button.next {
+            width: 210px;
+            height: 45px;
+            border-radius: 5px;
+            border: 1px solid #d93744;
+            background-color: #d93744;
+            color: white;
+            font-weight: 400;
+            font-size: 14px;
+            transition: all 0.4s;
+            cursor: pointer;
+        }
+
+        button.next:hover {
+            filter: brightness(85%);
+        }
+
         .page {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             
             .header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                padding: 20px;
                 
+                h1 {
+                    margin: 25px
+                }
+
+                p {
+
+                }
+
                 .capitalize {
                     text-transform: capitalize;
                 }
@@ -40,9 +67,12 @@
                     }
 
                     .options {
+                        // display: flex;
+                        // align-items: center;
                         width: 180px;
                         height: inherit;
-                        transform: rotateY(180deg);
+                        float: right;
+                        // transform: rotateY(180deg);
 
                         input {
                             display: none;
@@ -50,28 +80,80 @@
                         
                         label {
                             color: #E1E1E1;
-                            font-weight: 900;
-                            // float: right;
+                            float: right;
+                            font-size: 30px;
+                            padding: 1px;
                         }
 
-                        label:before {
-                            content: '\f005';
-                            font-family: 'Font Awesome 5 Free';
-                            font-size: 30px;
-                            display: inline-block;
-                            padding: 1px;
-                            cursor: pointer;
-                        }
+                        // header {
+                        //     float: right
+                        // }
 
                         input:not(:checked) ~ label:hover,
-                        input:not(:checked) ~ label:hover ~ label {
+                        input:not(:checked) ~ label:hover ~ label{
                             color: #da3743;
-                            
+                            // color: #E1E1E1;
                         }
-                        
+
                         input:checked ~ label {
                             color: #da3743;
                         }
+
+                        // #overall-stars1:checked ~ header:before {
+                        input.stars1:checked ~ header:before {
+                            content: 'Poor';
+                        }
+                        input.stars1:checked ~ header.reaction:before {
+                            content: 'Poor';
+                        }
+                        input.stars2:checked ~ header:before {
+                            content: 'Fair';
+                        }
+                        input.stars3:checked ~ header:before {
+                            content: 'Good';
+                        }
+                        input.stars4:checked ~ header:before {
+                            content: 'Very good';
+                        }
+                        input.stars5:checked ~ header:before {
+                            content: 'Outstanding';
+                        }
+
+                        // label:hover ~ input:not(:checked),
+                        // label ~ label:hover ~ input:not(:checked) {
+                        //     color: #E1E1E1;
+                        // }
+
+                        // label {
+                        //     color: #E1E1E1;
+                        //     font-weight: 900;
+                        //     // float: right;
+                        // }
+
+                        // label:before {
+                        //     content: '\f005';
+                        //     font-family: 'Font Awesome 5 Free';
+                        //     font-size: 30px;
+                        //     display: inline-block;
+                        //     padding: 1px;
+                        //     cursor: pointer;
+                        // }
+
+                        // input:not(:checked) ~ label:hover,
+                        // input:not(:checked) ~ label:hover ~ label {
+                        //     color: #da3743;
+                        //     // color: #E1E1E1;
+                            
+                        // }
+                        
+                        // input:checked ~ label {
+                        //     color: #da3743;
+                        //     // color: #E1E1E1;
+                        // }
+
+                        // label:hover ~ input:not(:checked) ~ label {
+                        //     color: #E1E1E1;
+                        // }
                         
                         // label:hover,
                         // label:hover ~ label {
@@ -110,24 +192,51 @@
                         // }
                     }
 
-                    .reaction {
+                    .noise-options {
 
-                        #stars1:checked ~ span:before {
-                            content: 'Poor'
+                        input {
+                            display: none;
                         }
-                        #stars2:checked ~ span:before {
-                            content: 'Fair'
+
+                        rect {
+                            color: #E1E1E1;
                         }
-                        #stars3:checked ~ span:before {
-                            content: 'Good'
+
+                        label:hover {
+                            color: red;
                         }
-                        #stars4:checked ~ span:before {
-                            content: 'Very good'
-                        }
-                        #stars5:checked ~ span:before {
-                            content: 'Outstanding'
-                        }
+
+                        // label.bars1 {
+                        //     width: 40px;
+                        //     height: 10px;
+                        //     background: red;
+                        // }
                     }
+                }
+            }
+
+            .written-review {
+                margin: 30px;
+
+                textarea {
+                    width: 635px;
+                    height: 200px;
+                    border: 1px solid #E1E1E1; 
+                    border-radius: 8px;
+                    padding: 14px 8px;
+                }
+
+                .characters {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    color: #91949a;
+                    margin-top: 7px;
+                    
+                    span.short {
+                        color: red
+                    }
+
                 }
             }
         }

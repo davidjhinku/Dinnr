@@ -10,6 +10,8 @@ class ReviewForm extends React.Component {
             ambiance: null,
             value: null,
             noise: null,
+            review: '',
+            recommended: 0,
             user_id: this.props.currentUser.id,
             restaurant_id: this.props.restId,
             reservation_id: this.props.resId
@@ -27,7 +29,11 @@ class ReviewForm extends React.Component {
     }
 
     handleChange(type) {
-        debugger
+        // debugger
+        // if (document.getElementById(`${type}-reaction`)) {
+        //     document.getElementById(`${type}-reaction`).textContent = 'something'
+        // }
+
         return e => {
             this.setState({[type]: e.target.value})
         }
@@ -41,42 +47,46 @@ class ReviewForm extends React.Component {
                     {/* <label htmlFor={type}>{type}</label> */}
                 </div>
                 <div className='options'>
+                    {/* <header></header> */}
                     <input type="radio"
                         name={type}
                         id={`${type}-stars5`}
-                        // id="stars5"
                         value="5"
-                        // checked={this.state.type === type}
-                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars5`}></label>  
-                        {/* onClick={this.handleChange(type)}/><label htmlFor='stars5' className="fas fa-star"></label>   */}
+                        onClick={this.handleChange(type)}
+                        className='stars5' />
+                        <label htmlFor={`${type}-stars5`} className="fas fa-star"></label>  
+                        {/* onClick={this.handleChange(type)}/><label htmlFor='stars5'></label>   */}
                     <input type="radio"
                         name={type}
                         id={`${type}-stars4`}
                         value="4"
-                        // checked={this.state.type === type}
-                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars4`}></label>
+                        onClick={this.handleChange(type)}
+                        className='stars4' />
+                        <label htmlFor={`${type}-stars4`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars3`}
                         value="3"
-                        // checked={this.state.type === type}
-                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars3`}></label>
+                        onClick={this.handleChange(type)}
+                        className='stars3' />
+                        <label htmlFor={`${type}-stars3`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars2`}
                         value="2"
-                        // checked={this.state.type === type}
-                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars2`}></label>
+                        onClick={this.handleChange(type)}
+                        className='stars2' />
+                        <label htmlFor={`${type}-stars2`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars1`}
                         value="1"
-                        // checked={this.state.type === type}
-                        onClick={this.handleChange(type)} /><label htmlFor={`${type}-stars1`}></label>
+                        onClick={this.handleChange(type)}
+                        className='stars1' />
+                        <label htmlFor={`${type}-stars1`} className="fas fa-star"></label>
+                    <header></header>
                 </div>
-                <div className='reaction'>
-                    <span></span>
-                </div>
+                <header className='reaction'></header>
             </div>
         )
     }
@@ -88,14 +98,38 @@ class ReviewForm extends React.Component {
                     Noise level
                     {/* <label htmlFor='noise'>Noise level</label> */}
                 </div>
-                <div className='options'>
-                    <input type="radio" name='noise' id="bars4" value="4" />
-                    <input type="radio" name='noise' id="bars3" value="3" />
-                    <input type="radio" name='noise' id="bars2" value="2" />
-                    <input type="radio" name='noise' id="bars1" value="1" />
+                <div className='noise-options'>
+                    <input type="radio"
+                        name='noise'
+                        id="bars4"
+                        value="4"
+                        onClick={this.handleChange('noise')}/>
+                        <label htmlFor='bars4' ></label>
+                    <input type="radio"
+                        name='noise'
+                        id="bars3"
+                        value="3"
+                        onClick={this.handleChange('noise')}/>
+                        <label htmlFor='bars3' ></label>
+                    <input type="radio"
+                        name='noise'
+                        id="bars2"
+                        value="2"
+                        onClick={this.handleChange('noise')}/>
+                        <label htmlFor='bars2' ></label>
+                    <input type="radio"
+                        name='noise'
+                        id="bars1"
+                        value="1"
+                        onClick={this.handleChange('noise')}/>
+                    <label htmlFor='bars1' className='bars1'>
+                        <svg width="40" height="10">
+                            <rect width="40" height="10" />
+                        </svg>
+                    </label>
                 </div>
                 <div className='description'>
-
+                    <rect width="50px" height='20px'></rect>
                 </div>
             </div>
         )
@@ -135,7 +169,43 @@ class ReviewForm extends React.Component {
                                     {this.radioBars()}
 
                                 </div>
-                                <button>Next</button>
+                                <button className='next'>Next</button>
+                            </div>
+
+                            <div className='page'>
+                                <div className='header'>
+                                    <h1>Write a review</h1>
+                                    <p>Help diners decide where to eat. Remember to keep it short, simple and specific.</p>
+                                </div>
+
+                                <div className='written-review'>
+                                    <textarea value={this.state.review}
+                                        placeholder="Your review must be at least 50 characters"
+                                        onChange={this.handleChange('review')}
+                                        minLength="50"
+                                    ></textarea>
+                                    <div className='characters'>
+                                        Minimum 50 characters
+                                            <div className='count'>
+                                                <span className={this.state.review.length < 50 ? "short" : "long"}>{`${this.state.review.length} `}</span> / 2000 characters
+                                            </div>
+                                    </div>
+                                </div>
+                                <div className='recommend'>
+                                    <p>Would you recommend STK - NYC - Meatpacking to a friend?</p>
+                                    <div>
+                                        <div className='yes'>
+                                            <i class="fas fa-dot-circle"></i>
+                                            Yes
+                                        </div>
+                                        <div className='no'>
+                                            <i class="far fa-circle"></i>
+                                            No
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
                         </form>
 
