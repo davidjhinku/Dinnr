@@ -28,15 +28,16 @@ class ReviewForm extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault()
+        debugger
+
         this.props.createReview(this.state)
+            // .then((res) => {
+            //     this.props.history.push('/profile')
+            // })
+        .then(this.props.history.push('/profile'))
     }
 
     handleChange(type) {
-        // debugger
-        // if (document.getElementById(`${type}-reaction`)) {
-        //     document.getElementById(`${type}-reaction`).textContent = 'something'
-        // }
-
         return e => {
             this.setState({[type]: e.target.value})
         }
@@ -99,7 +100,6 @@ class ReviewForm extends React.Component {
             <div className='row'>
                 <div className='type'>
                     Noise level
-                    {/* <label htmlFor='noise'>Noise level</label> */}
                 </div>
                 <div className='noise-options'>
                     <input type="radio"
@@ -107,34 +107,19 @@ class ReviewForm extends React.Component {
                         id="bars4"
                         value="4"
                         onClick={this.handleChange('noise')}/>
-                    <label htmlFor='bars4' className="fas fa-square-full bars4"></label>
-                        {/* <label htmlFor='bars4' >
-                            <div className='bar4'></div>
-                        </label> */}
-                    {/* <div className='bar4'><label htmlFor='bars4' ></label></div> */}
-                        
+                    <label htmlFor='bars4' className="fas fa-square-full bars4"></label>      
                     <input type="radio"
                         name='noise'
                         id="bars3"
                         value="3"
                         onClick={this.handleChange('noise')}/>
                     <label htmlFor='bars3' className="fas fa-square-full bars3"></label>
-                        {/* <label htmlFor='bars3' >
-                            <div className='bar3'></div>
-                        </label> */}
-                    {/* <div className='bar3'><label htmlFor='bars3' ></label></div> */}
-                        
                     <input type="radio"
                         name='noise'
                         id="bars2"
                         value="2"
                         onClick={this.handleChange('noise')}/>
                     <label htmlFor='bars2' className="fas fa-square-full bars2"></label>
-                        {/* <label htmlFor='bars2' >
-                            <div className='bar2'></div>
-                        </label> */}
-                    {/* <div className='bar2'><label htmlFor='bars2' ></label></div> */}
-                        
                     <input type="radio"
                         name='noise'
                         id="bars1"
@@ -146,9 +131,6 @@ class ReviewForm extends React.Component {
                     </label> */}
                     {/* <div className='bar1'><label htmlFor='bars1'></label></div> */}
                     
-                </div>
-                <div className='description'>
-                    <rect width="50px" height='20px'></rect>
                 </div>
             </div>
         )
@@ -236,7 +218,7 @@ class ReviewForm extends React.Component {
                         </div>
                     </div>
                     <div id='form-container' className='form-container'>
-                        <form id='review-form' action="">
+                        <form id='review-form'>
                             <div className='page'>
                                 <div className='header'>
                                     <h1><span className='capitalize'>{currentUser.first_name}</span>, how was your experience at {restaurant.name}</h1>

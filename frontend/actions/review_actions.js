@@ -12,5 +12,6 @@ const receiveReview = review => {
 export const createReview = review => dispatch => {
     return APIUTIL.createReview(review)
         .then(review => {
+            debugger
             return dispatch(receiveReview(review))})
 }
