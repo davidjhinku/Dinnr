@@ -1,11 +1,39 @@
 .review-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
     background-color: white;
-    height: auto;
+    min-height: 83vh;
+
+    .progress {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        .step {
+            
+            i {
+                font-size: 8px;
+                padding: 0 4px;
+                color: #eea0a5;
+            }
+        }
+    }
 
     .form-container {
-        margin-top: 25px;
+        // margin-top: 25px;
+        width: 695px;
+        overflow: hidden;
+
+        form {
+            display: flex;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
 
         button.next {
             width: 210px;
@@ -46,20 +74,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            min-width: 695px;
             
             .header {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 20px;
+                padding: 10px 20px 20px;
                 
                 h1 {
-                    margin: 25px
+                    margin: 20px 25px 25px;
                 }
 
                 p {
-
+                    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-size: 17px;
+                    margin-bottom: 12px;
                 }
 
                 .capitalize {
@@ -259,7 +289,7 @@
             }
 
             .recommend {
-                width: -webkit-fill-available;
+                width: 695px;
                 padding: 30px;
 
                 .options {
@@ -343,6 +373,11 @@
 
             #private-review {
                 display: none;
+                margin-top: -150px;
+            }
+
+            .private {
+                margin-bottom: 150px;
             }
         }
     }

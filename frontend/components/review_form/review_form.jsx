@@ -175,6 +175,11 @@ class ReviewForm extends React.Component {
         }
     }
 
+    scroll(distance) {
+        document.getElementById('form-container').scrollLeft += distance
+        // document.getElementById('review-form').scrollLeft += distance
+    }
+
     render() {
         debugger
         let currentUser = this.props.currentUser
@@ -191,8 +196,19 @@ class ReviewForm extends React.Component {
         } else {
             return(
                 <div className='review-page'>
-                    <div className='form-container'>
-                        <form action="">
+                    <div className='progress'>
+                        <div className='step'>
+                            <i className="fas fa-circle"></i>
+                        </div>
+                        <div className='step'>
+                            <i className="fas fa-circle"></i>
+                        </div>
+                        <div className='step'>
+                            <i className="fas fa-circle"></i>
+                        </div>
+                    </div>
+                    <div id='form-container' className='form-container'>
+                        <form id='review-form' action="">
                             <div className='page'>
                                 <div className='header'>
                                     <h1><span className='capitalize'>{currentUser.first_name}</span>, how was your experience at {restaurant.name}</h1>
@@ -210,7 +226,7 @@ class ReviewForm extends React.Component {
 
                                 </div>
                                 <div className='buttons'>
-                                    <button className='next'>Next</button>
+                                    <button className='next' onClick={() => this.scroll(695)}>Next</button>
                                 </div>
                             </div>
 
@@ -251,8 +267,8 @@ class ReviewForm extends React.Component {
                                     </div>
                                 </div>
                                 <div className='buttons'>
-                                    <button className='back'>Back</button>
-                                    <button className='next'>Next</button>
+                                    <button className='back' onClick={() => this.scroll(-695)}>Back</button>
+                                    <button className='next' onClick={() => this.scroll(695)}>Next</button>
                                 </div>
                             </div>
 
@@ -277,7 +293,7 @@ class ReviewForm extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className='recommend'>
+                                <div className='recommend private'>
                                     <p>Do you want to send a private note to {restaurant.name}?</p>
                                     <div className='options'>
                                         <div className='yes' onClick={() => this.toggleActive('yes')}>
@@ -309,7 +325,7 @@ class ReviewForm extends React.Component {
                                 </div>
                                 
                                 <div className='buttons'>
-                                    <button className='back'>Back</button>
+                                    <button className='back' onClick={() => this.scroll(-695)}>Back</button>
                                     <button className='next'>Submit your review</button>
                                 </div>
                             </div>
