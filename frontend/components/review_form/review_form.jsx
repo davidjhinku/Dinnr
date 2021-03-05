@@ -175,8 +175,19 @@ class ReviewForm extends React.Component {
         }
     }
 
-    scroll(distance) {
+    scroll(distance, step) {
         document.getElementById('form-container').scrollLeft += distance
+        if (step === 1) {
+            document.getElementById('bullet2').classList.remove('current')
+            document.getElementById('bullet1').classList.add('current')
+        } else if (step === 2) {
+            document.getElementById('bullet1').classList.remove('current')
+            document.getElementById('bullet3').classList.remove('current')
+            document.getElementById('bullet2').classList.add('current')
+        } else if (step === 3) {
+            document.getElementById('bullet2').classList.remove('current')
+            document.getElementById('bullet3').classList.add('current')
+        }
         // document.getElementById('review-form').scrollLeft += distance
     }
 
@@ -198,13 +209,13 @@ class ReviewForm extends React.Component {
                 <div className='review-page'>
                     <div className='progress'>
                         <div className='step'>
-                            <i className="fas fa-circle"></i>
+                            <i id='bullet1' className="fas fa-circle current"></i>
                         </div>
                         <div className='step'>
-                            <i className="fas fa-circle"></i>
+                            <i id='bullet2' className="fas fa-circle"></i>
                         </div>
                         <div className='step'>
-                            <i className="fas fa-circle"></i>
+                            <i id='bullet3' className="fas fa-circle"></i>
                         </div>
                     </div>
                     <div id='form-container' className='form-container'>
@@ -226,7 +237,7 @@ class ReviewForm extends React.Component {
 
                                 </div>
                                 <div className='buttons'>
-                                    <button className='next' onClick={() => this.scroll(695)}>Next</button>
+                                    <button className='next' onClick={() => this.scroll(695, 2)}>Next</button>
                                 </div>
                             </div>
 
@@ -267,8 +278,8 @@ class ReviewForm extends React.Component {
                                     </div>
                                 </div>
                                 <div className='buttons'>
-                                    <button className='back' onClick={() => this.scroll(-695)}>Back</button>
-                                    <button className='next' onClick={() => this.scroll(695)}>Next</button>
+                                    <button className='back' onClick={() => this.scroll(-695, 1)}>Back</button>
+                                    <button className='next' onClick={() => this.scroll(695, 3)}>Next</button>
                                 </div>
                             </div>
 
@@ -325,7 +336,7 @@ class ReviewForm extends React.Component {
                                 </div>
                                 
                                 <div className='buttons'>
-                                    <button className='back' onClick={() => this.scroll(-695)}>Back</button>
+                                    <button className='back' onClick={() => this.scroll(-695, 2)}>Back</button>
                                     <button className='next'>Submit your review</button>
                                 </div>
                             </div>
