@@ -20,7 +20,7 @@
                 color: #eea0a5;
 
             }
-            
+
             i.current {
                 color: #da3743;
             }
@@ -246,18 +246,82 @@
                     }
 
                     .noise-options {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        // align-items: baseline;
+                        justify-content: space-between;
+                        width: 147px;
+                        height: inherit;
+                        // float: right;
+                        margin-left: 17px;
+                        margin-top: 8px;
 
                         input {
                             display: none;
                         }
 
-                        rect {
+                        label {
                             color: #E1E1E1;
                         }
 
-                        label:hover {
-                            color: red;
+                        .fa-square-full.bars1 {
+                            transform: scale(2.5, 0.6);
                         }
+                        .fa-square-full.bars2 {
+                            transform: scale(2.5, 0.9);
+                        }
+                        .fa-square-full.bars3 {
+                            transform: scale(2.5, 1.2);
+                        }
+                        .fa-square-full.bars4 {
+                            transform: scale(2.5, 1.5);
+                        }
+
+                        input:not(:checked) ~ label:hover,
+                        input:not(:checked) ~ label:hover ~ label{
+                            color: #da3743;
+                            // color: #E1E1E1;
+                        }
+
+                        input:checked ~ label {
+                            color: #da3743;
+                        }
+                        
+                        // div {
+                        //     background: #E1E1E1;
+
+                        // }
+
+                        // div:hover {
+                        //     background: red;
+                        // }
+                        // .bar1 {
+                        //     width: 40px;
+                        //     height: 10px;
+                        // }
+                        // .bar2 {
+                        //     width: 40px;
+                        //     height: 15px;
+                        // }
+                        // .bar3 {
+                        //     width: 40px;
+                        //     height: 20px;
+                        // }
+                        // .bar4 {
+                        //     width: 40px;
+                        //     height: 25px;
+                        // }
+
+
+                        // rect {
+                        //     color: #E1E1E1;
+                        // }
+
+                        // label:hover {
+                        //     color: red;
+                        // }
+
+
 
                         // label.bars1 {
                         //     width: 40px;

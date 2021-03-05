@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
             restaurant_id: this.props.restId,
             reservation_id: this.props.resId
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
@@ -106,29 +107,45 @@ class ReviewForm extends React.Component {
                         id="bars4"
                         value="4"
                         onClick={this.handleChange('noise')}/>
-                        <label htmlFor='bars4' ></label>
+                    <label htmlFor='bars4' className="fas fa-square-full bars4"></label>
+                        {/* <label htmlFor='bars4' >
+                            <div className='bar4'></div>
+                        </label> */}
+                    {/* <div className='bar4'><label htmlFor='bars4' ></label></div> */}
+                        
                     <input type="radio"
                         name='noise'
                         id="bars3"
                         value="3"
                         onClick={this.handleChange('noise')}/>
-                        <label htmlFor='bars3' ></label>
+                    <label htmlFor='bars3' className="fas fa-square-full bars3"></label>
+                        {/* <label htmlFor='bars3' >
+                            <div className='bar3'></div>
+                        </label> */}
+                    {/* <div className='bar3'><label htmlFor='bars3' ></label></div> */}
+                        
                     <input type="radio"
                         name='noise'
                         id="bars2"
                         value="2"
                         onClick={this.handleChange('noise')}/>
-                        <label htmlFor='bars2' ></label>
+                    <label htmlFor='bars2' className="fas fa-square-full bars2"></label>
+                        {/* <label htmlFor='bars2' >
+                            <div className='bar2'></div>
+                        </label> */}
+                    {/* <div className='bar2'><label htmlFor='bars2' ></label></div> */}
+                        
                     <input type="radio"
                         name='noise'
                         id="bars1"
                         value="1"
                         onClick={this.handleChange('noise')}/>
-                    <label htmlFor='bars1' className='bars1'>
-                        <svg width="40" height="10">
-                            <rect width="40" height="10" />
-                        </svg>
-                    </label>
+                    <label htmlFor='bars1' className="fas fa-square-full bars1"></label>
+                    {/* <label htmlFor='bars1' className='bars1'>
+                        <div className='bar1'></div>
+                    </label> */}
+                    {/* <div className='bar1'><label htmlFor='bars1'></label></div> */}
+                    
                 </div>
                 <div className='description'>
                     <rect width="50px" height='20px'></rect>
@@ -176,6 +193,7 @@ class ReviewForm extends React.Component {
     }
 
     scroll(distance, step) {
+        event.preventDefault()
         document.getElementById('form-container').scrollLeft += distance
         if (step === 1) {
             document.getElementById('bullet2').classList.remove('current')
@@ -188,7 +206,6 @@ class ReviewForm extends React.Component {
             document.getElementById('bullet2').classList.remove('current')
             document.getElementById('bullet3').classList.add('current')
         }
-        // document.getElementById('review-form').scrollLeft += distance
     }
 
     render() {
@@ -337,7 +354,7 @@ class ReviewForm extends React.Component {
                                 
                                 <div className='buttons'>
                                     <button className='back' onClick={() => this.scroll(-695, 2)}>Back</button>
-                                    <button className='next'>Submit your review</button>
+                                    <button className='next' onClick={() => this.handleSubmit}>Submit your review</button>
                                 </div>
                             </div>
                         </form>
