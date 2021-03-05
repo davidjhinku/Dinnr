@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
     validates :overall, :food, :service, :ambiance, :value, :noise, :review, :recommended, :nickname, :reservation_id, :restaurant_id, :user_id, presence: true
-    validates :review, length: {minimum: 50}
+    validates :review, length: {minimum: 50, maximum: 2000}
+    validates :nickname, length: {minimum: 3, maximum: 24}
 
     belongs_to :reservation,
         class_name: :Reservation,
