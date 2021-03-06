@@ -142,6 +142,84 @@
 
         .show-reviews {
             padding: 15px;
+
+            .item {
+                display: flex;
+                padding: 10px 0;
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 123px;
+                    margin: 0 16px;
+
+                    .avatar {
+                        display: flex;
+                        justify-content: center;
+                        color: white;
+                        text-transform: uppercase;
+                        align-items: center;
+                        width: 48px;
+                        height: 48px;
+                        font-size: 16px;
+                        border-radius: 50%;
+                        background-color: #e69b84;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .name {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+        
+
+                    }
+
+                    .location {
+                        font-size: 14px;
+                        // fon
+                        color: #6f737b;
+                    }
+                }
+
+                .right {
+                    width: fit-content;
+
+                    li {
+                        display: inline-block;
+                        margin-right: 3px;
+                        font-size: 14px;
+                        // color: #606775;
+                    }
+
+                    li:after {
+                        content: " \00b7";
+                    }
+
+                    li:last-child:after {
+                        content: none;
+                    }
+
+                    .details {
+                        font-weight: 600;
+                        margin-top: 8px;
+
+                        span {
+                            color: red;
+                        }
+                    }
+
+                    .review {
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 25px;
+
+                        margin-top: 16px;
+                        
+                    }
+
+                }
+            }
         }
     }
 
