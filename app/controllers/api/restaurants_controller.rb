@@ -10,7 +10,10 @@ class Api::RestaurantsController < ApplicationController
 
     def show
         @restaurant = Restaurant.includes(menus: :items).with_attached_photos.find(params[:id])
+        # @restaurant = Restaurant.includes(:reviews).includes(menus: :items).with_attached_photos.find(params[:id])
         @reviews = @restaurant.reviews
+        # @reviewsData = Review.reviewData(@reviews)
+        # debugger
         render :show
 
     end

@@ -139,6 +139,179 @@
                 }
             }
         }  
+
+        .no-reviews {
+            padding: 15px;
+
+            p {
+                margin: 20px 0;
+                line-height: 20px;
+            }
+        }
+
+        .show-reviews {
+            padding: 15px;
+
+            li {
+                display: inline-block;
+                margin-right: 3px;
+                font-size: 14px;
+                // color: #606775;
+            }
+
+            li:after {
+                content: " \00b7";
+            }
+
+            li:last-child:after {
+                content: none;
+            }
+
+            .review-header {
+                display: flex;
+                padding: 10px 0;
+                margin-bottom: 20px;
+
+                .left {
+                    width: 350px;
+                    font-size: 14px;
+
+                    h3 {
+                        font-size: 16px;
+                        margin-bottom: 14px;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        margin-bottom: 14px;
+                    }
+
+                    i {
+                        width: 20px;
+                        margin-right: 5px;
+                    }
+
+                    .overall {
+                        margin-bottom: 14px;
+                    }
+
+                    .averages {
+                        display: flex;
+                        margin-bottom: 14px;
+
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+
+                        hr {
+                            margin: 0 20px;
+                            width: 1px;
+                            height: auto;
+                        }
+
+                        span {
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin-bottom: 5px;
+                        }
+                    }
+                    
+                    .volume {
+                        display: flex;
+                        margin-bottom: 14px;
+                    }
+                    
+                    .recommended {
+                        margin-bottom: 14px;
+                    }
+                }
+
+                .right {
+                    width: fit-content;
+                }
+
+            }
+
+            .item {
+                display: flex;
+                padding: 10px 0;
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 123px;
+                    margin: 0 16px;
+
+                    .avatar {
+                        display: flex;
+                        justify-content: center;
+                        color: white;
+                        text-transform: uppercase;
+                        align-items: center;
+                        width: 48px;
+                        height: 48px;
+                        font-size: 16px;
+                        border-radius: 50%;
+                        background-color: #e69b84;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .name {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+        
+
+                    }
+
+                    .location {
+                        font-size: 14px;
+                        // fon
+                        color: #6f737b;
+                    }
+                }
+
+                .right {
+                    width: fit-content;
+
+                    // li {
+                    //     display: inline-block;
+                    //     margin-right: 3px;
+                    //     font-size: 14px;
+                    //     // color: #606775;
+                    // }
+
+                    // li:after {
+                    //     content: " \00b7";
+                    // }
+
+                    // li:last-child:after {
+                    //     content: none;
+                    // }
+
+                    .details {
+                        font-weight: 600;
+                        margin-top: 8px;
+
+                        span {
+                            color: red;
+                        }
+                    }
+
+                    .review {
+                        font-size: 16px;
+                        font-weight: 300;
+                        line-height: 25px;
+
+                        margin-top: 16px;
+                        
+                    }
+
+                }
+            }
+        }
     }
 
     .show-right-column {
