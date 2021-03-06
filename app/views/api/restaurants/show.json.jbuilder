@@ -21,10 +21,16 @@
         end
     end
 
+    # debugger
+
     json.reviews do
-        @reviews.each do |review|
-            json.set! review.id do
-                json.extract! review, :overall, :food, :service, :ambiance, :value, :noise, :review, :recommended, :nickname, :reservation_id, :restaurant_id, :user_id
+        if @reviews.length == 0
+            json.none ""
+        else
+            @reviews.each do |review|
+                json.set! review.id do
+                    json.extract! review, :overall, :food, :service, :ambiance, :value, :noise, :review, :recommended, :nickname, :reservation_id, :restaurant_id, :user_id
+                end
             end
         end
     end
