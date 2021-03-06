@@ -22,11 +22,12 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount() {
-        debugger
+        // debugger
         this.props.fetchReservation(this.props.resId)
     }
     
     handleSubmit(e) {
+        debugger
         e.preventDefault()
         debugger
 
@@ -38,6 +39,7 @@ class ReviewForm extends React.Component {
     }
 
     handleChange(type) {
+        debugger
         return e => {
             this.setState({[type]: e.target.value})
         }
@@ -191,7 +193,6 @@ class ReviewForm extends React.Component {
     }
 
     render() {
-        debugger
         let currentUser = this.props.currentUser
         let restaurant = this.props.restaurant
         let reservation = this.props.reservation
@@ -336,7 +337,8 @@ class ReviewForm extends React.Component {
                                 
                                 <div className='buttons'>
                                     <button className='back' onClick={() => this.scroll(-695, 2)}>Back</button>
-                                    <button className='next' onClick={() => this.handleSubmit}>Submit your review</button>
+                                    {/* <button className='next' onClick={() => this.handleSubmit}>Submit your review</button> */}
+                                    <button className='next' onClick={this.handleSubmit}>Submit your review</button>
                                 </div>
                             </div>
                         </form>
