@@ -6,8 +6,13 @@ class ReviewsHeader extends React.Component {
     
     render() {
         return(
-            <div>
-                the header data
+            <div className='review-header'>
+                <div className='left'>
+                    
+                </div>
+                <div className='right'>
+
+                </div>
             </div>
         )
     }

@@ -140,8 +140,30 @@
             }
         }  
 
+        .no-reviews {
+            padding: 15px;
+
+            p {
+                margin: 20px 0;
+                line-height: 20px;
+            }
+        }
+
         .show-reviews {
             padding: 15px;
+
+            .review-header {
+                display: flex;
+
+                .left {
+                    width: 350px;
+                }
+
+                .right {
+                    width: fit-content;
+                }
+
+            }
 
             .item {
                 display: flex;

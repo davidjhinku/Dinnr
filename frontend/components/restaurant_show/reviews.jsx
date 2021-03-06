@@ -9,10 +9,11 @@ class Reviews extends React.Component {
         debugger
         if (reviews['none']) {
             return (
-                <div className='show-reviews'>
+                <div className='no-reviews'>
                     <h2>Be the first to review this restaurant</h2>
                     <hr />
                     <p>At present, {this.props.restaurant} has no reviews. Please add a review after your dining experience to help others make a decision about where to eat.</p>
+                    <hr/>
                 </div>
             )
         } else {
