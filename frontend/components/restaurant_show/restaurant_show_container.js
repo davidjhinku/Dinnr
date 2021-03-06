@@ -7,7 +7,8 @@ const mSTP = (state, ownProps) => {
     const restaurant = state.entities.restaurants[restId]
     return {
         restId: restId,
-        restaurant: restaurant
+        restaurant: restaurant,
+        reviews: state.entities.reviews
     }
 }
 

@@ -25,7 +25,7 @@
 
     json.reviews do
         if @reviews.length == 0
-            json.none ""
+            json.none "none"
         else
             @reviews.each do |review|
                 json.set! review.id do

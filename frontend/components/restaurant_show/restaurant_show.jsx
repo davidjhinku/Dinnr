@@ -2,6 +2,7 @@ import React from 'react'
 import RestaurantDetails from './restaurant_details'
 import RestaurantPhotos from './restaurant_photos'
 import Menu from './menu'
+import Reviews from './reviews'
 import ReservationFormContainer from './reservation_form_container'
 import RestaurantMap from './restaurant_map'
 import {numberToTime} from '../../util/util_functions'
@@ -74,7 +75,7 @@ class RestaurantShow extends React.Component {
                             </nav>
 
                             <nav ref={this.reviews}>
-                                <p className='temp-reviews'>Reviews coming soon !</p>
+                                <Reviews reviews={this.props.reviews} restaurant={restaurant.name}/>
                             </nav>
                         </div>
                             
