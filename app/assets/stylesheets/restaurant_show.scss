@@ -51,6 +51,7 @@
             top: 0;
             background-color: white;
             margin-bottom: -9px;
+            z-index: 2;
 
             a {
                 text-decoration: none;
@@ -325,20 +326,16 @@
                 .right {
                     width: fit-content;
 
-                    // li {
-                    //     display: inline-block;
-                    //     margin-right: 3px;
-                    //     font-size: 14px;
-                    //     // color: #606775;
-                    // }
+                    .overall {
+                        li {
+                            display: inline-flex;
 
-                    // li:after {
-                    //     content: " \00b7";
-                    // }
+                        }
 
-                    // li:last-child:after {
-                    //     content: none;
-                    // }
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
 
                     .details {
                         font-weight: 600;
@@ -357,6 +354,7 @@
                         margin-top: 16px;
                         
                     }
+
 
                 }
             }
