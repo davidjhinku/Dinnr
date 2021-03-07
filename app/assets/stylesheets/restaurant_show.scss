@@ -191,6 +191,10 @@
                         margin-right: 5px;
                     }
 
+                    .strong {
+                        font-weight: 600;
+                    }
+
                     .overall {
                         margin-bottom: 14px;
                     }
@@ -221,10 +225,12 @@
                     .volume {
                         display: flex;
                         margin-bottom: 14px;
+                        color: #6f737b;
                     }
                     
                     .recommended {
                         margin-bottom: 14px;
+                        color: #6f737b;
                     }
                 }
 

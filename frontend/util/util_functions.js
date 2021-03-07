@@ -126,3 +126,43 @@ export const newDate = (date, time) => {
 
     return new Date(y, m, d, time)
 }
+
+export const restAverages = (reviews) => {
+    let volume = ['none', 'Do not recall', 'Quiet', 'Moderate', 'Energetic']
+    let totalReviews = reviews.length
+
+    // debugger
+    let data = {
+        "overall": 0,
+        "food": 0,
+        "service": 0,
+        "ambiance": 0,
+        "value": 0,
+        "noise": 0,
+        "recommended": 0,
+        // "totalReviews": totalReviews
+    }
+
+    // debugger
+    reviews.forEach ((review => {
+        for (let key in review) {
+
+            // debugger
+            if (data[key] >= 0) {
+
+                // debugger
+                data[key] += review[key]
+            }
+        }
+    }))
+
+    // debugger
+    for (let key in data) {
+        data[key] = (data[key] / totalReviews).toFixed(1)
+    }
+
+    data['noise'] = volume[Math.floor(data['noise'])]
+
+    // debugger
+    return data
+}
