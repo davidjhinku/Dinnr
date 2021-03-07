@@ -168,7 +168,7 @@ export const restAverages = (reviews) => {
 }
 
 export const starRating = (average) => {
-    debugger
+    // debugger
     return (
         <div className='star-rating'>
             {/* <div className='top' style={{width: "50%"}}> */}

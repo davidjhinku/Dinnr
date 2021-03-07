@@ -50,6 +50,7 @@ class RestaurantShow extends React.Component {
                 <div>Loading Restaurant...</div>
             )
         } else {
+            // debugger
             return (
                 <div className='show-page'>
                     {/* <img src={restaurant.photoUrls[0]} alt="show header image"/> */}
@@ -64,7 +65,7 @@ class RestaurantShow extends React.Component {
                             </nav>
                             <hr className='nav-hr'/>
                             <nav ref={this.overview} className='overview'>
-                                <RestaurantDetails restaurant={this.props.restaurant} reviews={Object.values(this.props.reviews)}/>
+                                <RestaurantDetails restaurant={this.props.restaurant} reviews={this.props.reviews}/>
                             </nav>
                             <nav ref={this.photos}>
                                 <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />

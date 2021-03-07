@@ -20,7 +20,7 @@
         background-color: white;
         z-index: 0;
 
-        .star-rating {
+        div.star-rating {
             color: #E1E1E1;
             width: 100px;
             position: relative;
@@ -75,7 +75,7 @@
             top: 47px;
         }
 
-        .overview {
+        nav.overview {
             padding: 15px;
 
             li{
@@ -84,8 +84,10 @@
                 margin-right: 13px;
             }
 
+            
             .show-restaurant-details  {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
+                font-size: 14px;
 
                 h2 {
                     font-size: 45px;
@@ -94,9 +96,23 @@
                     width: 100%;
                 }
 
-                .show-details-list {
-                    margin: 13px 0;
+                p {
+                    font-size: 16px;
+                    margin-top: 10px;
                 }
+                
+                .show-details-list {
+                    margin: 20px 0;
+
+                    span {
+                        display: flex;
+                    }
+
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+
             }
         }
 
