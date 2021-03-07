@@ -64,7 +64,7 @@ class RestaurantShow extends React.Component {
                             </nav>
                             <hr className='nav-hr'/>
                             <nav ref={this.overview} className='overview'>
-                                <RestaurantDetails restaurant={this.props.restaurant}/>
+                                <RestaurantDetails restaurant={this.props.restaurant} reviews={Object.values(this.props.reviews)}/>
                             </nav>
                             <nav ref={this.photos}>
                                 <RestaurantPhotos photosArr={this.props.restaurant.photoUrls.slice(1)} />

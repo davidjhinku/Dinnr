@@ -166,3 +166,26 @@ export const restAverages = (reviews) => {
     // debugger
     return data
 }
+
+export const starRating = (average) => {
+    debugger
+    return (
+        <div className='star-rating'>
+            {/* <div className='top' style={{width: "50%"}}> */}
+            <div className='top' style={{width: `${parseInt((average/5)*100)}%`}}>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div className='bottom'>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+    )
+}

@@ -20,6 +20,28 @@
         background-color: white;
         z-index: 0;
 
+        .star-rating {
+            color: #E1E1E1;
+            width: 100px;
+            position: relative;
+            margin-right: 5px;
+
+            .top {
+                color: #da3743;
+                position: absolute;
+                z-index: 1;
+                display: inline-flex;
+                overflow: hidden;
+            }
+
+            .bottom {
+                display: inline-flex;
+                width: inherit;
+                z-index: 0;
+                overflow: hidden;
+            }
+        }
+
         .page-nav {
             padding: 15px;
             height: 47px;
@@ -196,7 +218,12 @@
                     }
 
                     .overall {
+                        // display: flex;
                         margin-bottom: 14px;
+
+                        span {
+                            display: flex;
+                        }
                     }
 
                     .averages {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {restAverages} from '../../util/util_functions';
+import {restAverages, starRating} from '../../util/util_functions';
 
 class ReviewsHeader extends React.Component {
 
@@ -13,7 +13,7 @@ class ReviewsHeader extends React.Component {
                     <h3>Overall ratings and reviews</h3>
                     <p>Reviews can only be made by diners who have eaten at this restaurant</p>
                     <div className='overall'>
-                        <span className='strong'>stars {averages['overall']} based on recent ratings</span> 
+                        <span className='strong'>{starRating(averages['overall'])} {averages['overall']} based on recent ratings</span> 
                     </div>
                     <div className='averages'>
                         <div>
