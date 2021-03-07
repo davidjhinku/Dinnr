@@ -6,7 +6,7 @@ class Reviews extends React.Component {
     render() {
         let reviews = this.props.reviews
 
-        debugger
+        // debugger
         if (reviews['none']) {
             return (
                 <div className='no-reviews'>
@@ -17,7 +17,7 @@ class Reviews extends React.Component {
                 </div>
             )
         } else {
-            debugger
+            // debugger
             let reviewDetails = Object.values(reviews)
 
             return(

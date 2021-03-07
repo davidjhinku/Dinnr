@@ -1,11 +1,11 @@
 import React from 'react'
-import {readableDate} from '../../util/util_functions'
+import {readableDate, starRating} from '../../util/util_functions'
 
 class ReviewItemDetails extends React.Component {
 
     render() {
         let review = this.props.review;
-        debugger
+        // debugger
         return(
             <div>
                 <li key={this.props.key} className='item'>
@@ -23,7 +23,8 @@ class ReviewItemDetails extends React.Component {
                     <div className='right'>
                         <div className='overall'>
                             <ul>
-                                <li>{review.overall}</li>
+                                <li>{starRating(review.overall)}</li>
+                                {/* <li>{review.overall}</li> */}
                                 <li>Dined on</li>
                             </ul>
                         </div>

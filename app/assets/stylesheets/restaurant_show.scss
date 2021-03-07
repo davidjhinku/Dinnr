@@ -20,6 +20,28 @@
         background-color: white;
         z-index: 0;
 
+        div.star-rating {
+            color: #E1E1E1;
+            width: 100px;
+            position: relative;
+            margin-right: 5px;
+
+            .top {
+                color: #da3743;
+                position: absolute;
+                z-index: 1;
+                display: inline-flex;
+                overflow: hidden;
+            }
+
+            .bottom {
+                display: inline-flex;
+                width: inherit;
+                z-index: 0;
+                overflow: hidden;
+            }
+        }
+
         .page-nav {
             padding: 15px;
             height: 47px;
@@ -29,6 +51,7 @@
             top: 0;
             background-color: white;
             margin-bottom: -9px;
+            z-index: 2;
 
             a {
                 text-decoration: none;
@@ -53,7 +76,7 @@
             top: 47px;
         }
 
-        .overview {
+        nav.overview {
             padding: 15px;
 
             li{
@@ -62,8 +85,10 @@
                 margin-right: 13px;
             }
 
+            
             .show-restaurant-details  {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
+                font-size: 14px;
 
                 h2 {
                     font-size: 45px;
@@ -72,9 +97,23 @@
                     width: 100%;
                 }
 
-                .show-details-list {
-                    margin: 13px 0;
+                p {
+                    font-size: 16px;
+                    margin-top: 10px;
                 }
+                
+                .show-details-list {
+                    margin: 20px 0;
+
+                    span {
+                        display: flex;
+                    }
+
+                    i {
+                        margin-right: 5px;
+                    }
+                }
+
             }
         }
 
@@ -191,8 +230,17 @@
                         margin-right: 5px;
                     }
 
+                    .strong {
+                        font-weight: 600;
+                    }
+
                     .overall {
+                        // display: flex;
                         margin-bottom: 14px;
+
+                        span {
+                            display: flex;
+                        }
                     }
 
                     .averages {
@@ -221,10 +269,12 @@
                     .volume {
                         display: flex;
                         margin-bottom: 14px;
+                        color: #6f737b;
                     }
                     
                     .recommended {
                         margin-bottom: 14px;
+                        color: #6f737b;
                     }
                 }
 
@@ -276,20 +326,16 @@
                 .right {
                     width: fit-content;
 
-                    // li {
-                    //     display: inline-block;
-                    //     margin-right: 3px;
-                    //     font-size: 14px;
-                    //     // color: #606775;
-                    // }
+                    .overall {
+                        li {
+                            display: inline-flex;
 
-                    // li:after {
-                    //     content: " \00b7";
-                    // }
+                        }
 
-                    // li:last-child:after {
-                    //     content: none;
-                    // }
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
 
                     .details {
                         font-weight: 600;
@@ -308,6 +354,7 @@
                         margin-top: 16px;
                         
                     }
+
 
                 }
             }
