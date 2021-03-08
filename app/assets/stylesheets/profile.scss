@@ -2,6 +2,11 @@
     width: inherit;
     background-color: #f7f7f7;
 
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
     .profile-header {
         display: flex;
         align-items: center;
@@ -177,6 +182,11 @@
                         align-items: center;
                         width: inherit;
                         padding: 24px;
+
+                        // a {
+                        //     text-decoration: none;
+                        //     color: black;
+                        // }
                         
                         .left {
                             display: flex;
@@ -235,7 +245,7 @@
                             }
                         }
 
-                        a {
+                        .restaurant-button {
                             width: 125px;
                             height: 45px;
                             text-decoration: none;
@@ -245,6 +255,10 @@
                             background-color: #DA3743;
                             color: white;
                             border-radius: 4px;
+                        }
+
+                        .restaurant-button:hover {
+                            filter: brightness(85%);
                         }
                     }
 
