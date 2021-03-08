@@ -20,7 +20,7 @@ class SearchPage extends React.Component {
                         <FilterForm fetchRestaurants={this.props.fetchRestaurants}/>
                     </div>
                     <div className='search-restaurants'>
-                        <RestaurantSearch restaurants={this.props.restaurants} history={this.props.history}/>
+                        <RestaurantSearch restaurants={this.props.restaurants} reviews={this.props.reviews} history={this.props.history}/>
                     </div>
                 </div>
             </div>

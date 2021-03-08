@@ -122,11 +122,6 @@
 
                 .rest-information {
                     width: 100%;
-
-                    .search-star {
-                        display: flex;
-                        margin: 8px 0;
-                    }
                     
                     p {
                         cursor: pointer;
@@ -134,6 +129,59 @@
                         font-size: 22px;
                         color: #247f9e;
                         margin-bottom: 10px;
+                    }
+
+                    .overall {
+                        display: flex;
+                        align-items: center;
+                        margin: 10px 0;
+
+                        i {
+                            margin-right: 5px;
+                        }
+
+                        .strong {
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+                        
+                        div.star-rating {
+                            color: #E1E1E1;
+                            width: 112px;
+                            position: relative;
+                            margin-right: 5px;
+        
+                            .top {
+                                color: #FEAF05;
+                                position: absolute;
+                                z-index: 1;
+                                display: inline-flex;
+                                overflow: hidden;
+                            }
+        
+                            .bottom {
+                                display: inline-flex;
+                                width: inherit;
+                                z-index: 0;
+                                overflow: hidden;
+                            }
+                        }
+                    }
+
+                    .rest-info-list {
+                        li {
+                            display: inline-block;
+                            margin-right: 3px;
+                            color: #606775;
+                        }
+
+                        li:after {
+                            content: " \00b7";
+                        }
+
+                        li:last-child:after {
+                            content: none;
+                        }
                     }
 
                     .search-reservation {

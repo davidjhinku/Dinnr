@@ -1,5 +1,6 @@
 import React from 'react'
 import ReservationTimeslotsContainer from './reservation_timeslots_container'
+import {stars} from '../../util/util_functions';
 
 class RestaurantSearchItem extends React.Component {
     constructor(props){
@@ -14,6 +15,8 @@ class RestaurantSearchItem extends React.Component {
 
     render() {
         const rest = this.props.restaurant
+        const rating = stars(this.props.reviews)
+        
         debugger
         return(
             <li>
@@ -23,14 +26,12 @@ class RestaurantSearchItem extends React.Component {
 
                     <div className='rest-information'>
                         <p onClick={this.handleClick}>{rest.name}</p>
-                        <div className='search-star'>
+                        {/* <div className='search-star'>
 
                             <h6>Stars</h6>
                             <h6>Rating</h6>
-
-                            {/* <img src={window.starUrl} alt="rating"/>
-                            <p>Exceptional ({Math.floor(Math.random() * 50)})</p> */}
-                        </div>
+                        </div> */}
+                        {rating}
                         <ul className='rest-info-list'>
                             <li>{rest.price_range}</li>
                             <li>{rest.cuisine_type}</li>
