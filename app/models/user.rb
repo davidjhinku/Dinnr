@@ -20,10 +20,14 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         primary_key: :id
 
-    # has_many :favorites
-    # has_many :favorite_restaurants,
-    #     through: :favorites,
-    #     source: :restaurant
+    has_many :favorites,
+        class_name: :Favorite,
+        foreign_key: :user_id,
+        primary_key: :id
+
+    has_many :favorite_restaurants,
+        through: :favorites,
+        source: :restaurant
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
