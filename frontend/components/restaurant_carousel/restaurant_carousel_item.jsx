@@ -14,11 +14,12 @@ class RestaurantCarouselItem extends React.Component {
     }
 
     stars(reviews) {
-        debugger
+        let length = Object.keys(reviews).length
         if (reviews['none']) {
             return(
                 <div className='overall'>
-                    <span className='strong'>{starRating(0)} 0 reviews</span>
+                    <span>{starRating(0)}</span>
+                    <span className='strong'>0 reviews</span>
                 </div>
             )
         } else {
@@ -26,7 +27,8 @@ class RestaurantCarouselItem extends React.Component {
 
             return(
                 <div className='overall'>
-                    <span className='strong'>{starRating(averages['overall'])} {reviews.length} reviews</span>
+                    <span>{starRating(averages['overall'])}</span>
+                    <span className='strong'>{length} reviews</span>
                 </div>
             )
         }
@@ -42,10 +44,10 @@ class RestaurantCarouselItem extends React.Component {
                 {/* <img src={rest.photoUrl} alt="first image"/> */}
                 <div className='carousel-info-block'>
                     <p>{rest.name}</p>
-                    <span className='carousel-star'>
+                    {/* <span className='carousel-star'>
                         <img className='carousel-star' src={window.starUrl} alt="rating" />
                         {Math.floor(Math.random() * 50)} reviews
-                    </span>
+                    </span> */}
                     {rating}
                     <ul className='rest-info-list'>
                         <li>{rest.cuisine_type}</li>
