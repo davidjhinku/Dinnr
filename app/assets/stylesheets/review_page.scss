@@ -136,6 +136,7 @@
                             float: right;
                             font-size: 30px;
                             padding: 1px;
+                            
                         }
 
                         // header {
@@ -156,9 +157,9 @@
                         input.stars1:checked ~ header:before {
                             content: 'Poor';
                         }
-                        input.stars1:checked ~ header.reaction:before {
-                            content: 'Poor';
-                        }
+                        // input.stars1:checked ~ header.reaction:before {
+                        //     content: 'Poor';
+                        // }
                         input.stars2:checked ~ header:before {
                             content: 'Fair';
                         }
