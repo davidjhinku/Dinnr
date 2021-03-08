@@ -2,10 +2,12 @@ class Api::UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @reservations = @user.reservations
-        @restaurants = Restaurant.all
+        @restaurants = Restaurant.includes(:reviews).all
+        @favorites = @user.favorites
+        # @favorites = @user.favorite_restaurants
+
         # @restaurants = @user.restaurants
-        
-        # debugger find a method to only get restaurants needed
+        # find a method to only get restaurants needed
         render 'api/users/data.json.jbuilder'
     end
     
