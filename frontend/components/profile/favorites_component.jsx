@@ -9,7 +9,7 @@ class Favorites extends React.Component {
             favorites = <li className='no-favorites'>You have no favorite restaurants to show on this list.</li>
         } else {
             favorites = Object.values(this.props.favorites).map((favorite, idx) => {
-                return <FavoriteDetails key={idx} favorite={favorite} restaurant={this.props.restaurants[favorite.restaurant_id]}/>
+                return <FavoriteDetails key={idx} favorite={favorite} restaurant={this.props.restaurants[favorite.restaurant_id]} deleteFavorite={this.props.deleteFavorite}/>
             })
         }
 

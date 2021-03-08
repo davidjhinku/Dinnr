@@ -27,7 +27,7 @@ class ReservationPastDetails extends React.Component {
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
         let favorite
-        debugger
+        
         if (this.props.favorites[restaurant.id]) {
             favorite = <button onClick={this.removeFavorite}><i class="fas fa-bookmark"></i>  Restaurant saved</button>
         } else {

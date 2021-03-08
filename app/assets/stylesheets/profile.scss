@@ -99,6 +99,7 @@
                            width: 80px; 
                            height: 80px;
                            margin-right: 15px;
+                           border-radius: 4px;
                         }
     
                         div {
@@ -114,8 +115,6 @@
                                 color: #6d6d6d;
                                 margin-bottom: 10px;
                             }
-
-
 
                             .upcoming-links {
                                 display: flex;
@@ -138,7 +137,7 @@
                                 a {
                                     font-size: 14px;
                                     text-decoration: none;
-                                    color: red;
+                                    color: #DA3743;
                                     margin-top: 2px;
                                     margin-right: 15px;
                                 }
@@ -148,7 +147,7 @@
                                 }
 
                                 button {
-                                    color: red;
+                                    color: #DA3743;
                                     background-color: white;
                                     font-size: 14px;
                                     border: none;
@@ -158,6 +157,122 @@
                                     cursor: pointer;
                                     color: rgb(179, 0, 0);
                                 }
+                            }
+                        }
+                    }
+
+                    hr {
+                        width: inherit;
+                        margin: 20px 0;
+                    }
+                }
+
+                .profile-favorite {
+                    width: inherit;
+                    padding: 0;
+
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: inherit;
+                        padding: 24px;
+                        
+                        .left {
+                            display: flex;
+                            padding: 0;
+
+                            img {
+                               width: 80px; 
+                               height: 80px;
+                               margin-right: 15px;
+                               border-radius: 4px;
+                            }
+        
+                            div {
+                                padding: 0;
+        
+                                h3 {
+                                    font-size: 16px;
+                                    margin-bottom: 10px;
+                                }
+            
+                                h4 {
+                                    font-size: 14px;
+                                    color: #6d6d6d;
+                                    margin-bottom: 10px;
+                                }
+
+                                button {
+                                    // color: red;
+                                    background-color: white;
+                                    font-size: 14px;
+                                    border: none;
+                                }
+
+                                button:hover {
+                                    cursor: pointer;
+                                    color: rgb(179, 0, 0);
+                                }
+
+                                i {
+                                    color: #DA3743;
+                                    margin-right: 5px;
+                                }
+    
+                                .attributes {
+                                    display: flex;
+                                    color: #6F6F6F;
+                                    margin-top: 10px;
+
+                                    hr {
+                                        width: 1px;
+                                        margin: 0 7px;
+                                    }
+                                }
+    
+                                // .upcoming-links {
+                                //     display: flex;
+    
+                                //     a {
+                                //         font-size: 14px;
+                                //         text-decoration: none;
+                                //         color: #237b98;
+                                //         margin-right: 15px;
+                                //     }
+    
+                                //     a:hover {
+                                //         filter: brightness(70%);
+                                //     }
+                                // }
+    
+                                // .past-links {
+                                //     display: flex;
+    
+                                //     a {
+                                //         font-size: 14px;
+                                //         text-decoration: none;
+                                //         color: red;
+                                //         margin-top: 2px;
+                                //         margin-right: 15px;
+                                //     }
+    
+                                //     a:hover {
+                                //         color: rgb(179, 0, 0)
+                                //     }
+    
+                                    // button {
+                                    //     color: red;
+                                    //     background-color: white;
+                                    //     font-size: 14px;
+                                    //     border: none;
+                                    // }
+    
+                                    // button:hover {
+                                    //     cursor: pointer;
+                                    //     color: rgb(179, 0, 0);
+                                    // }
+                                // }
                             }
                         }
                     }

@@ -12,7 +12,6 @@ const favoritesReducer = (state = _default, action) => {
             return Object.assign({}, state, {[action.favorite.restaurant_id]: action.favorite})
         case REMOVE_FAVORITE:
             let newState = Object.assign({}, state)
-            debugger
             delete newState[action.favorite.restaurant_id]
             return newState
         default:
