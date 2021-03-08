@@ -190,23 +190,23 @@ export const starRating = (average) => {
     )
 }
 
-export const stars = (reviews) => {
-    let length = Object.keys(reviews).length
-    if (reviews['none']) {
-        return (
-            <div className='overall'>
-                <span>{starRating(0)}</span>
-                <span className='strong'>0 reviews</span>
-            </div>
-        )
-    } else {
-        let averages = restAverages(Object.values(reviews))
+// export const stars = (reviews) => {
+//     let length = Object.keys(reviews).length
+//     if (reviews['none']) {
+//         return (
+//             <div className='overall'>
+//                 <span>{starRating(0)}</span>
+//                 <span className='strong'>0 reviews</span>
+//             </div>
+//         )
+//     } else {
+//         let averages = restAverages(Object.values(reviews))
 
-        return (
-            <div className='overall'>
-                <span>{starRating(averages['overall'])}</span>
-                <span className='strong'>{length} reviews</span>
-            </div>
-        )
-    }
-}
+//         return (
+//             <div className='overall'>
+//                 <span>{starRating(averages['overall'])}</span>
+//                 <span className='strong'>{length} reviews</span>
+//             </div>
+//         )
+//     }
+// }

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReservationTimeslotsContainer from './reservation_timeslots_container'
-import {stars} from '../../util/util_functions';
+import {restAverages, starRating} from '../../util/util_functions';
 
 class RestaurantSearchItem extends React.Component {
     constructor(props){
@@ -13,9 +13,32 @@ class RestaurantSearchItem extends React.Component {
         this.props.history.push(`/restaurants/${this.props.restaurant.id}`)
     }
 
+    stars(reviews) {
+        let length = Object.keys(reviews).length
+        if (reviews['none']) {
+            return (
+                <div className='overall'>
+                    <span>{starRating(0)}</span>
+                    <span className='size'>No reviews</span>
+                </div>
+            )
+        } else {
+            let averages = restAverages(Object.values(reviews))
+            let words = ['No Reviews', 'Good', 'Very Good', 'Excellent', 'Awesome', 'Exceptional']
+            
+            return (
+                <div className='overall'>
+                    <span>{starRating(averages['overall'])}</span>
+                    {/* <span className='strong'>{length} reviews</span> */}
+                    <span className='size'><span className='strong'>{words[Math.floor(averages['overall'])]}</span>{` (${length})`}</span>
+                </div>
+            )
+        }
+    }
+
     render() {
         const rest = this.props.restaurant
-        const rating = stars(this.props.reviews)
+        const rating = this.stars(this.props.reviews)
         
         debugger
         return(
@@ -26,11 +49,6 @@ class RestaurantSearchItem extends React.Component {
 
                     <div className='rest-information'>
                         <p onClick={this.handleClick}>{rest.name}</p>
-                        {/* <div className='search-star'>
-
-                            <h6>Stars</h6>
-                            <h6>Rating</h6>
-                        </div> */}
                         {rating}
                         <ul className='rest-info-list'>
                             <li>{rest.price_range}</li>

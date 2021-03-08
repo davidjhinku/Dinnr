@@ -140,9 +140,12 @@
                             margin-right: 5px;
                         }
 
-                        .strong {
+                        .size {
                             font-size: 14px;
-                            font-weight: 600;
+
+                            .strong {
+                                font-weight: 600;
+                            }
                         }
                         
                         div.star-rating {
