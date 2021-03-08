@@ -5,6 +5,7 @@ import searchReducer from './search_reducer'
 import timeslotsReducer from './timeslots_reducer'
 import reservationReducer from './reservation_reducer'
 import reviewsReducer from './reviews_reducer'
+import favoritesReducer from './favorites_reducer'
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     search_params: searchReducer,
     timeslots: timeslotsReducer,
     reservations: reservationReducer,
-    reviews: reviewsReducer
+    reviews: reviewsReducer,
+    favorites: favoritesReducer
 })
 
 export default entitiesReducer;
