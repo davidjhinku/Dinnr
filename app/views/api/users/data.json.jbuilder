@@ -20,7 +20,7 @@ json.favorites do
         json.none "none"
     else
         @favorites.each do |favorite|
-            json.set! favorite.id do
+            json.set! favorite.restaurant_id do
                 json.extract! favorite, :id, :restaurant_id
             end
         end

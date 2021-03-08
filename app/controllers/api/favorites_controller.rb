@@ -18,7 +18,8 @@ class Api::FavoritesController < ApplicationController
 
         @favorite.destroy
 
-        render json: @favorite
+        # render json: @favorite
+        render :create
     end
 
     private

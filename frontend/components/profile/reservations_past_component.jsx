@@ -9,7 +9,7 @@ class PastReservation extends React.Component {
         if (this.props.pastReservations.length < 1 || this.props.pastReservations[0].user_id === 0) {
             reservations = <li className='no-reservations'>No Past Reservations <Link to='/'>Book a Table</Link></li>
         } else {
-            reservations = this.props.pastReservations.map((reservation, idx) => { return <ReservationPastDetails key={`prof-${idx}`} reservation={reservation} restaurant={this.props.restaurants[reservation.restaurant_id]} createFavorite={this.props.createFavorite}/> })
+            reservations = this.props.pastReservations.map((reservation, idx) => { return <ReservationPastDetails key={`prof-${idx}`} reservation={reservation} restaurant={this.props.restaurants[reservation.restaurant_id]} favorites={this.props.favorites} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite}/> })
         }
 
         return (

@@ -6,6 +6,7 @@ class ReservationPastDetails extends React.Component {
     constructor(props){
         super(props)
         this.addFavorite = this.addFavorite.bind(this)
+        this.removeFavorite = this.removeFavorite.bind(this)
     }
 
     addFavorite(e) {
@@ -14,9 +15,24 @@ class ReservationPastDetails extends React.Component {
         this.props.createFavorite({user_id: this.props.reservation.user_id, restaurant_id: this.props.restaurant.id})
     }
 
+    removeFavorite(e) {
+        e.preventDefault()
+        debugger
+        let favorites = this.props.favorites
+        let restId = this.props.restaurant.id
+        this.props.deleteFavorite(favorites[restId].id)
+    }
+
     render() {
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
+        let favorite
+        debugger
+        if (this.props.favorites[restaurant.id]) {
+            favorite = <button onClick={this.removeFavorite}><i class="fas fa-bookmark"></i>  Restaurant saved</button>
+        } else {
+            favorite = <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button>
+        }
         
         return (
             <div className='profile-reservation'>
@@ -31,7 +47,8 @@ class ReservationPastDetails extends React.Component {
                         <div className="past-links">
                             <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
                             {/* <button><i className="far fa-comment-alt"></i>  Write Review</button> */}
-                            <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button>
+                            {/* <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button> */}
+                            {favorite}
                         </div>
                     </div>
                 </li>

@@ -39,7 +39,7 @@ class Profile extends React.Component {
                         </nav>
                         <div className='profile-components'>
                             <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants} userId={this.props.currentUser.id}/>
-                            <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} createFavorite={this.props.createFavorite}/>
+                            <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} favorites={this.props.favorites} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite}/>
                             <Favorites favorites={this.props.favorites} restaurants={this.props.restaurants} deleteFavorite={this.props.deleteFavorite}/>
                         </div>
                     </div>
