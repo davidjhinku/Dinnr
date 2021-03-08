@@ -4,6 +4,9 @@ class Api::FavoritesController < ApplicationController
         @favorite = Favorite.new(favorite_params)
 
         if @favorite.save!
+            # @restaurant = @favorite.restaurant
+            # @reviews = @restaurant.reviews
+
             render :create
         else
             render json: @favorite.errors.full_messages, status: 422

@@ -30,7 +30,7 @@ const reservationReducer = (state = _defaultState, action) => {
         case RECEIVE_USER_DATA:
             return action.payload.reservations
         default:
-            return _defaultState;
+            return state;
     }
 }
 

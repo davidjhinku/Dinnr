@@ -3,6 +3,17 @@ import {Link} from 'react-router-dom'
 import { numberToTime } from '../../util/util_functions';
 
 class ReservationPastDetails extends React.Component {
+    constructor(props){
+        super(props)
+        this.addFavorite = this.addFavorite.bind(this)
+    }
+
+    addFavorite(e) {
+        e.preventDefault()
+        debugger
+        this.props.createFavorite({user_id: this.props.reservation.user_id, restaurant_id: this.props.restaurant.id})
+    }
+
     render() {
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
@@ -20,7 +31,7 @@ class ReservationPastDetails extends React.Component {
                         <div className="past-links">
                             <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
                             {/* <button><i className="far fa-comment-alt"></i>  Write Review</button> */}
-                            <button><i className="far fa-bookmark"></i>  Save this restaurant</button>
+                            <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button>
                         </div>
                     </div>
                 </li>

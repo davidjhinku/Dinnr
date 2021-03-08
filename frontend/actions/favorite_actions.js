@@ -10,8 +10,10 @@ const receiveFavorite = favorite => {
 }
 
 export const createFavorite = favorite => dispatch => {
+    debugger
     return APIUTIL.createFavorite(favorite)
         .then(favorite => {
+            debugger
             return dispatch(receiveFavorite(favorite))
         })
 }

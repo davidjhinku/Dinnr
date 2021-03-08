@@ -1,4 +1,5 @@
 export const createFavorite = favorite => {
+    debugger
     return $.ajax({
         method: 'POST',
         url: 'api/favorites',
