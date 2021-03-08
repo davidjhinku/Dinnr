@@ -33,7 +33,7 @@ class FavoriteDetails extends React.Component {
                         </div>
                     </div>
                     
-                    <Link to={`/reservations/${restaurant.id}`}>Reserve Now</Link>
+                    <Link to={`/restaurants/${restaurant.id}`}>Reserve Now</Link>
                 </li>
                 <hr/>
             </div>
