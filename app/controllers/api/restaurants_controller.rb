@@ -1,7 +1,8 @@
 class Api::RestaurantsController < ApplicationController
     def index
         if !params[:search]
-            @restaurants = Restaurant.all
+            @restaurants = Restaurant.includes(:reviews).all
+            # @restaurants = Restaurant.all
         else 
             @restaurants = Restaurant.search(search_terms)
         end
