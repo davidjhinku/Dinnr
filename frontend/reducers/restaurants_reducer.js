@@ -8,7 +8,7 @@ const restaurantsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_RESTAURANTS:
-            return action.restaurants
+            return action.restaurants.restaurants
         case RECEIVE_RESTAURANT:
             return Object.assign({}, state, {[action.restaurant.id]: action.restaurant})
         // case CLEAR_RESTAURANTS:

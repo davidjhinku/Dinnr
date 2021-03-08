@@ -29,8 +29,10 @@ class RestaurantCarousel extends React.Component {
     }
 
     render() {
+        let reviews = this.props.reviews
+
         const restList = this.props.restaurants.map((restaurant, idx) => {
-            return <RestaurantCarouselItem key={idx} restaurant={restaurant} {...this.props}/>
+            return <RestaurantCarouselItem key={idx} restaurant={restaurant} reviews={reviews[restaurant.id]} /> //removed {...this.props}
         })
         return (
             <div className='carousel-component'>

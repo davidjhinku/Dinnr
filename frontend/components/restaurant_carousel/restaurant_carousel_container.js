@@ -4,7 +4,8 @@ import { fetchRestaurants } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
     return {
-        restaurants: Object.values(state.entities.restaurants)
+        restaurants: Object.values(state.entities.restaurants),
+        reviews: state.entities.reviews
     }
 }
 
