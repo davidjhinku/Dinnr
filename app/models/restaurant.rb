@@ -24,7 +24,7 @@ class Restaurant < ApplicationRecord
     has_many_attached :photos
 
     def self.search(terms)
-        results = Restaurant.where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")
+        results = Restaurant.includes(:reviews).where("name ILIKE :term OR city ILIKE :term OR cuisine_type ILIKE :term", term: "%#{terms[:wildcard]}%")
     
         if !terms[:time] #for carousel rando city
             @restaurants = results

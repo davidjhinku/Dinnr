@@ -131,7 +131,6 @@ export const restAverages = (reviews) => {
     let volume = ['none', 'Do not recall', 'Quiet', 'Moderate', 'Energetic']
     let totalReviews = reviews.length
 
-    // debugger
     let data = {
         "overall": 0,
         "food": 0,
@@ -143,35 +142,27 @@ export const restAverages = (reviews) => {
         // "totalReviews": totalReviews
     }
 
-    // debugger
     reviews.forEach ((review => {
         for (let key in review) {
-
-            // debugger
             if (data[key] >= 0) {
 
-                // debugger
                 data[key] += review[key]
             }
         }
     }))
 
-    // debugger
     for (let key in data) {
         data[key] = (data[key] / totalReviews).toFixed(1)
     }
 
     data['noise'] = volume[Math.floor(data['noise'])]
 
-    // debugger
     return data
 }
 
 export const starRating = (average) => {
-    // debugger
     return (
         <div className='star-rating'>
-            {/* <div className='top' style={{width: "50%"}}> */}
             <div className='top' style={{width: `${parseInt((average/5)*100)}%`}}>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
