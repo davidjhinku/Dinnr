@@ -21,20 +21,10 @@ class Review < ApplicationRecord
     def self.reviewData(reviews)
         volume = ['none', 'Do not recall', 'Quiet', 'Moderate', 'Energetic']
         totalReviews = reviews.length
-
-        # debugger
         
         if totalReviews == 0
             return {}
         else
-            # debugger
-            # overall = 0,
-            # food = 0,
-            # service = 0,
-            # ambiance = 0,
-            # value = 0,
-            # noise = 0,
-            # recommended = 0,
 
             data = {
                 "overall": 0,
@@ -52,17 +42,6 @@ class Review < ApplicationRecord
                     data[k] += v
                 end
             end
-
-            # return {
-            #     "overall": 0,
-            #     "food": 0,
-            #     "service": 0,
-            #     "ambiance": 0,
-            #     "value": 0,
-            #     "noise": 0,
-            #     "recommended": 1,
-            # }
-            # debugger
             return data
         end
 

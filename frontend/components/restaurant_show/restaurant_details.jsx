@@ -9,7 +9,6 @@ class RestaurantDetails extends React.Component {
         let restaurant = this.props.restaurant
         let reviews = this.props.reviews
         
-        debugger
         if (reviews['none']) {
             return (
                 <div className='show-restaurant-details'>
@@ -24,7 +23,6 @@ class RestaurantDetails extends React.Component {
                 </div>
             )
         } else {
-            debugger
             let reviewsData = restAverages(Object.values(reviews));
             let stars = starRating(reviewsData['overall']);
             reviews = reviews.length

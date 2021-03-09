@@ -22,24 +22,17 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         this.props.fetchReservation(this.props.resId)
     }
     
     handleSubmit(e) {
-        debugger
         e.preventDefault()
-        debugger
 
         this.props.createReview(this.state)
-            // .then((res) => {
-            //     this.props.history.push('/profile')
-            // })
         .then(this.props.history.push('/profile'))
     }
 
     handleChange(type) {
-        debugger
         return e => {
             this.setState({[type]: e.target.value})
         }
@@ -196,9 +189,6 @@ class ReviewForm extends React.Component {
         let restaurant = this.props.restaurant
         let reservation = this.props.reservation
 
-        debugger
-
-        // if (this.props.resId !== restaurant.id || this.props.restId !== reservation.id) {
         if (reservation["default"] || this.props.resId != reservation.id || this.props.restId != restaurant.id) {
             return(
                 <div>Loading...</div>

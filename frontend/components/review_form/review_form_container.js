@@ -4,7 +4,6 @@ import {createReview} from '../../actions/review_actions'
 import {fetchReservation} from '../../actions/reservation_actions'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         currentUser: Object.values(state.entities.users)[0],
         restaurant: Object.values(state.entities.restaurants)[0],

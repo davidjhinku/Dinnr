@@ -5,8 +5,6 @@ class ReviewsHeader extends React.Component {
 
     render() {
         let averages = restAverages(this.props.reviews)
-
-        debugger
         return(
             <div className='review-header'>
                 <div className='left'>
@@ -17,13 +15,11 @@ class ReviewsHeader extends React.Component {
                     </div>
                     <div className='averages'>
                         <div>
-                            {/* <span>4.7</span> */}
                             <span>{averages['food']}</span>
                             Food
                         </div>
                         <hr/>
                         <div>
-                            {/* <span>4.7</span> */}
                             <span>{averages['service']}</span>
                             Service
                         </div>

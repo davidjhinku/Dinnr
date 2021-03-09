@@ -43,11 +43,9 @@ class Api::ReservationsController < ApplicationController
 
     def destroy
         @reservation = Reservation.find_by(id: params[:id])       
-        # debugger
 
         @reservation.destroy
         # render :show
-        # debugger
 
         render json: @reservation
     end
