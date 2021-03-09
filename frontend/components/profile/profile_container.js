@@ -5,7 +5,6 @@ import {createFavorite, deleteFavorite} from '../../actions/favorite_actions'
 import {deleteReview} from '../../actions/review_actions'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         currentUser: Object.values(state.entities.users)[0],
         reservations: state.entities.reservations,

@@ -172,7 +172,63 @@
                     }
                     
                     .review-summary {
-                        padding: 0 16px;
+                        // display: flex;
+                        padding: 16px;
+                        border: 1px solid #F0F0F0;
+                        border-radius: 4px;
+                        margin-top: 20px;
+                        color: #B6B6B6;
+
+                        h3 {
+                            font-weight: 400;
+                        }
+
+                        p {
+                            line-height: 22px;
+                            color: #7d7d7d;
+                            margin: 15px 0;
+                        }
+
+                        div {
+                            padding: 0;
+                            margin-right: 30px;
+                        }
+                        
+                        .attributes{
+                            display: flex;
+                            margin: 10px 0;
+
+                            // span {
+                            //     margin-bottom: 5px;
+                            // }
+
+                            i {
+                                margin-right: 5px;
+                            }
+
+                            .star-rating {
+                                color: #E1E1E1;
+                                width: 112px;
+                                position: relative;
+                                margin-top: 5px;
+                                margin-right: 5px;
+            
+                                .top {
+                                    color: #FEAB6C;
+                                    position: absolute;
+                                    z-index: 1;
+                                    display: inline-flex;
+                                    overflow: hidden;
+                                }
+            
+                                .bottom {
+                                    display: inline-flex;
+                                    width: inherit;
+                                    z-index: 0;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
                     }
 
                     hr {
