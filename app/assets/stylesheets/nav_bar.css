@@ -103,7 +103,7 @@ ul.nav-dropdown > li {
 .dropdown-options button {
     background-color: white;
     border: none;
-    padding: 8px 15px;
+    /* padding: 8px 15px; */
     font-size: 16px;
     font-weight: 300;
     width: 100%;
@@ -136,8 +136,14 @@ ul.nav-dropdown > li {
 }
 
 a.nav-dropdown {
-    padding: 6px 0;
-    padding-right: 217px;
+    /* display: contents; */
+    /* padding: 6px 0;
+    padding-right: 217px; */
+    display: flex;
     text-decoration: none;
     color: black;
+}
+
+div.nav-text {
+    padding: 8px;
 }
