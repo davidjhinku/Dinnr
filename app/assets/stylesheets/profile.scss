@@ -88,7 +88,18 @@
 
                     a {
                         text-decoration: none;
+                        color: #237B98;
                     }
+
+                    a:hover {
+                        color: #bb2f38;
+                    }
+                }
+
+                .no-favorites {
+                    padding: 34px;
+                    color: #a1a1a1;
+                    text-decoration: none;
                 }
 
                 .profile-reservation {
