@@ -12,7 +12,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        debugger
         if (this.props.reservations['default'] || Object.keys(this.props.reservations)[0] === 'id') {
             return (
                 <div>Loading...</div>
