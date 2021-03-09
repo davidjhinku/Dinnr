@@ -4,6 +4,7 @@ class Api::UsersController < ApplicationController
         @reservations = @user.reservations
         @restaurants = Restaurant.includes(:reviews).all
         @favorites = @user.favorites
+        @reviews = @user.reviews
         # @favorites = @user.favorite_restaurants
 
         # @restaurants = @user.restaurants

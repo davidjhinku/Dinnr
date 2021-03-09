@@ -23,9 +23,9 @@ class ReservationPastDetails extends React.Component {
 
     render() {
 
-        let reservation = this.props.reservation
-        let restaurant = this.props.restaurant
-        let favorite
+        let reservation = this.props.reservation;
+        let restaurant = this.props.restaurant;
+        let reviews = this.props.reviews;
 
         if (!restaurant) {
             return(
@@ -34,6 +34,9 @@ class ReservationPastDetails extends React.Component {
                 </div>
             )
         } else {
+            let favorite;
+            let review;
+            let reviewLink;
 
             if (this.props.favorites[restaurant.id]) {
                 favorite = <button onClick={this.removeFavorite}><i class="fas fa-bookmark"></i>  Restaurant saved</button>
@@ -41,6 +44,14 @@ class ReservationPastDetails extends React.Component {
                 favorite = <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button>
             }
             
+            if (reviews[restaurant.id]) {
+                reviewLink = <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Delete Review</Link>
+                review = <div className='review-summary'>The summary of the review in here</div>
+            } else {
+                reviewLink = <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
+                review = <div className='review-summary'></div>
+            }
+
             return (
                 <div className='profile-reservation'>
                     <li>
@@ -54,13 +65,15 @@ class ReservationPastDetails extends React.Component {
                             <h3>{reservation.date}</h3>
                             <h4>{`Table for ${reservation.party_size} people.`}</h4>
                             <div className="past-links">
-                                <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
+                                {reviewLink}
+                                {/* <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link> */}
                                 {/* <button><i className="far fa-comment-alt"></i>  Write Review</button> */}
                                 {/* <button onClick={this.addFavorite}><i className="far fa-bookmark"></i>  Save this restaurant</button> */}
                                 {favorite}
                             </div>
                         </div>
                     </li>
+                    {review}
                     <hr/>
                 </div>
             )

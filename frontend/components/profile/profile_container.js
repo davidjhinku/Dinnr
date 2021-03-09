@@ -4,11 +4,13 @@ import {fetchUserData} from '../../actions/user_actions';
 import {createFavorite, deleteFavorite} from '../../actions/favorite_actions'
 
 const mSTP = (state, ownProps) => {
+    debugger
     return {
         currentUser: Object.values(state.entities.users)[0],
         reservations: state.entities.reservations,
         restaurants: state.entities.restaurants,
-        favorites: state.entities.favorites
+        favorites: state.entities.favorites,
+        reviews: state.entities.reviews
     }
 }
 

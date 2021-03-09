@@ -25,7 +25,7 @@ class RestaurantDetails extends React.Component {
         } else {
             let reviewsData = restAverages(Object.values(reviews));
             let stars = starRating(reviewsData['overall']);
-            reviews = reviews.length
+            reviews = Object.keys(reviews).length
 
             return (
                 <div className='show-restaurant-details'>
