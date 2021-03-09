@@ -36,10 +36,14 @@
 
         .profile-nav {
             width: 200px;
-            min-height: 69vh;
+            // min-height: 69vh;
+            height: min-content;
             display: flex;
             flex-direction: column;
             padding: 10px;
+            position: sticky;
+            top: 0;
+
 
             a {
                 font-weight: 400;
@@ -55,6 +59,7 @@
             }
             a:hover {
                 color: #c6000d;
+                cursor: pointer;
             }
         }
 
