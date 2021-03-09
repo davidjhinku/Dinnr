@@ -49,6 +49,13 @@ class ReviewForm extends React.Component {
                     {/* <header></header> */}
                     <input type="radio"
                         name={type}
+                        id={`${type}-stars5`}
+                        value="5"
+                        onClick={this.handleChange(type)}
+                        className='stars5' />
+                        <label htmlFor={`${type}-stars5`} className="fas fa-star"></label>  
+                    <input type="radio"
+                        name={type}
                         id={`${type}-stars4`}
                         value="4"
                         onClick={this.handleChange(type)}
@@ -75,13 +82,6 @@ class ReviewForm extends React.Component {
                         onClick={this.handleChange(type)}
                         className='stars1' />
                         <label htmlFor={`${type}-stars1`} className="fas fa-star"></label>
-                    <input type="radio"
-                        name={type}
-                        id={`${type}-stars5`}
-                        value="5"
-                        onClick={this.handleChange(type)}
-                        className='stars5' />
-                        <label htmlFor={`${type}-stars5`} className="fas fa-star"></label>  
                     <header></header>
                 </div>
                 <header id='reaction'></header>

@@ -6,9 +6,22 @@ import { updateReservation } from '../../util/reservation_api_util';
 import {newDate} from '../../util/util_functions'
 
 class Profile extends React.Component {
+    constructor(props){
+        super(props)
+        this.reservations = React.createRef();
+        this.favorites = React.createRef();
+    }
 
     componentDidMount() {
         this.props.fetchUserData(this.props.currentUser.id)
+    }
+
+    scrollReservations() {
+        this.reservations.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    scrollFavorites() {
+        this.favorites.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     render() {
@@ -32,14 +45,18 @@ class Profile extends React.Component {
                     </div>
                     <div className='profile-content'>
                         <nav className='profile-nav'>
-                            <a href="">Reservations</a>
-                            <a href="">Saved Restaurants</a>
-                            <a href="">Account Details</a>
+                            <a onClick={this.scrollReservations.bind(this)}>Reservations</a>
+                            <a onClick={this.scrollFavorites.bind(this)}>Saved Restaurants</a>
+                            {/* <a href="">Account Details</a> */}
                         </nav>
                         <div className='profile-components'>
-                            <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants} userId={this.props.currentUser.id}/>
-                            <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} favorites={this.props.favorites} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite}/>
-                            <Favorites favorites={this.props.favorites} restaurants={this.props.restaurants} deleteFavorite={this.props.deleteFavorite}/>
+                            <nav ref={this.reservations}>
+                                <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants} userId={this.props.currentUser.id}/>
+                                <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} favorites={this.props.favorites} reviews={this.props.reviews} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite} deleteReview={this.props.deleteReview}/>
+                            </nav>
+                            <nav ref={this.favorites}>
+                                <Favorites favorites={this.props.favorites} restaurants={this.props.restaurants} reviews={this.props.reviews} deleteFavorite={this.props.deleteFavorite}/>
+                            </nav>
                         </div>
                     </div>
     

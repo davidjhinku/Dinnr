@@ -27,6 +27,18 @@ json.favorites do
     end
 end
 
+json.reviews do
+    if @reviews.length == 0
+        json.none "none"
+    else
+        @reviews.each do |review|
+            json.set! review.restaurant_id do
+                json.extract! review, :id, :overall, :food, :service, :ambiance, :value, :noise, :review, :recommended, :nickname, :reservation_id, :restaurant_id, :user_id
+            end
+        end
+    end
+end
+
 # @favorites.each do |favorite|
 #     json.favorites do 
 #         json.set! favorite.id do

@@ -15,7 +15,7 @@ class UpcomingReservation extends React.Component {
 
         return (
             <div className='component'>
-                <h1>Upcoming Reservation</h1>
+                <h1>Upcoming Reservations</h1>
                 <hr/>
                 {/* <div className="profile-reservations"> */}
                     <ul>
