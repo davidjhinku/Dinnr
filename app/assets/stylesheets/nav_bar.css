@@ -84,26 +84,9 @@ ul.nav-dropdown > li {
     margin-bottom: 1px;
 }
 
-
-/* .dropdown-options a {
-    background-color: white;
-    border: none;
-    padding: 8px 15px;
-    font-size: 16px;
-    font-weight: 300;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-}
-
-.dropdown-options a:hover {
-    filter: brightness(85%)
-} */
-
 .dropdown-options button {
     background-color: white;
     border: none;
-    padding: 8px 15px;
     font-size: 16px;
     font-weight: 300;
     width: 100%;
@@ -128,7 +111,6 @@ ul.nav-dropdown > li {
 }
 
 .search-icon {
-    /* position: relative; */
     width: 22px;
     cursor: pointer;
     vertical-align: middle;
@@ -136,8 +118,11 @@ ul.nav-dropdown > li {
 }
 
 a.nav-dropdown {
-    padding: 6px 0;
-    padding-right: 217px;
+    display: flex;
     text-decoration: none;
     color: black;
+}
+
+div.nav-text {
+    padding: 8px;
 }

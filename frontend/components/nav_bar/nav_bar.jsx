@@ -23,10 +23,10 @@ class NavBar extends React.Component {
                         <h3>{`Hello, ${this.props.currentUser.first_name}!`}</h3>
                         <hr />
                         <ul>
-                            <li><button><Link to="/profile" className="nav-dropdown" >My Profile</Link></button></li>
-                            <li><button><Link to="/profile" className="nav-dropdown" >My Reservations</Link></button></li>
-                            <li><button><Link to="/profile" className="nav-dropdown" >My Saved Restaurants</Link></button></li>
-                            <li><button className='signout-button' onClick={() => this.props.logout()}>Sign out</button></li>
+                            <li><button><Link to="/profile" className="nav-dropdown" ><div className='nav-text'>My Profile</div></Link></button></li>
+                            <li><button><Link to="/profile" className="nav-dropdown" ><div className='nav-text'>My Reservations</div></Link></button></li>
+                            <li><button><Link to="/profile" className="nav-dropdown" ><div className='nav-text'>My Saved Restaurants</div></Link></button></li>
+                            <li><button className='signout-button' onClick={() => this.props.logout()}><div className='nav-text'>Sign out</div></button></li>
                         </ul>
                     </div>
                 </li>

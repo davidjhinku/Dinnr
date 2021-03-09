@@ -14,7 +14,6 @@ class ReservationConfirmation extends React.Component {
         let reservation = this.props.reservation
         // let date = new Date(reservation.date)
 
-
         if (reservation.user_id !== currUser.id ||
             !rest ||
             reservation.restaurant_id !== rest.id) {
@@ -35,10 +34,12 @@ class ReservationConfirmation extends React.Component {
                                 </div>
                             </div>
                             <div className="reservation-details">
-                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
-                                {/* <img src={rest.photoUrl}/> */}
+                                <Link to={`/restaurants/${rest.id}`} target="_blank">
+                                    {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
+                                    <img src={rest.photoUrls[0]}/>
+                                </Link>
                                 <div>
-                                    <h2>{rest.name}</h2>
+                                    <Link to={`/restaurants/${rest.id}`} target="_blank" className='name-link'><h2>{rest.name}</h2></Link>
                                     <div>
                                         <ul>
                                             <span>
@@ -53,7 +54,6 @@ class ReservationConfirmation extends React.Component {
                                                 <Link to={`/modify/reservation/${reservation.id}`}>Modify</Link>
                                                 <hr className='vert-line'/>
                                                 <Link to={`/${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link>
-                                                {/* <Link to={`${currUser.id}/delete/reservation/${reservation.id}`}>Cancel</Link> */}
                                             </span>
                                         </ul>
                                     </div>
@@ -85,11 +85,10 @@ class ReservationConfirmation extends React.Component {
                                 <h3>{rest.name}</h3>
                                 <h4>{rest.address}, {rest.city}</h4>
                                 <Link to={`/restaurants/${rest.id}`} target="_blank">{"View Hours, Transportation, and Other Details >"}</Link>
-                                {/* <a href={`/#/restaurants/${rest.id}`} target="_blank" >{"View Hours, Transportation, and Other Details >"}</a> */}
                             </div>
                             <div className="map">
                                 <a href={`https://maps.google.com/?q= ${rest.address}, ${rest.city}, ${rest.state}, ${rest.zip}`} target="_blank">
-                                    {/* <img src={`https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=310x155&maptype=roadmap&markers=color:blue%7C${rest.lat},${rest.lng}&key=${window.googleAPIKey}`} alt="map"/> */}
+                                    <img src={`https://maps.googleapis.com/maps/api/staticmap?zoom=13&size=310x155&maptype=roadmap&markers=color:blue%7C${rest.lat},${rest.lng}&key=${window.googleAPIKey}`} alt="map"/>
                                 </a>
                             </div>
                         </div>
