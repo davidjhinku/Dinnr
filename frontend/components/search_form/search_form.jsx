@@ -40,7 +40,6 @@ class SearchForm extends React.Component {
                     <select className='search-time'
                         defaultValue={currState.time}
                         onChange={this.handleChange('time')}>
-                        {/* {this.timeSlots()} */}
                         {timeSlotOption(currState)}
                     </select>
 

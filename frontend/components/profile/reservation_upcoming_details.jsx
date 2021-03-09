@@ -22,8 +22,8 @@ class ReservationUpcomingDetails extends React.Component {
                 <div className="profile-reservation">
                     <li>
                         <Link to={`/restaurants/${restaurant.id}`}>
-                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" />
-                        {/* <img src={restaurant.photoUrl} alt="first image"/> */}
+                        {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
+                        <img src={restaurant.photoUrl} alt="first image"/>
                         </Link>
                         <div className="upcoming-details">
                             <Link to={`/restaurants/${restaurant.id}`}><h3>{restaurant.name}</h3></Link>

@@ -43,7 +43,6 @@ class ReviewForm extends React.Component {
             <div className='row'>
                 <div className='type'>
                     {type}
-                    {/* <label htmlFor={type}>{type}</label> */}
                 </div>
                 <div className='options'>
                     {/* <header></header> */}
@@ -119,12 +118,7 @@ class ReviewForm extends React.Component {
                         id="bars1"
                         value="1"
                         onClick={this.handleChange('noise')}/>
-                    <label htmlFor='bars1' className="fas fa-square-full bars1"></label>
-                    {/* <label htmlFor='bars1' className='bars1'>
-                        <div className='bar1'></div>
-                    </label> */}
-                    {/* <div className='bar1'><label htmlFor='bars1'></label></div> */}
-                    
+                    <label htmlFor='bars1' className="fas fa-square-full bars1"></label>                
                 </div>
             </div>
         )
@@ -326,7 +320,6 @@ class ReviewForm extends React.Component {
                                 
                                 <div className='buttons'>
                                     <button className='back' onClick={() => this.scroll(-695, 2)}>Back</button>
-                                    {/* <button className='next' onClick={() => this.handleSubmit}>Submit your review</button> */}
                                     <button className='next' onClick={this.handleSubmit}>Submit your review</button>
                                 </div>
                             </div>

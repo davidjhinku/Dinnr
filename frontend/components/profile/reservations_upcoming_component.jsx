@@ -17,11 +17,9 @@ class UpcomingReservation extends React.Component {
             <div className='component'>
                 <h1>Upcoming Reservations</h1>
                 <hr/>
-                {/* <div className="profile-reservations"> */}
-                    <ul>
-                        {reservations}
-                    </ul>
-                {/* </div> */}
+                <ul>
+                    {reservations}
+                </ul>
             </div>
         )
     }

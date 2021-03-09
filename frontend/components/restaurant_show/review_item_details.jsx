@@ -24,12 +24,10 @@ class ReviewItemDetails extends React.Component {
                         <div className='overall'>
                             <ul>
                                 <li>{starRating(review.overall)}</li>
-                                {/* <li>{review.overall}</li> */}
                                 <li>Dined on</li>
                             </ul>
                         </div>
                         <div>
-                        {/* <div className='details'> */}
                             <ul className='details'>
                                 <li>Overall <span className="rating">{review.overall}</span></li>
                                 <li>Food <span className="rating">{review.food}</span></li>
