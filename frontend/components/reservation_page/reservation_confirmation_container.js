@@ -2,7 +2,6 @@ import ReservationConfirmation from './reservation_confirmation'
 import { connect } from 'react-redux'
 import { fetchReservation } from '../../actions/reservation_actions'
 import { fetchRestaurant} from '../../actions/restaurant_actions'
-//Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
     return {

@@ -12,15 +12,11 @@
         align-items: center;
         width: inherit;
         height: 80px;
-        // border-top: solid 1px #e4e3e3;
         box-shadow: 0 1px 1px #eeeeee;
         background-color: white;
         
         div {
-            // margin-top: 1%;
             margin-left: 180px;
-            
-            // margin-left: 10vw;
         }
 
         h1 {
@@ -36,7 +32,6 @@
 
         .profile-nav {
             width: 200px;
-            // min-height: 69vh;
             height: min-content;
             display: flex;
             flex-direction: column;
@@ -172,7 +167,6 @@
                     }
                     
                     .review-summary {
-                        // display: flex;
                         padding: 16px;
                         border: 1px solid #F0F0F0;
                         border-radius: 4px;
@@ -197,10 +191,6 @@
                         .attributes{
                             display: flex;
                             margin: 10px 0;
-
-                            // span {
-                            //     margin-bottom: 5px;
-                            // }
 
                             i {
                                 margin-right: 5px;
@@ -247,11 +237,6 @@
                         align-items: center;
                         width: inherit;
                         padding: 24px;
-
-                        // a {
-                        //     text-decoration: none;
-                        //     color: black;
-                        // }
                         
                         .left {
                             display: flex;
@@ -279,7 +264,6 @@
                                 }
 
                                 button {
-                                    // color: red;
                                     padding: 0;
                                     background-color: white;
                                     font-size: 14px;

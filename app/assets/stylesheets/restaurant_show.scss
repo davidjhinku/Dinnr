@@ -195,7 +195,6 @@
                 display: inline-block;
                 margin-right: 3px;
                 font-size: 14px;
-                // color: #606775;
             }
 
             li:after {
@@ -235,7 +234,6 @@
                     }
 
                     .overall {
-                        // display: flex;
                         margin-bottom: 14px;
 
                         span {
@@ -318,7 +316,6 @@
 
                     .location {
                         font-size: 14px;
-                        // fon
                         color: #6f737b;
                     }
                 }
@@ -371,10 +368,8 @@
 
         .reservation-block {
             padding: 15px;
-            // height: 240px;
             height: auto;
             display: flex;
-            // align-items: center;
             position: sticky;
             top: 0;
             background-color: white;
@@ -476,8 +471,6 @@
                 }
 
                 #timeslots {
-                    // display: flex;
-                    // justify-content: flex-start;
                     width: inherit;
                     height: auto;
                     margin-top: 16px;
@@ -490,9 +483,6 @@
 
                     .slots {
                         display: grid;
-                        // justify-content: space-between;
-                        /* grid-template-columns: repeat(auto-fill, minmax(88px, 88px)); */
-                        /* grid-column-gap: 10px; */
                         grid-row-gap: 10px;
                         grid-template-columns: 1fr 1fr 1fr;
                         width: inherit;

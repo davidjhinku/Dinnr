@@ -5,7 +5,7 @@ class ReviewItemDetails extends React.Component {
 
     render() {
         let review = this.props.review;
-        // debugger
+
         return(
             <div>
                 <li key={this.props.key} className='item'>

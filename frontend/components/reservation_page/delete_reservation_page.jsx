@@ -65,4 +65,3 @@ class DeleteReservation extends React.Component {
 }
 
 export default DeleteReservation;
-// export default withRouter(DeleteReservation);

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: center;
     background-color: white;
     min-height: 83vh;
 
@@ -28,7 +27,6 @@
     }
 
     .form-container {
-        // margin-top: 25px;
         width: 695px;
         overflow: hidden;
 
@@ -92,7 +90,6 @@
                 }
 
                 p {
-                    // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
                     font-size: 17px;
                     margin-bottom: 12px;
                 }
@@ -103,7 +100,6 @@
             }
     
             .radio-ratings {
-                // height: 35px;
                 margin: 30px;
     
                 .row {
@@ -120,12 +116,9 @@
                     }
 
                     .options {
-                        // display: flex;
-                        // align-items: center;
                         width: 180px;
                         height: inherit;
                         float: right;
-                        // transform: rotateY(180deg);
 
                         input {
                             display: none;
@@ -139,27 +132,18 @@
                             
                         }
 
-                        // header {
-                        //     float: right
-                        // }
-
                         input:not(:checked) ~ label:hover,
                         input:not(:checked) ~ label:hover ~ label{
                             color: #da3743;
-                            // color: #E1E1E1;
                         }
 
                         input:checked ~ label {
                             color: #da3743;
                         }
 
-                        // #overall-stars1:checked ~ header:before {
                         input.stars1:checked ~ header:before {
                             content: 'Poor';
                         }
-                        // input.stars1:checked ~ header.reaction:before {
-                        //     content: 'Poor';
-                        // }
                         input.stars2:checked ~ header:before {
                             content: 'Fair';
                         }
@@ -172,88 +156,14 @@
                         input.stars5:checked ~ header:before {
                             content: 'Outstanding';
                         }
-
-                        // label:hover ~ input:not(:checked),
-                        // label ~ label:hover ~ input:not(:checked) {
-                        //     color: #E1E1E1;
-                        // }
-
-                        // label {
-                        //     color: #E1E1E1;
-                        //     font-weight: 900;
-                        //     // float: right;
-                        // }
-
-                        // label:before {
-                        //     content: '\f005';
-                        //     font-family: 'Font Awesome 5 Free';
-                        //     font-size: 30px;
-                        //     display: inline-block;
-                        //     padding: 1px;
-                        //     cursor: pointer;
-                        // }
-
-                        // input:not(:checked) ~ label:hover,
-                        // input:not(:checked) ~ label:hover ~ label {
-                        //     color: #da3743;
-                        //     // color: #E1E1E1;
-                            
-                        // }
-                        
-                        // input:checked ~ label {
-                        //     color: #da3743;
-                        //     // color: #E1E1E1;
-                        // }
-
-                        // label:hover ~ input:not(:checked) ~ label {
-                        //     color: #E1E1E1;
-                        // }
-                        
-                        // label:hover,
-                        // label:hover ~ label {
-                        //     color: #da3743;
-                        //     // color: black;
-                        // }
-                        // label:before {
-                        //     content: '\f005';
-                        //     font-family: 'Font Awesome 5 Free';
-                        //     font-size: 30px;
-                        //     display: inline-block;
-                        //     padding: 1px;
-                        //     cursor: pointer;
-                        // }
-
-                        // label:hover:after,
-                        // label:hover ~ label:after,
-                        // input:checked ~ label:after {
-                        //     color: #da3743;
-                        //     // color: black;
-                        // }
-
-                        // input:checked ~ label,
-                        // .options:not(:checked) > label:hover,
-                        // .options:not(:checked) > label:hover ~ label {
-                        //     color: #da3743;
-                        //     // color: black;
-                        // }
-    
-                        // input:checked + label:hover,
-                        // input:checked ~ label:hover,
-                        // label:hover ~ input:checked ~ label,
-                        // input:checked ~ label:hover ~ label {
-                        //     color: #DA3743;
-                        //     // color: black;
-                        // }
                     }
 
                     .noise-options {
                         display: flex;
                         flex-direction: row-reverse;
-                        // align-items: baseline;
                         justify-content: space-between;
                         width: 147px;
                         height: inherit;
-                        // float: right;
                         margin-left: 17px;
                         margin-top: 8px;
 
@@ -281,54 +191,11 @@
                         input:not(:checked) ~ label:hover,
                         input:not(:checked) ~ label:hover ~ label{
                             color: #da3743;
-                            // color: #E1E1E1;
                         }
 
                         input:checked ~ label {
                             color: #da3743;
                         }
-                        
-                        // div {
-                        //     background: #E1E1E1;
-
-                        // }
-
-                        // div:hover {
-                        //     background: red;
-                        // }
-                        // .bar1 {
-                        //     width: 40px;
-                        //     height: 10px;
-                        // }
-                        // .bar2 {
-                        //     width: 40px;
-                        //     height: 15px;
-                        // }
-                        // .bar3 {
-                        //     width: 40px;
-                        //     height: 20px;
-                        // }
-                        // .bar4 {
-                        //     width: 40px;
-                        //     height: 25px;
-                        // }
-
-
-                        // rect {
-                        //     color: #E1E1E1;
-                        // }
-
-                        // label:hover {
-                        //     color: red;
-                        // }
-
-
-
-                        // label.bars1 {
-                        //     width: 40px;
-                        //     height: 10px;
-                        //     background: red;
-                        // }
                     }
                 }
             }
@@ -375,9 +242,6 @@
                     div:hover {
                         cursor: pointer
                     }
-                    // i:hover {
-                    //     cursor: pointer;
-                    // }
                     
                     i.active:before {
                         content: '\f192';
@@ -420,11 +284,6 @@
                         font-size: 16px;
                         font-weight: 300;
                     }
-    
-                    // input:focus {
-                    //     border: none;
-                    //     text-decoration: none;
-                    // }
                 }
     
                 .characters {

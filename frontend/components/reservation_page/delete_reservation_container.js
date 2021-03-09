@@ -1,8 +1,6 @@
 import DeleteReservation from './delete_reservation_page'
 import { connect } from 'react-redux'
 import { fetchReservation, deleteReservation } from '../../actions/reservation_actions'
-// import { fetchRestaurant } from '../../actions/restaurant_actions'
-//Also create action for unmount that will clear search params
 
 const mSTP = (state, ownProps) => {
     const resId = ownProps.match.params.resId
@@ -18,7 +16,6 @@ const mDTP = dispatch => {
     return {
         deleteReservation: resId => dispatch(deleteReservation(resId)),
         fetchReservation: resId => dispatch(fetchReservation(resId)),
-        // fetchRestaurant: restId => dispatch(fetchRestaurant(restId))
     }
 }
 

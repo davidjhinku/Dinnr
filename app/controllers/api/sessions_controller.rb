@@ -5,7 +5,6 @@ class Api::SessionsController < ApplicationController
             login!(@user)
             # @reservations = @user.reservations
 
-            # debugger
             render 'api/users/show.json.jbuilder'
         else
             render json: ["Your email and password don't match. Please try again."], status: 401

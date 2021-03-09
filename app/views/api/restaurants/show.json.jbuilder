@@ -21,8 +21,6 @@
         end
     end
 
-    # debugger
-
     json.reviews do
         json.set! @restaurant.id do
             if @reviews.length == 0

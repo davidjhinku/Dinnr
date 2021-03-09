@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchRestaurants } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         restaurants: state.entities.restaurants,
         reviews: state.entities.reviews

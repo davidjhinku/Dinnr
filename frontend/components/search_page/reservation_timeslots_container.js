@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { checkTimeslots } from '../../actions/reservation_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
         searchParams: state.entities.search_params,
         timeslots: state.entities.timeslots

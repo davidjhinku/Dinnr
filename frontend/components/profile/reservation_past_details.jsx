@@ -80,7 +80,6 @@ class ReservationPastDetails extends React.Component {
                         </div>
             } else {
                 reviewLink = <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
-                // review = <div className='review-summary'></div>
             }
 
             return (

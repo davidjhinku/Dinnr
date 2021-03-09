@@ -5,9 +5,7 @@ import { setSearchParams } from '../../actions/search_actions'
 import { fetchRestaurant } from '../../actions/restaurant_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     return {
-        // restId: ownProps.match.params.restId,
         searchParams: state.entities.search_params,
         timeslots: state.entities.timeslots
     }

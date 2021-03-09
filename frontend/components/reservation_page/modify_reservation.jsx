@@ -16,7 +16,6 @@ class ModifyReservation extends React.Component {
             occasion: this.props.reservation.occasion,
             special_request: this.props.reservation.special_request,
         }
-        // this.state = this.props.reservation
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -53,7 +52,6 @@ class ModifyReservation extends React.Component {
                 occasion: this.props.reservation.occasion,
                 special_request: this.props.reservation.special_request,
             })
-            // this.setState(this.props.reservation)
         }
     }
     
@@ -127,13 +125,6 @@ class ModifyReservation extends React.Component {
                                 </select>
                             </div>
                             <button className='search-form-button'>Let's go</button>
-                            {/* <div className='search-right'>
-                                <input type="text"
-                                    placeholder={currState.wildcard === '' ? 'Location, Restaurant, or Cuisine' : currState.wildcard}
-                                    value={currState.search_filter}
-                                    onChange={this.handleChange('wildcard')} />
-                                <button className='search-form-button'>Let's go</button>
-                            </div> */}
                         </form>
 
                     </div>
