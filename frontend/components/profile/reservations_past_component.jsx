@@ -16,7 +16,8 @@ class PastReservation extends React.Component {
                     favorites={this.props.favorites}
                     reviews={this.props.reviews}
                     createFavorite={this.props.createFavorite}
-                    deleteFavorite={this.props.deleteFavorite}/>
+                    deleteFavorite={this.props.deleteFavorite}
+                    deleteReview={this.props.deleteReview}/>
                 })
         }
 

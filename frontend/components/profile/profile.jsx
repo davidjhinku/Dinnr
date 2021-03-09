@@ -52,7 +52,7 @@ class Profile extends React.Component {
                         <div className='profile-components'>
                             <nav ref={this.reservations}>
                                 <UpcomingReservation upcomingReservations={upcomingReservations} restaurants={this.props.restaurants} userId={this.props.currentUser.id}/>
-                                <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} favorites={this.props.favorites} reviews={this.props.reviews} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite}/>
+                                <PastReservation pastReservations={pastReservations} restaurants={this.props.restaurants} favorites={this.props.favorites} reviews={this.props.reviews} createFavorite={this.props.createFavorite} deleteFavorite={this.props.deleteFavorite} deleteReview={this.props.deleteReview}/>
                             </nav>
                             <nav ref={this.favorites}>
                                 <Favorites favorites={this.props.favorites} restaurants={this.props.restaurants} reviews={this.props.reviews} deleteFavorite={this.props.deleteFavorite}/>

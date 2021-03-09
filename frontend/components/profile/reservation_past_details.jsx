@@ -45,7 +45,8 @@ class ReservationPastDetails extends React.Component {
             }
             
             if (reviews[restaurant.id]) {
-                reviewLink = <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Delete Review</Link>
+                let reviewData = reviews[restaurant.id]
+                reviewLink = <button onClick={this.props.deleteReview(reviewData.id)}><i className="far fa-comment-alt"></i>  Delete Review</button>
                 review = <div className='review-summary'>The summary of the review in here</div>
             } else {
                 reviewLink = <Link to={`/${reservation.user_id}/review/${restaurant.id}/${reservation.id}`}><i className="far fa-comment-alt"></i>  Write Review</Link>
