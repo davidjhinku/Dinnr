@@ -35,7 +35,7 @@ class ReviewsHeader extends React.Component {
                         </div>
                     </div>
                     <div className='volume'>
-                        <i class="fas fa-signal"></i>
+                        <i className="fas fa-signal"></i>
                         <ul>
                             <li className='strong'>Noise</li>
                             <li>{averages['noise']}</li>
@@ -43,7 +43,7 @@ class ReviewsHeader extends React.Component {
 
                     </div>
                     <div className='recommended'>
-                        <i class="far fa-thumbs-up"></i>
+                        <i className="far fa-thumbs-up"></i>
                         <span className='strong'>{`${averages['recommended'] * 100}% of people`}</span> would recommend it to a friend
                     </div>
                 </div>
