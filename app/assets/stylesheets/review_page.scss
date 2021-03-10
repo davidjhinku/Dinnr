@@ -105,7 +105,9 @@
                 .row {
                     display: flex;
                     height: 35px;
+                    width: 500px;
                     margin-bottom: 15px;
+                    justify-content: space-between;
                 
                     .type {
                         width: 110px;
@@ -115,6 +117,10 @@
 
                     }
 
+                    .reaction {
+                        width: 150px;
+                        padding-left: 30px;
+                    }
                     .options {
                         width: 180px;
                         height: inherit;
@@ -141,21 +147,21 @@
                             color: #da3743;
                         }
 
-                        input.stars1:checked ~ header:before {
-                            content: 'Poor';
-                        }
-                        input.stars2:checked ~ header:before {
-                            content: 'Fair';
-                        }
-                        input.stars3:checked ~ header:before {
-                            content: 'Good';
-                        }
-                        input.stars4:checked ~ header:before {
-                            content: 'Very good';
-                        }
-                        input.stars5:checked ~ header:before {
-                            content: 'Outstanding';
-                        }
+                        // input.stars1:checked ~ header:before {
+                        //     content: 'Poor';
+                        // }
+                        // input.stars2:checked ~ header:before {
+                        //     content: 'Fair';
+                        // }
+                        // input.stars3:checked ~ header:before {
+                        //     content: 'Good';
+                        // }
+                        // input.stars4:checked ~ header:before {
+                        //     content: 'Very good';
+                        // }
+                        // input.stars5:checked ~ header:before {
+                        //     content: 'Outstanding';
+                        // }
                     }
 
                     .noise-options {
@@ -196,6 +202,19 @@
                         input:checked ~ label {
                             color: #da3743;
                         }
+
+                        // input#bars1:checked ~ header:before {
+                        //     content: 'Do not recall';
+                        // }
+                        // input#bars2:checked ~ header:before {
+                        //     content: 'Quiet';
+                        // }
+                        // input#bars3:checked ~ header:before {
+                        //     content: 'Moderate';
+                        // }
+                        // input#bars4:checked ~ header:before {
+                        //     content: 'Energetic';
+                        // }
                     }
                 }
             }

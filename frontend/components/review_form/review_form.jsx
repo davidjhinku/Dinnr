@@ -50,42 +50,53 @@ class ReviewForm extends React.Component {
                         name={type}
                         id={`${type}-stars5`}
                         value="5"
-                        onClick={this.handleChange(type)}
+                        onClick={this.handleStars(type)}
                         className='stars5' />
                         <label htmlFor={`${type}-stars5`} className="fas fa-star"></label>  
                     <input type="radio"
                         name={type}
                         id={`${type}-stars4`}
                         value="4"
-                        onClick={this.handleChange(type)}
+                        onClick={this.handleStars(type)}
                         className='stars4' />
                         <label htmlFor={`${type}-stars4`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars3`}
                         value="3"
-                        onClick={this.handleChange(type)}
+                        onClick={this.handleStars(type)}
                         className='stars3' />
                         <label htmlFor={`${type}-stars3`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars2`}
                         value="2"
-                        onClick={this.handleChange(type)}
+                        onClick={this.handleStars(type)}
                         className='stars2' />
                         <label htmlFor={`${type}-stars2`} className="fas fa-star"></label>
                     <input type="radio"
                         name={type}
                         id={`${type}-stars1`}
                         value="1"
-                        onClick={this.handleChange(type)}
+                        onClick={this.handleStars(type)}
                         className='stars1' />
                         <label htmlFor={`${type}-stars1`} className="fas fa-star"></label>
                     <header></header>
                 </div>
-                <header id='reaction'></header>
+                <div id={`${type}-reaction`} className='reaction'></div>
             </div>
         )
+    }
+
+    handleStars(type) {
+        let rating = ['none', 'Poor', 'Fair', 'Good', 'Very good', 'Outstanding']
+
+        return e => {
+            let level = e.target.value
+            document.getElementById(`${type}-reaction`).textContent = rating[level]
+
+            this.setState({ [type]: e.target.value })
+        }
     }
 
     radioBars() {
@@ -99,29 +110,41 @@ class ReviewForm extends React.Component {
                         name='noise'
                         id="bars4"
                         value="4"
-                        onClick={this.handleChange('noise')}/>
+                        onClick={this.handleRadio('noise')}/>
                     <label htmlFor='bars4' className="fas fa-square-full bars4"></label>      
                     <input type="radio"
                         name='noise'
                         id="bars3"
                         value="3"
-                        onClick={this.handleChange('noise')}/>
+                        onClick={this.handleRadio('noise')}/>
                     <label htmlFor='bars3' className="fas fa-square-full bars3"></label>
                     <input type="radio"
                         name='noise'
                         id="bars2"
                         value="2"
-                        onClick={this.handleChange('noise')}/>
+                        onClick={this.handleRadio('noise')}/>
                     <label htmlFor='bars2' className="fas fa-square-full bars2"></label>
                     <input type="radio"
                         name='noise'
                         id="bars1"
                         value="1"
-                        onClick={this.handleChange('noise')}/>
-                    <label htmlFor='bars1' className="fas fa-square-full bars1"></label>                
+                        onClick={this.handleRadio('noise')}/>
+                    <label htmlFor='bars1' className="fas fa-square-full bars1"></label>
                 </div>
+                <div id='radio-reaction' className='reaction'></div>
             </div>
         )
+    }
+
+    handleRadio(type) {
+        let volume = ['none', 'Do not recall', 'Quiet', 'Moderate', 'Energetic']
+
+        return e => {
+            let level = e.target.value
+            document.getElementById('radio-reaction').textContent = volume[level]
+
+            this.setState({ [type]: e.target.value })
+        }
     }
 
     clickRecommend(type) {

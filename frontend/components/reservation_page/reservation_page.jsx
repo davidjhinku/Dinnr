@@ -38,6 +38,23 @@ class ReservationPage extends React.Component {
         }
     }
 
+    handlePhone(){
+        return e => {
+            let phone = e.target.value
+            phone = phone.replace(/[^\d]/g, "")
+
+            if (phone.length > 6) {
+                phone = phone.replace(/(\d{3})(\d{3})(\d)/g, "$1-$2-$3")
+            } else if (phone.length > 3) {
+                phone = phone.replace(/(\d{3})(\d)/g, "$1-$2")
+            }
+
+            if (phone.length <= 12) {
+                this.setState({'phone': phone})
+            }
+        }
+    }
+
     render() {
         let currUser = this.props.currentUser
         let rest = this.props.restaurant
@@ -86,7 +103,8 @@ class ReservationPage extends React.Component {
                                     className="editable"
                                     placeholder="123-456-7891"
                                     value={this.state.phone}
-                                    onChange={this.handleChange('phone')}
+                                    // onChange={this.handleChange('phone')}
+                                    onChange={this.handlePhone()}
                                     pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                                     required
                                 />
