@@ -24,7 +24,9 @@ class Reservation < ApplicationRecord
         slotsStart = terms[:time].to_i - 2
 
         5.times do 
-            if !bookedSlots[slotsStart]
+            if slotsStart > 24
+                slots[slotsStart] = 'booked'
+            elsif !bookedSlots[slotsStart]   
                 slots[slotsStart] = "available"
             else
                 slots[slotsStart] = "booked"
