@@ -41,6 +41,7 @@ class MakeReservation extends React.Component {
 
     render(){
         let currState = this.state
+        let currDate = formsDateFormat()
         const timeslots = this.props.timeslots
         let timeslotHash = timeslots[this.props.restId] ? timeslots[this.props.restId] : timeslots["loading"]
 
@@ -65,6 +66,7 @@ class MakeReservation extends React.Component {
                             <input type="date"
                                 value={currState.date}
                                 onChange={this.handleChange('date')}
+                                min={currDate}
                             />
                         </div>
                         <div className='bottom-input'>
