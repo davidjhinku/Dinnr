@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchReservation, updateReservation } from '../../actions/reservation_actions'
 
 const mSTP = (state, ownProps) => {
-    debugger
     return {
         reservation: state.entities.reservations,
         restaurant: Object.values(state.entities.restaurants)[0],
