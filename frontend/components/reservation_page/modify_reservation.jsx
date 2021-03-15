@@ -62,7 +62,6 @@ class ModifyReservation extends React.Component {
         let currState = this.state
         let currUser = this.props.currentUser
 
-        debugger
         if (!restaurant || reservation.restaurant_id !== restaurant.id) {
             return (
                 <div>loading...</div>
@@ -76,7 +75,7 @@ class ModifyReservation extends React.Component {
                                 <h4>Your current reservation</h4>
                                 <div className='header-info'>
                                     {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
-                                    <img src={rest.photoUrl}/>
+                                    <img src={restaurant.photoUrls[0]}/>
                                     <div>
                                         <h2>{restaurant.name}</h2>
                                         <div>
