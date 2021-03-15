@@ -22,7 +22,7 @@ class DeleteReservation extends React.Component {
         let currUser = this.props.currentUser
         let reservation = this.props.reservation
         let restaurant = this.props.restaurant
-
+        
         if (reservation.user_id !== currUser.id) {
             return (
                 <div>Loading</div>
@@ -36,7 +36,7 @@ class DeleteReservation extends React.Component {
                         <div className='element'>
                             <div className='details'>
                                 {/* <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="test image" /> */}
-                                <img src={restaurant.photoUrl} alt="first image"/>
+                                <img src={restaurant.photoUrls[0]} alt="first image"/>
                                 <div>
                                     <h4>GUESTS</h4>
                                     <h3>{reservation.party_size} people</h3>

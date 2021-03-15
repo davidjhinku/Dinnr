@@ -62,6 +62,7 @@ class ModifyReservation extends React.Component {
         let currState = this.state
         let currUser = this.props.currentUser
 
+        debugger
         if (!restaurant || reservation.restaurant_id !== restaurant.id) {
             return (
                 <div>loading...</div>
