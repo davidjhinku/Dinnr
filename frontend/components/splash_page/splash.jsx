@@ -7,7 +7,7 @@ class Splash extends React.Component {
         super(props)
     }
 
-    // componentWillUnmount() {
+    // componentWillUnmount() { //confirm what this will do
     //     debugger
     //     this.props.clearRestaurants();
     // }

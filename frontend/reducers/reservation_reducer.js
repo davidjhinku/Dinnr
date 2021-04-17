@@ -25,7 +25,7 @@ const reservationReducer = (state = _defaultState, action) => {
         case RECEIVE_RESERVATION:
             return action.reservationData.reservations
         // case RECEIVE_CURRENT_USER:
-        //     debugger
+        //     debugger //do we still need?
         //     return action.payload.reservations
         case RECEIVE_USER_DATA:
             return action.payload.reservations
