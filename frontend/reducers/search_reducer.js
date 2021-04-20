@@ -19,5 +19,3 @@ const searchReducer = (state = _defaultState, action) => {
 }
 
 export default searchReducer;
-
-// Maybe clear on receive a restaurant or profile as that leaves the params areas

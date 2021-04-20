@@ -8,7 +8,6 @@ const reviewsReducer = (state = {}, action) => {
         case RECEIVE_RESTAURANTS:
             return action.restaurants.reviews
         case RECEIVE_RESTAURANT: 
-            // return action.restaurant.reviews
             return Object.assign({}, state, action.restaurant.reviews)
         case RECEIVE_USER_DATA:
             return action.payload.reviews

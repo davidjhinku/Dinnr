@@ -4,23 +4,16 @@ import { formsDateFormat, timeSlotOption, timeslotHashToLi } from '../../util/ut
 class MakeReservation extends React.Component {
     constructor(props){
         super(props)
-        // this.state = {
-        //     party_size: 2,
-        //     date: formsDateFormat(),
-        //     time: new Date().getHours() + 1
-        // }
         this.state = this.props.searchParams
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e){
         e.preventDefault()
-
         document.getElementById('timeslot-button').style.display="none"
         document.getElementById('timeslots').style.display="block"
 
         let timeslotParams = Object.assign({}, this.state, { restId: this.props.restId })
-
         this.props.checkTimeslots(timeslotParams)
     }
 
@@ -60,6 +53,7 @@ class MakeReservation extends React.Component {
                             <option value="5">5 people</option>
                         </select>
                     </div>
+
                     <div className='form-bottom'>
                         <div className='bottom-input'>
                             <p>Date</p>
@@ -78,15 +72,16 @@ class MakeReservation extends React.Component {
                             </select>
                         </div>
                     </div>
+
                     <button id='timeslot-button'>Find a table</button>
                 </form>
+                
                 <div id='timeslots'>
                     <span>Select a Time:</span>
                     <ul className='slots'>
                         {timeslotHashToLi(timeslotHash, this.props.restId)}
                     </ul>
                 </div>
-    
             </div>
         )
     }

@@ -8,11 +8,9 @@ class ReviewsItems extends React.Component {
             return <ReviewItemDetails key={idx} review={review} />
         })
         return(
-            // <div>
-                <ul>
-                    {reviewItems}
-                </ul>
-            // </div>
+            <ul>
+                {reviewItems}
+            </ul>
         )
     }
 }

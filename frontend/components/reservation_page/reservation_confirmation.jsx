@@ -12,7 +12,6 @@ class ReservationConfirmation extends React.Component {
         let currUserJoined = new Date(currUser.created_at)
         let rest = this.props.restaurant
         let reservation = this.props.reservation
-        // let date = new Date(reservation.date)
 
         if (reservation.user_id !== currUser.id ||
             !rest ||
