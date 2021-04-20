@@ -34,7 +34,6 @@ export const timeSlotOption = (searchState) => {
     let time;
 
     if (formsDateFormat() === searchState.date) {
-        // time = searchState.time //So the options hash can't be happen in the past
         time = new Date().getHours() + 3 //So the options hash can't be happen in the past
     } else {
         time = 0
@@ -115,11 +114,7 @@ export const readableDate = (date) => {
     })
 }
 
-// new Date(year, month, date, hours, minutes, seconds, ms)
 export const newDate = (date, time) => {
-    // return new Date(`${date}T${time}:00:00Z`) Greenwich time, doesn't work on comparison
-
-
     let y = date.slice(0, 4)
     let m = date.slice(5, 7) - 1
     let d = date.slice(8, 11)
@@ -139,7 +134,6 @@ export const restAverages = (reviews) => {
         "value": 0,
         "noise": 0,
         "recommended": 0,
-        // "totalReviews": totalReviews
     }
 
     reviews.forEach ((review => {

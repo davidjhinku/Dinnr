@@ -11,10 +11,6 @@ const restaurantsReducer = (state = {}, action) => {
             return action.restaurants.restaurants
         case RECEIVE_RESTAURANT:
             return Object.assign({}, state, {[action.restaurant.id]: action.restaurant})
-        // case CLEAR_RESTAURANTS:
-        //     return {}
-        // case RECEIVE_SEARCH_PARAMS:
-        //     return {}
         case RECEIVE_RESERVATION:
             return Object.assign({}, { [action.reservationData.restaurants.id]: action.reservationData.restaurants})
         case RECEIVE_USER_DATA:

@@ -15,10 +15,6 @@ class ReservationTimeslots extends React.Component {
         }
     }
 
-    // componentWillUnmount(){
-    //     //function to clear reservation slots
-    // }
-
     render() {
         const timeslots = this.props.timeslots
         let timeslotHash = timeslots[this.props.restId] ? timeslots[this.props.restId] : timeslots["loading"]
