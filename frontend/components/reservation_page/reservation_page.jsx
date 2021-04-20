@@ -103,7 +103,6 @@ class ReservationPage extends React.Component {
                                     className="editable"
                                     placeholder="123-456-7891"
                                     value={this.state.phone}
-                                    // onChange={this.handleChange('phone')}
                                     onChange={this.handlePhone()}
                                     pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'
                                     required

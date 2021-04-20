@@ -20,12 +20,6 @@ class RestaurantShow extends React.Component {
         this.props.fetchRestaurant(this.props.restId)
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (prevProps.restaurant !== this.props.restaurant) {
-    //         this.props.fetchRestaurant(this.props.restId)
-    //     }
-    // }
-
     scrollOverview() {
         this.overview.current.scrollIntoView({ behavior: 'smooth' });
     }
